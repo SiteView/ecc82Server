@@ -1,0 +1,776 @@
+ aimparser
+
+ Timestamp is 50220fcd (Wed Aug 08 15:05:49 2012)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000b96aH .text                   CODE
+ 0001:0000b970 00000261H .text$x                 CODE
+ 0001:0000bbe0 00000088H .text$yc                CODE
+ 0001:0000bc70 0000003fH .text$yd                CODE
+ 0002:00000000 00000290H .idata$5                DATA
+ 0002:00000290 00001380H .rdata                  DATA
+ 0002:00001610 00000052H .rdata$debug            DATA
+ 0002:00001664 000000c0H .rdata$r                DATA
+ 0002:00001730 00000030H .rdata$sxdata           DATA
+ 0002:00001760 00000004H .rtc$IAA                DATA
+ 0002:00001764 00000004H .rtc$IZZ                DATA
+ 0002:00001768 00000004H .rtc$TAA                DATA
+ 0002:0000176c 00000004H .rtc$TZZ                DATA
+ 0002:00001770 00000284H .xdata$x                DATA
+ 0002:000019f4 00000000H ATL$__a                 DATA
+ 0002:000019f4 00000000H ATL$__z                 DATA
+ 0002:000019f4 00000064H .idata$2                DATA
+ 0002:00001a58 00000014H .idata$3                DATA
+ 0002:00001a6c 00000290H .idata$4                DATA
+ 0002:00001cfc 000008eeH .idata$6                DATA
+ 0002:000025f0 000001e2H .edata                  DATA
+ 0003:00000000 00000004H .CRT$XCA                DATA
+ 0003:00000004 00000004H .CRT$XCAA               DATA
+ 0003:00000008 00000008H .CRT$XCL                DATA
+ 0003:00000010 0000000cH .CRT$XCU                DATA
+ 0003:0000001c 00000004H .CRT$XCZ                DATA
+ 0003:00000020 00000004H .CRT$XIA                DATA
+ 0003:00000024 00000004H .CRT$XIZ                DATA
+ 0003:00000030 0000008cH .data                   DATA
+ 0003:000000c0 000011e0H .bss                    DATA
+ 0004:00000000 00000058H .rsrc$01                DATA
+ 0004:00000060 000002f8H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       __except_list              00000000     <absolute>
+ 0000:0000000c       ___safe_se_handler_count   0000000c     <absolute>
+ 0000:00009876       __ldused                   00009876     <absolute>
+ 0000:00009876       __fltused                  00009876     <absolute>
+ 0000:00000000       ___ImageBase               10000000     <linker-defined>
+ 0001:00000000       ?GetNext@CStringList@@QAEAAV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@AAPAU__POSITION@@@Z 10001000 f i aimparser.obj
+ 0001:00000020       ?GetMessageMap@CAimParserApp@@MBEPBUAFX_MSGMAP@@XZ 10001020 f   aimparser.obj
+ 0001:00000030       ??0CAimParserApp@@QAE@XZ   10001030 f   aimparser.obj
+ 0001:00000050       ?AssertValid@CObject@@UBEXXZ 10001050 f i aimparser.obj
+ 0001:00000060       ?Dump@CObject@@UBEXAAVCDumpContext@@@Z 10001060 f i aimparser.obj
+ 0001:00000060       ?Serialize@CObject@@UAEXAAVCArchive@@@Z 10001060 f i aimparser.obj
+ 0001:00000070       ??1CAimParserApp@@UAE@XZ   10001070 f i aimparser.obj
+ 0001:00000080       ?WriteLog@@YA_NV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@V12@@Z 10001080 f   aimparser.obj
+ 0001:00000250       ?ConvertGBKToUtf8@@YAXAAV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 10001250 f   aimparser.obj
+ 0001:00000320       ?FindMonth@@YAPADPADAAH@Z  10001320 f   aimparser.obj
+ 0001:00000500       ?_GetMatchColumn@@YAHPBD0AAH@Z 10001500 f   aimparser.obj
+ 0001:000006a0       ?GetBufferByNewMatchLine@@YAHPBDHPADPAPAD@Z 100016a0 f   aimparser.obj
+ 0001:00000800       ?FormatSource@@YAHPBDHAAVCStringList@@PAD@Z 10001800 f   aimparser.obj
+ 0001:00000c50       ?GetLineString@@YAXABVCStringList@@HHAAV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 10001c50 f   aimparser.obj
+ 0001:00000cd0       ?GetColumnFromLine@@YAXAAV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H0H@Z 10001cd0 f   aimparser.obj
+ 0001:00000e60       ?GetColumnIndex@@YAHAAVCStringList@@AAHPAD@Z 10001e60 f   aimparser.obj
+ 0001:00001000       ?GetColumnIndex@@YAHV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@AAHPAD@Z 10002000 f   aimparser.obj
+ 0001:00001150       _DisksParser               10002150 f   aimparser.obj
+ 0001:00001970       _DiskActParser             10002970 f   aimparser.obj
+ 0001:00001bf0       _MulCPUSParser             10002bf0 f   aimparser.obj
+ 0001:00001fe0       _MulCPUParser              10002fe0 f   aimparser.obj
+ 0001:00002510       ??1_Node@?$_List_nod@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAE@XZ 10003510 f i aimparser.obj
+ 0001:00002520       ??_GCAimParserApp@@UAEPAXI@Z 10003520 f i aimparser.obj
+ 0001:00002520       ??_ECAimParserApp@@UAEPAXI@Z 10003520 f i aimparser.obj
+ 0001:00002540       _CpuParserTest             10003540 f   aimparser.obj
+ 0001:00003060       _HP_CpuParser              10004060 f   aimparser.obj
+ 0001:00003790       _GetMatchColumn            10004790 f   aimparser.obj
+ 0001:00003890       _FileParser                10004890 f   aimparser.obj
+ 0001:00003b40       _MemoryParserTest          10004b40 f   aimparser.obj
+ 0001:00004b60       _MemoryParser              10005b60 f   aimparser.obj
+ 0001:00005580       _PMemoryParser             10006580 f   aimparser.obj
+ 0001:00006630       _MemoryParser_zw           10007630 f   aimparser.obj
+ 0001:00006f90       _DiskParser                10007f90 f   aimparser.obj
+ 0001:00007a10       _DiskParserTest            10008a10 f   aimparser.obj
+ 0001:00008ba0       _ServiceParser             10009ba0 f   aimparser.obj
+ 0001:00009220       _ServiceParserTest         1000a220 f   aimparser.obj
+ 0001:000098f0       _CpuParser                 1000a8f0 f   aimparser.obj
+ 0001:0000a0a0       ?_Buynode@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@IAEPAU_Node@?$_List_nod@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@XZ 1000b0a0 f i aimparser.obj
+ 0001:0000a0c0       ?clear@?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@QAEXXZ 1000b0c0 f i aimparser.obj
+ 0001:0000a100       _UserCPUParser             1000b100 f   aimparser.obj
+ 0001:0000a5f0       ?FuncGetInstallPath@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@XZ 1000b5f0 f   funcGeneral.obj
+ 0001:0000a690       ?FuncGetInstallRootSCPath@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@XZ 1000b690 f   funcGeneral.obj
+ 0001:0000a6b0       ?DFN_GetPrivateProfileString@@YAKPBD00PADK0@Z 1000b6b0 f   funcGeneral.obj
+ 0001:0000a8e0       ?DFN_GetPrivateProfileInt@@YAHPBD0H0@Z 1000b8e0 f   funcGeneral.obj
+ 0001:0000a990       ?GetSEIP@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ 1000b990 f   funcGeneral.obj
+ 0001:0000aaf0       ?GetResourceValue@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@Z 1000baf0 f   funcGeneral.obj
+ 0001:0000ac30       ?FuncGetStringFromIDS@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@PBD@Z 1000bc30 f   funcGeneral.obj
+ 0001:0000ad30       ?FuncGetStringFromIDS@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@PBD0@Z 1000bd30 f   funcGeneral.obj
+ 0001:0000ae30       ?DFNParser_GetPrivateProfileString@@YAKPBD00PADK0@Z 1000be30 f   funcGeneral.obj
+ 0001:0000aec0       ?DFNParser_GetPrivateProfileInt@@YAHPBD0H0@Z 1000bec0 f   funcGeneral.obj
+ 0001:0000af3e       ?GetThisMessageMap@CWinApp@@KGPBUAFX_MSGMAP@@XZ 1000bf3e f   mfc71:MFC71.DLL
+ 0001:0000af44       ?AfxThrowInvalidArgException@@YGXXZ 1000bf44 f   mfc71:MFC71.DLL
+ 0001:0000af4a       ?LoadSysPolicies@CWinApp@@UAEHXZ 1000bf4a f   mfc71:MFC71.DLL
+ 0001:0000af50       ?LoadAppLangResourceDLL@CWinApp@@UAEPAUHINSTANCE__@@XZ 1000bf50 f   mfc71:MFC71.DLL
+ 0001:0000af56       ?WinHelpInternal@CWinApp@@UAEXKI@Z 1000bf56 f   mfc71:MFC71.DLL
+ 0001:0000af5c       ?HtmlHelpA@CWinApp@@UAEXKI@Z 1000bf5c f   mfc71:MFC71.DLL
+ 0001:0000af62       ?WinHelpA@CWinApp@@UAEXKI@Z 1000bf62 f   mfc71:MFC71.DLL
+ 0001:0000af68       ?OnDDECommand@CWinApp@@UAEHPAD@Z 1000bf68 f   mfc71:MFC71.DLL
+ 0001:0000af6e       ?DoWaitCursor@CWinApp@@UAEXH@Z 1000bf6e f   mfc71:MFC71.DLL
+ 0001:0000af74       ?DoMessageBox@CWinApp@@UAEHPBDII@Z 1000bf74 f   mfc71:MFC71.DLL
+ 0001:0000af7a       ?SaveAllModified@CWinApp@@UAEHXZ 1000bf7a f   mfc71:MFC71.DLL
+ 0001:0000af80       ?InitApplication@CWinApp@@UAEHXZ 1000bf80 f   mfc71:MFC71.DLL
+ 0001:0000af86       ?AddToRecentFileList@CWinApp@@UAEXPBD@Z 1000bf86 f   mfc71:MFC71.DLL
+ 0001:0000af8c       ?OpenDocumentFile@CWinApp@@UAEPAVCDocument@@PBD@Z 1000bf8c f   mfc71:MFC71.DLL
+ 0001:0000af92       ?Unregister@CWinApp@@UAEHXZ 1000bf92 f   mfc71:MFC71.DLL
+ 0001:0000af98       ?Register@CWinApp@@UAEHXZ  1000bf98 f   mfc71:MFC71.DLL
+ 0001:0000af9e       ?InitLibId@CWinApp@@UAEXXZ 1000bf9e f   mfc71:MFC71.DLL
+ 0001:0000afa4       ?Delete@CWinThread@@UAEXXZ 1000bfa4 f   mfc71:MFC71.DLL
+ 0001:0000afaa       ?GetMainWnd@CWinThread@@UAEPAVCWnd@@XZ 1000bfaa f   mfc71:MFC71.DLL
+ 0001:0000afb0       ?ProcessMessageFilter@CWinThread@@UAEHHPAUtagMSG@@@Z 1000bfb0 f   mfc71:MFC71.DLL
+ 0001:0000afb6       ?ProcessWndProcException@CWinApp@@UAEJPAVCException@@PBUtagMSG@@@Z 1000bfb6 f   mfc71:MFC71.DLL
+ 0001:0000afbc       ?ExitInstance@CWinApp@@UAEHXZ 1000bfbc f   mfc71:MFC71.DLL
+ 0001:0000afc2       ?IsIdleMessage@CWinThread@@UAEHPAUtagMSG@@@Z 1000bfc2 f   mfc71:MFC71.DLL
+ 0001:0000afc8       ?OnIdle@CWinApp@@UAEHJ@Z   1000bfc8 f   mfc71:MFC71.DLL
+ 0001:0000afce       ?PumpMessage@CWinThread@@UAEHXZ 1000bfce f   mfc71:MFC71.DLL
+ 0001:0000afd4       ?PreTranslateMessage@CWinThread@@UAEHPAUtagMSG@@@Z 1000bfd4 f   mfc71:MFC71.DLL
+ 0001:0000afda       ?Run@CWinApp@@UAEHXZ       1000bfda f   mfc71:MFC71.DLL
+ 0001:0000afe0       ?InitInstance@CWinApp@@UAEHXZ 1000bfe0 f   mfc71:MFC71.DLL
+ 0001:0000afe6       ?GetConnectionHook@CCmdTarget@@MAEPAUIConnectionPoint@@ABU_GUID@@@Z 1000bfe6 f   mfc71:MFC71.DLL
+ 0001:0000afec       ?GetExtraConnectionPoints@CCmdTarget@@MAEHPAVCPtrArray@@@Z 1000bfec f   mfc71:MFC71.DLL
+ 0001:0000aff2       ?GetInterfaceHook@CCmdTarget@@UAEPAUIUnknown@@PBX@Z 1000bff2 f   mfc71:MFC71.DLL
+ 0001:0000aff8       ?OnCreateAggregates@CCmdTarget@@UAEHXZ 1000bff8 f   mfc71:MFC71.DLL
+ 0001:0000affe       ?GetEventSinkMap@CCmdTarget@@MBEPBUAFX_EVENTSINKMAP@@XZ 1000bffe f   mfc71:MFC71.DLL
+ 0001:0000b004       ?GetInterfaceMap@CCmdTarget@@MBEPBUAFX_INTERFACEMAP@@XZ 1000c004 f   mfc71:MFC71.DLL
+ 0001:0000b00a       ?GetConnectionMap@CCmdTarget@@MBEPBUAFX_CONNECTIONMAP@@XZ 1000c00a f   mfc71:MFC71.DLL
+ 0001:0000b010       ?GetDispatchMap@CCmdTarget@@MBEPBUAFX_DISPMAP@@XZ 1000c010 f   mfc71:MFC71.DLL
+ 0001:0000b016       ?GetCommandMap@CCmdTarget@@MBEPBUAFX_OLECMDMAP@@XZ 1000c016 f   mfc71:MFC71.DLL
+ 0001:0000b01c       ?GetTypeLib@CCmdTarget@@UAEJKPAPAUITypeLib@@@Z 1000c01c f   mfc71:MFC71.DLL
+ 0001:0000b022       ?GetTypeLibCache@CCmdTarget@@UAEPAVCTypeLibCache@@XZ 1000c022 f   mfc71:MFC71.DLL
+ 0001:0000b028       ?GetTypeInfoCount@CCmdTarget@@UAEIXZ 1000c028 f   mfc71:MFC71.DLL
+ 0001:0000b02e       ?GetDispatchIID@CCmdTarget@@UAEHPAU_GUID@@@Z 1000c02e f   mfc71:MFC71.DLL
+ 0001:0000b034       ?IsInvokeAllowed@CCmdTarget@@UAEHJ@Z 1000c034 f   mfc71:MFC71.DLL
+ 0001:0000b03a       ?OnFinalRelease@CCmdTarget@@UAEXXZ 1000c03a f   mfc71:MFC71.DLL
+ 0001:0000b040       ?OnCmdMsg@CCmdTarget@@UAEHIHPAXPAUAFX_CMDHANDLERINFO@@@Z 1000c040 f   mfc71:MFC71.DLL
+ 0001:0000b046       ?GetRuntimeClass@CWinApp@@UBEPAUCRuntimeClass@@XZ 1000c046 f   mfc71:MFC71.DLL
+ 0001:0000b04c       ??0CWinApp@@QAE@PBD@Z      1000c04c f   mfc71:MFC71.DLL
+ 0001:0000b052       ??1CWinApp@@UAE@XZ         1000c052 f   mfc71:MFC71.DLL
+ 0001:0000b058       ??_V@YAXPAX@Z              1000c058 f   mfc71:MFC71.DLL
+ 0001:0000b05e       ??_U@YAPAXI@Z              1000c05e f   mfc71:MFC71.DLL
+ 0001:0000b064       ?AddTail@CStringList@@QAEPAU__POSITION@@PBD@Z 1000c064 f   mfc71:MFC71.DLL
+ 0001:0000b06a       ??1CStringList@@UAE@XZ     1000c06a f   mfc71:MFC71.DLL
+ 0001:0000b070       ?RemoveAll@CStringList@@QAEXXZ 1000c070 f   mfc71:MFC71.DLL
+ 0001:0000b076       ??0CStringList@@QAE@H@Z    1000c076 f   mfc71:MFC71.DLL
+ 0001:0000b07c       ??3@YAXPAX@Z               1000c07c f   mfc71:MFC71.DLL
+ 0001:0000b082       ??2@YAPAXI@Z               1000c082 f   mfc71:MFC71.DLL
+ 0001:0000b088       ?FindIndex@CStringList@@QBEPAU__POSITION@@H@Z 1000c088 f   mfc71:MFC71.DLL
+ 0001:0000b08e       ?AddTail@CStringList@@QAEPAU__POSITION@@ABV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 1000c08e f   mfc71:MFC71.DLL
+ 0001:0000b094       ??1_AFX_DLL_MODULE_STATE@@UAE@XZ 1000c094 f i mfcs71:dllmodul.obj
+ 0001:0000b099       _RawDllMain@12             1000c099 f   mfcs71:dllmodul.obj
+ 0001:0000b0ea       ??1AFX_MAINTAIN_STATE2@@QAE@XZ 1000c0ea f i mfcs71:dllmodul.obj
+ 0001:0000b0f3       ?AfxWndProcDllStatic@@YGJPAUHWND__@@IIJ@Z 1000c0f3 f   mfcs71:dllmodul.obj
+ 0001:0000b138       _DllMain@12                1000c138 f   mfcs71:dllmodul.obj
+ 0001:0000b25f       ??0_AFX_DLL_MODULE_STATE@@QAE@XZ 1000c25f f i mfcs71:dllmodul.obj
+ 0001:0000b27f       ??_G_AFX_DLL_MODULE_STATE@@UAEPAXI@Z 1000c27f f i mfcs71:dllmodul.obj
+ 0001:0000b27f       ??_E_AFX_DLL_MODULE_STATE@@UAEPAXI@Z 1000c27f f i mfcs71:dllmodul.obj
+ 0001:0000b29a       ??0CComCriticalSection@ATL@@QAE@XZ 1000c29a f i mfcs71:stdafx.obj
+ 0001:0000b2ae       ?Init@CComCriticalSection@ATL@@QAEJXZ 1000c2ae f i mfcs71:stdafx.obj
+ 0001:0000b2fe       _free                      1000c2fe f   msvcrt:MSVCR71.dll
+ 0001:0000b310       __except_handler3          1000c310 f   msvcrt:MSVCR71.dll
+ 0001:0000b320       __chkstk                   1000c320 f   msvcrt:chkstk.obj
+ 0001:0000b320       __alloca_probe             1000c320     msvcrt:chkstk.obj
+ 0001:0000b38e       @__security_check_cookie@4 1000c38e f   msvcrt:secchk.obj
+ 0001:0000b39c       ___CxxFrameHandler         1000c39c f   msvcrt:MSVCR71.dll
+ 0001:0000b3a2       ??_Etype_info@@UAEPAXI@Z   1000c3a2 f i msvcrt:ti_inst.obj
+ 0001:0000b3ed       __onexit                   1000c3ed f   msvcrt:atonexit.obj
+ 0001:0000b413       _atexit                    1000c413 f   msvcrt:atonexit.obj
+ 0001:0000b425       ?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z 1000c425 f   msvcrt:ehvecdtr.obj
+ 0001:0000b483       ??_M@YGXPAXIHP6EX0@Z@Z     1000c483 f   msvcrt:ehvecdtr.obj
+ 0001:0000b4e3       __CRT_INIT@12              1000c4e3 f   msvcrt:crtdll.obj
+ 0001:0000b5a1       __DllMainCRTStartup@12     1000c5a1 f   msvcrt:crtdll.obj
+ 0001:0000b688       __EH_prolog                1000c688 f   msvcrt:ehprolog.obj
+ 0001:0000b6a8       __SEH_prolog               1000c6a8 f   msvcrt:sehprolg.obj
+ 0001:0000b6e3       __SEH_epilog               1000c6e3 f   msvcrt:sehprolg.obj
+ 0001:0000b6f4       _memset                    1000c6f4 f   msvcrt:MSVCR71.dll
+ 0001:0000b6fa       ___security_init_cookie    1000c6fa f   msvcrt:seccinit.obj
+ 0001:0000b760       ___security_error_handler  1000c760 f   msvcrt:MSVCR71.dll
+ 0001:0000b766       ??1type_info@@UAE@XZ       1000c766 f   msvcrt:MSVCR71.dll
+ 0001:0000b76c       ___dllonexit               1000c76c f   msvcrt:MSVCR71.dll
+ 0001:0000b772       ?terminate@@YAXXZ          1000c772 f   msvcrt:MSVCR71.dll
+ 0001:0000b778       __initterm                 1000c778 f   msvcrt:MSVCR71.dll
+ 0001:0000b77e       __RTC_Initialize           1000c77e f   msvcrt:initsect.obj
+ 0001:0000b7c2       __RTC_Terminate            1000c7c2 f   msvcrt:initsect.obj
+ 0001:0000b806       ___CppXcptFilter           1000c806 f   msvcrt:MSVCR71.dll
+ 0001:0000b80c       ?RemoveAll@?$CSimpleArray@PAUHINSTANCE__@@V?$CSimpleArrayEqualHelper@PAUHINSTANCE__@@@ATL@@@ATL@@QAEXXZ 1000c80c f i atls:atlbase.obj
+ 0001:0000b829       ??0_ATL_BASE_MODULE70@ATL@@QAE@XZ 1000c829 f i atls:atlbase.obj
+ 0001:0000b843       ??1CAtlBaseModule@ATL@@QAE@XZ 1000c843 f   atls:atlbase.obj
+ 0001:0000b859       ??0CAtlBaseModule@ATL@@QAE@XZ 1000c859 f   atls:atlbase.obj
+ 0001:0000b904       ??1AFX_MODULE_STATE@@UAE@XZ 1000c904 f   mfc71:MFC71.DLL
+ 0001:0000b90a       ?AfxSetModuleState@@YGPAVAFX_MODULE_STATE@@PAV1@@Z 1000c90a f   mfc71:MFC71.DLL
+ 0001:0000b910       ?AfxGetThreadState@@YGPAV_AFX_THREAD_STATE@@XZ 1000c910 f   mfc71:MFC71.DLL
+ 0001:0000b916       ?AfxGetModuleState@@YGPAVAFX_MODULE_STATE@@XZ 1000c916 f   mfc71:MFC71.DLL
+ 0001:0000b91c       ?AfxWndProc@@YGJPAUHWND__@@IIJ@Z 1000c91c f   mfc71:MFC71.DLL
+ 0001:0000b922       ??0AFX_MAINTAIN_STATE2@@QAE@PAVAFX_MODULE_STATE@@@Z 1000c922 f   mfc71:MFC71.DLL
+ 0001:0000b928       ?AfxTermThread@@YGXPAUHINSTANCE__@@@Z 1000c928 f   mfc71:MFC71.DLL
+ 0001:0000b92e       ?AfxTermExtensionModule@@YGXAAUAFX_EXTENSION_MODULE@@H@Z 1000c92e f   mfc71:MFC71.DLL
+ 0001:0000b934       ?AfxUnlockTempMaps@@YGHH@Z 1000c934 f   mfc71:MFC71.DLL
+ 0001:0000b93a       ?AfxLockTempMaps@@YGXXZ    1000c93a f   mfc71:MFC71.DLL
+ 0001:0000b940       ??0CDynLinkLibrary@@QAE@AAUAFX_EXTENSION_MODULE@@H@Z 1000c940 f   mfc71:MFC71.DLL
+ 0001:0000b946       ?AfxInitExtensionModule@@YGHAAUAFX_EXTENSION_MODULE@@PAUHINSTANCE__@@@Z 1000c946 f   mfc71:MFC71.DLL
+ 0001:0000b94c       ?AfxWinTerm@@YGXXZ         1000c94c f   mfc71:MFC71.DLL
+ 0001:0000b952       ?AfxWinInit@@YGHPAUHINSTANCE__@@0PADH@Z 1000c952 f   mfc71:MFC71.DLL
+ 0001:0000b958       ?AfxCoreInitModule@@YGXXZ  1000c958 f   mfc71:MFC71.DLL
+ 0001:0000b95e       ??0AFX_MODULE_STATE@@QAE@HP6GJPAUHWND__@@IIJ@ZKH@Z 1000c95e f   mfc71:MFC71.DLL
+ 0001:0000b964       ??3CNoTrackObject@@SGXPAX@Z 1000c964 f   mfc71:MFC71.DLL
+ 0002:00000000       __imp__WideCharToMultiByte@32 1000d000     kernel32:KERNEL32.dll
+ 0002:00000004       __imp__GetSystemTimeAsFileTime@4 1000d004     kernel32:KERNEL32.dll
+ 0002:00000008       __imp__GetCurrentProcessId@0 1000d008     kernel32:KERNEL32.dll
+ 0002:0000000c       __imp__GetCurrentThreadId@0 1000d00c     kernel32:KERNEL32.dll
+ 0002:00000010       __imp__GetTickCount@0      1000d010     kernel32:KERNEL32.dll
+ 0002:00000014       __imp__QueryPerformanceCounter@4 1000d014     kernel32:KERNEL32.dll
+ 0002:00000018       __imp__ExitProcess@4       1000d018     kernel32:KERNEL32.dll
+ 0002:0000001c       __imp__DeleteCriticalSection@4 1000d01c     kernel32:KERNEL32.dll
+ 0002:00000020       __imp__InitializeCriticalSection@4 1000d020     kernel32:KERNEL32.dll
+ 0002:00000024       __imp__LocalAlloc@8        1000d024     kernel32:KERNEL32.dll
+ 0002:00000028       __imp__LocalFree@4         1000d028     kernel32:KERNEL32.dll
+ 0002:0000002c       __imp__GetPrivateProfileIntA@16 1000d02c     kernel32:KERNEL32.dll
+ 0002:00000030       __imp__GetPrivateProfileStringA@24 1000d030     kernel32:KERNEL32.dll
+ 0002:00000034       __imp__OutputDebugStringA@4 1000d034     kernel32:KERNEL32.dll
+ 0002:00000038       __imp__MultiByteToWideChar@24 1000d038     kernel32:KERNEL32.dll
+ 0002:0000003c       __imp__GetVersionExA@4     1000d03c     kernel32:KERNEL32.dll
+ 0002:00000040       \177KERNEL32_NULL_THUNK_DATA 1000d040     kernel32:KERNEL32.dll
+ 0002:00000044       __imp_?GetInterfaceMap@CCmdTarget@@MBEPBUAFX_INTERFACEMAP@@XZ 1000d044     mfc71:MFC71.DLL
+ 0002:00000048       __imp_?GetConnectionMap@CCmdTarget@@MBEPBUAFX_CONNECTIONMAP@@XZ 1000d048     mfc71:MFC71.DLL
+ 0002:0000004c       __imp_?GetDispatchMap@CCmdTarget@@MBEPBUAFX_DISPMAP@@XZ 1000d04c     mfc71:MFC71.DLL
+ 0002:00000050       __imp_?GetCommandMap@CCmdTarget@@MBEPBUAFX_OLECMDMAP@@XZ 1000d050     mfc71:MFC71.DLL
+ 0002:00000054       __imp_?GetTypeLib@CCmdTarget@@UAEJKPAPAUITypeLib@@@Z 1000d054     mfc71:MFC71.DLL
+ 0002:00000058       __imp_?GetTypeLibCache@CCmdTarget@@UAEPAVCTypeLibCache@@XZ 1000d058     mfc71:MFC71.DLL
+ 0002:0000005c       __imp_?GetTypeInfoCount@CCmdTarget@@UAEIXZ 1000d05c     mfc71:MFC71.DLL
+ 0002:00000060       __imp_?GetDispatchIID@CCmdTarget@@UAEHPAU_GUID@@@Z 1000d060     mfc71:MFC71.DLL
+ 0002:00000064       __imp_?IsInvokeAllowed@CCmdTarget@@UAEHJ@Z 1000d064     mfc71:MFC71.DLL
+ 0002:00000068       __imp_?OnFinalRelease@CCmdTarget@@UAEXXZ 1000d068     mfc71:MFC71.DLL
+ 0002:0000006c       __imp_?OnCmdMsg@CCmdTarget@@UAEHIHPAXPAUAFX_CMDHANDLERINFO@@@Z 1000d06c     mfc71:MFC71.DLL
+ 0002:00000070       __imp_?GetRuntimeClass@CWinApp@@UBEPAUCRuntimeClass@@XZ 1000d070     mfc71:MFC71.DLL
+ 0002:00000074       __imp_??0CWinApp@@QAE@PBD@Z 1000d074     mfc71:MFC71.DLL
+ 0002:00000078       __imp_??1CWinApp@@UAE@XZ   1000d078     mfc71:MFC71.DLL
+ 0002:0000007c       __imp_??1?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAE@XZ 1000d07c     mfc71:MFC71.DLL
+ 0002:00000080       __imp_?Format@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAAXPBDZZ 1000d080     mfc71:MFC71.DLL
+ 0002:00000084       __imp_??_V@YAXPAX@Z        1000d084     mfc71:MFC71.DLL
+ 0002:00000088       __imp_??4?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEAAV01@PBD@Z 1000d088     mfc71:MFC71.DLL
+ 0002:0000008c       __imp_??_U@YAPAXI@Z        1000d08c     mfc71:MFC71.DLL
+ 0002:00000090       __imp_?AddTail@CStringList@@QAEPAU__POSITION@@PBD@Z 1000d090     mfc71:MFC71.DLL
+ 0002:00000094       __imp_??0?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAE@ABV01@@Z 1000d094     mfc71:MFC71.DLL
+ 0002:00000098       __imp_??4?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEAAV01@ABV01@@Z 1000d098     mfc71:MFC71.DLL
+ 0002:0000009c       __imp_?ReleaseBuffer@?$CSimpleStringT@D$00@ATL@@QAEXH@Z 1000d09c     mfc71:MFC71.DLL
+ 0002:000000a0       __imp_?GetBuffer@?$CSimpleStringT@D$00@ATL@@QAEPADH@Z 1000d0a0     mfc71:MFC71.DLL
+ 0002:000000a4       __imp_?SpanExcluding@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QBE?AV12@PBD@Z 1000d0a4     mfc71:MFC71.DLL
+ 0002:000000a8       __imp_?GetAt@?$CSimpleStringT@D$00@ATL@@QBEDH@Z 1000d0a8     mfc71:MFC71.DLL
+ 0002:000000ac       __imp_?Right@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QBE?AV12@H@Z 1000d0ac     mfc71:MFC71.DLL
+ 0002:000000b0       __imp_?ReverseFind@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QBEHD@Z 1000d0b0     mfc71:MFC71.DLL
+ 0002:000000b4       __imp_?Compare@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QBEHPBD@Z 1000d0b4     mfc71:MFC71.DLL
+ 0002:000000b8       __imp_??1CStringList@@UAE@XZ 1000d0b8     mfc71:MFC71.DLL
+ 0002:000000bc       __imp_?RemoveAll@CStringList@@QAEXXZ 1000d0bc     mfc71:MFC71.DLL
+ 0002:000000c0       __imp_?TrimRight@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEAAV12@PBD@Z 1000d0c0     mfc71:MFC71.DLL
+ 0002:000000c4       __imp_??0CStringList@@QAE@H@Z 1000d0c4     mfc71:MFC71.DLL
+ 0002:000000c8       __imp_??0?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAE@XZ 1000d0c8     mfc71:MFC71.DLL
+ 0002:000000cc       __imp_??3@YAXPAX@Z         1000d0cc     mfc71:MFC71.DLL
+ 0002:000000d0       __imp_??2@YAPAXI@Z         1000d0d0     mfc71:MFC71.DLL
+ 0002:000000d4       __imp_?Replace@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEHPBD0@Z 1000d0d4     mfc71:MFC71.DLL
+ 0002:000000d8       __imp_?Delete@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEHHH@Z 1000d0d8     mfc71:MFC71.DLL
+ 0002:000000dc       __imp_??Y?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEAAV01@PBD@Z 1000d0dc     mfc71:MFC71.DLL
+ 0002:000000e0       __imp_??Y?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEAAV01@ABV?$CSimpleStringT@D$00@1@@Z 1000d0e0     mfc71:MFC71.DLL
+ 0002:000000e4       __imp_?FindIndex@CStringList@@QBEPAU__POSITION@@H@Z 1000d0e4     mfc71:MFC71.DLL
+ 0002:000000e8       __imp_?AddTail@CStringList@@QAEPAU__POSITION@@ABV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 1000d0e8     mfc71:MFC71.DLL
+ 0002:000000ec       __imp_??3CNoTrackObject@@SGXPAX@Z 1000d0ec     mfc71:MFC71.DLL
+ 0002:000000f0       __imp_??0AFX_MODULE_STATE@@QAE@HP6GJPAUHWND__@@IIJ@ZKH@Z 1000d0f0     mfc71:MFC71.DLL
+ 0002:000000f4       __imp_?AfxCoreInitModule@@YGXXZ 1000d0f4     mfc71:MFC71.DLL
+ 0002:000000f8       __imp_?AfxWinInit@@YGHPAUHINSTANCE__@@0PADH@Z 1000d0f8     mfc71:MFC71.DLL
+ 0002:000000fc       __imp_?AfxWinTerm@@YGXXZ   1000d0fc     mfc71:MFC71.DLL
+ 0002:00000100       __imp_?AfxInitExtensionModule@@YGHAAUAFX_EXTENSION_MODULE@@PAUHINSTANCE__@@@Z 1000d100     mfc71:MFC71.DLL
+ 0002:00000104       __imp_??0CDynLinkLibrary@@QAE@AAUAFX_EXTENSION_MODULE@@H@Z 1000d104     mfc71:MFC71.DLL
+ 0002:00000108       __imp_?AfxLockTempMaps@@YGXXZ 1000d108     mfc71:MFC71.DLL
+ 0002:0000010c       __imp_?AfxUnlockTempMaps@@YGHH@Z 1000d10c     mfc71:MFC71.DLL
+ 0002:00000110       __imp_?AfxTermExtensionModule@@YGXAAUAFX_EXTENSION_MODULE@@H@Z 1000d110     mfc71:MFC71.DLL
+ 0002:00000114       __imp_?AfxTermThread@@YGXPAUHINSTANCE__@@@Z 1000d114     mfc71:MFC71.DLL
+ 0002:00000118       __imp_??0AFX_MAINTAIN_STATE2@@QAE@PAVAFX_MODULE_STATE@@@Z 1000d118     mfc71:MFC71.DLL
+ 0002:0000011c       __imp_?AfxWndProc@@YGJPAUHWND__@@IIJ@Z 1000d11c     mfc71:MFC71.DLL
+ 0002:00000120       __imp_?AfxGetModuleState@@YGPAVAFX_MODULE_STATE@@XZ 1000d120     mfc71:MFC71.DLL
+ 0002:00000124       __imp_?AfxGetThreadState@@YGPAV_AFX_THREAD_STATE@@XZ 1000d124     mfc71:MFC71.DLL
+ 0002:00000128       __imp_?AfxSetModuleState@@YGPAVAFX_MODULE_STATE@@PAV1@@Z 1000d128     mfc71:MFC71.DLL
+ 0002:0000012c       __imp_??1AFX_MODULE_STATE@@UAE@XZ 1000d12c     mfc71:MFC71.DLL
+ 0002:00000130       __imp_?GetThisMessageMap@CWinApp@@KGPBUAFX_MSGMAP@@XZ 1000d130     mfc71:MFC71.DLL
+ 0002:00000134       __imp_??0?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAE@PBD@Z 1000d134     mfc71:MFC71.DLL
+ 0002:00000138       __imp_?AfxThrowInvalidArgException@@YGXXZ 1000d138     mfc71:MFC71.DLL
+ 0002:0000013c       __imp_?LoadSysPolicies@CWinApp@@UAEHXZ 1000d13c     mfc71:MFC71.DLL
+ 0002:00000140       __imp_?LoadAppLangResourceDLL@CWinApp@@UAEPAUHINSTANCE__@@XZ 1000d140     mfc71:MFC71.DLL
+ 0002:00000144       __imp_?WinHelpInternal@CWinApp@@UAEXKI@Z 1000d144     mfc71:MFC71.DLL
+ 0002:00000148       __imp_?HtmlHelpA@CWinApp@@UAEXKI@Z 1000d148     mfc71:MFC71.DLL
+ 0002:0000014c       __imp_?WinHelpA@CWinApp@@UAEXKI@Z 1000d14c     mfc71:MFC71.DLL
+ 0002:00000150       __imp_?OnDDECommand@CWinApp@@UAEHPAD@Z 1000d150     mfc71:MFC71.DLL
+ 0002:00000154       __imp_?DoWaitCursor@CWinApp@@UAEXH@Z 1000d154     mfc71:MFC71.DLL
+ 0002:00000158       __imp_?DoMessageBox@CWinApp@@UAEHPBDII@Z 1000d158     mfc71:MFC71.DLL
+ 0002:0000015c       __imp_?SaveAllModified@CWinApp@@UAEHXZ 1000d15c     mfc71:MFC71.DLL
+ 0002:00000160       __imp_?InitApplication@CWinApp@@UAEHXZ 1000d160     mfc71:MFC71.DLL
+ 0002:00000164       __imp_?AddToRecentFileList@CWinApp@@UAEXPBD@Z 1000d164     mfc71:MFC71.DLL
+ 0002:00000168       __imp_?OpenDocumentFile@CWinApp@@UAEPAVCDocument@@PBD@Z 1000d168     mfc71:MFC71.DLL
+ 0002:0000016c       __imp_?Unregister@CWinApp@@UAEHXZ 1000d16c     mfc71:MFC71.DLL
+ 0002:00000170       __imp_?Register@CWinApp@@UAEHXZ 1000d170     mfc71:MFC71.DLL
+ 0002:00000174       __imp_?InitLibId@CWinApp@@UAEXXZ 1000d174     mfc71:MFC71.DLL
+ 0002:00000178       __imp_?Delete@CWinThread@@UAEXXZ 1000d178     mfc71:MFC71.DLL
+ 0002:0000017c       __imp_?GetMainWnd@CWinThread@@UAEPAVCWnd@@XZ 1000d17c     mfc71:MFC71.DLL
+ 0002:00000180       __imp_?ProcessMessageFilter@CWinThread@@UAEHHPAUtagMSG@@@Z 1000d180     mfc71:MFC71.DLL
+ 0002:00000184       __imp_?ProcessWndProcException@CWinApp@@UAEJPAVCException@@PBUtagMSG@@@Z 1000d184     mfc71:MFC71.DLL
+ 0002:00000188       __imp_?ExitInstance@CWinApp@@UAEHXZ 1000d188     mfc71:MFC71.DLL
+ 0002:0000018c       __imp_?IsIdleMessage@CWinThread@@UAEHPAUtagMSG@@@Z 1000d18c     mfc71:MFC71.DLL
+ 0002:00000190       __imp_?OnIdle@CWinApp@@UAEHJ@Z 1000d190     mfc71:MFC71.DLL
+ 0002:00000194       __imp_?PumpMessage@CWinThread@@UAEHXZ 1000d194     mfc71:MFC71.DLL
+ 0002:00000198       __imp_?PreTranslateMessage@CWinThread@@UAEHPAUtagMSG@@@Z 1000d198     mfc71:MFC71.DLL
+ 0002:0000019c       __imp_?GetEventSinkMap@CCmdTarget@@MBEPBUAFX_EVENTSINKMAP@@XZ 1000d19c     mfc71:MFC71.DLL
+ 0002:000001a0       __imp_?OnCreateAggregates@CCmdTarget@@UAEHXZ 1000d1a0     mfc71:MFC71.DLL
+ 0002:000001a4       __imp_?GetInterfaceHook@CCmdTarget@@UAEPAUIUnknown@@PBX@Z 1000d1a4     mfc71:MFC71.DLL
+ 0002:000001a8       __imp_?GetExtraConnectionPoints@CCmdTarget@@MAEHPAVCPtrArray@@@Z 1000d1a8     mfc71:MFC71.DLL
+ 0002:000001ac       __imp_?GetConnectionHook@CCmdTarget@@MAEPAUIConnectionPoint@@ABU_GUID@@@Z 1000d1ac     mfc71:MFC71.DLL
+ 0002:000001b0       __imp_?InitInstance@CWinApp@@UAEHXZ 1000d1b0     mfc71:MFC71.DLL
+ 0002:000001b4       __imp_?Run@CWinApp@@UAEHXZ 1000d1b4     mfc71:MFC71.DLL
+ 0002:000001b8       \177MFC71_NULL_THUNK_DATA  1000d1b8     mfc71:MFC71.DLL
+ 0002:000001bc       __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ 1000d1bc     msvcprt:MSVCP71.dll
+ 0002:000001c0       __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z 1000d1c0     msvcprt:MSVCP71.dll
+ 0002:000001c4       __imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z 1000d1c4     msvcprt:MSVCP71.dll
+ 0002:000001c8       __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A 1000d1c8     msvcprt:MSVCP71.dll
+ 0002:000001cc       __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@H@Z 1000d1cc     msvcprt:MSVCP71.dll
+ 0002:000001d0       __imp_??_D?$basic_ofstream@DU?$char_traits@D@std@@@std@@QAEXXZ 1000d1d0     msvcprt:MSVCP71.dll
+ 0002:000001d4       __imp_?close@?$basic_ofstream@DU?$char_traits@D@std@@@std@@QAEXXZ 1000d1d4     msvcprt:MSVCP71.dll
+ 0002:000001d8       __imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z 1000d1d8     msvcprt:MSVCP71.dll
+ 0002:000001dc       __imp_??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z 1000d1dc     msvcprt:MSVCP71.dll
+ 0002:000001e0       __imp_?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z 1000d1e0     msvcprt:MSVCP71.dll
+ 0002:000001e4       __imp_?open@?$basic_ofstream@DU?$char_traits@D@std@@@std@@QAEXPBDHH@Z 1000d1e4     msvcprt:MSVCP71.dll
+ 0002:000001e8       __imp_??0?$basic_ofstream@DU?$char_traits@D@std@@@std@@QAE@XZ 1000d1e8     msvcprt:MSVCP71.dll
+ 0002:000001ec       __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ 1000d1ec     msvcprt:MSVCP71.dll
+ 0002:000001f0       __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z 1000d1f0     msvcprt:MSVCP71.dll
+ 0002:000001f4       __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z 1000d1f4     msvcprt:MSVCP71.dll
+ 0002:000001f8       \177MSVCP71_NULL_THUNK_DATA 1000d1f8     msvcprt:MSVCP71.dll
+ 0002:000001fc       __imp__sprintf             1000d1fc     msvcrt:MSVCR71.dll
+ 0002:00000200       __imp___except_handler3    1000d200     msvcrt:MSVCR71.dll
+ 0002:00000204       __imp__free                1000d204     msvcrt:MSVCR71.dll
+ 0002:00000208       __imp__malloc              1000d208     msvcrt:MSVCR71.dll
+ 0002:0000020c       __imp___strdup             1000d20c     msvcrt:MSVCR71.dll
+ 0002:0000020c       __imp__strdup              1000d20c     msvcrt:MSVCR71.dll
+ 0002:00000210       __imp__stricmp             1000d210     msvcrt:MSVCR71.dll
+ 0002:00000210       __imp___stricmp            1000d210     msvcrt:MSVCR71.dll
+ 0002:00000214       __imp___itoa               1000d214     msvcrt:MSVCR71.dll
+ 0002:00000218       __imp__atoi                1000d218     msvcrt:MSVCR71.dll
+ 0002:0000021c       __imp__fflush              1000d21c     msvcrt:MSVCR71.dll
+ 0002:00000220       __imp___iob                1000d220     msvcrt:MSVCR71.dll
+ 0002:00000224       __imp__printf              1000d224     msvcrt:MSVCR71.dll
+ 0002:00000228       __imp__puts                1000d228     msvcrt:MSVCR71.dll
+ 0002:0000022c       __imp__atof                1000d22c     msvcrt:MSVCR71.dll
+ 0002:00000230       __imp__atol                1000d230     msvcrt:MSVCR71.dll
+ 0002:00000234       __imp__memset              1000d234     msvcrt:MSVCR71.dll
+ 0002:00000238       __imp____security_error_handler 1000d238     msvcrt:MSVCR71.dll
+ 0002:0000023c       __imp_??1type_info@@UAE@XZ 1000d23c     msvcrt:MSVCR71.dll
+ 0002:00000240       __imp____dllonexit         1000d240     msvcrt:MSVCR71.dll
+ 0002:00000244       __imp___onexit             1000d244     msvcrt:MSVCR71.dll
+ 0002:00000248       __imp_?terminate@@YAXXZ    1000d248     msvcrt:MSVCR71.dll
+ 0002:0000024c       __imp___initterm           1000d24c     msvcrt:MSVCR71.dll
+ 0002:00000250       __imp___adjust_fdiv        1000d250     msvcrt:MSVCR71.dll
+ 0002:00000254       __imp____CppXcptFilter     1000d254     msvcrt:MSVCR71.dll
+ 0002:00000258       __imp___strtime            1000d258     msvcrt:MSVCR71.dll
+ 0002:0000025c       __imp___strdate            1000d25c     msvcrt:MSVCR71.dll
+ 0002:00000260       __imp____CxxFrameHandler   1000d260     msvcrt:MSVCR71.dll
+ 0002:00000264       __imp__sscanf              1000d264     msvcrt:MSVCR71.dll
+ 0002:00000268       __imp__strchr              1000d268     msvcrt:MSVCR71.dll
+ 0002:0000026c       __imp__strncpy             1000d26c     msvcrt:MSVCR71.dll
+ 0002:00000270       __imp__strstr              1000d270     msvcrt:MSVCR71.dll
+ 0002:00000274       \177MSVCR71_NULL_THUNK_DATA 1000d274     msvcrt:MSVCR71.dll
+ 0002:00000278       __imp_?GetResourceNode@@YAPAXPAX@Z 1000d278     svapi:svapi.dll
+ 0002:0000027c       __imp_?CloseResource@@YA_NAAPAX@Z 1000d27c     svapi:svapi.dll
+ 0002:00000280       __imp_?LoadResource@@YAPAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z 1000d280     svapi:svapi.dll
+ 0002:00000284       __imp_?FindNodeValue@@YA_NPAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV12@@Z 1000d284     svapi:svapi.dll
+ 0002:00000288       __imp_?GetSiteViewRootPath@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ 1000d288     svapi:svapi.dll
+ 0002:0000028c       \177svapi_NULL_THUNK_DATA  1000d28c     svapi:svapi.dll
+ 0002:000002ac       ?messageMap@CAimParserApp@@1UAFX_MSGMAP@@B 1000d2ac     aimparser.obj
+ 0002:000002b4       ?_messageEntries@CAimParserApp@@0QBUAFX_MSGMAP_ENTRY@@B 1000d2b4     aimparser.obj
+ 0002:000002d0       ??_7CAimParserApp@@6B@     1000d2d0     aimparser.obj
+ 0002:00000390       ??_C@_01GPOEFGEJ@?7?$AA@   1000d390     aimparser.obj
+ 0002:00000394       ??_C@_06BEJGOBHG@?$CFs?4log?$AA@ 1000d394     aimparser.obj
+ 0002:0000039b       ??_C@_00CNPNBAHC@?$AA@     1000d39b     aimparser.obj
+ 0002:0000039c       ??_C@_05MPOCIJBL@?$CFs?9?$CFs?$AA@ 1000d39c     aimparser.obj
+ 0002:000003a4       ??_C@_04IMPCIBNO@12?T?B?$AA@ 1000d3a4     aimparser.obj
+ 0002:000003ac       ??_C@_03MKABNOCG@Dec?$AA@  1000d3ac     aimparser.obj
+ 0002:000003b0       ??_C@_04JOEHCODA@11?T?B?$AA@ 1000d3b0     aimparser.obj
+ 0002:000003b8       ??_C@_03JPJOFNIA@Nov?$AA@  1000d3b8     aimparser.obj
+ 0002:000003bc       ??_C@_04CGPLEJFF@10?T?B?$AA@ 1000d3bc     aimparser.obj
+ 0002:000003c4       ??_C@_03BMAOKBAD@Oct?$AA@  1000d3c4     aimparser.obj
+ 0002:000003c8       ??_C@_03CANELPOI@9?T?B?$AA@ 1000d3c8     aimparser.obj
+ 0002:000003cc       ??_C@_03GGCAPAJC@Sep?$AA@  1000d3cc     aimparser.obj
+ 0002:000003d0       ??_C@_03JIGINIIN@8?T?B?$AA@ 1000d3d0     aimparser.obj
+ 0002:000003d4       ??_C@_03IFJFEIGA@Aug?$AA@  1000d3d4     aimparser.obj
+ 0002:000003d8       ??_C@_03MAALMINL@7?T?B?$AA@ 1000d3d8     aimparser.obj
+ 0002:000003dc       ??_C@_03LBGABGKK@Jul?$AA@  1000d3dc     aimparser.obj
+ 0002:000003e0       ??_C@_03HILHKPLO@6?T?B?$AA@ 1000d3e0     aimparser.obj
+ 0002:000003e4       ??_C@_03IDFGHECI@Jun?$AA@  1000d3e4     aimparser.obj
+ 0002:000003e8       ??_C@_03GKACAAFA@5?T?B?$AA@ 1000d3e8     aimparser.obj
+ 0002:000003ec       ??_C@_03CNMDKL@May?$AA@    1000d3ec     aimparser.obj
+ 0002:000003f0       ??_C@_03NCLOGHDF@4?T?B?$AA@ 1000d3f0     aimparser.obj
+ 0002:000003f4       ??_C@_03LEOLGMJP@Apr?$AA@  1000d3f4     aimparser.obj
+ 0002:000003f8       ??_C@_03EPGJFPIM@3?T?B?$AA@ 1000d3f8     aimparser.obj
+ 0002:000003fc       ??_C@_03ODNJBKGA@Mar?$AA@  1000d3fc     aimparser.obj
+ 0002:00000400       ??_C@_03PHNFDIOJ@2?T?B?$AA@ 1000d400     aimparser.obj
+ 0002:00000404       ??_C@_03HJBDCHOM@Feb?$AA@  1000d404     aimparser.obj
+ 0002:00000408       ??_C@_03OFGAJHAH@1?T?B?$AA@ 1000d408     aimparser.obj
+ 0002:0000040c       ??_C@_03JIHJHPIE@Jan?$AA@  1000d40c     aimparser.obj
+ 0002:00000410       ??_C@_01CLKCMJKC@?5?$AA@   1000d410     aimparser.obj
+ 0002:00000414       ??_C@_04DAMGJPCA@file?$AA@ 1000d414     aimparser.obj
+ 0002:0000041c       ??_C@_05HAGAAHKK@disks?$AA@ 1000d41c     aimparser.obj
+ 0002:00000424       ??_C@_07EFMBDOBA@service?$AA@ 1000d424     aimparser.obj
+ 0002:0000042c       ??_C@_06HLKELJGF@memory?$AA@ 1000d42c     aimparser.obj
+ 0002:00000434       ??_C@_04MDPPAFID@disk?$AA@ 1000d434     aimparser.obj
+ 0002:0000043c       ??_C@_03PBJBJNON@cpu?$AA@  1000d43c     aimparser.obj
+ 0002:00000440       ??_C@_0L@MFGPJMAD@matchLine1?$AA@ 1000d440     aimparser.obj
+ 0002:0000044c       ??_C@_02NJDCDGDB@?$KD?$KM?$AA@ 1000d44c     aimparser.obj
+ 0002:00000450       ??_C@_08EICEBODB@?N?D?$LM?$PO?O?$LF?M?$LD?$AA@ 1000d450     aimparser.obj
+ 0002:0000045c       ??_C@_05MMKAFIAC@Linux?$AA@ 1000d45c     aimparser.obj
+ 0002:00000464       ??_C@_0BI@OLJNPFDH@?6matchLine?$DN?$CFs?6buffer?$DN?$CFs?$AA@ 1000d464     aimparser.obj
+ 0002:0000047c       ??_C@_0CO@IDDBHADM@?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?5FormatSource?5?9?9?9@ 1000d47c     aimparser.obj
+ 0002:000004ac       ??_C@_0N@HPOHAIG@FREE_PMEMORY?$AA@ 1000d4ac     aimparser.obj
+ 0002:000004bc       ??_C@_07PDNAIINO@mulcpus?$AA@ 1000d4bc     aimparser.obj
+ 0002:000004c4       ??_C@_0BE@KFMBJOEN@totalPhysicalMemory?$AA@ 1000d4c4     aimparser.obj
+ 0002:000004d8       ??_C@_07FHOMOFJM@usercpu?$AA@ 1000d4d8     aimparser.obj
+ 0002:000004e0       ??_C@_09EFLIJCIG@matchline?$AA@ 1000d4e0     aimparser.obj
+ 0002:000004ec       ??_C@_0N@BPPAMJJL@FormatSource?$AA@ 1000d4ec     aimparser.obj
+ 0002:000004fc       ??_C@_0P@PNCCPBLN@namecolumnname?$AA@ 1000d4fc     aimparser.obj
+ 0002:0000050c       ??_C@_07POCELPHL@?$CFs?$CFs$$$?$AA@ 1000d50c     aimparser.obj
+ 0002:00000514       ??_C@_07CJPNAHIA@?$CFs?$CFs?$CD?$CD?$CD?$AA@ 1000d514     aimparser.obj
+ 0002:0000051c       ??_C@_0N@NNIEMOCK@?$CFs?$CFs?$CD?$CD?$CD?$CFs$$$?$AA@ 1000d51c     aimparser.obj
+ 0002:0000052c       ??_C@_0N@EBIKPJHJ@strTarget?$DN?$CFs?$AA@ 1000d52c     aimparser.obj
+ 0002:0000053c       ??_C@_05LEMOKIDC@mount?$AA@ 1000d53c     aimparser.obj
+ 0002:00000544       ??_C@_04MEMAJGDJ@name?$AA@ 1000d544     aimparser.obj
+ 0002:0000054c       ??_C@_06MEMFDNEJ@ostype?$AA@ 1000d54c     aimparser.obj
+ 0002:00000554       ??_C@_0BP@PPOJABGN@IniFileName?$DN?$CFs?0nMonitorType?$DN?$CFd?$AA@ 1000d554     aimparser.obj
+ 0002:00000574       ??_C@_0DB@JKHEOECE@?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?5DisksParser?5Star@ 1000d574     aimparser.obj
+ 0002:000005a8       ??_C@_0M@DELBDBBJ@DisksParser?$AA@ 1000d5a8     aimparser.obj
+ 0002:000005b4       ??_C@_0O@OECOIFOF@DiskAct?$DN?$CF?42f$?$AA@ 1000d5b4     aimparser.obj
+ 0002:000005c4       ??_C@_02NJPGOMH@?$CFf?$AA@ 1000d5c4     aimparser.obj
+ 0002:000005c8       ??_C@_07DBFOOHDP@diskact?$AA@ 1000d5c8     aimparser.obj
+ 0002:000005d0       ??_C@_09BLGOEODG@startline?$AA@ 1000d5d0     aimparser.obj
+ 0002:000005dc       ??_C@_0N@OEGMFLJP@reverselines?$AA@ 1000d5dc     aimparser.obj
+ 0002:000005ec       ??_C@_07GIBKCKFH@DiskAct?$AA@ 1000d5ec     aimparser.obj
+ 0002:000005f4       ??_C@_09JPBKPMIJ@strOut?$DN?$CFs?$AA@ 1000d5f4     aimparser.obj
+ 0002:00000600       ??_C@_0CA@JGGABCAP@nName?$DN?$CFd?6nOsType?$DN?$CFd?6matchEnd?$DN?$CFs?$AA@ 1000d600     aimparser.obj
+ 0002:00000620       ??_C@_03JBJLGPFL@end?$AA@  1000d620     aimparser.obj
+ 0002:00000624       ??_C@_0BJ@GBFEGAFN@FormatSource?5is?5success?$CB?$AA@ 1000d624     aimparser.obj
+ 0002:00000640       ??_C@_0CL@CJBEIBMA@IniFileName?$DN?$CFs?0nMonitorType?$DN?$CFd?6s@ 1000d640     aimparser.obj
+ 0002:0000066c       ??_C@_0DD@IDMDEPGA@?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?5MulCPUSParser?5St@ 1000d66c     aimparser.obj
+ 0002:000006a0       ??_C@_0O@OKGHNBM@MulCPUSParser?$AA@ 1000d6a0     aimparser.obj
+ 0002:000006b0       ??_C@_0BL@GKCPLAKF@user?$DN?$CFs$system?$DN?$CFs$idle?$DN?$CFs$?$AA@ 1000d6b0     aimparser.obj
+ 0002:000006cc       ??_C@_0BO@JJDFEFBH@?6nUser?$DN?$CFd?6nIdle?$DN?$CFd?6nSystem?$DN?$CFd?$AA@ 1000d6cc     aimparser.obj
+ 0002:000006ec       ??_C@_0CB@PEBGNNBA@?6nName?$DN?$CFd?6nOsType?$DN?$CFd?6matchEnd?$DN?$CFs@ 1000d6ec     aimparser.obj
+ 0002:00000710       ??_C@_06FHFOAHML@system?$AA@ 1000d710     aimparser.obj
+ 0002:00000718       ??_C@_04EAPMNACM@idle?$AA@ 1000d718     aimparser.obj
+ 0002:00000720       ??_C@_04CCHAHKJA@user?$AA@ 1000d720     aimparser.obj
+ 0002:00000728       ??_C@_0DC@NFPENHGP@?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?5MulCPUParser?5Sta@ 1000d728     aimparser.obj
+ 0002:0000075c       ??_C@_0N@LPOECBOO@MulCPUParser?$AA@ 1000d75c     aimparser.obj
+ 0002:0000076c       ??_C@_05ONEOBAM@?$CFs_?$CFs?$AA@ 1000d76c     aimparser.obj
+ 0002:00000774       ??_C@_07PNPBPIJD@Average?$AA@ 1000d774     aimparser.obj
+ 0002:0000077c       ??_C@_05LFHGFJK@?$CFs_?$CFd?$AA@ 1000d77c     aimparser.obj
+ 0002:00000784       ??_C@_02KEGNLNML@?0?5?$AA@ 1000d784     aimparser.obj
+ 0002:00000788       ??_C@_02LMMGGCAJ@?3?5?$AA@ 1000d788     aimparser.obj
+ 0002:0000078c       ??_C@_01IDAFKMJL@_?$AA@    1000d78c     aimparser.obj
+ 0002:00000790       ??_C@_0BF@FCNCEDFN@?$DM?$CFIDS_AimParser_24?$CF?$DO?$AA@ 1000d790     aimparser.obj
+ 0002:000007a8       ??_C@_0BF@MPAFHLOE@?$DM?$CFIDS_AimParser_23?$CF?$DO?$AA@ 1000d7a8     aimparser.obj
+ 0002:000007c0       ??_C@_0BF@HHLJBMIB@?$DM?$CFIDS_AimParser_22?$CF?$DO?$AA@ 1000d7c0     aimparser.obj
+ 0002:000007d8       ??_C@_0BF@NNLANEAK@?$DM?$CFIDS_AimParser_20?$CF?$DO?$AA@ 1000d7d8     aimparser.obj
+ 0002:000007f0       ??_C@_0BF@OHBIOBFA@?$DM?$CFIDS_AimParser_19?$CF?$DO?$AA@ 1000d7f0     aimparser.obj
+ 0002:00000808       ??_C@_0BF@BPOOBINF@?$CFs?5?$CCwait?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000d808     aimparser.obj
+ 0002:00000820       ??_C@_0BF@FPKEIGDF@?$DM?$CFIDS_AimParser_18?$CF?$DO?$AA@ 1000d820     aimparser.obj
+ 0002:00000838       ??_C@_0BF@HMHJGGD@?$DM?$CFIDS_AimParser_17?$CF?$DO?$AA@ 1000d838     aimparser.obj
+ 0002:00000850       ??_C@_04PNOAOIAG@wait?$AA@ 1000d850     aimparser.obj
+ 0002:00000858       ??_C@_0L@DPOAHIOA@?$CFs?$CI?$CF?$CF?$CJ?3?5?$CFd?$AA@ 1000d858     aimparser.obj
+ 0002:00000864       ??_C@_06DCOLBACJ@SV_CPU?$AA@ 1000d864     aimparser.obj
+ 0002:0000086c       ??_C@_08OMPFHOLK@CPU_USED?$AA@ 1000d86c     aimparser.obj
+ 0002:00000878       ??_C@_0CD@HBBHEBDB@?$CFs?5?$CCreverseLines?$CC?3?5?$CFs?5?$DMbr?$DO?$DMbr?$DO?$AN?6@ 1000d878     aimparser.obj
+ 0002:0000089c       ??_C@_0BF@KNMOFOOI@?$DM?$CFIDS_AimParser_15?$CF?$DO?$AA@ 1000d89c     aimparser.obj
+ 0002:000008b4       ??_C@_05LAPONLG@false?$AA@ 1000d8b4     aimparser.obj
+ 0002:000008bc       ??_C@_04LOAJBDKD@true?$AA@ 1000d8bc     aimparser.obj
+ 0002:000008c4       ??_C@_0BK@DDPEGCFE@?$CFs?5?$CCstartLine?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000d8c4     aimparser.obj
+ 0002:000008e0       ??_C@_0BF@BFHCDJIN@?$DM?$CFIDS_AimParser_14?$CF?$DO?$AA@ 1000d8e0     aimparser.obj
+ 0002:000008f8       ??_C@_0BF@PLPIMHLJ@?$CFs?5?$CCidle?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000d8f8     aimparser.obj
+ 0002:00000910       ??_C@_0BF@IIKFABDE@?$DM?$CFIDS_AimParser_13?$CF?$DO?$AA@ 1000d910     aimparser.obj
+ 0002:00000928       ??_C@_06EBJBKPGL@?$AN?6?$DMbr?$DO?$AA@ 1000d928     aimparser.obj
+ 0002:00000930       ??_C@_0BF@KMEEKLHI@Line?5?$CF2?42d?3?7?$CFs?$DMbr?$DO?$AN?6?$AA@ 1000d930     aimparser.obj
+ 0002:00000948       ??_C@_0DD@NEIEFPPE@utilization?$DN?$CFd$sysper?$DN?$CFd$usrper?$DN@ 1000d948     aimparser.obj
+ 0002:0000097c       ??_C@_02GJEFMFID@hp?$AA@   1000d97c     aimparser.obj
+ 0002:00000980       ??_C@_03PIADFGHL@sys?$AA@  1000d980     aimparser.obj
+ 0002:00000984       ??_C@_03MJOELNDA@usr?$AA@  1000d984     aimparser.obj
+ 0002:00000988       ??_C@_03INDADPAB@wio?$AA@  1000d988     aimparser.obj
+ 0002:0000098c       ??_C@_0BA@EGEKJPAI@utilization?$DN?$CFd$?$AA@ 1000d98c     aimparser.obj
+ 0002:0000099c       ??_C@_04GMGOKAFF@mode?$AA@ 1000d99c     aimparser.obj
+ 0002:000009a8       __real@3f847ae147ae147b    1000d9a8     aimparser.obj
+ 0002:000009b0       __real@42c80000            1000d9b0     aimparser.obj
+ 0002:000009b4       ??_C@_0BF@PCEHDAKD@?$DM?$CFIDS_AimParser_57?$CF?$DO?$AA@ 1000d9b4     aimparser.obj
+ 0002:000009cc       ??_C@_0BF@EKPLFHMG@?$DM?$CFIDS_AimParser_56?$CF?$DO?$AA@ 1000d9cc     aimparser.obj
+ 0002:000009e4       ??_C@_0BF@FIEOPICI@?$DM?$CFIDS_AimParser_55?$CF?$DO?$AA@ 1000d9e4     aimparser.obj
+ 0002:000009fc       ??_C@_0BN@CNNBBMJN@?$CFs?5?$CCuse?5percent?$CC?3?5?$CFld?5?$DMbr?$DO?$AN?6?$AA@ 1000d9fc     aimparser.obj
+ 0002:00000a1c       ??_C@_0BF@OAPCJPEN@?$DM?$CFIDS_AimParser_54?$CF?$DO?$AA@ 1000da1c     aimparser.obj
+ 0002:00000a34       ??_C@_0L@BLFCGOI@usePercent?$AA@ 1000da34     aimparser.obj
+ 0002:00000a40       ??_C@_03JALODAI@?$CFld?$AA@ 1000da40     aimparser.obj
+ 0002:00000a44       ??_C@_0BF@NHCMGPHP@?$DM?$CFIDS_AimParser_51?$CF?$DO?$AA@ 1000da44     aimparser.obj
+ 0002:00000a5c       ??_C@_0BK@DFFJLNPA@?$CFs?5?$CCswapunit?$CC?3?5?$CFld?5?$DMbr?$DO?$AN?6?$AA@ 1000da5c     aimparser.obj
+ 0002:00000a78       ??_C@_0BF@GPJAAIBK@?$DM?$CFIDS_AimParser_50?$CF?$DO?$AA@ 1000da78     aimparser.obj
+ 0002:00000a90       ??_C@_0BF@CPPIGOCA@?$DM?$CFIDS_AimParser_49?$CF?$DO?$AA@ 1000da90     aimparser.obj
+ 0002:00000aa8       ??_C@_0BG@GCJLMNMO@?$CFs?5?$CCfree?$CC?3?5?$CFld?5?$DMbr?$DO?$AN?6?$AA@ 1000daa8     aimparser.obj
+ 0002:00000ac0       ??_C@_0BF@JHEEAJEF@?$DM?$CFIDS_AimParser_48?$CF?$DO?$AA@ 1000dac0     aimparser.obj
+ 0002:00000ad8       ??_C@_0BJ@HBKFONBD@?$CFs?5?$CCfreeline?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000dad8     aimparser.obj
+ 0002:00000af4       ??_C@_0BF@MPCHBJBD@?$DM?$CFIDS_AimParser_47?$CF?$DO?$AA@ 1000daf4     aimparser.obj
+ 0002:00000b0c       ??_C@_0BH@KHKPPN@?$CFs?5?$CCtotal?$CC?3?5?$CFld?5?$DMbr?$DO?$AN?6?$AA@ 1000db0c     aimparser.obj
+ 0002:00000b24       ??_C@_0BF@HHJLHOHG@?$DM?$CFIDS_AimParser_46?$CF?$DO?$AA@ 1000db24     aimparser.obj
+ 0002:00000b3c       ??_C@_0BK@CPCMMDBK@?$CFs?5?$CCtotalline?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000db3c     aimparser.obj
+ 0002:00000b58       ??_C@_0BF@GFCONBJI@?$DM?$CFIDS_AimParser_45?$CF?$DO?$AA@ 1000db58     aimparser.obj
+ 0002:00000b70       ??_C@_09JLAOJPAN@totalLine?$AA@ 1000db70     aimparser.obj
+ 0002:00000b7c       ??_C@_08NIKDAMDA@freeLine?$AA@ 1000db7c     aimparser.obj
+ 0002:00000b88       ??_C@_02DPKJAMEF@?$CFd?$AA@ 1000db88     aimparser.obj
+ 0002:00000b8c       ??_C@_0BF@PIPJOJCB@?$DM?$CFIDS_AimParser_42?$CF?$DO?$AA@ 1000db8c     aimparser.obj
+ 0002:00000ba4       ??_C@_0BF@OKEMEGMP@?$DM?$CFIDS_AimParser_41?$CF?$DO?$AA@ 1000dba4     aimparser.obj
+ 0002:00000bbc       ??_C@_0BF@FCPACBKK@?$DM?$CFIDS_AimParser_40?$CF?$DO?$AA@ 1000dbbc     aimparser.obj
+ 0002:00000bd4       ??_C@_0BF@JNNILCDA@?$DM?$CFIDS_AimParser_39?$CF?$DO?$AA@ 1000dbd4     aimparser.obj
+ 0002:00000bf0       __real@3f50000000000000    1000dbf0     aimparser.obj
+ 0002:00000bf8       ??_C@_0BF@MFLLKCGG@?$DM?$CFIDS_AimParser_36?$CF?$DO?$AA@ 1000dbf8     aimparser.obj
+ 0002:00000c10       ??_C@_0BF@NHAOANII@?$DM?$CFIDS_AimParser_35?$CF?$DO?$AA@ 1000dc10     aimparser.obj
+ 0002:00000c28       ??_C@_0BF@POLOLEHJ@?$CFs?5?$CCfree?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000dc28     aimparser.obj
+ 0002:00000c40       ??_C@_0BF@GPLCGKON@?$DM?$CFIDS_AimParser_34?$CF?$DO?$AA@ 1000dc40     aimparser.obj
+ 0002:00000c58       ??_C@_0BF@PCGFFCFE@?$DM?$CFIDS_AimParser_33?$CF?$DO?$AA@ 1000dc58     aimparser.obj
+ 0002:00000c70       ??_C@_08LGDAGFIK@swapunit?$AA@ 1000dc70     aimparser.obj
+ 0002:00000c7c       ??_C@_04LIAPHEDB@free?$AA@ 1000dc7c     aimparser.obj
+ 0002:00000c84       ??_C@_0BH@IMJJKJNO@?$CFs?$CI?$CF?$CF?$CJ?3?5?$CF?42f?5?5?$CFs?3?5?$CF?42f?$AA@ 1000dc84     aimparser.obj
+ 0002:00000c9c       ??_C@_0M@HAAPLNMF@MEMORY_USED?$AA@ 1000dc9c     aimparser.obj
+ 0002:00000ca8       __real@3eb0000000000000    1000dca8     aimparser.obj
+ 0002:00000cb0       ??_C@_09NOAEDEGC@SV_MEMORY?$AA@ 1000dcb0     aimparser.obj
+ 0002:00000cbc       ??_C@_0N@MGILIADB@MEMORY_FREED?$AA@ 1000dcbc     aimparser.obj
+ 0002:00000cd0       __real@4059000000000000    1000dcd0     aimparser.obj
+ 0002:00000cd8       ??_C@_03IAIAKOHP@?$CFdk?$AA@ 1000dcd8     aimparser.obj
+ 0002:00000cdc       ??_C@_0BF@OANAPNLK@?$DM?$CFIDS_AimParser_30?$CF?$DO?$AA@ 1000dcdc     aimparser.obj
+ 0002:00000cf4       ??_C@_0BF@KALIJLIA@?$DM?$CFIDS_AimParser_29?$CF?$DO?$AA@ 1000dcf4     aimparser.obj
+ 0002:00000d0c       ??_C@_0BG@BPMBFICF@?$CFs?5?$CCtotal?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000dd0c     aimparser.obj
+ 0002:00000d24       ??_C@_0BF@BIAEPMOF@?$DM?$CFIDS_AimParser_28?$CF?$DO?$AA@ 1000dd24     aimparser.obj
+ 0002:00000d3c       ??_C@_0BF@IJBCAGGH@?$CFs?5?$CCused?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000dd3c     aimparser.obj
+ 0002:00000d54       ??_C@_0BF@EAGHOMLD@?$DM?$CFIDS_AimParser_27?$CF?$DO?$AA@ 1000dd54     aimparser.obj
+ 0002:00000d6c       ??_C@_05KBOMEDGA@total?$AA@ 1000dd6c     aimparser.obj
+ 0002:00000d74       ??_C@_04DOOIMPEH@used?$AA@ 1000dd74     aimparser.obj
+ 0002:00000d7c       ??_C@_06CJLNAGBC@?$DMbr?$DO?$AN?6?$AA@ 1000dd7c     aimparser.obj
+ 0002:00000d84       ??_C@_0BD@OEDKGNNA@?$CFs?5?$CF2?42d?3?7?$CFs?$DMbr?$DO?$AN?6?$AA@ 1000dd84     aimparser.obj
+ 0002:00000d98       ??_C@_0BF@PINLILNG@?$DM?$CFIDS_AimParser_26?$CF?$DO?$AA@ 1000dd98     aimparser.obj
+ 0002:00000db0       __real@3f000000            1000ddb0     aimparser.obj
+ 0002:00000db8       __real@41f0000000000000    1000ddb8     aimparser.obj
+ 0002:00000dc0       ??_C@_0DP@MAEFHJGO@percentUsed?$DN?$CF?42f$Mbfree?$DN?$CF?42f$pag@ 1000ddc0     aimparser.obj
+ 0002:00000e00       __real@3f70000000000000    1000de00     aimparser.obj
+ 0002:00000e08       ??_C@_0L@GNNKOKKN@?$CFs?0?5?$CFs?0?5?$CFs?$AA@ 1000de08     aimparser.obj
+ 0002:00000e14       ??_C@_0DG@CAFHGLKI@nReverse?$DN?$CFd?0?5nStart?$DN?$CFd?0?5nSize?$DN?$CFd@ 1000de14     aimparser.obj
+ 0002:00000e4c       ??_C@_05FFBINAKH@inuse?$AA@ 1000de4c     aimparser.obj
+ 0002:00000e54       ??_C@_04IAGNFIBA@size?$AA@ 1000de54     aimparser.obj
+ 0002:00000e5c       ??_C@_0DK@LKAOHMFL@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?5FREE_PMEMORY?5E@ 1000de5c     aimparser.obj
+ 0002:00000e98       ??_C@_0CL@BIGBICED@?6nReverse?5?$DN?5?$CFd?6nStart?$DN?$CFd?6nFree?$DN?$CF@ 1000de98     aimparser.obj
+ 0002:00000ec4       ??_C@_0O@PMKFICO@strTarget?3?6?$CFs?$AA@ 1000dec4     aimparser.obj
+ 0002:00000ed4       ??_C@_0N@PAOGBCOB@szSource?3?6?$CFs?$AA@ 1000ded4     aimparser.obj
+ 0002:00000ee8       ??_C@_0EB@GANFOFBG@?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?$DN?5FREE_PMEMORY@ 1000dee8     aimparser.obj
+ 0002:00000f2c       ??_C@_07FKEJEJOI@memunit?$AA@ 1000df2c     aimparser.obj
+ 0002:00000f34       ??_C@_04DGGKDJMA@real?$AA@ 1000df34     aimparser.obj
+ 0002:00000f3c       ??_C@_0BB@FIMCMKJJ@freeMemory?$DN?$CF?42f$?$AA@ 1000df3c     aimparser.obj
+ 0002:00000f50       ??_C@_0BD@IPHPHEIH@freePhysicalMemory?$AA@ 1000df50     aimparser.obj
+ 0002:00000f64       ??_C@_0BC@CCPLMADN@totalMemory?$DN?$CF?42f$?$AA@ 1000df64     aimparser.obj
+ 0002:00000f78       __real@4f800000            1000df78     aimparser.obj
+ 0002:00000f7c       ??_C@_04NPEDKLDA@unit?$AA@ 1000df7c     aimparser.obj
+ 0002:00000f84       ??_C@_05MFEJDJP@value?$AA@ 1000df84     aimparser.obj
+ 0002:00000f8c       __real@3a800000            1000df8c     aimparser.obj
+ 0002:00000f90       ??_C@_07CBADIHEM@buffers?$AA@ 1000df90     aimparser.obj
+ 0002:00000f98       ??_C@_06HEOINPBP@cached?$AA@ 1000df98     aimparser.obj
+ 0002:00000fa0       ??_C@_0P@DLGDDMPK@physicalmemory?$AA@ 1000dfa0     aimparser.obj
+ 0002:00000fb0       __real@3eb0624dd2f1a9fc    1000dfb0     aimparser.obj
+ 0002:00000fb8       __real@4090000000000000    1000dfb8     aimparser.obj
+ 0002:00000fc0       __real@4130000000000000    1000dfc0     aimparser.obj
+ 0002:00000fc8       ??_C@_0BO@DKNBNIJ@percentFull?$DN?$CF?42f$Mbfree?$DN?$CF?42f$?$AA@ 1000dfc8     aimparser.obj
+ 0002:00000fe8       ??_C@_0BO@CDEOOPGP@nFree_8?$DN?$CFI64d?0?5nTotal_8?$DN?$CFI64d?$AA@ 1000dfe8     aimparser.obj
+ 0002:00001008       ??_C@_04FCMNJMCO@?$CFd?$CF?$CF?$AA@ 1000e008     aimparser.obj
+ 0002:00001010       ??_C@_05LLAMLEHD@?$CFI64d?$AA@ 1000e010     aimparser.obj
+ 0002:00001018       ??_C@_0M@MCLFHLMP@percentused?$AA@ 1000e018     aimparser.obj
+ 0002:00001024       ??_C@_0L@NCEENDBD@DiskParser?$AA@ 1000e024     aimparser.obj
+ 0002:00001030       ??_C@_0BF@OKAIIDCB@?$DM?$CFIDS_AimParser_89?$CF?$DO?$AA@ 1000e030     aimparser.obj
+ 0002:00001048       ??_C@_0BF@FCLEOEEE@?$DM?$CFIDS_AimParser_88?$CF?$DO?$AA@ 1000e048     aimparser.obj
+ 0002:00001060       ??_C@_0BF@KNHPEBC@?$DM?$CFIDS_AimParser_87?$CF?$DO?$AA@ 1000e060     aimparser.obj
+ 0002:00001078       ??_C@_0BF@LCGLJDHH@?$DM?$CFIDS_AimParser_86?$CF?$DO?$AA@ 1000e078     aimparser.obj
+ 0002:00001090       ??_C@_0BF@KANODMJJ@?$DM?$CFIDS_AimParser_85?$CF?$DO?$AA@ 1000e090     aimparser.obj
+ 0002:000010a8       ??_C@_0BF@BIGCFLPM@?$DM?$CFIDS_AimParser_84?$CF?$DO?$AA@ 1000e0a8     aimparser.obj
+ 0002:000010c0       ??_C@_0BF@IIIHGDMD@?$DM?$CFIDS_AimParser_77?$CF?$DO?$AA@ 1000e0c0     aimparser.obj
+ 0002:000010d8       ??_C@_0BF@DADLAEKG@?$DM?$CFIDS_AimParser_76?$CF?$DO?$AA@ 1000e0d8     aimparser.obj
+ 0002:000010f0       ??_C@_0BF@CCIOKLEI@?$DM?$CFIDS_AimParser_75?$CF?$DO?$AA@ 1000e0f0     aimparser.obj
+ 0002:00001108       ??_C@_0BF@JKDCMMCN@?$DM?$CFIDS_AimParser_74?$CF?$DO?$AA@ 1000e108     aimparser.obj
+ 0002:00001120       ??_C@_0BF@HOFPEJE@?$DM?$CFIDS_AimParser_73?$CF?$DO?$AA@ 1000e120     aimparser.obj
+ 0002:00001138       ??_C@_0BF@LPFJJDPB@?$DM?$CFIDS_AimParser_72?$CF?$DO?$AA@ 1000e138     aimparser.obj
+ 0002:00001150       ??_C@_0CA@NILOCBCC@?5?$CFs?$FL?$CFs?$FN?$KB?$KB?$CFs?$CI?$CF?$CF?$CJ?3?5?$CF?42f?$KB?$KB?$CFs?3?5?$CF?42f?$AA@ 1000e150     aimparser.obj
+ 0002:00001170       ??_C@_0CA@HHGJCHDF@?$CFs?5?$FL?$CFs?$FN?5?5?$CFs?$CI?$CF?$CF?$CJ?3?5?$CF?42f?$KB?$KB?$CFs?3?5?$CF?42f?$AA@ 1000e170     aimparser.obj
+ 0002:00001190       ??_C@_09CNHPDACC@DISK_DESC?$AA@ 1000e190     aimparser.obj
+ 0002:0000119c       ??_C@_09FCGHMPFG@DISK_USED?$AA@ 1000e19c     aimparser.obj
+ 0002:000011a8       ??_C@_07MKLBFNAF@SV_DISK?$AA@ 1000e1a8     aimparser.obj
+ 0002:000011b0       ??_C@_0L@KPKPCKLN@DISK_FREED?$AA@ 1000e1b0     aimparser.obj
+ 0002:000011bc       ??_C@_0BF@BPOOICPI@?$DM?$CFIDS_AimParser_65?$CF?$DO?$AA@ 1000e1bc     aimparser.obj
+ 0002:000011d4       ??_C@_0BF@KHFCOFJN@?$DM?$CFIDS_AimParser_64?$CF?$DO?$AA@ 1000e1d4     aimparser.obj
+ 0002:000011ec       ??_C@_0BF@DKIFNNCE@?$DM?$CFIDS_AimParser_63?$CF?$DO?$AA@ 1000e1ec     aimparser.obj
+ 0002:00001204       ??_C@_0BF@ICDJLKEB@?$DM?$CFIDS_AimParser_62?$CF?$DO?$AA@ 1000e204     aimparser.obj
+ 0002:0000121c       ??_C@_0BM@GLJNLFNK@?$CFs?5?$CCuse?5percent?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000e21c     aimparser.obj
+ 0002:00001238       ??_C@_0BF@JAIMBFKP@?$DM?$CFIDS_AimParser_61?$CF?$DO?$AA@ 1000e238     aimparser.obj
+ 0002:00001250       ??_C@_0BF@BIMILNAM@?$CFs?5?$CCname?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000e250     aimparser.obj
+ 0002:00001268       ??_C@_0BF@CIDAHCMK@?$DM?$CFIDS_AimParser_60?$CF?$DO?$AA@ 1000e268     aimparser.obj
+ 0002:00001280       ??_C@_0O@LIHLJMDB@Processes?$DN?$CFd$?$AA@ 1000e280     aimparser.obj
+ 0002:00001290       ??_C@_0BA@LAJGPGNN@namecolumnindex?$AA@ 1000e290     aimparser.obj
+ 0002:000012a0       ??_C@_0BG@FAONNLCF@?$DM?$CFIDS_AimParser_100?$CF?$DO?$AA@ 1000e2a0     aimparser.obj
+ 0002:000012b8       ??_C@_0BF@GPNEMNPE@?$DM?$CFIDS_AimParser_98?$CF?$DO?$AA@ 1000e2b8     aimparser.obj
+ 0002:000012d0       ??_C@_0BD@GENFDJEN@Service?5?$FL?$CFs?$FN?5?$CFs?5?$CFd?$AA@ 1000e2d0     aimparser.obj
+ 0002:000012e4       ??_C@_0L@EOIECPJM@SV_SERVICE?$AA@ 1000e2e4     aimparser.obj
+ 0002:000012f0       ??_C@_0N@PCAMPKMP@SERVICE_DESC?$AA@ 1000e2f0     aimparser.obj
+ 0002:00001300       ??_C@_0CA@LBNKPEDK@?$CFs?5?$CCnamecolumnindex?$CC?3?5?$CFd?5?$DMbr?$DO?$AN?6?$AA@ 1000e300     aimparser.obj
+ 0002:00001320       ??_C@_0BF@IPALLKMH@?$DM?$CFIDS_AimParser_96?$CF?$DO?$AA@ 1000e320     aimparser.obj
+ 0002:00001338       ??_C@_04HGGBINEM@?$CFs?$CFd?$AA@ 1000e338     aimparser.obj
+ 0002:00001340       ??_C@_01EPMOAMKG@$?$AA@    1000e340     aimparser.obj
+ 0002:00001344       ??_C@_01NEMOKFLO@?$DN?$AA@ 1000e344     aimparser.obj
+ 0002:00001348       ??_C@_0M@FHAAGPLH@utilization?$AA@ 1000e348     aimparser.obj
+ 0002:00001354       ??_C@_07BGNMGPNE@strOut?3?$AA@ 1000e354     aimparser.obj
+ 0002:0000135c       ??_C@_06KIPLJENO@nIdle?$DN?$AA@ 1000e35c     aimparser.obj
+ 0002:00001364       ??_C@_0M@FANMBHMF@strTarget?3?6?$AA@ 1000e364     aimparser.obj
+ 0002:00001370       ??_C@_0M@MCGBABEM@matchcolumn?$AA@ 1000e370     aimparser.obj
+ 0002:0000137c       ??_C@_0BA@NOPOIPBG@matchColumnLine?$AA@ 1000e37c     aimparser.obj
+ 0002:0000138c       ??_C@_0L@EOFBFIBA@?$CFd?5?9?$CFd?9?$CFd?6?$AA@ 1000e38c     aimparser.obj
+ 0002:00001398       ??_C@_0BB@FLGFONMG@user?$DN?$CFs$cpu?$DN?$CF?41f?$AA@ 1000e398     aimparser.obj
+ 0002:000013ac       ??_C@_06NKAIJKMF@cpu?$DN?$CFs?$AA@ 1000e3ac     aimparser.obj
+ 0002:000013b4       ??_C@_0M@HKCDCCJE@userName?$DN?$CFs?$AA@ 1000e3b4     aimparser.obj
+ 0002:000013c0       ??_C@_09HNCGOPCF@string?$DN?$CFs?$AA@ 1000e3c0     aimparser.obj
+ 0002:000013cc       ??_C@_0N@FCCHAONC@PIDColumn?$DN?$CFd?$AA@ 1000e3cc     aimparser.obj
+ 0002:000013dc       ??_C@_0O@NFNAGFOO@PIDColumnName?$AA@ 1000e3dc     aimparser.obj
+ 0002:000013ec       ??_C@_0P@LGLGENEC@CPUColumnIndex?$AA@ 1000e3ec     aimparser.obj
+ 0002:000013fc       ??_C@_0N@IIPABHHK@cpuColumn?$DN?$CFd?$AA@ 1000e3fc     aimparser.obj
+ 0002:0000140c       ??_C@_0O@GLCMHBPI@CPUColumnName?$AA@ 1000e40c     aimparser.obj
+ 0002:0000141c       ??_C@_0BA@FDOKNFK@userColumnIndex?$AA@ 1000e41c     aimparser.obj
+ 0002:0000142c       ??_C@_0O@DBHENMKC@userColumn?$DN?$CFd?$AA@ 1000e42c     aimparser.obj
+ 0002:0000143c       ??_C@_0P@IFLGEHAA@userColumnName?$AA@ 1000e43c     aimparser.obj
+ 0002:0000144c       ??_C@_01EEMJAFIK@?6?$AA@   1000e44c     funcGeneral.obj
+ 0002:00001450       ??_C@_0M@ELOFBODM@?6info?5path?3?$AA@ 1000e450     funcGeneral.obj
+ 0002:0000145c       ??_C@_0BG@KFDBAEJB@?$CFs?2data?2TmpIniFile?2?$CFs?$AA@ 1000e45c     funcGeneral.obj
+ 0002:00001474       ??_C@_0L@HPMGBIOI@ServerHost?$AA@ 1000e474     funcGeneral.obj
+ 0002:00001480       ??_C@_09IPAEKDAI@localhost?$AA@ 1000e480     funcGeneral.obj
+ 0002:0000148c       ??_C@_0BA@GGPFGLLN@MonitorSchedule?$AA@ 1000e48c     funcGeneral.obj
+ 0002:0000149c       ??_C@_04BPKCJLI@SEID?$AA@  1000e49c     funcGeneral.obj
+ 0002:000014a4       ??_C@_0BG@BFJACLLI@?$CFs?2fcgi?9bin?2mc?4config?$AA@ 1000e4a4     funcGeneral.obj
+ 0002:000014bc       ??_C@_07DLHCIBDH@default?$AA@ 1000e4bc     funcGeneral.obj
+ 0002:000014c4       ??_C@_09BMHOOPHN@oscmd?4ini?$AA@ 1000e4c4     funcGeneral.obj
+ 0002:000014d4       ??_7_AFX_DLL_MODULE_STATE@@6B@ 1000e4d4     mfcs71:dllmodul.obj
+ 0002:000014f8       ??_C@_06JBKGCNBB@Delete?$AA@ 1000e4f8     mfcs71:stdafx.obj
+ 0002:00001500       ??_C@_08KAAPDIAN@NoRemove?$AA@ 1000e500     mfcs71:stdafx.obj
+ 0002:0000150c       ??_C@_0M@DBGDLGLL@ForceRemove?$AA@ 1000e50c     mfcs71:stdafx.obj
+ 0002:00001518       ??_C@_03LAIAPFCB@Val?$AA@  1000e518     mfcs71:stdafx.obj
+ 0002:0000151c       ??_C@_01HMGJMAIH@B?$AA@    1000e51c     mfcs71:stdafx.obj
+ 0002:00001520       ??_C@_01CKDDGHAB@D?$AA@    1000e520     mfcs71:stdafx.obj
+ 0002:00001524       ??_C@_01PLPBNMEI@M?$AA@    1000e524     mfcs71:stdafx.obj
+ 0002:00001528       ??_C@_01CPLAODJH@S?$AA@    1000e528     mfcs71:stdafx.obj
+ 0002:00001550       ??_7type_info@@6B@         1000e550     msvcrt:ti_inst.obj
+ 0002:000015a4       _GUID_ATLVer30             1000e5a4     atls:atlbase.obj
+ 0002:000015b4       _GUID_ATLVer70             1000e5b4     atls:atlbase.obj
+ 0002:000015c8       __load_config_used         1000e5c8     msvcrt:loadcfg.obj
+ 0002:00001664       ??_R1A@?0A@A@CNoTrackObject@@8 1000e664     mfcs71:dllmodul.obj
+ 0002:0000167c       ??_R1A@?0A@A@AFX_MODULE_STATE@@8 1000e67c     mfcs71:dllmodul.obj
+ 0002:00001694       ??_R1A@?0A@A@_AFX_DLL_MODULE_STATE@@8 1000e694     mfcs71:dllmodul.obj
+ 0002:000016ac       ??_R2_AFX_DLL_MODULE_STATE@@8 1000e6ac     mfcs71:dllmodul.obj
+ 0002:000016bc       ??_R3_AFX_DLL_MODULE_STATE@@8 1000e6bc     mfcs71:dllmodul.obj
+ 0002:000016cc       ??_R4_AFX_DLL_MODULE_STATE@@6B@ 1000e6cc     mfcs71:dllmodul.obj
+ 0002:000016e0       ??_R1A@?0A@A@type_info@@8  1000e6e0     msvcrt:ti_inst.obj
+ 0002:000016f8       ??_R2type_info@@8          1000e6f8     msvcrt:ti_inst.obj
+ 0002:00001700       ??_R3type_info@@8          1000e700     msvcrt:ti_inst.obj
+ 0002:00001710       ??_R4type_info@@6B@        1000e710     msvcrt:ti_inst.obj
+ 0002:00001730       ___safe_se_handler_table   1000e730     <linker-defined>
+ 0002:00001760       ___rtc_iaa                 1000e760     msvcrt:initsect.obj
+ 0002:00001764       ___rtc_izz                 1000e764     msvcrt:initsect.obj
+ 0002:00001768       ___rtc_taa                 1000e768     msvcrt:initsect.obj
+ 0002:0000176c       ___rtc_tzz                 1000e76c     msvcrt:initsect.obj
+ 0002:000019f4       __IMPORT_DESCRIPTOR_svapi  1000e9f4     svapi:svapi.dll
+ 0002:00001a08       __IMPORT_DESCRIPTOR_MFC71  1000ea08     mfc71:MFC71.DLL
+ 0002:00001a1c       __IMPORT_DESCRIPTOR_MSVCR71 1000ea1c     msvcrt:MSVCR71.dll
+ 0002:00001a30       __IMPORT_DESCRIPTOR_KERNEL32 1000ea30     kernel32:KERNEL32.dll
+ 0002:00001a44       __IMPORT_DESCRIPTOR_MSVCP71 1000ea44     msvcprt:MSVCP71.dll
+ 0002:00001a58       __NULL_IMPORT_DESCRIPTOR   1000ea58     svapi:svapi.dll
+ 0003:00000000       ___xc_a                    10010000     msvcrt:cinitexe.obj
+ 0003:0000001c       ___xc_z                    1001001c     msvcrt:cinitexe.obj
+ 0003:00000020       ___xi_a                    10010020     msvcrt:cinitexe.obj
+ 0003:00000024       ___xi_z                    10010024     msvcrt:cinitexe.obj
+ 0003:00000030       __pRawDllMain              10010030     mfcs71:dllmodul.obj
+ 0003:00000034       ??_R0?AVCNoTrackObject@@@8 10010034     mfcs71:dllmodul.obj
+ 0003:00000054       ??_R0?AVAFX_MODULE_STATE@@@8 10010054     mfcs71:dllmodul.obj
+ 0003:00000074       ??_R0?AV_AFX_DLL_MODULE_STATE@@@8 10010074     mfcs71:dllmodul.obj
+ 0003:000000a0       ___security_cookie         100100a0     msvcrt:seccook.obj
+ 0003:000000a4       ??_R0?AVtype_info@@@8      100100a4     msvcrt:ti_inst.obj
+ 0003:000000c0       ?m_bInitFailed@CAtlBaseModule@ATL@@2_NA 100100c0     aimparser.obj
+ 0003:000000c8       ?theApp@@3VCAimParserApp@@A 100100c8     aimparser.obj
+ 0003:000001a4       __afxForceEXCLUDE          100101a4     mfcs71:nolib.obj
+ 0003:000001bc       __afxForceUSRDLL           100101bc     mfcs71:dllmodul.obj
+ 0003:00001250       __afxForceSTDAFX           10011250     mfcs71:stdafx.obj
+ 0003:00001258       ?_AtlBaseModule@ATL@@3VCAtlBaseModule@1@A 10011258     atls:atlbase.obj
+ 0003:00001294       __adjust_fdiv              10011294     <common>
+ 0003:00001298       ___onexitend               10011298     <common>
+ 0003:0000129c       ___onexitbegin             1001129c     <common>
+
+ entry point at        0001:0000b5a1
+
+ Static symbols
+
+ 0001:0000b35d       _report_failure            1000c35d f   msvcrt:secchk.obj
+ 0001:0000b970       $L129432                   1000c970 f   aimparser.obj
+ 0001:0000b979       $L129433                   1000c979 f   aimparser.obj
+ 0001:0000b982       $L129434                   1000c982 f   aimparser.obj
+ 0001:0000b98e       $L129435                   1000c98e f   aimparser.obj
+ 0001:0000b99a       __ehhandler$?WriteLog@@YA_NV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@V12@@Z 1000c99a f   aimparser.obj
+ 0001:0000b9b0       $L129520                   1000c9b0 f   aimparser.obj
+ 0001:0000b9b9       $L129521                   1000c9b9 f   aimparser.obj
+ 0001:0000b9c2       $L129522                   1000c9c2 f   aimparser.obj
+ 0001:0000b9cb       $L129523                   1000c9cb f   aimparser.obj
+ 0001:0000b9d4       $L129525                   1000c9d4 f   aimparser.obj
+ 0001:0000b9dd       $L129527                   1000c9dd f   aimparser.obj
+ 0001:0000b9e6       $L129528                   1000c9e6 f   aimparser.obj
+ 0001:0000b9ef       __ehhandler$?FormatSource@@YAHPBDHAAVCStringList@@PAD@Z 1000c9ef f   aimparser.obj
+ 0001:0000ba00       $L129664                   1000ca00 f   aimparser.obj
+ 0001:0000ba09       $L129665                   1000ca09 f   aimparser.obj
+ 0001:0000ba12       $L129666                   1000ca12 f   aimparser.obj
+ 0001:0000ba1b       $L129667                   1000ca1b f   aimparser.obj
+ 0001:0000ba24       __ehhandler$?GetColumnFromLine@@YAXAAV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H0H@Z 1000ca24 f   aimparser.obj
+ 0001:0000ba30       $L129718                   1000ca30 f   aimparser.obj
+ 0001:0000ba39       $L129719                   1000ca39 f   aimparser.obj
+ 0001:0000ba42       $L129720                   1000ca42 f   aimparser.obj
+ 0001:0000ba4b       $L129721                   1000ca4b f   aimparser.obj
+ 0001:0000ba54       __ehhandler$?GetColumnIndex@@YAHAAVCStringList@@AAHPAD@Z 1000ca54 f   aimparser.obj
+ 0001:0000ba60       $L129758                   1000ca60 f   aimparser.obj
+ 0001:0000ba69       $L129759                   1000ca69 f   aimparser.obj
+ 0001:0000ba72       $L129760                   1000ca72 f   aimparser.obj
+ 0001:0000ba7b       $L129761                   1000ca7b f   aimparser.obj
+ 0001:0000ba84       __ehhandler$?GetColumnIndex@@YAHV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@AAHPAD@Z 1000ca84 f   aimparser.obj
+ 0001:0000ba90       $L118709                   1000ca90 f   funcGeneral.obj
+ 0001:0000ba99       $L118710                   1000ca99 f   funcGeneral.obj
+ 0001:0000baa2       __ehhandler$?FuncGetInstallPath@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@XZ 1000caa2 f   funcGeneral.obj
+ 0001:0000bab0       $L118808                   1000cab0 f   funcGeneral.obj
+ 0001:0000babc       $L118809                   1000cabc f   funcGeneral.obj
+ 0001:0000bac8       $L118810                   1000cac8 f   funcGeneral.obj
+ 0001:0000bad4       $L118811                   1000cad4 f   funcGeneral.obj
+ 0001:0000bae0       $L118812                   1000cae0 f   funcGeneral.obj
+ 0001:0000baec       $L118813                   1000caec f   funcGeneral.obj
+ 0001:0000baf8       __ehhandler$?DFN_GetPrivateProfileString@@YAKPBD00PADK0@Z 1000caf8 f   funcGeneral.obj
+ 0001:0000bb10       $L119339                   1000cb10 f   funcGeneral.obj
+ 0001:0000bb1c       $L119340                   1000cb1c f   funcGeneral.obj
+ 0001:0000bb28       __ehhandler$?GetSEIP@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ 1000cb28 f   funcGeneral.obj
+ 0001:0000bb40       $L119357                   1000cb40 f   funcGeneral.obj
+ 0001:0000bb49       $L119358                   1000cb49 f   funcGeneral.obj
+ 0001:0000bb52       $L119359                   1000cb52 f   funcGeneral.obj
+ 0001:0000bb5b       $L119361                   1000cb5b f   funcGeneral.obj
+ 0001:0000bb75       __ehhandler$?GetResourceValue@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@Z 1000cb75 f   funcGeneral.obj
+ 0001:0000bb80       $L119829                   1000cb80 f   funcGeneral.obj
+ 0001:0000bb80       $L119797                   1000cb80 f   funcGeneral.obj
+ 0001:0000bb89       $L119830                   1000cb89 f   funcGeneral.obj
+ 0001:0000bb89       $L119798                   1000cb89 f   funcGeneral.obj
+ 0001:0000bb92       $L119800                   1000cb92 f   funcGeneral.obj
+ 0001:0000bb92       $L119832                   1000cb92 f   funcGeneral.obj
+ 0001:0000bb9b       $L119801                   1000cb9b f   funcGeneral.obj
+ 0001:0000bb9b       $L119833                   1000cb9b f   funcGeneral.obj
+ 0001:0000bbb5       __ehhandler$?FuncGetStringFromIDS@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@PBD@Z 1000cbb5 f   funcGeneral.obj
+ 0001:0000bbb5       __ehhandler$?FuncGetStringFromIDS@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@PBD0@Z 1000cbb5 f   funcGeneral.obj
+ 0001:0000bbbf       $L185173                   1000cbbf f   mfcs71:dllmodul.obj
+ 0001:0000bbc7       __ehhandler$?AfxWndProcDllStatic@@YGJPAUHWND__@@IIJ@Z 1000cbc7 f   mfcs71:dllmodul.obj
+ 0001:0000bbe0       _$E1                       1000cbe0 f   aimparser.obj
+ 0001:0000bc00       _$E4                       1000cc00 f   aimparser.obj
+ 0001:0000bc20       _$E1                       1000cc20 f   funcGeneral.obj
+ 0001:0000bc3c       _$E5                       1000cc3c f   mfcs71:dllmodul.obj
+ 0001:0000bc52       _$E5                       1000cc52 f   atls:atlbase.obj
+ 0001:0000bc70       _$E2                       1000cc70 f   aimparser.obj
+ 0001:0000bc80       _$E5                       1000cc80 f   aimparser.obj
+ 0001:0000bc90       _$E2                       1000cc90 f   funcGeneral.obj
+ 0001:0000bc9b       _$E6                       1000cc9b f   mfcs71:dllmodul.obj
+ 0001:0000bca5       _$E6                       1000cca5 f   atls:atlbase.obj

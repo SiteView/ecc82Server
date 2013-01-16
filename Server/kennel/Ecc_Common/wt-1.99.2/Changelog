@@ -1,0 +1,232 @@
+18-02-2007:
+	- various transient and widget memory improvements
+	  sample of sizeof() before and after:
+	  WObject:           48		 40
+	  WResource:         84		 60
+	  WWidget:           92		 68
+	  WWebWidget:       592		108
+	  WInteractWidget: 1356		300
+	  WText:           1384		328
+	  WTable:          1376		320
+
+16-02-2007:
+	- New widget: WTreeTable and example File Browser.
+
+18-12-2006:
+	- Use Boost.Signals instead of home-brew signal/slots
+	- Drag&Drop seems to work with firefox/konqueror, probably needs more
+	testing
+	- valgrind checked, no warnings no errors !
+	- adopt wide string array
+
+05-12-2006:
+	- Solaris patches by Patrick Mauritz
+	- Drag&Drop, initial implementation (not yet complete)
+	- Drag&Drop example
+
+01-12-2006:
+	- Happy birthday, Wt.
+	- many changes not documented in the Changelog.
+
+07-09-2006:
+	- Support for cookies for session management (when available) instead
+	  of URL rewriting
+	- Support for reading and setting cookies (in respectively WEnvironment
+	  and WApplication)
+
+04-09-2006:
+	- Starting to finalize event handling: WMouseEvent and WKeyEvent
+	- working on a new example and a new widget: WVirtualImage
+
+02-09-2006:
+	- Added WTreeNode and WIconPair widgets, derived from the
+	  treelist example with different loading policies, and OO
+	  overloading capabilities.
+	- Corrected API bug: hide() and show() are non-virtual but
+	  setHidden() is the virtual one that you should reimplement
+	- Remove WCssDecorationStyle from WWebWidget header, and do
+	  not allocated it until needed. Saves alot on memory usage
+	  when using many widgets.
+
+01-09-2006:
+	- Moved Menu from the homepage example to become WMenu. Provides now
+	  different loading policies for the items, and customizable
+	  WMenuItem look (through OO inheritance).
+	- Fixed a nasty bug in stateless slot learning.
+
+30-08-2006:
+	- implemented WJavascriptSlot (abdiel) for pure client-side event
+	  handling
+	- implemented WSuggestionPopup
+	- use two-phase rendering for all updates, and configuration option
+	  to change the threshold
+	- separated examples in their own doxygen documentation
+	- added ContactSuggestions widget to the composer example
+	- various documentation improvements
+	- fix a bug with deleting a signal while emitting the slots (abdiel)
+	- avoid (?) race condition in blur() and click() handler in WSuggestionPopup.C
+
+24-08-2006:
+	- mindfully implemented all quoting stuff
+	- change behaviour at quit(): simply render the last changes, but
+	  add -- Quited. to the title, and avoid receiving new events.
+	- fix non-javascript look for the wrap buttons.
+
+22-08-2006:
+	- add WWidget::isVisible()
+	- workaround for Firefox keeping 'Transferring data from:'
+	- yet another WFileUpload implementation -- the final one ?
+	- misc improvements to Composer example
+	- add support for external stylesheets
+	- fix stateless slots discarding changes after serving resource
+	- allow caching of WWidget resources
+
+21-08-2006:
+	- Added the composer example
+	- Fixed bug not quoting href attribute in DemoTreeList
+	- CgiParser: revert old behaviour, parsing through big requests
+	- move helper function escape and replace to DomElement
+	- WFileUpload::fileTooLarge in addition to WAppliation::requestTooLarge
+	- isLoaded is broken because of WCompositeWidget..., but not needed anyway
+        - add WEnvironment::getArgument, by Tomek Mazurek
+	- WFileUpload: looks much better (konqueror, opera & firefox).
+        - WFileUpload: added alternative firefox implementation that is even better (but is not used now)
+	- WFileUpload: add isUploaded to check if calling upload() will do anything
+	- WLineEdit: bugfix: escape preset text
+	- WText: bugfix: replace newlines with <br/> in plainFormatting
+	- WTextArea: bugfix: now set preset text correctly
+	- WWebWidget, WCompositeWidget: bugfix: fix destructor javascript code
+	- WWebWidget: bugfix: do not propagate renderOk in stubbed widgets
+	- WWebWidget: bugfix: escapeText returns the escaped text
+	- WWidget: bugfix: resourceMimeType: escape " in javascript code.
+
+18-08-2006:
+	- Documentation improvements
+	- Fixed WFileUpload and FileUpload example (one bug remains)
+	- Add propagateRenderOk() instead of creating the complete
+	  DOM structure
+	- prevent XSS attacks at the heart by filtering user supplied
+	  XHTML.
+	- Do not parse CGI input if too big anyway -- simply discard.
+
+17-08-2006:
+	- Documentation improvements, also doxygenified some reusable
+	  classes in the examples.
+
+16-08-2006:
+	- improved look on non-javascript version, konqueror renders
+	  wt-homepage now ok, but Firefox keeps adding padding inside
+	  the button...
+
+14-08-2006:
+	- parse locale from browser and use it as start-up locale
+	  and other things in WEnvironment
+	- release 1.1.5
+
+11-08-2006:
+	- performance improvement: keep track of widgets that need
+	  to be repainted, and only process these when finding
+	  changes in the DOM.
+
+10-08-2006:
+	- many new features, not kept track off in ChangeLog (bad habit)
+	- release 1.1.4
+
+13-07-2006:
+	- adopted cmake, an autoconf/tool/make alternative.
+
+26-04-2006:
+	- new: WContainerWidget::insert(WWidget *w, WWidget *before)
+	- WCssDecorationStyle background image may be positioned
+	- Added a Style example
+
+24-04-2006:
+ 	- Patch for gcc 4 compile errors (Alan Ezust).
+	- chased any remaining memory leaks in all examples, reworked
+	  WCompositeWidget implementation -- you will need to update any code
+	- WFileUpload improvements: looks better, works better
+          Added a changed signal which allows capturing file selection on
+          some browsers
+	- WApplication: limit post-size API
+	- CgiParser: make buffer static
+
+22-04-2006:
+	- fix session behaviour with multiple fastcgi servers for high
+	  performance settings
+	- added WDoubleValidator and WRegExpValidator and example of a
+	  custom validator -- DateValidator
+
+20-04-2006:
+	- kick buggy cgi_util.c in favour of C++ CgiParser
+	- rewrote WFileUpload -- works well but looks ugly (most of the time)
+	- fixed some memory-leaks indicated by valgrind
+
+14-04-2006:
+	- many changes in the last months that were not recorded
+	  in the Changelog.
+
+16-01-2006:
+	- add new example hangman, contributed by Wim Dumon
+	- add new example hello-word, contributed by Wim Dumon
+	- fixed contentAlignment() on non-inline children
+	- moved HorizontAlignment to WWidget (that was ugly!)
+	- add support for valgrind, and fixed dito bugs
+	- remove excess zeros in object ids
+	- release 1.0.14
+
+03-01-2006:
+	- add WSignalMapper class, suggested by Wim Dumon
+	- fix gcc 4 compile error, thanks to Costantino Giuliodori and Udo
+	  Kreckel.
+	- release 1.0.13
+	- add WContainerWidget::clear()
+	- add WLineEdit::echoMode (Normal/Password)
+
+29-12-2005:
+	- add javascript but non-ajax code. But does not work with
+	  netscape 4, because of 'onclick' not working ?
+	- release 1.0.12
+
+28-12-2005:
+	- make WWidget an abstract interface
+	- create WWebWidget
+	- create WCompositeWidget
+	- fixed a bug not initializing margin and padding
+	- add non-javascript support
+	- add message resource bundles, and support for localization to
+	  most WWebWidgets
+	- add refresh() in WApplication and WWidget, and in wt-homepage
+	  example.
+
+22-12-2005:
+	- fix (hack?) for browser going back to Wt page bug
+	- added side specific margin and padding, moved padding to
+	  WContainerWidget
+	- More documented members in WWidget
+	- release 1.0.11
+
+21-12-2005:
+	- added WFont, and use in the wt-homepage example (for the navigation
+	  menu)
+	- discovered, but not fixed, the reason why going back to the Wt page
+	  does not work: when going backward, the page replays the same stuff
+	  as if it was unloaded. So, we probably want our first keep-alive
+	  message to be 'load', which should find out which things were
+	  stubbed, and retransmit these -- are easier just trigger a reload
+
+20-12-2005:
+	- some bug fixes in WStackedWidget
+	- converted homepage to Wt (as new example)
+	- add support for WApplication.title()
+	- release 1.0.10
+
+19-12-2005:
+	- started doing ChangeLog
+	- read XHTML tutorial at w3org, now properly generate xhtml, no more
+  	  problems caused by closing non-empty tags (such as <select />), and
+ 	  fixes some cross-browser inconsistencies such as disabled widgets
+	- add security checks around web references to resource and signal
+	  instances (as suggested by Graydon Hoare).
+	- quit the application nicely on timeout by exiting the eventloop
+	  (as suggested by Wim Dumon).
+	- release 1.0.9

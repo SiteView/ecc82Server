@@ -1,0 +1,115 @@
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+// This may look like C code, but it's really -*- C++ -*-
+#ifndef WABSTRACTTAB_H_
+#define WABSTRACTTAB_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <string>
+#include <WObject>
+
+class WTabWidget;
+class WContainerWidget;
+class WWidget;
+
+/*! \brief Abstraction of a tabbed window.
+ *
+ * Reimplement this class if you want a different look and feel for
+ * the tab buttons.
+ *
+ * You need to provide suitable implementations for
+ * createButton() and setLabel(const std::string),
+ * and possibly as well for show() and hide().
+ *
+ * Connect a signal to the selectTab() slot to select this tab.
+ */
+class __declspec(dllexport) WAbstractTab : public WObject
+{
+  //MOC: W_OBJECT WAbstractTab:WObject
+  W_OBJECT;
+
+public:
+  /*! \brief Create a tab with given label.
+   *
+   * The classSelected and classUnselected are used by show() and hide()
+   * to change the visualization of a button associated with a selected
+   * or unselected tab.
+   */
+  WAbstractTab(const std::string label,
+	       const std::string classSelected,
+	       const std::string classUnselected);
+
+  /*! \brief Get the label of this tab.
+   */
+  const std::string label() const;
+
+  /*! \brief Change the label of this tab.
+   *
+   * You need to reimplement this method to set the label in the custom
+   * tab button.
+   */
+  virtual void setLabel(const std::string text);
+
+  /*! \brief The window of this tab that contains the content.
+   */
+  WContainerWidget *window() const { return window_; }
+
+protected static_slots:
+  //MOC: STATIC SLOT WAbstractTab::selectTab()
+  /*! \brief Select this tab.
+   *
+   * This is a static slot !
+   */
+  void selectTab();
+
+private:
+  std::string       text_;
+  std::string       classUnselected_;
+  std::string	    classSelected_;
+  WTabWidget        *tabWidget_;
+  WContainerWidget  *window_;
+  WWidget	    *buttonWidget_;
+
+  int  lastIndex_;
+  void undoSelectTab();
+
+  void doCreateButton(WContainerWidget *parent);
+  friend class WTabWidget;
+
+protected:
+  /*! \brief Show this tab.
+   *
+   * Sets the classSelected to the button widget, and shows the
+   * the window().
+   *
+   * You may want to reimplement this method if you need something
+   * more fancy than changing the class of the button widget.
+   */
+  virtual void show();
+
+  /*! \brief Show this tab.
+   *
+   * Sets the classUnselected to the button widget, and hides the
+   * the window().
+   *
+   * You may want to reimplement this method if you need something
+   * more fancy than changing the class of the button widget.
+   */
+  virtual void hide();
+  
+  /*! \brief Create the button.
+   *
+   * Create the widget that represents the button for this class.
+   *
+   * You need to reimplement this method.
+   */
+  virtual WWidget *createButton() = 0;
+};
+
+#endif // WTAB_H_

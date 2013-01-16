@@ -1,0 +1,54 @@
+为Lotus Notes监视器提供的DLL程序：LotusMon.dll
+
+编译环境：VS2003
+编译条件：
+1、在LotusMon属性页”-〉“C/C++”-〉“常规”
+-〉“附加包含目录”中加入“E:\EccCode\opens\NOTESAPI6.5\INCLUDE”
+（如已安装Lotus Notes，可以找到对应的目录）；
+2、在“db2mfcmonitor属性页”-〉“链接器”-〉“常规”
+-〉“附加库目录”中加入“E:\EccCode\opens\NOTESAPI6.5\LIB\mswin32”
+（如已安装Lotus Notes，可以找到对应的目录）；
+3、在“db2mfcmonitor属性页”-〉“链接器”-〉“输入”
+-〉“附加依赖项”中加入“notes.lib”。
+
+
+监视器名称：LotusNotes内存
+调用的函数：Mem
+监视指标：Free  	指标类型：Float
+监视指标：AllocTotal 	指标类型：Float
+监视指标：AllocProcess  指标类型：Float
+监视指标：AllocShared  	指标类型：Float
+监视指标：PhysicalRAM 	指标类型：Float
+监视指标：Availability  指标类型：String
+
+监视器名称：LotusNotes磁盘
+调用的函数：Disk
+监视指标：FreeDisks  	指标类型：int
+监视指标：SizeDisks	指标类型：int
+监视指标：TypeDisks     指标类型：String
+监视指标：FixedDisks 	指标类型：Int
+监视指标：RemoteDisks	指标类型：Int
+
+监视器名称：LotusNote 服务器任务的状态
+调用的函数：Task
+监视指标：TaskCount		指标类型：Int
+监视指标：RepicatorStatus	指标类型：String
+监视指标：RouterStatus        	指标类型：String
+监视指标：EventStatus           指标类型：String
+
+监视器名称：LotusNote邮件系统
+调用的函数：Mail
+监视指标：DeliveredMailRate 	指标类型：Int
+监视指标：TaskMailTransferRate  指标类型：Int
+监视指标：RoutedMailRate 	指标类型：Int
+监视指标：DeadmailRate  	指标类型：Int
+监视指标：TotalPending 		指标类型：Int
+监视指标：WaitingMail  		指标类型：Int
+监视指标：WaitingRecipients  	指标类型：Int
+
+监视器名称：LotusNote文件数据库空间
+调用的函数：DBSpace
+监视指标：Used  		指标类型：Float
+监视指标：Free	 	 	指标类型：Float
+监视指标：FreePer		指标类型：Float
+

@@ -1,0 +1,12 @@
+// Support.h
+
+BOOL IsNT5plus();
+
+BOOL	MyWriteProfileString	(LPCTSTR,LPCTSTR,LPCTSTR);
+BOOL	MyWriteProfileDWORD		(LPCTSTR,LPCTSTR,DWORD);
+BOOL	MyGetProfileString		(LPCTSTR,LPCTSTR,LPCTSTR,DWORD);
+DWORD	MyGetProfileDWORD		(LPCTSTR,LPCTSTR,DWORD);
+HKEY	MyGetSectionKey			(LPCTSTR);
+HKEY	MyGetServiceRegistryKey	();
+
+

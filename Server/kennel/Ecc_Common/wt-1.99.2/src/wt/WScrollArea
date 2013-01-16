@@ -1,0 +1,94 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSCROLLAREA_H_
+#define WSCROLLAREA_H_
+
+#include <WWebWidget>
+
+namespace Wt {
+
+class WScrollBar;
+
+/*! \class WScrollArea WScrollArea WScrollArea
+ *  \brief A Widget that adds scrolling capabilities to its content.
+ *
+ * Use a WScrollArea to add scrolling capabilities to another widget.
+ * When the content is bigger than the WScrollArea, scrollbars are added
+ * so that the user can still view the entire content.
+ *
+ * Use setScrollBarPolicy() to configure if and when the scrollbars may
+ * appear.
+ */
+class WScrollArea : public WWebWidget
+{
+public:
+  /*! brief Policy for showing a scrollbar.
+   */
+  enum ScrollBarPolicy {
+    ScrollBarAsNeeded,	//!< Automatic
+    ScrollBarAlwaysOff, //!< Always show a scrollbar
+    ScrollBarAlwaysOn   //!< Never show a scrollbar
+  };
+
+  /*! \brief Create a scroll area.
+   */
+  WScrollArea(WContainerWidget *parent = 0);
+
+  ~WScrollArea();
+
+  /*! \brief Set the widget that is the contents of the scroll area.
+   *
+   * Setting a new widget will delete the previously set widget.
+   */
+  void setWidget(WWidget *widget);
+
+  /*! \brief Remove the widget content.
+   */
+  WWidget *takeWidget();
+
+  /*! \brief Get the widget content.
+   */
+  WWidget *widget() const { return widget_; }
+
+  /*! \brief Get the horizontal scrollbar.
+   */
+  WScrollBar *horizontalScrollBar() const { return horizontalScrollBar_; }
+
+  /*! \brief Get the vertical scrollbar.
+   */
+  WScrollBar *verticalScrollBar() const { return verticalScrollBar_; }
+
+  /*! \brief Set the policy for both scrollbars
+   *
+   * When browsers will support seperate policies for vertical and horizontal,
+   * we will split this.
+   */
+  void setScrollBarPolicy(ScrollBarPolicy scrollBarPolicy);
+
+private:
+  WWidget *widget_;
+  bool widgetChanged_;
+
+  WScrollBar *horizontalScrollBar_;
+  WScrollBar *verticalScrollBar_;
+  bool scrollBarChanged_;
+
+  ScrollBarPolicy scrollBarPolicy_;
+  bool scrollBarPolicyChanged_;
+
+  void scrollBarChanged();
+  friend class WScrollBar;
+
+protected:
+  void        updateDom(DomElement& element, bool all);
+  DomElement *createDomElement();
+  void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+}
+
+#endif // WSCROLLAREA

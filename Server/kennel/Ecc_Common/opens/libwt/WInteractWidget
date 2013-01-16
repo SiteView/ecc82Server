@@ -1,0 +1,125 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WINTERACT_WIDGET_H_
+#define WINTERACT_WIDGET_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WWebWidget>
+
+ #define  JAVATEXT 1024   //wangpeng
+
+/*! \brief A WWidget that can receive user-interface interaction
+ *
+ * An InteractWidget provides various signals that correspond
+ * to user-interface interaction.
+ */
+class __declspec(dllexport) WInteractWidget : public WWebWidget
+{
+  //MOC: W_OBJECT WInteractWidget:WWebWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Create an InteractWidget with optional parent.
+   */
+  WInteractWidget(WContainerWidget *parent = 0);
+
+  void setData(void *data);
+  void *data() { return data_; }
+
+public signals:
+  /* keyboard events */
+
+  //MOC: EVENT SIGNAL WInteractWidget::keyWentDown(int keyCode)
+  /*! \brief Signal emitted when a keyboard key is pushed down.
+   *
+   * The keyCode seems not well defined...
+   */
+  void keyWentDown(int keyCode);
+
+  //MOC: EVENT SIGNAL WInteractWidget::keyPressed(int keyCode)
+  /*! \brief Signal emitted when a keyboard key is pressed (?)
+   *
+   * The keyCode seems not well defined...
+   */
+  void keyPressed(int keyCode);
+
+  //MOC: EVENT SIGNAL WInteractWidget::keyWentUp(int keyCode)
+  /*! \brief Signal emitted when a keyboard key is released.
+   *
+   * The keyCode seems not well defined...
+   */
+  void keyWentUp(int keyCode);
+
+  /* mouse events */
+
+  //MOC: EVENT SIGNAL WInteractWidget::clicked()
+  /*! \brief Signal emitted when a mouse key was clicked.
+   */
+  void clicked();
+
+  //MOC: EVENT SIGNAL WInteractWidget::doubleClicked()
+  /*! \brief Signal emitted when a mouse key was double clicked.
+   */
+  void doubleClicked();
+
+  //MOC: EVENT SIGNAL WInteractWidget::mouseWentDown()
+  /*! \brief Signal emitted when a mouse key was pushed down.
+   */
+  void mouseWentDown();
+
+  //MOC: EVENT SIGNAL WInteractWidget::mouseWentUp()
+  /*! \brief Signal emitted when a mouse key was released.
+   */
+  void mouseWentUp();
+
+  //MOC: EVENT SIGNAL WInteractWidget::mouseWentOut()
+  /*! \brief Signal emitted when the mouse went out of this WWidget.
+   */
+  void mouseWentOut();
+
+  //MOC: EVENT SIGNAL WInteractWidget::mouseWentOver()
+  /*! \brief Signal emitted when the mouse entered this WWidget.
+   */
+  void mouseWentOver();
+
+  //MOC: EVENT SIGNAL WInteractWidget::mouseMoved()
+  /*! \brief Signal emitted when the mouse moved over this WWidget.
+   */
+  void mouseMoved();
+
+  /* derived events */
+  //MOC: EVENT SIGNAL WInteractWidget::clicked(void *data)
+  void clicked(void *data);
+
+  // wangpeng ²¹³äº¯Êý 
+  //MOC: EVENT SIGNAL WInteractWidget::contextmenu()
+  /*! \brief Signal emitted when the mouse moved over this WWidget.
+   */
+  void contextmenu();
+	
+	
+
+private slots:
+  //MOC: SLOT WInteractWidget::gotClick()
+  void gotClick();
+
+private:
+  void *data_;
+
+protected:
+  void updateDom(DomElement& element, bool all);
+
+
+public:  //wangpeng
+	char         contextmenu_[JAVATEXT];
+
+};
+
+#endif // WINTERACT_WIDGET_H_

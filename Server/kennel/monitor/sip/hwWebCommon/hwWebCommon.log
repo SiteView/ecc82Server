@@ -1,0 +1,587 @@
+05/20/09 17:49:41 	========== GetData =========
+05/20/09 17:49:42 	0
+05/20/09 17:49:42 	Device.LAN.IPAddress=111212131424
+05/20/09 17:49:42 	Device.LAN.IPAddress=111212131424
+05/20/09 17:55:38 	========== GetData =========
+05/20/09 17:55:40 	0
+05/20/09 17:55:40 	Device.LAN.IPAddress=111212131424
+05/20/09 17:55:40 	Device.LAN.IPAddress=111212131424
+05/20/09 18:13:17 	========== GetData =========
+05/20/09 18:13:17 	Device.GateWay.Network.DnsEnable
+05/20/09 18:13:17 	Device.GateWay.Network.HostName
+05/20/09 18:13:17 	Device.GateWay.Network.PppoePassword
+05/20/09 18:13:17 	Device.GateWay.Network.PppoeUsername
+05/20/09 18:13:17 	Device.LAN.AddressingType
+05/20/09 18:13:17 	Device.LAN.DNSServers
+05/20/09 18:13:17 	Device.LAN.DefaultGateway
+05/20/09 18:13:17 	Device.LAN.IPAddress
+05/20/09 18:13:17 	Device.LAN.MACAddress
+05/20/09 18:13:17 	Device.LAN.SubnetMask
+05/20/09 18:13:17 	Device.Time.LocalTimeZone
+05/20/09 18:13:17 	Device.Time.NTPServer1
+05/20/09 18:13:17 	Device.Time.NTPServer2
+05/20/09 18:13:42 	12
+05/20/09 18:13:49 	========== GetData =========
+05/20/09 18:13:49 	Device.GateWay.Network.DnsEnable
+05/20/09 18:13:49 	Device.GateWay.Network.HostName
+05/20/09 18:13:49 	Device.GateWay.Network.PppoePassword
+05/20/09 18:13:49 	Device.GateWay.Network.PppoeUsername
+05/20/09 18:13:49 	Device.LAN.AddressingType
+05/20/09 18:13:49 	Device.LAN.DNSServers
+05/20/09 18:13:49 	Device.LAN.DefaultGateway
+05/20/09 18:13:49 	Device.LAN.IPAddress
+05/20/09 18:13:49 	Device.LAN.MACAddress
+05/20/09 18:13:49 	Device.LAN.SubnetMask
+05/20/09 18:13:49 	Device.Time.LocalTimeZone
+05/20/09 18:13:49 	Device.Time.NTPServer1
+05/20/09 18:13:49 	Device.Time.NTPServer2
+05/20/09 18:14:14 	12
+05/20/09 18:14:32 	========== GetData =========
+05/20/09 18:14:32 	Device.GateWay.Network.DnsEnable
+05/20/09 18:14:32 	Device.GateWay.Network.HostName
+05/20/09 18:14:32 	Device.GateWay.Network.PppoePassword
+05/20/09 18:14:32 	Device.GateWay.Network.PppoeUsername
+05/20/09 18:14:32 	Device.LAN.AddressingType
+05/20/09 18:14:32 	Device.LAN.DNSServers
+05/20/09 18:14:32 	Device.LAN.DefaultGateway
+05/20/09 18:14:32 	Device.LAN.IPAddress
+05/20/09 18:14:32 	Device.LAN.MACAddress
+05/20/09 18:14:32 	Device.LAN.SubnetMask
+05/20/09 18:14:32 	Device.Time.LocalTimeZone
+05/20/09 18:14:32 	Device.Time.NTPServer1
+05/20/09 18:14:32 	Device.Time.NTPServer2
+05/20/09 18:14:57 	12
+05/20/09 18:15:36 	========== GetData =========
+05/20/09 18:15:36 	Device.GateWay.Network.DnsEnable
+05/20/09 18:15:36 	Device.GateWay.Network.HostName
+05/20/09 18:15:36 	Device.GateWay.Network.PppoePassword
+05/20/09 18:15:36 	Device.GateWay.Network.PppoeUsername
+05/20/09 18:15:36 	Device.LAN.AddressingType
+05/20/09 18:15:36 	Device.LAN.DNSServers
+05/20/09 18:15:36 	Device.LAN.DefaultGateway
+05/20/09 18:15:36 	Device.LAN.IPAddress
+05/20/09 18:15:36 	Device.LAN.MACAddress
+05/20/09 18:15:36 	Device.LAN.SubnetMask
+05/20/09 18:15:36 	Device.Time.LocalTimeZone
+05/20/09 18:15:36 	Device.Time.NTPServer1
+05/20/09 18:15:36 	Device.Time.NTPServer2
+05/20/09 18:16:01 	12
+05/21/09 11:24:20 	========== GetData =========
+05/21/09 11:24:20 	Device.LAN.IPAddress
+05/21/09 11:24:20 	Device.LAN.MACAddress
+05/21/09 11:24:20 	0
+05/21/09 11:24:20 	Device.LAN.IPAddress=111212131424
+05/21/09 11:24:20 	Device.LAN.IPAddress=111212131424
+05/21/09 11:24:20 	Device.LAN.MACAddress=00:00:00:00:00:00
+05/21/09 11:24:30 	========== GetData =========
+05/21/09 11:24:30 	Device.LAN.IPAddress
+05/21/09 11:24:30 	Device.LAN.MACAddress
+05/21/09 11:24:31 	0
+05/21/09 11:24:31 	Device.LAN.IPAddress=111212131424
+05/21/09 11:24:31 	Device.LAN.IPAddress=111212131424
+05/21/09 11:24:31 	Device.LAN.MACAddress=00:00:00:00:00:00
+05/21/09 11:25:05 	========== GetData =========
+05/21/09 11:25:05 	Device.LAN.IPAddress
+05/21/09 11:25:05 	0
+05/21/09 11:25:05 	Device.LAN.IPAddress=xxxxx
+05/21/09 11:25:16 	========== GetData =========
+05/21/09 11:25:16 	Device.LAN.MACAddress
+05/21/09 11:25:17 	0
+05/21/09 11:25:17 	Device.LAN.MACAddress=00:00:00:00:00:00
+05/21/09 11:27:59 	========== GetData =========
+05/21/09 11:27:59 	Device.GateWay.Network.DnsEnable
+05/21/09 11:27:59 	Device.GateWay.Network.HostName
+05/21/09 11:27:59 	Device.GateWay.Network.PppoePassword
+05/21/09 11:27:59 	Device.GateWay.Network.PppoeUsername
+05/21/09 11:27:59 	Device.LAN.AddressingType
+05/21/09 11:27:59 	Device.LAN.DNSServers
+05/21/09 11:27:59 	Device.LAN.DefaultGateway
+05/21/09 11:27:59 	Device.LAN.IPAddress
+05/21/09 11:27:59 	Device.LAN.MACAddress
+05/21/09 11:27:59 	Device.LAN.SubnetMask
+05/21/09 11:27:59 	Device.Time.LocalTimeZone
+05/21/09 11:27:59 	Device.Time.NTPServer1
+05/21/09 11:27:59 	Device.Time.NTPServer2
+05/21/09 11:28:00 	0
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.PppoeUsername=ddd
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.PppoeUsername=ddd
+05/21/09 11:28:00 	Device.LAN.AddressingType=eee
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.PppoeUsername=ddd
+05/21/09 11:28:00 	Device.LAN.AddressingType=eee
+05/21/09 11:28:00 	Device.LAN.DNSServers=xxx
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.PppoeUsername=ddd
+05/21/09 11:28:00 	Device.LAN.AddressingType=eee
+05/21/09 11:28:00 	Device.LAN.DNSServers=xxx
+05/21/09 11:28:00 	Device.LAN.DefaultGateway=rrr
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.PppoeUsername=ddd
+05/21/09 11:28:00 	Device.LAN.AddressingType=eee
+05/21/09 11:28:00 	Device.LAN.DNSServers=xxx
+05/21/09 11:28:00 	Device.LAN.DefaultGateway=rrr
+05/21/09 11:28:00 	Device.LAN.IPAddress=yyy
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.PppoeUsername=ddd
+05/21/09 11:28:00 	Device.LAN.AddressingType=eee
+05/21/09 11:28:00 	Device.LAN.DNSServers=xxx
+05/21/09 11:28:00 	Device.LAN.DefaultGateway=rrr
+05/21/09 11:28:00 	Device.LAN.IPAddress=yyy
+05/21/09 11:28:00 	Device.LAN.MACAddress=00:00:00:00:00:00
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.PppoeUsername=ddd
+05/21/09 11:28:00 	Device.LAN.AddressingType=eee
+05/21/09 11:28:00 	Device.LAN.DNSServers=xxx
+05/21/09 11:28:00 	Device.LAN.DefaultGateway=rrr
+05/21/09 11:28:00 	Device.LAN.IPAddress=yyy
+05/21/09 11:28:00 	Device.LAN.MACAddress=00:00:00:00:00:00
+05/21/09 11:28:00 	Device.LAN.SubnetMask=rrr
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.PppoeUsername=ddd
+05/21/09 11:28:00 	Device.LAN.AddressingType=eee
+05/21/09 11:28:00 	Device.LAN.DNSServers=xxx
+05/21/09 11:28:00 	Device.LAN.DefaultGateway=rrr
+05/21/09 11:28:00 	Device.LAN.IPAddress=yyy
+05/21/09 11:28:00 	Device.LAN.MACAddress=00:00:00:00:00:00
+05/21/09 11:28:00 	Device.LAN.SubnetMask=rrr
+05/21/09 11:28:00 	Device.Time.LocalTimeZone=kkkk
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.PppoeUsername=ddd
+05/21/09 11:28:00 	Device.LAN.AddressingType=eee
+05/21/09 11:28:00 	Device.LAN.DNSServers=xxx
+05/21/09 11:28:00 	Device.LAN.DefaultGateway=rrr
+05/21/09 11:28:00 	Device.LAN.IPAddress=yyy
+05/21/09 11:28:00 	Device.LAN.MACAddress=00:00:00:00:00:00
+05/21/09 11:28:00 	Device.LAN.SubnetMask=rrr
+05/21/09 11:28:00 	Device.Time.LocalTimeZone=kkkk
+05/21/09 11:28:00 	Device.Time.NTPServer1=hhh
+05/21/09 11:28:00 	Device.GateWay.Network.DnsEnable=aaaa
+05/21/09 11:28:00 	Device.GateWay.Network.HostName=bbbb
+05/21/09 11:28:00 	Device.GateWay.Network.PppoePassword=ccc
+05/21/09 11:28:00 	Device.GateWay.Network.PppoeUsername=ddd
+05/21/09 11:28:00 	Device.LAN.AddressingType=eee
+05/21/09 11:28:00 	Device.LAN.DNSServers=xxx
+05/21/09 11:28:00 	Device.LAN.DefaultGateway=rrr
+05/21/09 11:28:00 	Device.LAN.IPAddress=yyy
+05/21/09 11:28:00 	Device.LAN.MACAddress=00:00:00:00:00:00
+05/21/09 11:28:00 	Device.LAN.SubnetMask=rrr
+05/21/09 11:28:00 	Device.Time.LocalTimeZone=kkkk
+05/21/09 11:28:00 	Device.Time.NTPServer1=hhh
+05/21/09 11:28:00 	Device.Time.NTPServer2=ppp
+05/21/09 13:10:52 	========== GetData =========
+05/21/09 13:10:52 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent
+05/21/09 13:11:17 	12
+05/21/09 13:16:24 	========== GetData =========
+05/21/09 13:16:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent
+05/21/09 13:16:25 	0
+05/21/09 13:16:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent=1000
+05/21/09 13:18:10 	========== GetData =========
+05/21/09 13:18:10 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent
+05/21/09 13:18:11 	0
+05/21/09 13:18:11 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent=5852814368
+05/21/09 13:19:15 	========== GetData =========
+05/21/09 13:19:31 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent
+05/21/09 13:19:39 	0
+05/21/09 13:19:55 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent=5852814378
+05/21/09 13:21:16 	========== GetData =========
+05/21/09 13:21:16 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent
+05/21/09 13:21:16 	0
+05/21/09 13:21:16 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent=5852814385
+05/21/09 13:25:24 	========== GetData =========
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAnswered
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAttempted
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsConnected
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsFailed
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsLost
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsReceived
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.ReceivePacketLossRate
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime
+05/21/09 13:25:24 	0
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:24 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived=50
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived=50
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAnswered=40
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived=50
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAnswered=40
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAttempted=60
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived=50
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAnswered=40
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAttempted=60
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsConnected=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived=50
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAnswered=40
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAttempted=60
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsConnected=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsFailed=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived=50
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAnswered=40
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAttempted=60
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsConnected=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsFailed=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsLost=100
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived=50
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAnswered=40
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAttempted=60
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsConnected=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsFailed=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsLost=100
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsReceived=1500
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived=50
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAnswered=40
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAttempted=60
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsConnected=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsFailed=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsLost=100
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsReceived=1500
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent=5852814395
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived=50
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAnswered=40
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAttempted=60
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsConnected=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsFailed=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsLost=100
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsReceived=1500
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent=5852814395
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.ReceivePacketLossRate=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesReceived=20000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=15000
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.CallsDropped=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsAnswered=30
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsConnected=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsFailed=0
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.IncomingCallsReceived=50
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAnswered=40
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsAttempted=60
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsConnected=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.OutgoingCallsFailed=10
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsLost=100
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsReceived=1500
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent=5852814395
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.ReceivePacketLossRate=20
+05/21/09 13:25:25 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime=10000
+05/21/09 20:50:59 	========== GetData =========
+05/21/09 23:14:56 	========== GetMonitorData =========
+05/21/09 23:15:21 	========== GetMonitorData =========
+05/21/09 23:17:11 	========== GetMonitorData =========
+05/21/09 23:17:11 	========== GetData =========
+05/21/09 23:18:25 	========== GetMonitorData =========
+05/21/09 23:18:25 	========== GetData =========
+05/21/09 23:18:25 	aa
+05/21/09 23:18:25 	bb
+05/21/09 23:18:25 	0
+05/21/09 23:19:23 	========== GetMonitorData =========
+05/21/09 23:19:51 	========== GetData =========
+05/21/09 23:19:51 	aa
+05/21/09 23:19:51 	bb
+05/21/09 23:19:51 	0
+05/21/09 23:20:46 	========== GetMonitorData =========
+05/21/09 23:20:46 	========== GetData =========
+05/21/09 23:20:46 	aa
+05/21/09 23:20:46 	bb
+05/21/09 23:20:46 	0
+05/21/09 23:20:55 	========== GetMonitorData =========
+05/21/09 23:20:55 	========== GetData =========
+05/21/09 23:20:55 	aa
+05/21/09 23:20:55 	bb
+05/21/09 23:20:55 	0
+05/21/09 23:22:58 	========== GetMonitorData =========
+05/21/09 23:22:58 	========== GetData =========
+05/21/09 23:22:58 	aa
+05/21/09 23:22:58 	bb
+05/21/09 23:22:58 	0
+05/21/09 23:22:58 	aa=aaaa
+05/21/09 23:23:03 	========== GetMonitorData =========
+05/21/09 23:23:03 	========== GetData =========
+05/21/09 23:23:03 	aa
+05/21/09 23:23:03 	bb
+05/21/09 23:23:03 	0
+05/21/09 23:23:18 	aa=aaaa
+05/21/09 23:24:10 	========== GetMonitorData =========
+05/21/09 23:24:10 	========== GetData =========
+05/21/09 23:24:10 	aa
+05/21/09 23:24:10 	bb
+05/21/09 23:24:10 	0
+05/21/09 23:24:10 	aa=aaaa
+05/21/09 23:24:10 	bb=aaaa
+05/22/09 11:33:22 	========== GetMonitorData =========
+05/22/09 11:33:22 	========== GetData =========
+05/22/09 11:33:22 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent
+05/22/09 11:33:22 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent
+05/22/09 11:33:22 	0
+05/22/09 11:33:22 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=0
+05/22/09 11:33:22 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent=0
+05/22/09 11:33:22 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent=0
+05/22/09 11:34:45 	========== GetMonitorData =========
+05/22/09 11:34:45 	========== GetData =========
+05/22/09 11:34:45 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate
+05/22/09 11:34:45 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.ReceivePacketLossRate
+05/22/09 11:34:46 	0
+05/22/09 11:34:46 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=0
+05/22/09 11:34:46 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=0
+05/22/09 11:34:46 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.ReceivePacketLossRate=0
+05/22/09 11:35:45 	========== GetMonitorData =========
+05/22/09 11:35:45 	========== GetData =========
+05/22/09 11:35:45 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate
+05/22/09 11:35:45 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.ReceivePacketLossRate
+05/22/09 11:35:45 	0
+05/22/09 11:35:45 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=0
+05/22/09 11:35:45 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.FarEndPacketLossRate=0
+05/22/09 11:35:45 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.ReceivePacketLossRate=0
+05/22/09 18:38:45 	12
+05/26/09 10:40:56 	0
+05/26/09 11:34:13 	========== GetData =========
+05/26/09 11:34:34 	set返回码：0
+05/27/09 11:24:49 	========== GetData =========
+05/27/09 11:25:37 	set返回码：0
+06/09/09 16:00:29 	========== GetData =========
+06/09/09 16:00:29 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime,callTotalTime
+06/09/09 16:00:29 	0
+06/09/09 16:00:50 	========== GetData =========
+06/09/09 16:01:58 	========== GetData =========
+06/09/09 16:02:11 	基本参数：
+06/09/09 16:02:11 	_MachineName=192.168.0.101
+06/09/09 16:02:11 	hwID=New Rock,123456,MX100,4
+06/09/09 16:02:11 	serverIP=192.168.0.181
+06/09/09 16:02:11 	serverPort=8080
+06/09/09 16:02:11 	查询参数：
+06/09/09 16:02:11 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime,callTotalTime=198.60.22.251
+06/09/09 16:02:18 	0
+06/09/09 16:03:01 	========== GetData =========
+06/09/09 16:03:01 	基本参数：
+06/09/09 16:03:01 	_MachineName=192.168.0.101
+06/09/09 16:03:01 	hwID=New Rock,123456,MX100,4
+06/09/09 16:03:01 	serverIP=192.168.0.181
+06/09/09 16:03:01 	serverPort=8080
+06/09/09 16:03:01 	查询参数：
+06/09/09 16:03:01 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime,callTotalTime=198.60.22.251
+06/09/09 16:03:04 	0
+06/09/09 16:04:39 	========== GetData =========
+06/09/09 16:04:39 	基本参数：
+06/09/09 16:04:39 	_MachineName=192.168.0.101
+06/09/09 16:04:39 	hwID=New Rock,123456,MX100,4
+06/09/09 16:04:39 	serverIP=192.168.0.181
+06/09/09 16:04:39 	serverPort=8080
+06/09/09 16:04:39 	查询参数：
+06/09/09 16:04:39 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime,callTotalTime=198.60.22.251
+06/09/09 16:07:20 	========== GetData =========
+06/09/09 16:07:20 	基本参数：
+06/09/09 16:07:20 	_MachineName=192.168.0.101
+06/09/09 16:07:20 	hwID=New Rock,123456,MX100,4
+06/09/09 16:07:20 	serverIP=192.168.0.181
+06/09/09 16:07:20 	serverPort=8080
+06/09/09 16:07:20 	查询参数：
+06/09/09 16:07:20 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime,callTotalTime=198.60.22.251
+06/09/09 16:07:21 	0
+06/09/09 16:07:28 	========== GetData =========
+06/09/09 16:07:28 	基本参数：
+06/09/09 16:07:28 	_MachineName=192.168.0.101
+06/09/09 16:07:28 	hwID=New Rock,123456,MX100,4
+06/09/09 16:07:28 	serverIP=192.168.0.181
+06/09/09 16:07:28 	serverPort=8080
+06/09/09 16:07:28 	查询参数：
+06/09/09 16:07:28 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime,callTotalTime=198.60.22.251
+06/09/09 16:08:44 	========== GetData =========
+06/09/09 16:08:44 	基本参数：
+06/09/09 16:08:44 	_MachineName=192.168.0.101
+06/09/09 16:08:44 	hwID=New Rock,123456,MX100,4
+06/09/09 16:08:44 	serverIP=192.168.0.181
+06/09/09 16:08:44 	serverPort=8080
+06/09/09 16:08:44 	查询参数：
+06/09/09 16:08:44 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime=198.60.22.251
+06/09/09 16:08:54 	0
+06/09/09 16:09:04 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime=69293
+06/09/09 16:09:42 	========== GetData =========
+06/09/09 16:09:42 	基本参数：
+06/09/09 16:09:42 	_MachineName=192.168.0.101
+06/09/09 16:09:42 	hwID=New Rock,123456,MX100,4
+06/09/09 16:09:42 	serverIP=192.168.0.181
+06/09/09 16:09:42 	serverPort=8080
+06/09/09 16:09:42 	查询参数：
+06/09/09 16:09:42 	Device.Services.VoiceService.3.VoiceProfile.3.Isdn.3.Stats.TotalCallTime=198.60.22.251
+06/09/09 16:12:51 	========== GetData =========
+06/09/09 16:12:51 	基本参数：
+06/09/09 16:12:51 	_MachineName=192.168.0.101
+06/09/09 16:12:51 	hwID=New Rock,123456,MX100,4
+06/09/09 16:12:51 	serverIP=192.168.0.181
+06/09/09 16:12:51 	serverPort=8080
+06/09/09 16:12:51 	查询参数：
+06/09/09 16:12:51 	Device.Services.VoiceService.3.VoiceProfile.3.Isdn.3.Stats.TotalCallTime=198.60.22.251
+06/09/09 16:48:22 	========== GetData =========
+06/09/09 16:48:22 	基本参数：
+06/09/09 16:48:22 	_MachineName=192.168.0.101
+06/09/09 16:48:22 	hwID=New Rock,123456,MX100,4
+06/09/09 16:48:22 	serverIP=192.168.0.181
+06/09/09 16:48:22 	serverPort=8080
+06/09/09 16:48:22 	查询参数：
+06/09/09 16:48:22 	Device.Services.VoiceService.3.VoiceProfile.3.Isdn.3.Stats.TotalCallTime=198.60.22.251
+06/09/09 16:48:22 	0
+06/09/09 17:07:00 	========== GetData =========
+06/09/09 17:07:00 	基本参数：
+06/09/09 17:07:00 	_MachineName=192.168.0.101
+06/09/09 17:07:00 	hwID=New Rock,123456,MX100,4
+06/09/09 17:07:00 	serverIP=192.168.0.181
+06/09/09 17:07:00 	serverPort=8080
+06/09/09 17:07:00 	查询参数：
+06/09/09 17:07:00 	Device.Services.VoiceService.3.VoiceProfile.3.Isdn.3.Stats.TotalCallTime=198.60.22.251
+06/09/09 17:07:05 	0
+06/15/09 18:51:10 	========== GetData =========
+06/15/09 18:51:11 	基本参数：
+06/15/09 18:51:11 	_MachineName=192.168.0.101
+06/15/09 18:51:11 	hwID=New Rock,123456,MX100,4
+06/15/09 18:51:11 	serverIP=192.168.0.181
+06/15/09 18:51:11 	serverPort=8080
+06/15/09 18:51:11 	查询参数：
+06/15/09 18:51:11 	Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.TotalCallTime=198.60.22.251
+06/22/09 14:22:01 	========== GetData =========
+06/22/09 14:22:26 	========== GetData =========
+06/22/09 14:22:40 	基本参数：
+06/22/09 14:22:40 	_MachineName=192.168.0.101
+06/22/09 14:22:40 	hwID=New Rock,123456,MX100,4
+06/22/09 14:22:40 	serverIP=192.168.0.181
+06/22/09 14:22:40 	serverPort=8080
+06/22/09 14:22:40 	查询参数：
+06/22/09 14:22:40 	Device.Services.VoiceService.1.Capabilities.MaxLineCount =198.60.22.251
+06/22/09 14:24:15 	========== GetData =========
+06/22/09 14:24:15 	基本参数：
+06/22/09 14:24:15 	_MachineName=192.168.0.101
+06/22/09 14:24:15 	hwID=New Rock,123456,MX100,4
+06/22/09 14:24:15 	serverIP=192.168.0.181
+06/22/09 14:24:15 	serverPort=8080
+06/22/09 14:24:15 	查询参数：
+06/22/09 14:24:15 	Device.Services.VoiceService.1.Capabilities.MaxLineCount =198.60.22.251
+06/22/09 14:24:15 	0
+06/22/09 14:25:54 	========== GetData =========
+06/22/09 14:25:54 	基本参数：
+06/22/09 14:25:54 	_MachineName=192.168.0.101
+06/22/09 14:25:54 	hwID=New Rock,123456,MX100,4
+06/22/09 14:25:54 	serverIP=192.168.0.181
+06/22/09 14:25:54 	serverPort=8080
+06/22/09 14:25:54 	查询参数：
+06/22/09 14:25:54 	Device.Services.VoiceService.1.Capabilities.MaxLineCount=198.60.22.251
+06/22/09 14:25:54 	0

@@ -1,0 +1,108 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WMENU_ITEM_H_
+#define WMENU_ITEM_H_
+
+#include <WObject>
+
+namespace Wt {
+
+class WContainerWidget;
+class WMenu;
+class WWidget;
+
+/*! \brief A WMenuItem represents one item in a WMenu.
+ *
+ * The WMenuItem is rendered as a plain WText widget.
+ *
+ * To provide another look for the menu items (such as perhaps adding
+ * an icon), you can specialize this class, and reimplement the
+ * virtual methods createItemWidget() and perhaps also renderSelected(bool)
+ * if you want something more than changing style classes.
+ *
+ * \sa WMenu
+ * \sa WMenu::addItem(WMenuItem *)
+ */
+class WT_API WMenuItem : public WObject
+{
+public:
+  /*! \brief How should the item be loaded ?
+   */
+  enum LoadPolicy { LazyLoading,     //!< Lazy loading: on first use
+		    PreLoading       //!< Pre-loading: before first use
+  };
+
+  /*! \brief Create a new WMenuItem.
+   *
+   * The text specifies the item text. The contents is the widget that must
+   * be shown in the WMenu contents stack when the item is selected.
+   *
+   * The load policy specifies whether the contents widgets is transmitted
+   * only when it the item is activated for the first time (LazyLoading)
+   * or transmitted prior to first rendering.
+   */
+  WMenuItem(const WMessage& text, WWidget *contents,
+	    LoadPolicy policy);
+
+  /* !\brief Delete a WMenuItem.
+   */
+  ~WMenuItem();
+
+  /*! \brief Get the text for this item.
+   */
+  const WMessage& text() const { return text_; }
+
+public slots:
+  /*! \brief Select this item.
+   */
+  void select();
+
+protected:
+  /*! \brief Get the widget that represents the item in the WMenu.
+   *
+   * This returns the widget that was previously created
+   * using createItemWidget().
+   */
+  WInteractWidget *itemWidget();  
+
+  /*! \brief Render the item selected or unselected.
+   *
+   * The default implementation will set the styleclass to 'item' for
+   * an unselected, and 'itemselected' for a selected item.
+   *
+   * Note that this methods is called from within a stateless slot
+   * implementation, and thus should be stateless as well.
+   */
+  virtual void renderSelected(bool selected);
+
+private:
+  /*! \brief Create the widget that represents the item in the WMenu.
+   *
+   * The default implementation will create and return a WText representation.
+   */
+  virtual WInteractWidget *createItemWidget();
+
+private:
+  WWidget *contents();
+  void     loadContents();
+  void     setMenu(WMenu *menu);
+
+private:
+  WMessage          text_;
+  WInteractWidget  *itemWidget_;
+  WContainerWidget *contentsContainer_;
+  WWidget          *contents_;
+  WMenu            *menu_;
+
+  void undoSelect();
+
+  friend class WMenu;
+};
+
+}
+
+#endif // WMENU_ITEM_H_

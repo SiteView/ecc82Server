@@ -1,0 +1,51 @@
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+// This may look like C code, but it's really -*- C++ -*-
+#ifndef WBUTTONTAB_H_
+#define WBUTTONTAB_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <string>
+#include <WAbstractTab>
+
+class WTabWidget;
+class WContainerWidget;
+class WWidget;
+class WText;
+
+/*! \brief A tab window represented by a plain flat button.
+ *
+ * Implementation of WAbstractTab with a flat button.
+ *
+ * \sa WTabWidget
+ */
+class __declspec(dllexport) WButtonTab : public WAbstractTab
+{
+  //MOC: W_OBJECT WButtonTab:WAbstractTab
+  W_OBJECT;
+
+public:
+  /*! \brief Create a tab with a given label.
+   */
+  WButtonTab(const std::string label);
+
+  /*! \brief Set the label
+   */
+  virtual void setLabel(const std::string text);
+
+private:
+  WText	*tabButton_;
+
+protected:  
+  /*! \brief Create a simple WText for the button.
+   */
+  virtual WWidget *createButton();
+};
+
+#endif // WBUTTONTAB_H_

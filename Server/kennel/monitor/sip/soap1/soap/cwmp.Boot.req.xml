@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns1="urn:dslforum-org:cwmp-1-1">
+ <SOAP-ENV:Body>
+   <ns1:Boot>
+    <DeviceId>
+     <Manufacturer></Manufacturer>
+     <OUI></OUI>
+     <ProductClass></ProductClass>
+     <SerialNumber></SerialNumber>
+    </DeviceId>
+    <Ip></Ip>
+    <MaxEnvelopes>0</MaxEnvelopes>
+    <CurrentTime></CurrentTime>
+    <RetryCount>0</RetryCount>
+   </ns1:Boot>
+
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

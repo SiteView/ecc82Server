@@ -1,0 +1,1441 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (8813725b).
+//
+// wbemdisp.tli
+//
+// Wrapper implementations for Win32 type library WbemScripting.SWbemLocator
+// compiler-generated file created 08/24/12 at 14:45:29 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface ISWbemNamedValue wrapper method implementations
+//
+
+inline _variant_t ISWbemNamedValue::GetValue ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Value(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void ISWbemNamedValue::PutValue ( VARIANT * varValue ) {
+    HRESULT _hr = put_Value(varValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISWbemNamedValue::GetName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+//
+// interface ISWbemNamedValueSet wrapper method implementations
+//
+
+inline IUnknownPtr ISWbemNamedValueSet::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline ISWbemNamedValuePtr ISWbemNamedValueSet::Item ( _bstr_t strName, long iFlags ) {
+    struct ISWbemNamedValue * _result = 0;
+    HRESULT _hr = raw_Item(strName, iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemNamedValuePtr(_result, false);
+}
+
+inline long ISWbemNamedValueSet::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline ISWbemNamedValuePtr ISWbemNamedValueSet::Add ( _bstr_t strName, VARIANT * varValue, long iFlags ) {
+    struct ISWbemNamedValue * _result = 0;
+    HRESULT _hr = raw_Add(strName, varValue, iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemNamedValuePtr(_result, false);
+}
+
+inline HRESULT ISWbemNamedValueSet::Remove ( _bstr_t strName, long iFlags ) {
+    HRESULT _hr = raw_Remove(strName, iFlags);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemNamedValueSetPtr ISWbemNamedValueSet::Clone ( ) {
+    struct ISWbemNamedValueSet * _result = 0;
+    HRESULT _hr = raw_Clone(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemNamedValueSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemNamedValueSet::DeleteAll ( ) {
+    HRESULT _hr = raw_DeleteAll();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ISWbemPrivilege wrapper method implementations
+//
+
+inline VARIANT_BOOL ISWbemPrivilege::GetIsEnabled ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemPrivilege::PutIsEnabled ( VARIANT_BOOL bIsEnabled ) {
+    HRESULT _hr = put_IsEnabled(bIsEnabled);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISWbemPrivilege::GetName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t ISWbemPrivilege::GetDisplayName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_DisplayName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline enum WbemPrivilegeEnum ISWbemPrivilege::GetIdentifier ( ) {
+    enum WbemPrivilegeEnum _result;
+    HRESULT _hr = get_Identifier(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface ISWbemPrivilegeSet wrapper method implementations
+//
+
+inline IUnknownPtr ISWbemPrivilegeSet::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline ISWbemPrivilegePtr ISWbemPrivilegeSet::Item ( enum WbemPrivilegeEnum iPrivilege ) {
+    struct ISWbemPrivilege * _result = 0;
+    HRESULT _hr = raw_Item(iPrivilege, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemPrivilegePtr(_result, false);
+}
+
+inline long ISWbemPrivilegeSet::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline ISWbemPrivilegePtr ISWbemPrivilegeSet::Add ( enum WbemPrivilegeEnum iPrivilege, VARIANT_BOOL bIsEnabled ) {
+    struct ISWbemPrivilege * _result = 0;
+    HRESULT _hr = raw_Add(iPrivilege, bIsEnabled, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemPrivilegePtr(_result, false);
+}
+
+inline HRESULT ISWbemPrivilegeSet::Remove ( enum WbemPrivilegeEnum iPrivilege ) {
+    HRESULT _hr = raw_Remove(iPrivilege);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ISWbemPrivilegeSet::DeleteAll ( ) {
+    HRESULT _hr = raw_DeleteAll();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemPrivilegePtr ISWbemPrivilegeSet::AddAsString ( _bstr_t strPrivilege, VARIANT_BOOL bIsEnabled ) {
+    struct ISWbemPrivilege * _result = 0;
+    HRESULT _hr = raw_AddAsString(strPrivilege, bIsEnabled, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemPrivilegePtr(_result, false);
+}
+
+//
+// interface ISWbemSecurity wrapper method implementations
+//
+
+inline enum WbemImpersonationLevelEnum ISWbemSecurity::GetImpersonationLevel ( ) {
+    enum WbemImpersonationLevelEnum _result;
+    HRESULT _hr = get_ImpersonationLevel(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemSecurity::PutImpersonationLevel ( enum WbemImpersonationLevelEnum iImpersonationLevel ) {
+    HRESULT _hr = put_ImpersonationLevel(iImpersonationLevel);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline enum WbemAuthenticationLevelEnum ISWbemSecurity::GetAuthenticationLevel ( ) {
+    enum WbemAuthenticationLevelEnum _result;
+    HRESULT _hr = get_AuthenticationLevel(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemSecurity::PutAuthenticationLevel ( enum WbemAuthenticationLevelEnum iAuthenticationLevel ) {
+    HRESULT _hr = put_AuthenticationLevel(iAuthenticationLevel);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline ISWbemPrivilegeSetPtr ISWbemSecurity::GetPrivileges ( ) {
+    struct ISWbemPrivilegeSet * _result = 0;
+    HRESULT _hr = get_Privileges(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemPrivilegeSetPtr(_result, false);
+}
+
+//
+// interface ISWbemObjectPath wrapper method implementations
+//
+
+inline _bstr_t ISWbemObjectPath::GetPath ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Path(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISWbemObjectPath::PutPath ( _bstr_t strPath ) {
+    HRESULT _hr = put_Path(strPath);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISWbemObjectPath::GetRelPath ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_RelPath(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISWbemObjectPath::PutRelPath ( _bstr_t strRelPath ) {
+    HRESULT _hr = put_RelPath(strRelPath);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISWbemObjectPath::GetServer ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Server(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISWbemObjectPath::PutServer ( _bstr_t strServer ) {
+    HRESULT _hr = put_Server(strServer);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISWbemObjectPath::GetNamespace ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Namespace(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISWbemObjectPath::PutNamespace ( _bstr_t strNamespace ) {
+    HRESULT _hr = put_Namespace(strNamespace);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISWbemObjectPath::GetParentNamespace ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ParentNamespace(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t ISWbemObjectPath::GetDisplayName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_DisplayName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISWbemObjectPath::PutDisplayName ( _bstr_t strDisplayName ) {
+    HRESULT _hr = put_DisplayName(strDisplayName);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISWbemObjectPath::GetClass ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Class(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISWbemObjectPath::PutClass ( _bstr_t strClass ) {
+    HRESULT _hr = put_Class(strClass);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemObjectPath::GetIsClass ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsClass(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT ISWbemObjectPath::SetAsClass ( ) {
+    HRESULT _hr = raw_SetAsClass();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL ISWbemObjectPath::GetIsSingleton ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsSingleton(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT ISWbemObjectPath::SetAsSingleton ( ) {
+    HRESULT _hr = raw_SetAsSingleton();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemNamedValueSetPtr ISWbemObjectPath::GetKeys ( ) {
+    struct ISWbemNamedValueSet * _result = 0;
+    HRESULT _hr = get_Keys(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemNamedValueSetPtr(_result, false);
+}
+
+inline ISWbemSecurityPtr ISWbemObjectPath::GetSecurity_ ( ) {
+    struct ISWbemSecurity * _result = 0;
+    HRESULT _hr = get_Security_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemSecurityPtr(_result, false);
+}
+
+inline _bstr_t ISWbemObjectPath::GetLocale ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Locale(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISWbemObjectPath::PutLocale ( _bstr_t strLocale ) {
+    HRESULT _hr = put_Locale(strLocale);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISWbemObjectPath::GetAuthority ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Authority(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISWbemObjectPath::PutAuthority ( _bstr_t strAuthority ) {
+    HRESULT _hr = put_Authority(strAuthority);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface ISWbemQualifier wrapper method implementations
+//
+
+inline _variant_t ISWbemQualifier::GetValue ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Value(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void ISWbemQualifier::PutValue ( VARIANT * varValue ) {
+    HRESULT _hr = put_Value(varValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISWbemQualifier::GetName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL ISWbemQualifier::GetIsLocal ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsLocal(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ISWbemQualifier::GetPropagatesToSubclass ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_PropagatesToSubclass(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemQualifier::PutPropagatesToSubclass ( VARIANT_BOOL bPropagatesToSubclass ) {
+    HRESULT _hr = put_PropagatesToSubclass(bPropagatesToSubclass);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemQualifier::GetPropagatesToInstance ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_PropagatesToInstance(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemQualifier::PutPropagatesToInstance ( VARIANT_BOOL bPropagatesToInstance ) {
+    HRESULT _hr = put_PropagatesToInstance(bPropagatesToInstance);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemQualifier::GetIsOverridable ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsOverridable(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemQualifier::PutIsOverridable ( VARIANT_BOOL bIsOverridable ) {
+    HRESULT _hr = put_IsOverridable(bIsOverridable);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemQualifier::GetIsAmended ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsAmended(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface ISWbemQualifierSet wrapper method implementations
+//
+
+inline IUnknownPtr ISWbemQualifierSet::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline ISWbemQualifierPtr ISWbemQualifierSet::Item ( _bstr_t Name, long iFlags ) {
+    struct ISWbemQualifier * _result = 0;
+    HRESULT _hr = raw_Item(Name, iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemQualifierPtr(_result, false);
+}
+
+inline long ISWbemQualifierSet::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline ISWbemQualifierPtr ISWbemQualifierSet::Add ( _bstr_t strName, VARIANT * varVal, VARIANT_BOOL bPropagatesToSubclass, VARIANT_BOOL bPropagatesToInstance, VARIANT_BOOL bIsOverridable, long iFlags ) {
+    struct ISWbemQualifier * _result = 0;
+    HRESULT _hr = raw_Add(strName, varVal, bPropagatesToSubclass, bPropagatesToInstance, bIsOverridable, iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemQualifierPtr(_result, false);
+}
+
+inline HRESULT ISWbemQualifierSet::Remove ( _bstr_t strName, long iFlags ) {
+    HRESULT _hr = raw_Remove(strName, iFlags);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ISWbemProperty wrapper method implementations
+//
+
+inline _variant_t ISWbemProperty::GetValue ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Value(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void ISWbemProperty::PutValue ( VARIANT * varValue ) {
+    HRESULT _hr = put_Value(varValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISWbemProperty::GetName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL ISWbemProperty::GetIsLocal ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsLocal(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t ISWbemProperty::GetOrigin ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Origin(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline enum WbemCimtypeEnum ISWbemProperty::GetCIMType ( ) {
+    enum WbemCimtypeEnum _result;
+    HRESULT _hr = get_CIMType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline ISWbemQualifierSetPtr ISWbemProperty::GetQualifiers_ ( ) {
+    struct ISWbemQualifierSet * _result = 0;
+    HRESULT _hr = get_Qualifiers_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemQualifierSetPtr(_result, false);
+}
+
+inline VARIANT_BOOL ISWbemProperty::GetIsArray ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsArray(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface ISWbemPropertySet wrapper method implementations
+//
+
+inline IUnknownPtr ISWbemPropertySet::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline ISWbemPropertyPtr ISWbemPropertySet::Item ( _bstr_t strName, long iFlags ) {
+    struct ISWbemProperty * _result = 0;
+    HRESULT _hr = raw_Item(strName, iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemPropertyPtr(_result, false);
+}
+
+inline long ISWbemPropertySet::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline ISWbemPropertyPtr ISWbemPropertySet::Add ( _bstr_t strName, enum WbemCimtypeEnum iCimType, VARIANT_BOOL bIsArray, long iFlags ) {
+    struct ISWbemProperty * _result = 0;
+    HRESULT _hr = raw_Add(strName, iCimType, bIsArray, iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemPropertyPtr(_result, false);
+}
+
+inline HRESULT ISWbemPropertySet::Remove ( _bstr_t strName, long iFlags ) {
+    HRESULT _hr = raw_Remove(strName, iFlags);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// dispinterface ISWbemSinkEvents wrapper method implementations
+//
+
+inline HRESULT ISWbemSinkEvents::OnObjectReady ( struct ISWbemObject * objWbemObject, struct ISWbemNamedValueSet * objWbemAsyncContext ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0009\x0009", objWbemObject, objWbemAsyncContext);
+}
+
+inline HRESULT ISWbemSinkEvents::OnCompleted ( enum WbemErrorEnum iHResult, struct ISWbemObject * objWbemErrorObject, struct ISWbemNamedValueSet * objWbemAsyncContext ) {
+    return _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003\x0009\x0009", iHResult, objWbemErrorObject, objWbemAsyncContext);
+}
+
+inline HRESULT ISWbemSinkEvents::OnProgress ( long iUpperBound, long iCurrent, _bstr_t strMessage, struct ISWbemNamedValueSet * objWbemAsyncContext ) {
+    return _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003\x0003\x0008\x0009", iUpperBound, iCurrent, (BSTR)strMessage, objWbemAsyncContext);
+}
+
+inline HRESULT ISWbemSinkEvents::OnObjectPut ( struct ISWbemObjectPath * objWbemObjectPath, struct ISWbemNamedValueSet * objWbemAsyncContext ) {
+    return _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0009\x0009", objWbemObjectPath, objWbemAsyncContext);
+}
+
+//
+// interface ISWbemSink wrapper method implementations
+//
+
+inline HRESULT ISWbemSink::Cancel ( ) {
+    HRESULT _hr = raw_Cancel();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ISWbemDateTime wrapper method implementations
+//
+
+inline _bstr_t ISWbemDateTime::GetValue ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Value(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISWbemDateTime::PutValue ( _bstr_t strValue ) {
+    HRESULT _hr = put_Value(strValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISWbemDateTime::GetYear ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Year(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutYear ( long iYear ) {
+    HRESULT _hr = put_Year(iYear);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemDateTime::GetYearSpecified ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_YearSpecified(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutYearSpecified ( VARIANT_BOOL bYearSpecified ) {
+    HRESULT _hr = put_YearSpecified(bYearSpecified);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISWbemDateTime::GetMonth ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Month(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutMonth ( long iMonth ) {
+    HRESULT _hr = put_Month(iMonth);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemDateTime::GetMonthSpecified ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_MonthSpecified(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutMonthSpecified ( VARIANT_BOOL bMonthSpecified ) {
+    HRESULT _hr = put_MonthSpecified(bMonthSpecified);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISWbemDateTime::GetDay ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Day(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutDay ( long iDay ) {
+    HRESULT _hr = put_Day(iDay);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemDateTime::GetDaySpecified ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_DaySpecified(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutDaySpecified ( VARIANT_BOOL bDaySpecified ) {
+    HRESULT _hr = put_DaySpecified(bDaySpecified);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISWbemDateTime::GetHours ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Hours(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutHours ( long iHours ) {
+    HRESULT _hr = put_Hours(iHours);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemDateTime::GetHoursSpecified ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_HoursSpecified(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutHoursSpecified ( VARIANT_BOOL bHoursSpecified ) {
+    HRESULT _hr = put_HoursSpecified(bHoursSpecified);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISWbemDateTime::GetMinutes ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Minutes(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutMinutes ( long iMinutes ) {
+    HRESULT _hr = put_Minutes(iMinutes);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemDateTime::GetMinutesSpecified ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_MinutesSpecified(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutMinutesSpecified ( VARIANT_BOOL bMinutesSpecified ) {
+    HRESULT _hr = put_MinutesSpecified(bMinutesSpecified);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISWbemDateTime::GetSeconds ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Seconds(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutSeconds ( long iSeconds ) {
+    HRESULT _hr = put_Seconds(iSeconds);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemDateTime::GetSecondsSpecified ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_SecondsSpecified(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutSecondsSpecified ( VARIANT_BOOL bSecondsSpecified ) {
+    HRESULT _hr = put_SecondsSpecified(bSecondsSpecified);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISWbemDateTime::GetMicroseconds ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Microseconds(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutMicroseconds ( long iMicroseconds ) {
+    HRESULT _hr = put_Microseconds(iMicroseconds);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemDateTime::GetMicrosecondsSpecified ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_MicrosecondsSpecified(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutMicrosecondsSpecified ( VARIANT_BOOL bMicrosecondsSpecified ) {
+    HRESULT _hr = put_MicrosecondsSpecified(bMicrosecondsSpecified);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ISWbemDateTime::GetUTC ( ) {
+    long _result = 0;
+    HRESULT _hr = get_UTC(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutUTC ( long iUTC ) {
+    HRESULT _hr = put_UTC(iUTC);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemDateTime::GetUTCSpecified ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_UTCSpecified(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutUTCSpecified ( VARIANT_BOOL bUTCSpecified ) {
+    HRESULT _hr = put_UTCSpecified(bUTCSpecified);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL ISWbemDateTime::GetIsInterval ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsInterval(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemDateTime::PutIsInterval ( VARIANT_BOOL bIsInterval ) {
+    HRESULT _hr = put_IsInterval(bIsInterval);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline DATE ISWbemDateTime::GetVarDate ( VARIANT_BOOL bIsLocal ) {
+    DATE _result = 0;
+    HRESULT _hr = raw_GetVarDate(bIsLocal, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT ISWbemDateTime::SetVarDate ( DATE dVarDate, VARIANT_BOOL bIsLocal ) {
+    HRESULT _hr = raw_SetVarDate(dVarDate, bIsLocal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t ISWbemDateTime::GetFileTime ( VARIANT_BOOL bIsLocal ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetFileTime(bIsLocal, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT ISWbemDateTime::SetFileTime ( _bstr_t strFileTime, VARIANT_BOOL bIsLocal ) {
+    HRESULT _hr = raw_SetFileTime(strFileTime, bIsLocal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ISWbemServices wrapper method implementations
+//
+
+inline ISWbemObjectPtr ISWbemServices::Get ( _bstr_t strObjectPath, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = raw_Get(strObjectPath, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+inline HRESULT ISWbemServices::GetAsync ( IDispatch * objWbemSink, _bstr_t strObjectPath, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_GetAsync(objWbemSink, strObjectPath, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ISWbemServices::Delete ( _bstr_t strObjectPath, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    HRESULT _hr = raw_Delete(strObjectPath, iFlags, objWbemNamedValueSet);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ISWbemServices::DeleteAsync ( IDispatch * objWbemSink, _bstr_t strObjectPath, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_DeleteAsync(objWbemSink, strObjectPath, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectSetPtr ISWbemServices::InstancesOf ( _bstr_t strClass, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectSet * _result = 0;
+    HRESULT _hr = raw_InstancesOf(strClass, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemServices::InstancesOfAsync ( IDispatch * objWbemSink, _bstr_t strClass, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_InstancesOfAsync(objWbemSink, strClass, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectSetPtr ISWbemServices::SubclassesOf ( _bstr_t strSuperclass, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectSet * _result = 0;
+    HRESULT _hr = raw_SubclassesOf(strSuperclass, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemServices::SubclassesOfAsync ( IDispatch * objWbemSink, _bstr_t strSuperclass, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_SubclassesOfAsync(objWbemSink, strSuperclass, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectSetPtr ISWbemServices::ExecQuery ( _bstr_t strQuery, _bstr_t strQueryLanguage, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectSet * _result = 0;
+    HRESULT _hr = raw_ExecQuery(strQuery, strQueryLanguage, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemServices::ExecQueryAsync ( IDispatch * objWbemSink, _bstr_t strQuery, _bstr_t strQueryLanguage, long lFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_ExecQueryAsync(objWbemSink, strQuery, strQueryLanguage, lFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectSetPtr ISWbemServices::AssociatorsOf ( _bstr_t strObjectPath, _bstr_t strAssocClass, _bstr_t strResultClass, _bstr_t strResultRole, _bstr_t strRole, VARIANT_BOOL bClassesOnly, VARIANT_BOOL bSchemaOnly, _bstr_t strRequiredAssocQualifier, _bstr_t strRequiredQualifier, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectSet * _result = 0;
+    HRESULT _hr = raw_AssociatorsOf(strObjectPath, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemServices::AssociatorsOfAsync ( IDispatch * objWbemSink, _bstr_t strObjectPath, _bstr_t strAssocClass, _bstr_t strResultClass, _bstr_t strResultRole, _bstr_t strRole, VARIANT_BOOL bClassesOnly, VARIANT_BOOL bSchemaOnly, _bstr_t strRequiredAssocQualifier, _bstr_t strRequiredQualifier, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_AssociatorsOfAsync(objWbemSink, strObjectPath, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectSetPtr ISWbemServices::ReferencesTo ( _bstr_t strObjectPath, _bstr_t strResultClass, _bstr_t strRole, VARIANT_BOOL bClassesOnly, VARIANT_BOOL bSchemaOnly, _bstr_t strRequiredQualifier, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectSet * _result = 0;
+    HRESULT _hr = raw_ReferencesTo(strObjectPath, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemServices::ReferencesToAsync ( IDispatch * objWbemSink, _bstr_t strObjectPath, _bstr_t strResultClass, _bstr_t strRole, VARIANT_BOOL bClassesOnly, VARIANT_BOOL bSchemaOnly, _bstr_t strRequiredQualifier, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_ReferencesToAsync(objWbemSink, strObjectPath, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemEventSourcePtr ISWbemServices::ExecNotificationQuery ( _bstr_t strQuery, _bstr_t strQueryLanguage, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemEventSource * _result = 0;
+    HRESULT _hr = raw_ExecNotificationQuery(strQuery, strQueryLanguage, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemEventSourcePtr(_result, false);
+}
+
+inline HRESULT ISWbemServices::ExecNotificationQueryAsync ( IDispatch * objWbemSink, _bstr_t strQuery, _bstr_t strQueryLanguage, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_ExecNotificationQueryAsync(objWbemSink, strQuery, strQueryLanguage, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectPtr ISWbemServices::ExecMethod ( _bstr_t strObjectPath, _bstr_t strMethodName, IDispatch * objWbemInParameters, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = raw_ExecMethod(strObjectPath, strMethodName, objWbemInParameters, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+inline HRESULT ISWbemServices::ExecMethodAsync ( IDispatch * objWbemSink, _bstr_t strObjectPath, _bstr_t strMethodName, IDispatch * objWbemInParameters, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_ExecMethodAsync(objWbemSink, strObjectPath, strMethodName, objWbemInParameters, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemSecurityPtr ISWbemServices::GetSecurity_ ( ) {
+    struct ISWbemSecurity * _result = 0;
+    HRESULT _hr = get_Security_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemSecurityPtr(_result, false);
+}
+
+//
+// interface ISWbemLocator wrapper method implementations
+//
+
+inline ISWbemServicesPtr ISWbemLocator::ConnectServer ( _bstr_t strServer, _bstr_t strNamespace, _bstr_t strUser, _bstr_t strPassword, _bstr_t strLocale, _bstr_t strAuthority, long iSecurityFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemServices * _result = 0;
+    HRESULT _hr = raw_ConnectServer(strServer, strNamespace, strUser, strPassword, strLocale, strAuthority, iSecurityFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemServicesPtr(_result, false);
+}
+
+inline ISWbemSecurityPtr ISWbemLocator::GetSecurity_ ( ) {
+    struct ISWbemSecurity * _result = 0;
+    HRESULT _hr = get_Security_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemSecurityPtr(_result, false);
+}
+
+//
+// interface ISWbemObject wrapper method implementations
+//
+
+inline ISWbemObjectPathPtr ISWbemObject::Put_ ( long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectPath * _result = 0;
+    HRESULT _hr = raw_Put_(iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPathPtr(_result, false);
+}
+
+inline HRESULT ISWbemObject::PutAsync_ ( IDispatch * objWbemSink, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_PutAsync_(objWbemSink, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ISWbemObject::Delete_ ( long iFlags, IDispatch * objWbemNamedValueSet ) {
+    HRESULT _hr = raw_Delete_(iFlags, objWbemNamedValueSet);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ISWbemObject::DeleteAsync_ ( IDispatch * objWbemSink, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_DeleteAsync_(objWbemSink, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectSetPtr ISWbemObject::Instances_ ( long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectSet * _result = 0;
+    HRESULT _hr = raw_Instances_(iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemObject::InstancesAsync_ ( IDispatch * objWbemSink, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_InstancesAsync_(objWbemSink, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectSetPtr ISWbemObject::Subclasses_ ( long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectSet * _result = 0;
+    HRESULT _hr = raw_Subclasses_(iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemObject::SubclassesAsync_ ( IDispatch * objWbemSink, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_SubclassesAsync_(objWbemSink, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectSetPtr ISWbemObject::Associators_ ( _bstr_t strAssocClass, _bstr_t strResultClass, _bstr_t strResultRole, _bstr_t strRole, VARIANT_BOOL bClassesOnly, VARIANT_BOOL bSchemaOnly, _bstr_t strRequiredAssocQualifier, _bstr_t strRequiredQualifier, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectSet * _result = 0;
+    HRESULT _hr = raw_Associators_(strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemObject::AssociatorsAsync_ ( IDispatch * objWbemSink, _bstr_t strAssocClass, _bstr_t strResultClass, _bstr_t strResultRole, _bstr_t strRole, VARIANT_BOOL bClassesOnly, VARIANT_BOOL bSchemaOnly, _bstr_t strRequiredAssocQualifier, _bstr_t strRequiredQualifier, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_AssociatorsAsync_(objWbemSink, strAssocClass, strResultClass, strResultRole, strRole, bClassesOnly, bSchemaOnly, strRequiredAssocQualifier, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectSetPtr ISWbemObject::References_ ( _bstr_t strResultClass, _bstr_t strRole, VARIANT_BOOL bClassesOnly, VARIANT_BOOL bSchemaOnly, _bstr_t strRequiredQualifier, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectSet * _result = 0;
+    HRESULT _hr = raw_References_(strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemObject::ReferencesAsync_ ( IDispatch * objWbemSink, _bstr_t strResultClass, _bstr_t strRole, VARIANT_BOOL bClassesOnly, VARIANT_BOOL bSchemaOnly, _bstr_t strRequiredQualifier, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_ReferencesAsync_(objWbemSink, strResultClass, strRole, bClassesOnly, bSchemaOnly, strRequiredQualifier, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectPtr ISWbemObject::ExecMethod_ ( _bstr_t strMethodName, IDispatch * objWbemInParameters, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = raw_ExecMethod_(strMethodName, objWbemInParameters, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+inline HRESULT ISWbemObject::ExecMethodAsync_ ( IDispatch * objWbemSink, _bstr_t strMethodName, IDispatch * objWbemInParameters, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_ExecMethodAsync_(objWbemSink, strMethodName, objWbemInParameters, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemObjectPtr ISWbemObject::Clone_ ( ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = raw_Clone_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+inline _bstr_t ISWbemObject::GetObjectText_ ( long iFlags ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetObjectText_(iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline ISWbemObjectPtr ISWbemObject::SpawnDerivedClass_ ( long iFlags ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = raw_SpawnDerivedClass_(iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+inline ISWbemObjectPtr ISWbemObject::SpawnInstance_ ( long iFlags ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = raw_SpawnInstance_(iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+inline VARIANT_BOOL ISWbemObject::CompareTo_ ( IDispatch * objWbemObject, long iFlags ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_CompareTo_(objWbemObject, iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline ISWbemQualifierSetPtr ISWbemObject::GetQualifiers_ ( ) {
+    struct ISWbemQualifierSet * _result = 0;
+    HRESULT _hr = get_Qualifiers_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemQualifierSetPtr(_result, false);
+}
+
+inline ISWbemPropertySetPtr ISWbemObject::GetProperties_ ( ) {
+    struct ISWbemPropertySet * _result = 0;
+    HRESULT _hr = get_Properties_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemPropertySetPtr(_result, false);
+}
+
+inline ISWbemMethodSetPtr ISWbemObject::GetMethods_ ( ) {
+    struct ISWbemMethodSet * _result = 0;
+    HRESULT _hr = get_Methods_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemMethodSetPtr(_result, false);
+}
+
+inline _variant_t ISWbemObject::GetDerivation_ ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Derivation_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline ISWbemObjectPathPtr ISWbemObject::GetPath_ ( ) {
+    struct ISWbemObjectPath * _result = 0;
+    HRESULT _hr = get_Path_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPathPtr(_result, false);
+}
+
+inline ISWbemSecurityPtr ISWbemObject::GetSecurity_ ( ) {
+    struct ISWbemSecurity * _result = 0;
+    HRESULT _hr = get_Security_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemSecurityPtr(_result, false);
+}
+
+//
+// interface ISWbemObjectSet wrapper method implementations
+//
+
+inline IUnknownPtr ISWbemObjectSet::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline ISWbemObjectPtr ISWbemObjectSet::Item ( _bstr_t strObjectPath, long iFlags ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = raw_Item(strObjectPath, iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+inline long ISWbemObjectSet::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline ISWbemSecurityPtr ISWbemObjectSet::GetSecurity_ ( ) {
+    struct ISWbemSecurity * _result = 0;
+    HRESULT _hr = get_Security_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemSecurityPtr(_result, false);
+}
+
+inline ISWbemObjectPtr ISWbemObjectSet::ItemIndex ( long lIndex ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = raw_ItemIndex(lIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+//
+// interface ISWbemMethod wrapper method implementations
+//
+
+inline _bstr_t ISWbemMethod::GetName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t ISWbemMethod::GetOrigin ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Origin(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline ISWbemObjectPtr ISWbemMethod::GetInParameters ( ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = get_InParameters(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+inline ISWbemObjectPtr ISWbemMethod::GetOutParameters ( ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = get_OutParameters(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+inline ISWbemQualifierSetPtr ISWbemMethod::GetQualifiers_ ( ) {
+    struct ISWbemQualifierSet * _result = 0;
+    HRESULT _hr = get_Qualifiers_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemQualifierSetPtr(_result, false);
+}
+
+//
+// interface ISWbemMethodSet wrapper method implementations
+//
+
+inline IUnknownPtr ISWbemMethodSet::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline ISWbemMethodPtr ISWbemMethodSet::Item ( _bstr_t strName, long iFlags ) {
+    struct ISWbemMethod * _result = 0;
+    HRESULT _hr = raw_Item(strName, iFlags, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemMethodPtr(_result, false);
+}
+
+inline long ISWbemMethodSet::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface ISWbemEventSource wrapper method implementations
+//
+
+inline ISWbemObjectPtr ISWbemEventSource::NextEvent ( long iTimeoutMs ) {
+    struct ISWbemObject * _result = 0;
+    HRESULT _hr = raw_NextEvent(iTimeoutMs, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPtr(_result, false);
+}
+
+inline ISWbemSecurityPtr ISWbemEventSource::GetSecurity_ ( ) {
+    struct ISWbemSecurity * _result = 0;
+    HRESULT _hr = get_Security_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemSecurityPtr(_result, false);
+}
+
+//
+// interface ISWbemObjectEx wrapper method implementations
+//
+
+inline HRESULT ISWbemObjectEx::Refresh_ ( long iFlags, IDispatch * objWbemNamedValueSet ) {
+    HRESULT _hr = raw_Refresh_(iFlags, objWbemNamedValueSet);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline ISWbemPropertySetPtr ISWbemObjectEx::GetSystemProperties_ ( ) {
+    struct ISWbemPropertySet * _result = 0;
+    HRESULT _hr = get_SystemProperties_(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemPropertySetPtr(_result, false);
+}
+
+inline _bstr_t ISWbemObjectEx::GetText_ ( enum WbemObjectTextFormatEnum iObjectTextFormat, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetText_(iObjectTextFormat, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT ISWbemObjectEx::SetFromText_ ( _bstr_t bsText, enum WbemObjectTextFormatEnum iObjectTextFormat, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    HRESULT _hr = raw_SetFromText_(bsText, iObjectTextFormat, iFlags, objWbemNamedValueSet);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ISWbemServicesEx wrapper method implementations
+//
+
+inline ISWbemObjectPathPtr ISWbemServicesEx::Put ( struct ISWbemObjectEx * objWbemObject, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemObjectPath * _result = 0;
+    HRESULT _hr = raw_Put(objWbemObject, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectPathPtr(_result, false);
+}
+
+inline HRESULT ISWbemServicesEx::PutAsync ( struct ISWbemSink * objWbemSink, struct ISWbemObjectEx * objWbemObject, long iFlags, IDispatch * objWbemNamedValueSet, IDispatch * objWbemAsyncContext ) {
+    HRESULT _hr = raw_PutAsync(objWbemSink, objWbemObject, iFlags, objWbemNamedValueSet, objWbemAsyncContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ISWbemRefresher wrapper method implementations
+//
+
+inline IUnknownPtr ISWbemRefresher::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline ISWbemRefreshableItemPtr ISWbemRefresher::Item ( long iIndex ) {
+    struct ISWbemRefreshableItem * _result = 0;
+    HRESULT _hr = raw_Item(iIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemRefreshableItemPtr(_result, false);
+}
+
+inline long ISWbemRefresher::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline ISWbemRefreshableItemPtr ISWbemRefresher::Add ( struct ISWbemServicesEx * objWbemServices, _bstr_t bsInstancePath, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemRefreshableItem * _result = 0;
+    HRESULT _hr = raw_Add(objWbemServices, bsInstancePath, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemRefreshableItemPtr(_result, false);
+}
+
+inline ISWbemRefreshableItemPtr ISWbemRefresher::AddEnum ( struct ISWbemServicesEx * objWbemServices, _bstr_t bsClassName, long iFlags, IDispatch * objWbemNamedValueSet ) {
+    struct ISWbemRefreshableItem * _result = 0;
+    HRESULT _hr = raw_AddEnum(objWbemServices, bsClassName, iFlags, objWbemNamedValueSet, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemRefreshableItemPtr(_result, false);
+}
+
+inline HRESULT ISWbemRefresher::Remove ( long iIndex, long iFlags ) {
+    HRESULT _hr = raw_Remove(iIndex, iFlags);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ISWbemRefresher::Refresh ( long iFlags ) {
+    HRESULT _hr = raw_Refresh(iFlags);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL ISWbemRefresher::GetAutoReconnect ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_AutoReconnect(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISWbemRefresher::PutAutoReconnect ( VARIANT_BOOL bCount ) {
+    HRESULT _hr = put_AutoReconnect(bCount);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline HRESULT ISWbemRefresher::DeleteAll ( ) {
+    HRESULT _hr = raw_DeleteAll();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ISWbemRefreshableItem wrapper method implementations
+//
+
+inline long ISWbemRefreshableItem::GetIndex ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Index(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline ISWbemRefresherPtr ISWbemRefreshableItem::GetRefresher ( ) {
+    struct ISWbemRefresher * _result = 0;
+    HRESULT _hr = get_Refresher(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemRefresherPtr(_result, false);
+}
+
+inline VARIANT_BOOL ISWbemRefreshableItem::GetIsSet ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsSet(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline ISWbemObjectExPtr ISWbemRefreshableItem::GetObject ( ) {
+    struct ISWbemObjectEx * _result = 0;
+    HRESULT _hr = get_Object(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectExPtr(_result, false);
+}
+
+inline ISWbemObjectSetPtr ISWbemRefreshableItem::GetObjectSet ( ) {
+    struct ISWbemObjectSet * _result = 0;
+    HRESULT _hr = get_ObjectSet(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISWbemObjectSetPtr(_result, false);
+}
+
+inline HRESULT ISWbemRefreshableItem::Remove ( long iFlags ) {
+    HRESULT _hr = raw_Remove(iFlags);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}

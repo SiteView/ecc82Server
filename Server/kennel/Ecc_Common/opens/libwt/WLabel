@@ -1,0 +1,95 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WLABEL_H_
+#define WLABEL_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WInteractWidget>
+
+class WFormWidget;
+class WImage;
+class WText;
+
+/*! \brief A WWidget that acts as a label for a WFormWidget.
+ *
+ * A WLabel may contain an image and/or text that acts like a proxy
+ * for giving focus to a WFormWidget. When both an image and text
+ * are specified, the image is put at the left of the text.
+ *
+ * A WLabel is by default an inline widget.
+ */
+class __declspec(dllexport) WLabel : public WInteractWidget
+{
+  //MOC: W_OBJECT WLabel:WInteractWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Construct a WLabel with empty text and optional parent.
+   */
+  WLabel(WContainerWidget *parent = 0);
+
+  /*! \brief Construct a WLabel with given text.
+   */
+  WLabel(const std::string text, WContainerWidget *parent = 0);
+
+  /*! \brief Construct a WLabel with given message.
+   */
+  WLabel(const WMessage& message, WContainerWidget *parent = 0);
+
+  /*! \brief Construct a WLabel with an image.
+   */
+  WLabel(WImage *image, WContainerWidget *parent = 0);
+
+  ~WLabel();
+
+  /*! \brief Return the buddy of this label.
+   *
+   * \sa setBuddy(WFormWidget *)
+   */
+  WFormWidget *buddy() const { return buddy_; }
+
+  /*! \brief Set the buddy of this label.
+   *
+   * Sets the buddy FormWidget for which this label acts as a proxy.
+   *
+   * \sa WFormWidget::label()
+   */
+  void setBuddy(WFormWidget *buddy);
+
+  /*! \brief Set the label text.
+   */
+  void setText(const std::string text);
+
+  /*! \brief Get the label text.
+   */
+  const std::string text() const;
+
+  /*! \brief Set the image.
+   */
+  void setImage(WImage *image);
+
+  /*! \brief Get the image.
+   */
+  WImage *image() const { return image_; }
+
+private:
+  WFormWidget *buddy_;
+  WText *text_;
+  WImage *image_;
+
+  bool buddyChanged_;
+
+protected:
+  virtual void  updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+#endif // WLABEL_H_

@@ -1,0 +1,485 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" dir="ltr">
+<head>
+<meta http-equiv='Pragma' content='no-cache' />
+<title>${TITLE}</title>
+${STYLESHEETS}
+<style type="text/css">
+${STYLESHEET}
+</style>
+<script src="dhtmlHistory.js">
+</script>
+<script language="JavaScript">
+/*
+ * Event handling helpers.
+ */
+function pageCoordinates(e) {
+  var posX = posY = 0;
+  if (e.pageX || e.pageY) {
+    posX = e.pageX; posY = e.pageY;
+  } else if (e.clientX || e.clientY) {
+    posX = e.clientX + document.body.scrollLeft
+      + document.documentElement.scrollLeft;
+    posY = e.clientY + document.body.scrollTop
+      + document.documentElement.scrollTop;
+  }
+
+  return { x: posX, y: posY };
+}
+
+function widgetPageCoordinates(obj) {
+  var objX = objY = 0;
+  if (obj.offsetParent) {
+    objX = obj.offsetLeft
+    objY = obj.offsetTop
+    while (obj = obj.offsetParent) {
+      objX += obj.offsetLeft
+      objY += obj.offsetTop
+    }
+  }
+
+  return { x: objX, y: objY };
+}
+
+var downX = downY = 0;
+
+function saveDownPos(e) {
+  var coords = pageCoordinates(e);
+  downX = coords.x;
+  downY = coords.y;
+}
+
+/*
+ * Ajax history
+ */
+var historyKey = null;
+var historyStates = new Array();
+${STATES_INIT}
+
+function historyChange(newLocation, historyData)
+{
+  historyKey = newLocation;
+  if (historyData != null)
+    historyStates = historyData;
+  update(null, 'hist', null, true);
+}
+
+function historyChangeState(key, value)
+{
+  if (dhtmlHistory) {
+    historyStates[key] = value;
+
+    historyKey = "";
+    for (var key in historyStates) {
+      if (key != "______array") {
+        if (historyKey != "")
+          historyKey += ";"
+        historyKey += key + ":" + historyStates[key];
+      }
+    }
+    dhtmlHistory.add(historyKey, historyStates);
+  }
+}
+
+/*
+ * Drag & drop
+ */
+var dragObject = null;
+var dragSourceId = null;
+var dragMimeType = null;
+var dragDropObjects = null;
+var dragOffsetX = 0;
+var dragOffsetY = 0;
+var dragDropTarget = null;
+var dragObjectPrevStylePosition = null;
+var dragObjectPrevStyleDisplay = null;
+var dragObjectPrevStyleLeft = 0;
+var dragObjectPrevStyleRight = 0;
+
+/*
+ * attributes used in dragger:
+ *   dwid = dragWidgetId
+ *   dsid = dragSourceId
+ *   dmt = dragMimeType
+ * attributes used in dropelement:
+ *   amts = acceptMimeTypes
+ *   ds = dropSignal
+ */
+function dragStart(obj, e) {
+  dragObject   = getElement(obj.getAttribute("dwid"));
+  dragSourceId = obj.getAttribute("dsid");
+
+  dragObjectPrevStylePosition = dragObject.style["position"];
+  dragObjectPrevStyleDisplay = dragObject.style["display"];
+  dragObjectPrevStyleLeft = dragObject.style["left"];
+  dragObjectPrevStyleRight = dragObject.style["right"];
+
+  dragObject.style["position"] = "absolute";
+  dragObject.style["display"] = "block";
+
+  var xy = pageCoordinates(e);
+
+  if (dragObject == obj) {
+    var widgetXy = widgetPageCoordinates(obj);
+    dragOffsetX = xy.x - widgetXy.x;
+    dragOffsetY = xy.y - widgetXy.y;
+  } else {
+    dragOffsetX = 0;
+    dragOffsetY = 0;
+  }
+
+  dragDropObjects = new Array();
+  dragDropTarget = null;
+
+  dragMimeType = obj.getAttribute("dmt");
+  var mimeType = "{" + dragMimeType + ":";
+
+  function fildChildElements(element) {
+    if (element.getAttribute) {
+      var amts = element.getAttribute("amts");
+      if (amts != null && amts.indexOf(mimeType) != -1)
+        dragDropObjects.push(element);
+    }
+
+    var children = element.childNodes;
+    for (var i = 0; i < children.length; i++)
+      fildChildElements(children[i]);
+  }
+  
+  fildChildElements(document.body);
+
+  return dragDrag(e);
+}
+
+function dragDrag(e) {
+  var newPosX;
+  var newPosY;
+
+  if (dragObject != null) {
+    var xy = pageCoordinates(e);
+
+    dragObject.style["left"] = (xy.x - dragOffsetX) + 'px';
+    dragObject.style["top"] = (xy.y - dragOffsetY) + 'px';
+
+    var prevDropTarget = dragDropTarget;
+    dragDropTarget = null;
+
+    for (x in dragDropObjects) {
+      if (x != "______array") {
+        theObj = dragDropObjects[x];
+	var objXy = widgetPageCoordinates(theObj);
+
+	if ((xy.x > objXy.x) && (xy.x < (objXy.x + theObj.offsetWidth))
+	    && (xy.y > objXy.y) && (xy.y < (objXy.y + theObj.offsetHeight))) {
+	    dragDropTarget = theObj;
+        }
+      }
+    }
+
+    if (dragDropTarget != prevDropTarget) {
+      if (dragDropTarget) {
+        // indicate a drop target
+        var mimeType = "{" + dragMimeType + ":";
+        var amts = dragDropTarget.getAttribute("amts");
+        var s = amts.indexOf(mimeType) + mimeType.length;
+	var e = amts.indexOf("}", s);
+	var style = amts.substring(s, e);
+	if (style.length != 0) {
+          dragDropTarget.setAttribute("dos", dragDropTarget.className);
+	  dragDropTarget.className = style;
+        }
+      } else {
+        // indicate no drop target
+      }
+
+      if (prevDropTarget != null) {
+        // indicate no longer drop target
+        prevDropTarget.className = prevDropTarget.getAttribute("dos");
+      }
+    }
+
+    if (e.preventDefault)
+      e.preventDefault();
+    if (e.stopPropagation)
+      e.stopPropagation();
+  }
+
+  return true;
+}
+
+function dragEnd(e) {
+  if (dragObject) {
+    if (dragDropTarget) {
+      dragDropTarget.className = dragDropTarget.getAttribute("dos");
+      update(dragDropTarget, dragDropTarget.getAttribute("ds"),
+             e, true);
+    } else {
+      // could not be dropped, perhaps animate it floating back ?
+    }
+    dragObject.style["position"] = dragObjectPrevStylePosition;
+    dragObject.style["display"] = dragObjectPrevStyleDisplay;
+    dragObject.style["left"] = dragObjectPrevStyleLeft;
+    dragObject.style["right"] = dragObjectPrevStyleRight;
+
+    dragObject = null;
+  }
+}
+
+function encodeEvent(self, e) {
+  var result = "";
+
+  // history
+  if (historyKey != null)
+    result += '&historyKey=' + historyKey;
+
+  if (!e)
+    return result;
+
+  // clientX/Y
+  if (e.clientX || e.clientY)
+    result += '&clientX=' + e.clientX + '&clientY=' + e.clientY;
+
+  // pageX/Y
+  var pageCoords = pageCoordinates(e);
+  var posX = pageCoords.x;
+  var posY = pageCoords.y;
+
+  if (posX || posY) {
+    result += '&documentX=' + posX + '&documentY=' + posY;
+    result += '&dragdX=' + (posX - downX) + '&dragdY=' + (posY - downY);
+  }
+
+  // screenX/Y
+  if (e.screenX || e.screenY)
+    result += '&screenX=' + e.screenX + '&screenY=' + e.screenY;
+
+  // widgetX/Y
+  if (self) {
+    var widgetCoords = widgetPageCoordinates(self);
+    var objX = widgetCoords.x;
+    var objY = widgetCoords.y;
+    result += '&widgetX=' + (posX - objX) + '&widgetY=' + (posY - objY);
+  }
+
+  // button
+  if (e.which)
+    result += '&right=' + (e.which==3);
+  else
+    if (e.button)
+      result += '&right=' + (e.button==2);
+
+  // keyCode
+  var code = 0;
+  code = e.keyCode ? e.keyCode : e.which ? e.which : 0;
+  if (code != 0)
+    result += '&keyCode=' + code + '&char='
+     + encodeURIComponent(String.fromCharCode(code));
+
+  // modifiers
+  if (e.altKey)
+    result += '&altKey=1';
+  if (e.ctrlKey)
+    result += '&ctrlKey=1';
+  if (e.metaKey)
+    result += '&metaKey=1';
+  if (e.shifTkey)
+    result += '&shiftKey=1';
+
+  // drag & drop
+  if (dragSourceId != null) {
+    result += '&dsid=' + dragSourceId;
+    result += '&dmt=' + dragMimeType;
+  }
+
+  return result;
+}
+
+/*
+ * Wt AJAX housekeeping.
+ */
+var formObjects = new Array(${FORMOBJECTS});
+var quited = false;
+var loaded = false;
+
+var keepAliveTimer;
+function keepAlive() {
+  update(null, 'none', null, false);
+  keepAliveTimer = setTimeout('keepAlive()', ${KEEPALIVE}000);
+}
+
+function debug(s) {
+  getElement("o2").innerHTML += s;
+}
+
+function rand() {
+  return Math.round(Math.random()*1000000) + ${RANDOMSEED};
+}
+
+function setTitle(title) {
+  document.title = title;
+  if (${INFRAME})
+    window.parent.document.title = title;
+}
+
+if (window.dhtmlHistory) {
+  dhtmlHistory.create(${INFRAME} ? window.parent : window);
+}
+
+function doOnLoad() {
+  if (!loaded) {
+    loaded = true;
+    setTitle(document.title);
+
+    if (window.dhtmlHistory) {
+      dhtmlHistory.initialize();
+      dhtmlHistory.addListener(historyChange);
+    }
+
+    update(null, 'load', null, false);
+    keepAliveTimer = setTimeout('keepAlive()', ${KEEPALIVE}000);
+  }
+}
+
+var url = '${RELATIVE_URL}';
+
+function getElement(id) {
+  var el = document.getElementById(id);
+  if (!el)
+    for (var i = 0; i < window.frames.length; ++i) {
+      try {
+        el = window.frames[i].document.getElementById(id);
+        if (el)
+          return el;
+      } catch (e) {
+      }
+    }
+  return el;
+}
+
+function callback(requests, timer) {
+  if (quited)
+    return;
+
+  if (requests.readyState == 4) {
+    if (requests.status) {
+      if (requests.status == 200) {
+        //debug("Callback OK");
+	var msg = requests.responseText;
+        try {
+          eval(msg);
+        } catch (e) {
+          alert ("Wt internal error: " + e + ", code: " +  e.code 
+                 + ", description: " + e.description);
+        }
+        if (timer)
+          cancelFeedback(timer);
+      } else {
+        //debug("Callback status: " + requests.status);
+      }
+    }
+  } else {
+    //debug("Callback readystate: " + requests.readyState);
+    //if (requests.readyState == 3 && requests.responseText)
+    //  debug("Got: " + requests.responseText.length);
+  }
+}
+
+function evalJavaScript(s) {
+  eval (s);
+}
+
+function cancelFeedback(t) {
+  clearTimeout(t);
+  document.body.style.cursor = 'default';
+  var div = getElement("feedback");
+  if (div) div.style.display = 'none';
+}
+
+function waitFeedback() {
+  var div = getElement("feedback");
+  if (div)
+    div.style.display = 'block';
+  else {
+    div = document.createElement("div");
+    div.id = "feedback";
+    div.innerHTML = "Loading...";
+    div.style.position = "fixed";
+    div.style.backgroundColor = "red";
+    div.style.fontFamily = "Arial,Helvetica,sans-serif";
+    div.style.fontSize = "small";
+    div.style.color = "white";
+    document.body.appendChild(div);
+  }
+  div.style.top = 0; div.style.right= 0;
+  document.body.style.cursor = 'wait';
+}
+
+function update(self, signalName, e, feedback) {
+  if (quited) {
+    if (confirm("The application was quited, do you want to restart?")) {
+      if (${INFRAME})
+        window.parent.document.location = window.parent.document.location;
+      else
+        document.location = document.location;
+      return;
+    } else
+      return;
+  }
+
+  var xmlHttpReq = false;
+  if (window.XMLHttpRequest) {
+    xmlHttpReq = new XMLHttpRequest();
+  } else if (window.ActiveXObject) {
+    xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  var query = '&rand=' + rand();
+  var querydata = 'signal=' + signalName;
+  for (x in formObjects) {
+    if (x != "______array") {
+      var el = getElement(formObjects[x]);
+      if ((el.type != 'file') 
+          && (((el.type != 'checkbox')&&(el.type != 'radio')) || el.checked))
+        querydata += '&' + formObjects[x] + '=' + encodeURIComponent(el.value);
+    }
+  }
+
+  querydata += encodeEvent(self, e);
+
+  xmlHttpReq.open('POST', url + query, true);
+  xmlHttpReq.setRequestHeader("Content-type",
+    "application/x-www-form-urlencoded;");
+  xmlHttpReq.setRequestHeader("Connection","close"); // !firefox
+  var tm = feedback ? setTimeout(waitFeedback, 500) : null;
+  //avoid race conditions
+  xmlHttpReq.onreadystatechange = function() { callback(xmlHttpReq, tm); };
+  xmlHttpReq.send(querydata);
+  //debug("Sent thing");
+}
+
+/*
+ * WTimer helpers.
+ */
+function addTimerEvent(timerid, msec) {
+  setTimeout('var obj=getElement("' + timerid + '"); '
+             + 'if (obj) { obj.onclick(); }', msec);
+}
+
+/*
+ * Some compact javascript functions.
+ */
+function hide(o) { getElement(o).style.display = 'none'; }
+function inline(o) { getElement(o).style.display = 'inline'; }
+function block(o) { getElement(o).style.display = 'block'; }
+
+</script>
+</head>
+<body onload="doOnLoad();"
+      onmousemove="return dragDrag(event);"
+      onmouseup="return dragEnd(event);"
+      ondragstart="return false;">
+  ${HTML}
+<script language="JavaScript">
+${ONLOAD}
+</script>
+</body>
+</html>

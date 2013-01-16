@@ -1,0 +1,49 @@
+<html>
+<head>
+<noscript>
+  <meta http-equiv='refresh' content='0;${RELATIVE_URL}&js=no' />
+</noscript>
+<script language='JavaScript'><!--
+
+function rand() {
+  return Math.round(Math.random()*1000000) + ${RANDOMSEED};
+}
+
+var ajax = (window.XMLHttpRequest || window.ActiveXObject) ? 'yes' : 'no';
+
+var testcookie='jscookietest=valid';
+document.cookie=testcookie;
+
+var no_replace = ${RELOAD_IS_NEWSESSION}
+  || (${USE_COOKIES} && document.cookie.indexOf(testcookie) != -1);
+
+var hash = window.location.hash;
+if (hash.length > 0)
+  hash = hash.substr(1);
+
+var qstart = hash.indexOf('?');
+if (qstart != -1)
+  hash = hash.substr(0, qstart);
+
+historyKey = hash;
+
+if (!no_replace) {
+  if (document.images)
+    window.location.replace('${RELATIVE_URL}&historyKey=' + historyKey + '&js=yes&ajax=' + ajax);
+  else
+    window.location.href = '${RELATIVE_URL}&historyKey=' + historyKey + '&js=yes&ajax=' + ajax;
+} else {
+  document.cookie=testcookie+';expires=Thu, 01 Jan 1970 00:00:00 GMT';
+
+  document.write('<frameset rows="100%,*", border=0><frame name=main src="${RELATIVE_URL}&historyKey=' + historyKey + '&js=yes&ajax=' + ajax + '&inframe=yes&rand=' + rand() + '" frameborder=0 noresize scrolling=auto></frameset>');
+}
+
+//-->
+</script>
+</head>
+<noscript>
+  <body>
+    <a href='${RELATIVE_URL}&js=no'>Loading...</a>
+  </body>
+</noscript>
+</html>

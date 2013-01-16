@@ -1,0 +1,44 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WMESSAGE_RESOURCES_
+#define WMESSAGE_RESOURCES_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <string>
+#include <map>
+
+class WMessage;
+
+/*!
+ */
+class __declspec(dllexport) WMessageResources
+{
+public:
+  /*! \brief Load message resources from a file.
+   */
+  WMessageResources(const std::string path);
+
+  const std::string path() const { return path_; }
+
+  bool getValue(const WMessage& message, std::string& value) const;
+
+  void refresh();
+
+private:
+  const std::string path_;
+
+  typedef std::map<std::string, std::string> KeyValueMap;
+  KeyValueMap local_;
+  KeyValueMap defaults_;
+
+  void readResourceFile(std::string locale, KeyValueMap& valueMap);
+};
+
+#endif // WMESSAGE_RESOURCES_

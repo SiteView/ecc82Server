@@ -1,0 +1,70 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2006 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WVIRTUALIMAGE_H_
+#define WVIRTUALIMAGE_H_
+
+#include <WCompositeWidget>
+
+namespace Wt {
+
+class WImage;
+
+class WVirtualImage : public WCompositeWidget
+{
+public:
+  WVirtualImage(int width, int height,
+		int virtualWidth, int virtualHeight,
+		WContainerWidget *parent = 0);
+  ~WVirtualImage();
+
+  void redrawAll();
+
+  void scroll(int dx, int dy);
+
+  int virtualWidth() const { return virtualWidth_; }
+  int virtualHeight() const { return virtualHeight_; }
+
+private:
+  virtual WResource *render(int x, int y, int w, int h) = 0;
+
+private slots:
+  void mouseUp(WMouseEvent e);
+
+private:
+  WContainerWidget *impl_;
+  WContainerWidget *contents_;
+
+  struct Rect {
+    int x1, y1, x2, y2;
+    
+    Rect(int x1_, int y1_, int x2_, int y2_)
+      : x1(x1_), y1(y1_), x2(x2_), y2(y2_) { }
+  };
+
+  typedef std::map<int, WImage *> GridMap;
+  GridMap grid_;
+
+  int width_;
+  int height_;
+  int virtualWidth_;
+  int virtualHeight_;
+
+  int currentX_;
+  int currentY_;
+
+  Rect neighbourhood(int x, int y, int marginX, int marginY);
+  int  gridKey(int i, int j);
+  void decodeKey(int key, int& i, int& j);
+  void generateGridItems(int newX, int newY);
+  void cleanGrid();
+
+  static const int GRID = 256;
+};
+
+}
+
+#endif // WVIRTUALIMAGE_H_

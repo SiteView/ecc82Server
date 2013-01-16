@@ -1,0 +1,21 @@
+﻿生成启动时间为 2013/1/14 15:31:28。
+     1>项目“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\libutil\libutil.vcxproj”在节点 3 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\libutil\libutil.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         所有输出均为最新。
+       Lib:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\libutil.lib" /NOLOGO /LTCG E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\libutil\bstree.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\libutil\buffer.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\libutil\exception.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\libutil\hashtable.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\libutil\strkey.obj
+         libutil.vcxproj -> E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\libutil.lib
+       FinalizeBuildStatus:
+         正在删除文件“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\libutil\libutil.unsuccessfulbuild”。
+         正在对“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\libutil\libutil.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\libutil\libutil.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.71

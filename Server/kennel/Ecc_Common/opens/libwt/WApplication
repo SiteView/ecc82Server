@@ -1,0 +1,250 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WAPPLICATION_
+#define WAPPLICATION_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <vector>
+#include <string>
+#include <set>
+
+#include <WObject>
+#include <WCssStyleSheet>
+#include <WMessageResourceBundle>
+
+class WContainerWidget;
+class WResource;
+
+/*! \brief A class that represents an instance of a Wt Application
+ *
+ * Every Wt application needs to instantiate an instance of WApplication
+ * before creating widgets. The minimum structure of a valid Wt Application
+ * is:
+ *
+ * <pre>
+ *   int wmain(int argc, char **argv) {
+ *     #WApplication app(argc, argv);
+ *     // add widgets to root()
+ *     return \link exec() app.exec()\endlink;
+ *   }
+ * </pre>
+ *
+ * Throughout the application, the instance is available in the global
+ * variable wApp. The application may be quited either by calling quit(),
+ * or because of a timeout (when the user has closed the window, or crashed
+ * its computer or was eaten by a virus). In that case, the exec() method
+ * returns, allowing for cleanup.
+ *
+ */
+class __declspec(dllexport) WApplication : public WObject {
+  //MOC: W_OBJECT WApplication:WObject
+  W_OBJECT;
+
+public:
+  bool submit_;
+  enum Encoding { DefaultCodec, UnicodeUTF8 };
+
+  /*! \brief Construct a WApplication
+   *
+   *  Currently the arguments argc and argv are ignored.
+   */
+  WApplication(int argc, char *argv[]);
+
+  /*! \brief Destroys the WApplication.
+   *
+   * This automatically destroys root(), and as a consequence the entire
+   * widget tree.
+   */
+  ~WApplication();
+
+  /*! \brief Start the main event loop.
+   *
+   *  Calling this function will render the page and listen for
+   *  events.  The event loop is stopped and this function returns
+   *  when quit() is called, or the session timeouts. Finally, when
+   *  returning from wmain(int argc). When quit() was called, a
+   *  good-bye page is rendered after releasing all application resources.
+   */
+  int exec();
+
+  /*! \brief Access the style sheet of this application.
+   *
+   *  WWidgets may allow configuration of their look and feel through style
+   *  classes. These may be defined in this stylesheet. Currently, the
+   *  stylesheet must be configured before calling exec(), subsequent
+   *  changes will not be reflected in the application.
+   */
+  WCssStyleSheet& styleSheet() { return styleSheet_; }
+
+  /*! \brief The root container of this application.
+   *
+   *  This is the top-level container for displaying widgets in the
+   *  application.
+   */
+  WContainerWidget *root() const { return root_; }
+
+  /*! \brief Specify the path for doanloading the application.
+   *
+   * When using the OAPL license, you may specify here the path where
+   * the source of the application can be downloaded. This will appear
+   * as a URL at the bottom of the page.
+   *
+   * When you have your own mechanism for allowing users to download the
+   * source code, you can set an empty path.
+   */
+  void setOAPLDownloadPath(const std::string path);
+
+  /*! \brief Get the application URL.
+   *
+   * Returns the (relative) URL for this application.
+   */
+  std::string url() const;
+
+  std::string submiturl() const;
+
+  /*! \brief Set the application title.
+   *
+   * Set the application title.
+   */
+  void setTitle(const std::string title);
+
+  /*! \brief Get the application title.
+   *
+   * Returns the application title.
+   */
+  std::string title() const { return title_; }
+
+  /*! \brief Get the application instance.
+   *
+   * This is the same as the global variable wApp.
+   */
+  static WApplication *instance();
+
+  bool loading() const { return loading_; }
+  void setLoading(bool how) { loading_ = how; }
+
+  /*! \brief Get the message resource bundle for this application.
+   *
+   * \sa WMessage
+   */
+  WMessageResourceBundle& messageResourceBundle()
+    { return messageResourceBundle_; }
+
+  /*! \brief Set the current locale.
+   *
+   * Specifying an empty locale assumes the default locale.
+   * A different value (such as e.g. "nl") will cause WMessage values to be
+   * resolved in the respect message resource files.
+   *
+   * When the locale get changed, refresh() is called which will re-localize
+   * messages.
+   *
+   * \sa WMessageResourceBundle::use
+   */
+  void setLocale(const std::string locale);
+
+  /*! \brief Get the current locale.
+   *
+   * \sa setLocale(const std::string)
+   */
+  std::string locale() const { return locale_; }
+
+  /*! \brief Refresh the application.
+   *
+   * This method is called in response to the user hitting the refresh
+   * (or reload) button, and causes the application to refresh its data,
+   * including messages from message-resource bundles.
+   */
+  virtual void refresh();
+
+  /*! \brief Returns whether the browser has support for JavaScript.
+   *
+   * Without support for JavaScript, Wt will still be able to serve
+   * the application, but with a serious limitation:
+   * only the WInteractWidget::clicked() signal will be emitted, leaving the
+   * other signals dead. Moreover, every click will cause the application
+   * to retransmit the whole page.
+   */
+  bool haveJavaScript() const;
+
+  /*
+   *	set body attribute
+   */
+   void setBodyAttribute(const std::string strBody );
+   const std::string getBodyAttribute()  { return strBodyString;};
+   std::string strBeforeBodyStr;
+   void setBeforBodyStr(const std::string strBody ){strBeforeBodyStr = strBody;};
+   const std::string getBeforBodyStr()  { return strBeforeBodyStr;};
+   int nrefreshtime;  
+   std::string strrefreshfunc;
+   void setRefreshTime(int nUpdateTime,std::string  strFuncName);
+   int getRefreshTime(){ return nrefreshtime;};
+   std::string getRefreshFunc(){return strrefreshfunc; };
+	
+
+
+public slots:
+  //MOC: SLOT WApplication::quit()
+  /*! \brief Exit the application.
+   *
+   * Signaling this slot will cause the application's event loop to
+   * end and exec() to return.
+   */
+  void quit();
+
+  //MOC: SLOT WApplication::scheduleUploadFiles()
+  /*! \brief Upload files in WFileUpload widgets.
+   *
+   * This slot schedules a file upload cycle. Any new files will trigger
+   * a WFileUpload::newFileUploaded() event.
+   */
+  void scheduleUploadFiles();
+
+private:
+  std::string            title_;
+  WContainerWidget      *root_;
+  WCssStyleSheet         styleSheet_;
+  WMessageResourceBundle messageResourceBundle_;
+  std::string            locale_;
+  //wangpeng
+  std::string            strBodyString;
+
+
+  bool        loading_;
+  bool        quited_;
+  bool        needSubmit_;
+  std::string oaplDownloadPath_;
+
+  friend class WebSession;
+  friend class WSignalInstance_;
+  friend class WResource;
+
+  std::set<const WSignalInstance_ *> exposedSignals_;
+  void addExposedSignal(const WSignalInstance_ *signal);
+  void removeExposedSignal(const WSignalInstance_ *signal);
+  bool isExposedSignal(const WSignalInstance_ *signal) const;
+
+  std::set<const WResource *> exposedResources_;
+  void addExposedResource(const WResource *resource);
+  void removeExposedResource(const WResource *resource);
+  bool isExposedResource(const WResource *resource) const;
+
+  bool isQuited() const { return quited_; }
+
+  static WApplication *instance_;
+};
+
+/*! \brief Global constant for accessing the application instance.
+ */
+extern WApplication *wApp;
+
+extern int wmain(int argc, char **argv);
+
+#endif // WAPPLICATION_

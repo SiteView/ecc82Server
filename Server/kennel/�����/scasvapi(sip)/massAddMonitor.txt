@@ -1,0 +1,24 @@
+
+SCA_SVAPI
+bool SubmitUnivData(ForestMap & fmap, const NodeData & what, const string & estr);
+
+//批量添加监测器:
+
+// 输入参数：
+inwhat:
+dowhat=massAddMonitor;
+monitorType=XXX;
+
+fmap:
+entityId1: 
+entityId2: 
+...
+entityIdN: 
+
+
+// 输出参数：
+fmap:
+entityId1: monitorId=XXX; monitorName=XXX;
+entityId2: monitorId=XXX; monitorName=XXX;
+...
+entityIdN: monitorId=XXX; monitorName=XXX;

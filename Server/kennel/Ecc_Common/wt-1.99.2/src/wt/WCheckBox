@@ -1,0 +1,39 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WCHECKBOX_H_
+#define WCHECKBOX_H_
+
+#include <WAbstractToggleButton>
+
+namespace Wt {
+
+/*! \class WCheckBox WCheckBox WCheckBox
+ *  \brief A user control that represents a check box.
+ *
+ * WCheckBox is an \link WWidget::setInline(bool) inline \endlink widget.
+ *
+ * \sa WAbstractToggleButton
+ */
+class WT_API WCheckBox : public WAbstractToggleButton
+{
+public:
+  /*! \brief Create a checkbox with empty label.
+   */
+  WCheckBox(WContainerWidget *parent = 0);
+
+  /*! \brief Create a checkbox with given label.
+   */
+  WCheckBox(const WMessage& text, WContainerWidget *parent = 0);
+
+protected:
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+}
+
+#endif // WCHECKBOX_H_

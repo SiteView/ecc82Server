@@ -1,0 +1,405 @@
+// This may look like C code, but it's really -*- C++ -*-
+
+// ChangeLog: Feb 13 13:17:07 abj: exposed signals type to Wt::SignalInterface
+
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WAPPLICATION_
+#define WAPPLICATION_
+
+#include <vector>
+#include <string>
+#include <set>
+
+#include <WObject>
+#include <WCssStyleSheet>
+#include <WMessage>
+#include <WMessageResourceBundle>
+#include <WSignal>
+
+/*! \file WApplication */
+
+namespace Wt {
+
+class WContainerWidget;
+class WEnvironment;
+class WResource;
+class WebSession;
+class Iframe;
+
+extern WT_API void RemoveExposedSignal(EventSignalBase *s);
+extern WT_API void AddExposedSignal(EventSignalBase *s);
+
+/*! \class WApplication WApplication WApplication
+ *  \brief A class that represents an instance of a %Wt Application,
+ *         corresponding to a single session.
+ *
+ * For every new session, an instance of Wt::WApplication must be
+ * created, before creating widgets. For this purpose, the user passes
+ * a function that creates applications to Wt::WRun(). A general
+ * structure for starting a %Wt Application could be:
+ *
+ * <pre>
+ *   WApplication *createApplication(const\link WEnvironment WEnvironment\endlink& env) {
+ *     //
+ *     // Optionally, check the environment and redirect to an error page.
+ *     //
+ *     bool valid = ...;
+ *    
+ *     if (!valid) {
+ *       WApplication *app = new WApplication(env);
+ *       app->redirect("error.html");
+ *       app->quit();
+ *       return app;
+ *     }
+ *
+ *     WApplication *app = new WApplication(env);
+ *
+ *     //
+ *     // Add widgets to app->root() and return the application object.
+ *     //
+ *     return app;
+ *   }
+ * </pre>
+ *
+ * Throughout the application, the instance is available through
+ * WApplication::instance() (or through #wApp). The application may be
+ * quited either by calling quit(), or because of a timeout (when the
+ * user has closed the window, or crashed its computer or was eaten by
+ * a virus). In either case, the application object is deleted,
+ * allowing for cleanup of the entire widget tree, and any other
+ * resources.
+ */
+class WT_API WApplication : public WObject
+{
+public:
+  enum Encoding { DefaultCodec, UnicodeUTF8 };
+
+  /*! \brief Typedef for a function that creates WApplication objects.
+   *
+   * \sa WRun()
+   */
+  typedef WApplication* (*ApplicationCreator)(const WEnvironment& env);
+
+  /*! \brief Construct a WApplication
+   */
+  WApplication(const WEnvironment& environment);
+
+  /*! \brief Destroys the WApplication.
+   *
+   * This automatically destroys root(), and as a consequence the entire
+   * widget tree.
+   */
+  ~WApplication();
+
+  /*! \brief The environment for this application session.
+   *
+   * This is the environment that was used when constructing the
+   * application.
+   */
+  const WEnvironment& environment() const;
+
+  /*! \brief Access the inline style sheet of this application.
+   *
+   *  WWidgets may allow configuration of their look and feel through style
+   *  classes. These may be defined in this inline stylesheet. Currently,
+   *  the stylesheet may only be defined before the application is started,
+   *  subsequent changes will not be reflected in the application.
+   *
+   * \sa useStyleSheet()
+   */
+  WCssStyleSheet& styleSheet() { return styleSheet_; }
+
+  /*! \brief Add an external style sheet.
+   *
+   * \sa styleSheet()
+   */
+  void useStyleSheet(const std::string uri);
+
+  /*! \brief The root container of this application.
+   *
+   *  This is the top-level container for displaying widgets in the
+   *  application.
+   */
+  WContainerWidget *root() const { return widgetRoot_; }
+
+  /*! \brief Get the application URL.
+   *
+   * Returns the (relative) URL for this application.
+   */
+  std::string url() const;
+
+  /*! \brief Set the application title.
+   *
+   * Set the title that appears as the browser window title.
+   */
+  void setTitle(const WMessage& text);
+
+  /*! \brief Get the application title.
+   *
+   * Returns the currently set application title.
+   */
+  const WMessage& title() const { return title_; }
+
+  /*! \brief Get the application instance.
+   *
+   * This is the same as the global variable #wApp.
+   */
+  static WApplication *instance();
+
+  /*! \brief Get the message resource bundle for this application.
+   *
+   * \sa WMessage
+   */
+  WMessageResourceBundle& messageResourceBundle()
+    { return messageResourceBundle_; }
+
+  /*! \brief Set the current locale.
+   *
+   * Specifying an empty locale assumes the default locale.
+   * A different value (such as e.g. "nl") will cause WMessage values to be
+   * resolved in the respect message resource files.
+   *
+   * When the locale get changed, refresh() is called which will re-localize
+   * messages.
+   *
+   * \sa WMessageResourceBundle::use
+   */
+  void setLocale(const std::string locale);
+
+  /*! \brief Get the currently used locale.
+   *
+   * The default locale is copied from the environment, but may be changed
+   * using setLocale().
+   *
+   * \sa setLocale(const std::string)
+   * \sa WEnvironment::locale()
+   */
+  std::string locale() const { return locale_; }
+
+  /*! \brief Refresh the application.
+   *
+   * This method is called in response to the user hitting the refresh
+   * (or reload) button, and causes the application to refresh its data,
+   * including messages from message-resource bundles.
+   */
+  virtual void refresh();
+
+  /*! \brief Get the current maximum size of a request to the application.
+   *
+   * The maximum request size may be configured in the configuration file.
+   */
+  int maximumRequestSize() const;
+
+  /*! \brief Redirect the application to another location.
+   *
+   * The client will be redirected to a new location. Use this in
+   * conjunction with quit() if you want to the application to be
+   * terminated as well. redirect() does not imply quit(), since it
+   * may be useful to switch between a non-secure and secure (SSL)
+   * transport connection.
+   */
+  void redirect(const std::string url);
+
+  /*! \brief Change the threshold for two-phase rendering.
+   *
+   * This changes the threshold for the communication size (in bytes) to
+   * render invisible changes in one go. If the bandwidth for
+   * rendering the invisible changes exceed the threshold, they will
+   * be fetched in a second communication, after the visible changes
+   * have been rendered.
+   *
+   * The value is a trade-off: setting it smaller will always use two-phase
+   * rendering, increasing the total render time. Setting it too large will
+   * increase the latency to render the visible changes, which will only
+   * be rendered after all changes have been communicated.
+   *
+   * The initial value is read from the configuration file.
+   */
+  void setTwoPhaseRenderingThreshold(int size);
+
+  /*! \brief Set a new cookie.
+   *
+   * The name must be a valid cookie name (of type 'token': no special
+   * characters or separators, see RFC2616 page 16). The value may be
+   * anything. Specify the maximum age (in seconds) after which the
+   * client must discard the cookie. To delete a cookie, use a value of '0'.
+   *
+   * By default the cookie only applies to the current path on the
+   * current domain. To set a proper value for domain, see also RFC2109.
+   */
+  void setCookie(const std::string name, const std::string value,
+		 int maxAge, const std::string domain = "",
+		 const std::string path = "");
+
+  /*! \brief Checkpoint the current application state with a key/value pair.
+   *
+   * The user may browse through application states using the browser back
+   * and forward buttons, or bookmark a particular state of your application.
+   *
+   * An application object that wishes to generate history events, and
+   * respond to state changes, should:
+   * <ul>
+   *   <li>reserve a unique key for itself;</li>
+   *   <li>use calls to setState() to indicate a new state;</li>
+   *   <li>examine an initial state using state() when the widget is created,
+   *     which may reflect a bookmarked state;</li>
+   *   <li>respond to state changes by listening to the stateChanged signal
+   *     for state changes that correspond to its key.</li>
+   * </ul>
+   *
+   * For an example, see the WMenu implementation.
+   *
+   * This feature is currently only functional when Ajax and JavaScript are
+   * enabled, and only is functional for Firefox and Internet Explorer.
+   *
+   * To use, you should also copy the dhtmlHistory.js and
+   * dhtmlHistory_blank.html files into the web directory. They are located
+   * in src/web/skeleton/ 
+   *
+   * \sa state(), stateChanged
+   */
+  void setState(const std::string key, const std::string value);
+
+  /*! \brief Get the current application state value associated with a
+   *         specific key.
+   *
+   * \sa setState()
+   */
+  std::string state(const std::string key) const;
+
+  /*! \brief Signal which is emitted when the application state changes
+   *         because the user navigates through the browser history.
+   *
+   * An application object that wishes to react to state changes should
+   * listen to this signal. 
+   *
+   * \sa setState()
+   */
+  Signal<std::string, std::string> stateChanged;
+
+  WebSession *session() { return session_; }
+
+public slots:
+  /*! \brief Exit the application.
+   *
+   * Signaling this slot will cause the application to end after the
+   * current event is completed.
+   *
+   * By default, the current widget tree (including any modifications
+   * still pending) is rendered, and the application is terminated. A
+   * "-- Quited" is appended to the application title.
+   *
+   * You might want to make sure no more events can be received from
+   * the user, by not having anything clickable, for example by
+   * displaying only text. A better approach may be to redirect the
+   * user to another page using redirect().
+   */
+  void quit();
+
+public:
+  /*! \brief Emitted when a too large post was received.
+   *
+   * The integer parameter is the request that was received in bytes.
+   */
+  Signal<int> requestTooLarge; 
+
+private:
+  typedef std::map<std::string, std::string> StateMap;
+
+  WebSession            *session_;
+  WMessage               title_;
+  WContainerWidget      *widgetRoot_;
+  WContainerWidget      *domRoot_;
+  WContainerWidget      *timerRoot_;
+  WCssStyleSheet         styleSheet_;
+  WMessageResourceBundle messageResourceBundle_;
+  std::string            locale_;
+  std::vector<Iframe *>  iframes_;
+  bool                   titleChanged_;
+  StateMap               state_;
+  std::set<std::string>  statesChanged_;
+
+  WWidget *useIframe();
+  void releaseIframe(WWidget *iframe);
+
+  std::vector<std::string> styleSheets_;
+
+  bool        quited_;
+
+  friend class WebRenderer;
+  friend class WebSession;
+  friend class WebController;
+  friend class EventSignalBase;
+  friend struct JavascriptEvent;
+  friend class WTimer;
+  friend class WResource;
+  friend class WFileUpload;
+  friend class WInteractWidget;
+
+  typedef std::map<std::string, EventSignalBase *> SignalMap;
+  SignalMap exposedSignals_;
+  void addExposedSignal(EventSignalBase* signal);
+  void removeExposedSignal(EventSignalBase* signal);
+  bool isExposedSignal(const EventSignalBase* signal) const;
+  EventSignalBase *decodeExposedSignal(const std::string signalName) const;
+  const SignalMap& exposedSignals() const;
+
+  /*
+   * Exposed resources: resources that are encoded in the browser, and
+   * may be streamed.
+   */
+  typedef std::map<std::string, WResource *> ResourceMap;
+  ResourceMap exposedResources_;
+  void addExposedResource(WResource *resource);
+  void removeExposedResource(WResource *resource);
+  WResource *decodeExposedResource(const std::string resourceName) const;
+
+  /*
+   * Encoded objects: objects that are encoded for internal purposes:
+   * They act as virtual pointers for referring to an object through
+   * an event -- used for drag & drop.
+   */
+  typedef std::map<std::string, WObject *> ObjectMap;
+  ObjectMap encodedObjects_;
+  std::string encodeObject(WObject *object);
+  WObject    *decodeObject(const std::string objectId) const;
+
+  bool isQuited() const { return quited_; }
+
+  WContainerWidget *domRoot() const { return domRoot_; }
+  WContainerWidget *timerRoot() const { return timerRoot_; }
+
+  void setCurrentHistoryKey(std::string stateStr);
+};
+
+#ifdef WIN32
+#ifdef wthttp_EXPORTS
+#define WTCONNECTOR_API __declspec(dllexport)
+#else
+#define WTCONNECTOR_API __declspec(dllimport)
+#endif
+#else
+#define WTCONNECTOR_API
+#endif
+/*! \brief Entry point for a %Wt application.
+ *
+ * This function must be called in the main of your application. The
+ * createApplication parameter is a function pointer that creates a
+ * %Wt application.
+ */
+extern int WTCONNECTOR_API WRun(int argc, char** argv,
+		       WApplication::ApplicationCreator createApplication);
+
+/*! \brief Global constant for accessing the application instance.
+ *
+ * This is equivalent to WApplication::instance()
+ */
+#define wApp WApplication::instance()
+
+}
+
+#endif // WAPPLICATION_

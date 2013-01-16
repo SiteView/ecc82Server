@@ -1,0 +1,144 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSIGNAL_MAPPER
+#define WSIGNAL_MAPPER
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <string>
+#include <map>
+
+#include <WObject>
+
+class WWidget;
+
+/*! \brief An auxiliary class to map signals from multiple senders to one slot.
+ *
+ * Use a WSignalMapper if you want to map signals from multiple senders to
+ * one slot, and identify the sender, or a property thereof.
+ *
+ * For example, if you have multiple button-like widgets, and you want
+ * to catch their clicked() events in one slot, but which to identify the
+ * button that originated the slot, you could use code like this:
+ * \code
+
+WSignalMapper *mapper = new WSignalMapper;
+for (unsigned i = 0; i < buttons_.size(); ++i) {
+  connect(buttons_[i], SIGNAL(clicked()), mapper, SLOT(map()));
+  mapper->setMapping(buttons_[i], i);
+}
+connect(mapper, SIGNAL(mapped(int)), this SLOT(buttonClicked(int)));
+
+ * \endcode
+ */
+class  WSignalMapper: public WObject
+{
+  //MOC: W_OBJECT WSignalMapper:WObject
+  W_OBJECT;
+
+public:
+  /*! \brief Create a new SignalMapper object.
+   */
+  WSignalMapper();
+
+  /*! \brief Destructor
+   */
+  ~WSignalMapper();
+
+  WObject *mapping(int id) const;
+  WObject *mapping(const std::string &id) const;
+  WObject *mapping(WWidget *widget) const;
+
+  /*! \brief Remove mappings associated with sender.
+   *
+   * Mappings will be removed when the sender is destroyed.
+   */
+  void removeMappings(WObject *sender);
+
+  /*! \brief Set an integer mapping for the sender.
+   *
+   * When the given sender signals the map() slot, then a mapped(id)
+   * signal will be emitted by the mapper.
+   */
+  void setMapping(WObject *sender, int id);
+
+  /*! \brief Set a string mapping for the sender.
+   *
+   * When the given sender signals the map() slot, then a mapped(text)
+   * signal will be emitted by the mapper.
+   */
+  void setMapping(WObject *sender, const std::string text);
+
+  /*! \brief Set a widget mapping for the sender.
+   *
+   * When the given sender signals the map() slot, then a mapped(widget)
+   * signal will be emitted by the mapper.
+   */
+  void setMapping(WObject *sender, WWidget *widget);
+      
+public slots:
+  //MOC: SLOT WSignalMapper::map()
+  /*! \brief Map slot.
+   *
+   * When this slot is signaled, the mapper identifies the sender, and
+   * emits the appropriate mapped signals.
+   */
+  void map();
+  //MOC: SLOT WSignalMapper::map(WObject *sender)
+
+  /*! \brief Map slot.
+   *
+   * This slot behaves in the same way as the previous one.
+   */
+  void map(WObject *sender);
+      
+public signals:
+  //MOC: SIGNAL WSignalMapper::mapped(int i)
+  /*! \brief Mapped signal.
+   *
+   * Signal emitted when an integer mapping was associated with a
+   * sender that triggered the map() slot.
+   *
+   * \sa setMapping(int);
+   */
+  void mapped(int id);
+
+  //MOC: SIGNAL WSignalMapper::mapped(const std::string text)
+  /*! \brief Mapped signal.
+   *
+   * Signal emitted when a text mapping was associated with a
+   * sender that triggered the map() slot.
+   *
+   * \sa setMapping(const std::string);
+   */
+  void mapped(const std::string text);
+
+  //MOC: SIGNAL WSignalMapper::mapped(WWidget *widget)
+  /*! \brief Mapped signal.
+   *
+   * Signal emitted when a widget mapping was associated with a
+   * sender that triggered the map() slot.
+   *
+   * \sa setMapping(WWidget);
+   */
+  void mapped(WWidget *widget);   
+
+private slots:
+  //MOC: SLOT WSignalMapper::senderDestroyed(WObject *sender)
+  void senderDestroyed(WObject *sender);
+
+private:
+  std::map<WObject *, int>         intMappings_;
+  std::map<WObject *, std::string> stringMappings_;
+  std::map<WObject *, WWidget *>   widgetMappings_;
+
+  void addSender(WObject *sender);
+};
+
+#endif // WSIGNAL_MAPPER

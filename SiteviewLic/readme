@@ -1,0 +1,24 @@
+siteviewlic说明：
+
+     1、使用流程：
+
+	 技术支持在客户机器上运行sysid.exe, 会在本目录下生成一个sysid.txt文件, 将sysid.txt及点数信息等发送给经理以申请lic。
+
+	 经理运行genlic.exe并将sysid.txt内容拷贝到机器码文本框，选取ecc等模块， 并输入用户点数等可以在当前目录下生成lic文件， 也可以读老的lic文件来看等。
+
+	 技术支持在收到lic文件后可以运行License *.lic来查看lic的内容是否正确等， 也可以根据提示用License /c *.lic来更换机器。
+
+	 LicTest *.lic 可以测试lic是否有效，ViewSysid.exe可以查看sysid内容。
+
+     2、工程说明。
+
+	 crud lic等逻辑均包含在IODll.dll里， genlic.exe，sysid.exe、License.exe、LicTest.exe均是调用IODll.dll的输出函数来进行各种操作，licence.h里为函数接口。
+
+	 Ecc、NNM、Dm均调IODll.dll（用了IODll.lib）里的函数来验证lic是否过期及点数是否超等，ecc里是在monitorctrol里判断是否过期， 每5分钟读一次lic文件来判断
+	 ，以防止用户直接改ini来延期等， NNM、Dm里怎么做不太清楚。
+
+	 licwangzhenm及license1里为erlang调IODll.dll的代码， 这是现有web lic管理平台的接口的一部分。
+     
+     3、技术支持包内容：
+
+	 ssleay32.dll、libeay32.dll、IODll.dll、sysid.exe、License.exe、LicTest.exe。

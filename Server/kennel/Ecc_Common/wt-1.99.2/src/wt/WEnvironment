@@ -1,0 +1,188 @@
+// This may look like C code, but it's really -*- C++ -*-
+
+/*
+ * Copyright (C) 2006 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WENVIRONMENT_H_
+#define WENVIRONMENT_H_
+
+#include <string>
+#include <map>
+#include <vector>
+#include <WDllDefs.h>
+
+namespace Wt {
+
+class CgiParser;
+class WebRequest;
+class WebSession;
+
+/*! \class WEnvironment WEnvironment WEnvironment
+ *  \brief The WEnvironment class captures information on the
+ *         application environment.
+ *
+ * The environment provides information on the client, and gives access
+ * to startup arguments.
+ */
+class WT_API WEnvironment
+{
+public:
+  /*! \brief Values associated with an argument.
+   *
+   * One or more values may be associated with a single argument.
+   *
+   * For example a Wt application 'foo.fcg' started as 
+   * http://.../foo.fcg?hello=Hello&hello=World 
+   * will result in both values "Hello" and "World" to be associated
+   * with the argument "hello".
+   */
+  typedef std::vector<std::string> ArgumentValues;
+
+  /*! \brief Argument/value map.
+   *
+   * A std::map which associates an argument name with its set of
+   * given values.
+   */
+  typedef std::map<std::string, ArgumentValues> ArgumentMap;
+
+  /*! \brief Cookie map.
+   *
+   * A std::map which associates a cookie name with a cookie value.
+   */
+  typedef std::map<std::string, std::string> CookieMap;
+
+  /*! \brief Arguments passed to the application.
+   *
+   * Arguments passed to the application, either in the URL for a
+   * http GET, or in both the URL and data submitted in a http POST.
+   */
+  const ArgumentMap& arguments() const { return arguments_; }
+
+  /*! \brief Checks for existence and returns specified argument.
+   *
+   * Throws a std::runtime_error("missing argument: argument_name")
+   * when the argument is missing or returns the vector of
+   * values otherwise.
+   */
+  const ArgumentValues& getArgument(const std::string argument_name) const;
+
+  /*! \brief Cookies set in the initial call to the application.
+   *
+   * Note that cookies set with WApplication::setCookie() are not made
+   * available in the environment.
+   *
+   * Not all clients may support cookies or have cookies enabled. See
+   * supportsCookies()
+   */
+  const CookieMap& cookies() const { return cookies_; }
+
+  /*! \brief Checks for existence and returns specified argument.
+   *
+   * Throws a std::runtime_error("missing cookie: cookie_name")
+   * when the cookie is missing, or returns cookie value otherwise.
+   */
+  const std::string getCookie(const std::string cookie_name) const;
+
+  /*! \brief Returns whether the browser has enabled support for cookies.
+   *
+   * When the user disables cookies during the visit of the page, this
+   * value is not updated.
+   */
+  bool supportsCookies() const { return doesCookies_; }
+
+  /*! \brief Returns whether the browser has enabled support for JavaScript.
+   *
+   * Without support for JavaScript, Wt will still be able to serve
+   * the application, but with a serious limitation: only the
+   * WTimer::timeout and WInteractWidget::clicked() signals will be
+   * emitted, leaving the other signals dead. Moreover, every click
+   * will cause the application to retransmit the whole page.
+   */
+  bool javaScript() const { return doesJavaScript_; }
+
+  /*! \brief Returns whether the browser has enabled support for AJAX.
+   *
+   * Without support for JavaScript, Wt will still be able to serve
+   * the application, but every event will cause the application to
+   * retransmit the whole page, rendering many events inpractical.
+   */
+  bool ajax() const { return doesAjax_; }
+
+  /*! \brief Returns the preferred language indicated in the request
+   *         header.
+   *
+   * The language is parsed from the Accept-Language field, if present
+   * in the HTTP headers. If not, the locale is empty.
+   *
+   * If multiple languages are present, the one with the highest
+   * "q"uality is assumed, and if a tie is present, the first one
+   * is taken.
+   */
+  std::string locale() const { return locale_; }
+
+  /*! \brief Returns the host name which was submitted in the request.
+   *
+   * The hostname is the unresolved host name with optional port number,
+   * which the browser used to connect to the application.
+   *
+   * e.g. www.mydomain.com
+   * e.g. localhost:8080
+   */
+  std::string hostName() const { return host_; }
+
+  /*! \brief Returns the user agent.
+   *
+   * The user agent, as reported in the HTTP User-Agent field.
+   */
+  std::string userAgent() const { return userAgent_; }
+
+  /*! \brief Returns the referer.
+   *
+   * The referer, as reported in the HTTP Referer field.
+   */
+  std::string referer() const { return referer_; }
+
+  /*! \brief Returns if it is a (known) indexing spider bot.
+   *
+   * Note: currently the list of know bot is quite small. This method
+   * is used internally to skip the default browser capabilities detection
+   * step since the spider usually takes too long to follow the link, and
+   * then the session has timed out. 
+   */
+  bool agentIsSpiderBot() const;
+
+  bool inFrame() const { return inFrame_; }
+
+private:
+  WebSession *session_;
+  bool       doesJavaScript_;
+  bool       doesAjax_;
+  bool       doesCookies_;
+  bool       inFrame_;
+
+  ArgumentMap arguments_;
+  CookieMap   cookies_;
+
+  std::string locale_;
+  std::string host_;
+  std::string userAgent_;
+  std::string referer_;
+
+  void init(const CgiParser& cgi, const WebRequest& request);
+
+  WEnvironment(const WEnvironment&);
+  WEnvironment(WebSession *session);
+
+  std::string parsePreferredAcceptValue(const std::string& value);
+  void        parseCookies(const std::string& value);
+
+  friend class WebController;
+  friend class WebSession;
+  friend class WApplication;
+};
+
+}
+
+#endif // WENVIRONMENT_H_

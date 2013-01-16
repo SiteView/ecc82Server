@@ -1,0 +1,196 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WWEB_WIDGET_H_
+#define WWEB_WIDGET_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WMessage>
+#include <WWidget>
+
+class WContainerWidget;
+class DomElement;
+class JavaScript;
+
+/*! \brief WWebWidget is the base class for widgets directly provided
+ *         by HTML.
+ *
+ * All descendants of WWebWidget implement a particular HTML
+ * control. While these widgets provide all (sensible) capabilities exposed
+ * by the underlying rendering technology, they make no attempt to do anything
+ * more. Therefore it makes sense to make more sophisticated widget libraries.
+ * on top of Wt.
+ */
+class __declspec(dllexport) WWebWidget : public WWidget {
+  //MOC: W_OBJECT WWebWidget:WWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Construct a WebWidget with a given parent.
+   *
+   * \sa WWidget::WWidget
+   */
+  WWebWidget(WContainerWidget *parent = 0);
+  virtual ~WWebWidget();
+
+  virtual WWidget *parent() const;
+  virtual void setPositionScheme(PositionScheme scheme);
+  virtual PositionScheme positionScheme() const { return positionScheme_; }
+  virtual void setOffset(Side s, WLength x);
+  virtual WLength offset(Side s) const;
+  virtual void resize(WLength width, WLength height);
+  virtual WLength width() const { return width_; }
+  virtual WLength height() const { return height_; }
+  virtual void setMinimumSize(WLength width, WLength height);
+  virtual void setMaximumSize(WLength width, WLength height);
+  virtual void setFloatSide(Side s);
+  virtual Side floatSide() const;
+  virtual void setClearSides(int sides);
+  virtual int clearSides() const;
+  virtual void setMargin(WLength margin, int sides = All);
+  virtual WLength margin(Side side) const;
+  virtual void setHidden(bool);
+  virtual bool isHidden() const { return hidden_; }
+  virtual void setPopup(bool);
+  virtual bool isPopup() const { return popup_; }
+  virtual void setInline(bool);
+  virtual bool isInline() const { return inline_; }
+  virtual WCssDecorationStyle& decorationStyle() { return decorationStyle_; }
+  virtual void setStyleClass(const std::string styleClass);
+  virtual const std::string styleClass() const { return styleClass_; }
+  virtual void setVerticalAlignment(VerticalAlignment alignment,
+				    WLength length = WLength());
+  virtual VerticalAlignment verticalAlignment() const
+    { return verticalAlignment_; }
+  virtual WLength verticalAlignmentLength() const
+    { return verticalAlignmentLength_; }
+  virtual void setToolTip(const std::string text);
+  virtual void setToolTipMessage(const WMessage& message);
+  virtual std::string toolTip() const { return toolTip_; }
+  virtual const WMessage& toolTipMessage() const { return toolTipMessage_; }
+  virtual void refresh();
+
+  virtual void hide();
+  virtual void show();
+//wangpeng
+public:
+	std::string getEncodeCmd(const char *signal);
+	
+
+protected:
+  enum RenderState { RenderOk, RenderUpdate };
+  RenderState renderState() const { return renderState_; }
+  void repaint();
+  void renderOk();
+
+  bool isLoaded() const;
+
+  virtual void updateDom(DomElement& element, bool all);
+
+private:
+  virtual void undoHide();
+  virtual void undoShow();
+
+  PositionScheme	 positionScheme_;
+  Side			 floatSide_;
+  int			 clearSides_;
+  WLength		 offsets_[4]; // left, right, top, bottom
+  WLength		 width_;
+  WLength		 height_;
+  WLength		 minimumWidth_;
+  WLength		 minimumHeight_;
+  WLength		 maximumWidth_;
+  WLength		 maximumHeight_;
+  bool			 hidden_;
+  bool			 popup_;
+  bool			 inline_;
+  WCssDecorationStyle    decorationStyle_;
+  std::string		 styleClass_;
+
+  VerticalAlignment	 verticalAlignment_;
+  WLength		 verticalAlignmentLength_;
+
+  WLength		 margin_[4];
+
+  std::string            toolTip_;
+  WMessage               toolTipMessage_;
+
+  WWidget		    *parent_;
+  std::vector<WWidget *>    children_;
+  std::vector<DomElement *> childRemoveChanges_;
+
+  bool			 geometryChanged_;
+  bool			 marginsChanged_;
+  bool			 hiddenChanged_;
+  bool		         styleClassChanged_;
+  bool                   toolTipChanged_;
+
+  bool			 wasHidden_;
+
+  RenderState            renderState_;
+  bool                   stubbed_;
+  bool			 loaded_; /* not stubbed or stubbed ancestors */
+  bool                   formObject_;
+
+  int zIndex() const;
+  void setNoFormData();
+
+  virtual void signalConnectionsChanged();
+
+  DomElement *	      createSDomElement();
+  void		      getSDomChanges(std::vector<DomElement *>& result);
+  void                getSFormObjects(std::vector<WObject *>& formObjects);
+
+  virtual DomElement *createDomElement() = 0;
+  virtual void        getDomChanges(std::vector<DomElement *>& result) = 0;
+  virtual void	      getFormObjects(std::vector<WObject *>& formObjects);
+
+protected:
+  virtual void addChild(WWidget *child);
+  virtual void removeChild(WWidget *child);
+  virtual void setParent(WWidget *parent);
+
+  virtual WWebWidget *webWidget() { return this; }
+
+  void setFormObject(bool how);
+
+
+  const std::vector<WWidget *>& children() const { return children_; }
+
+
+  void updateSignalConnection(DomElement& element,
+			      const char *signal,
+			      const std::string eventName,
+			      bool all,
+			      const char *argName = 0);
+
+  void updateSignalConnection(DomElement& element,
+			      const char *signal,
+			      const std::string eventName,
+			      const char *condition,
+			      bool all,
+			      const char *argName = 0);
+
+  /*
+   * WWebWidget has more friends than me, that clearly cannot be
+   * a good thing.
+   */
+  friend class WebSession;
+  friend class WAnchor;
+  friend class WContainerWidget;
+  friend class WCssDecorationStyle;
+  friend class WFont;
+  friend class WLabel;
+  friend class WScrollArea;
+  friend class WTable;
+  friend class WWidget;
+  friend class WCheckBox;
+};
+
+#endif // WWEB_WIDGET_H_

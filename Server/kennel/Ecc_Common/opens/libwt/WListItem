@@ -1,0 +1,38 @@
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+// This may look like C code, but it's really -*- C++ -*-
+#ifndef WLISTITEM_H_
+#define WLISTITEM_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <string>
+class WWidget;
+
+class __declspec(dllexport) WListItem
+{
+public:
+  WListItem(const std::string text);
+  ~WListItem();
+
+  void setData(void *data);
+  void *data() const { return data_; }
+  const std::string text() const { return text_; }
+
+private:
+  std::string text_;
+  void *data_;
+  WWidget *w_;
+
+  friend class WFancyList;
+
+  void setWidget(WWidget *w);
+  WWidget *widget() const { return w_; }
+};
+
+#endif // WLISTITEM_H_

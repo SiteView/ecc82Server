@@ -1,0 +1,41 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WAUTOCOMPLETE_SUGGESTION_H_
+#define WAUTOCOMPLETE_SUGGESTION_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WCompositeWidget>
+
+class WAutoCompleteLineEdit;
+class WContainerWidget;
+
+class __declspec(dllexport) WAutoCompleteSuggestion : public WCompositeWidget
+{
+  //MOC: W_OBJECT WAutoCompleteSuggestion:WCompositeWidget
+  W_OBJECT;
+
+public:
+  WAutoCompleteSuggestion(WAutoCompleteLineEdit *lineEdit,
+			  int suggestionIndex, WContainerWidget *parent);
+
+private static_slots:
+  //MOC: STATIC SLOT WAutoCompleteSuggestion::gotClick()
+  void gotClick();
+
+private:
+  WContainerWidget *impl_;
+  WAutoCompleteLineEdit *lineEdit_;
+  int suggestionIndex_;
+
+  std::string previousText_;
+  void undoGotClick();
+};
+
+#endif // WAUTOCOMPLETE_SUGGESTION_H_

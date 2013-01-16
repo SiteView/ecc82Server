@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mysqlmonitor", "mysqlmonitor.vcproj", "{0565CCA1-EEBC-4B59-887A-B0768BAD50CA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{0565CCA1-EEBC-4B59-887A-B0768BAD50CA}.Debug.ActiveCfg = Release|Win32
+		{0565CCA1-EEBC-4B59-887A-B0768BAD50CA}.Debug.Build.0 = Release|Win32
+		{0565CCA1-EEBC-4B59-887A-B0768BAD50CA}.Release.ActiveCfg = Release|Win32
+		{0565CCA1-EEBC-4B59-887A-B0768BAD50CA}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

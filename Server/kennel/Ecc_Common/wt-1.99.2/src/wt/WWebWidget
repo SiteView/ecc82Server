@@ -1,0 +1,241 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WWEB_WIDGET_H_
+#define WWEB_WIDGET_H_
+
+#include <set>
+#include <bitset>
+
+#include <WMessage>
+#include <WWidget>
+#include <WEvent>
+
+namespace Wt {
+
+class WCssDecorationStyle;
+class WContainerWidget;
+class JavaScript;
+class DomElement;
+
+/*! \class WWebWidget WWebWidget WWebWidget
+ *  \brief WWebWidget is the base class for widgets directly provided
+ *         by HTML.
+ *
+ * All descendants of WWebWidget implement a particular HTML
+ * control. While these widgets provide all (sensible) capabilities exposed
+ * by the underlying rendering technology, they make no attempt to do anything
+ * more. Therefore it makes sense to make more sophisticated widget libraries.
+ * on top of Wt.
+ */
+class WT_API WWebWidget : public WWidget
+{
+public:
+  /*! \brief Construct a WebWidget with a given parent.
+   *
+   * \sa WWidget::WWidget
+   */
+  WWebWidget(WContainerWidget *parent = 0);
+  virtual ~WWebWidget();
+
+  virtual void setPositionScheme(PositionScheme scheme);
+  virtual PositionScheme positionScheme() const;
+  virtual void setOffset(int s, WLength x);
+  virtual WLength offset(Side s) const;
+  virtual void resize(WLength width, WLength height);
+  virtual WLength width() const;
+  virtual WLength height() const;
+  virtual void setMinimumSize(WLength width, WLength height);
+  virtual void setMaximumSize(WLength width, WLength height);
+  virtual void setFloatSide(Side s);
+  virtual Side floatSide() const;
+  virtual void setClearSides(int sides);
+  virtual int clearSides() const;
+  virtual void setMargin(WLength margin, int sides = All);
+  virtual WLength margin(Side side) const;
+  virtual void setHidden(bool);
+  virtual bool isHidden() const;
+  virtual void setPopup(bool);
+  virtual bool isPopup() const;
+  virtual void setInline(bool);
+  virtual bool isInline() const;
+  virtual WCssDecorationStyle& decorationStyle();
+  virtual void setStyleClass(const char *styleClass);
+  virtual void setStyleClass(const std::wstring styleClass);
+  virtual const std::wstring styleClass() const;
+  virtual void setVerticalAlignment(VerticalAlignment alignment,
+				    WLength length = WLength());
+  virtual VerticalAlignment verticalAlignment() const;
+  virtual WLength verticalAlignmentLength() const;
+  virtual void setToolTip(const WMessage& toolTip);
+  virtual WMessage toolTip() const;
+  virtual void refresh();
+  virtual void setAttributeValue(const std::string name,
+				 const std::wstring value);
+  virtual void load();
+  virtual bool loaded() const;
+
+protected:
+  enum RenderState { RenderOk, RenderUpdate };
+  RenderState renderState() const { return renderState_; }
+  void repaint();
+  void renderOk();
+
+  virtual void updateDom(DomElement& element, bool all);
+
+  virtual bool isVisible() const;
+  virtual bool isStubbed() const;
+
+private:
+  /*
+   * Boolean packeds in a bitset.
+   */
+  static const int BIT_INLINE = 0;
+  static const int BIT_HIDDEN = 1;
+  static const int BIT_LOADED = 2;
+  static const int BIT_HIDDEN_CHANGED = 3;
+  static const int BIT_STUBBED = 4;
+  static const int BIT_FORM_OBJECT = 5;
+  static const int BIT_IGNORE_CHILD_REMOVES = 6;
+  static const int BIT_GEOMETRY_CHANGED = 7;
+
+  /*
+   * Frequently used attributes.
+   */
+  std::bitset<8>             flags_;
+  WLength	            *width_;
+  WLength	            *height_;
+
+  std::vector<WWidget *>    *children_;
+  std::vector<DomElement *> *childRemoveChanges_;
+  std::vector<WWidget *>    *newSiblings_;
+
+  RenderState                renderState_;
+
+  struct LayoutImpl {
+    PositionScheme	    positionScheme_;
+    Side		    floatSide_;
+    int			    clearSides_;
+    WLength		    offsets_[4]; // left, right, top, bottom
+    WLength		    minimumWidth_;
+    WLength		    minimumHeight_;
+    WLength		    maximumWidth_;
+    WLength		    maximumHeight_;
+    bool		    popup_;
+    VerticalAlignment	    verticalAlignment_;
+    WLength		    verticalAlignmentLength_;
+    WLength		    margin_[4];
+
+    bool		    marginsChanged_;
+
+    LayoutImpl();
+  };
+
+  LayoutImpl *layoutImpl_;
+
+  struct LookImpl {
+    WCssDecorationStyle    *decorationStyle_;
+    std::wstring	    styleClass_;
+    WMessage               *toolTip_;
+    bool		    styleClassChanged_;
+    bool                    toolTipChanged_;
+
+    LookImpl();
+    ~LookImpl();
+  };
+
+  LookImpl *lookImpl_;
+
+  struct OtherImpl {
+    std::map<std::string, std::wstring> *attributes_;
+    std::vector<std::string>            *attributesSet_;
+    std::map<std::string, std::string>  *scriptFunctions_;
+    std::string                         *scriptAdded_;
+
+    EventSignal<WDropEvent>             *dropEventSignal_;
+
+    struct DropMimeType {
+      std::wstring hoverStyleClass;
+
+      DropMimeType();
+      DropMimeType(std::wstring hoverStyleClass);
+    };
+
+    typedef std::map<std::string, DropMimeType>   MimeTypesMap;
+    MimeTypesMap                                 *acceptedDropMimeTypes_;
+
+    OtherImpl();
+    ~OtherImpl();
+  };
+
+  OtherImpl *otherImpl_;
+
+  int  zIndex() const;
+  void setNoFormData();
+
+  virtual void signalConnectionsChanged();
+
+  void                propagateRenderOk();
+  DomElement *	      createSDomElement();
+  void		      getSDomChanges(std::vector<DomElement *>& result);
+  void                getSFormObjects(std::vector<WObject *>& formObjects);
+
+  virtual DomElement *createDomElement() = 0;
+  virtual void        getDomChanges(std::vector<DomElement *>& result) = 0;
+  virtual void	      getFormObjects(std::vector<WObject *>& formObjects);
+
+  /*
+   * Drag & drop stuff.
+   */
+  bool                setAcceptDropsImpl(const std::string mimeType,
+					 bool accept,
+					 const std::wstring hoverStyleClass);
+
+protected:
+  /*! \brief escape HTML control characters in the text, to display literally.
+   */
+  static std::wstring escapeText(const std::wstring text,
+				 bool newlinesToo = false);
+
+  static std::string removeScript(const std::string text);
+
+  void setIgnoreChildRemoves(bool how);
+
+  virtual void addChild(WWidget *child);
+  virtual void removeChild(WWidget *child);
+  virtual void addNewSibling(WWidget *sibling);
+
+  virtual WWebWidget *webWidget() { return this; }
+
+  void setFormObject(bool how);
+
+  void setScript(const std::string signature,
+		 const std::string body);
+
+  void updateSignalConnection(DomElement& element, EventSignalBase& signal,
+			      const std::string eventName, bool all);
+
+  /*
+   * WWebWidget ended up with more friends than me...
+   */
+  friend class WebRenderer;
+  friend class WebSession;
+  friend class WAnchor;
+  friend class WCompositeWidget;
+  friend class WContainerWidget;
+  friend class WCssDecorationStyle;
+  friend class WFont;
+  friend class WLabel;
+  friend class WScrollArea;
+  friend class WTable;
+  friend class WWidget;
+  friend class WJavascriptSlot;
+
+};
+
+}
+
+#endif // WWEB_WIDGET_H_

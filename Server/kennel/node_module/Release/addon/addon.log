@@ -1,0 +1,66 @@
+﻿生成启动时间为 2013/1/14 15:31:34。
+     1>项目“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\addon\addon.vcxproj”在节点 3 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\addon.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         所有输出均为最新。
+       Lib:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon.lib" /NOLOGO /LTCG E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\complexFunc.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\Des.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\Edge.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\Entity.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\EntityAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\EntityEx.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\EntityGroup.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\EntityGroupAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\EntityRelation.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\EntityTemplet.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\EntityTempletAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\General.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\Group.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\GroupAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\Monitor.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\MonitorAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\MonitorTemplet.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\MonitorTempletAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\MQapi.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\MySocket.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\MyTCPSocket.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\MyTCPStream.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\NNMEntityAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\ObjCache.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\otherfunc.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\otherfunc2.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\Port.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\QueryData.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\QueueRecord.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\RcdStat.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\RecordSet.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\RecordType.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\Resource.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\ResourceAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\addonapi.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\Section.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\SerialBase.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\ShareMemFile.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\stlini.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\StringMap.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\svdbapi.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\svdbtype.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\SVSE.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\SVSEAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\TaskAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\TopologyChart.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\TopologyChartAPI.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\util.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\VirtualGroup.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\VirtualGroupAPI.obj
+         addon.vcxproj -> E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon.lib
+       FinalizeBuildStatus:
+         正在删除文件“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\addon.unsuccessfulbuild”。
+         正在对“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon\addon.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\addon\addon.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:06.80

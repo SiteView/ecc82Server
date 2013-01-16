@@ -1,0 +1,68 @@
+为BEA Tuxedo监视器提供的DLL程序：TuxedoMonitor.dll
+
+编译环境：VS2003
+编译条件：
+1、安装并配置好BEA Tuxedo（可以参考“Windows下Tuxedo的安装与配置.doc”，从公司网站下载）；
+2、在“ibmmqseries属性页”-〉“C/C++”-〉“常规”
+-〉“附加包含目录”中加入“D:\BEA\tuxedo9.1\include”
+（IBM MQSeries安装在D盘）；
+3、在“ibmmqseries属性页”-〉“链接器”-〉“常规”
+-〉“附加库目录”中加入“D:\BEA\tuxedo9.1\lib”
+（IBM MQSeries安装在C盘）；
+4、在“ibmmqseries属性页”-〉“链接器”-〉“输入”
+-〉“附加依赖项”中加入“wtuxws32.lib”。
+
+
+监视器名称：Tuxedo Machine
+调用的函数：TuxedoMachine
+监视指标：state  		  指标类型：String
+监视指标：numtran 		  指标类型：Int
+监视指标：numtrancmt  		  指标类型：Int
+监视指标：wkcompleted 		  指标类型：Int
+监视指标：wkinitiated  		  指标类型：Int
+监视指标：wkcompleted_per_second  指标类型：Int
+监视指标：wkinitiated_per_second  指标类型：Int
+监视指标：role			  指标类型：Int
+
+监视器名称：Tuxedo Server
+调用的函数：TuxedoServer
+监视指标：state  		  指标类型：String
+监视指标：numreq 		  指标类型：Int
+监视指标：numtrancmt  		  指标类型：Int
+监视指标：numreq_per_second 	  指标类型：Int
+监视指标：numtrancmt_per_second   指标类型：Int
+监视指标：curconv  		  指标类型：Int
+
+监视器名称：Tuxedo Message Queues
+调用的函数：TuxedoMsg
+监视指标：state  		  指标类型：String
+监视指标：qbytes 		  指标类型：Int
+监视指标：cbytes  		  指标类型：Int
+监视指标：qnum 	  		  指标类型：Int
+
+监视器名称：Tuxedo Client
+调用的函数：TuxedoClient
+监视指标：state  		  指标类型：String
+监视指标：numreq  		  指标类型：Int
+监视指标：numtrancmt  		  指标类型：Int
+
+监视器名称：Tuxedo Service
+调用的函数：TuxedoService
+监视指标：state  		  指标类型：String
+监视指标：numreq  		  指标类型：Int
+监视指标：numtrancmt  		  指标类型：Int
+
+监视器名称：Tuxedo WSH
+调用的函数：TuxedoWSH
+监视指标：state  		  指标类型：String
+监视指标：numblockq 		  指标类型：Int
+监视指标：rcvdbyt  		  指标类型：Int
+监视指标：rcvdnum 		  指标类型：Int
+监视指标：sentbyt  		  指标类型：Int
+监视指标：sentnum  		  指标类型：Int
+监视指标：numblockq_per_second    指标类型：Int
+监视指标：rcvdbyt_per_second	  指标类型：Int
+监视指标：rcvdnum_per_second  	  指标类型：Int
+监视指标：sentbyt_per_second      指标类型：Int
+监视指标：sentnum_per_second	  指标类型：Int
+

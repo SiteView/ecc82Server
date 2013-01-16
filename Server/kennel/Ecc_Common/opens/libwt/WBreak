@@ -1,0 +1,36 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WBREAK_H_
+#define WBREAK_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WWebWidget>
+
+/*! \brief A line break.
+ *
+ * This is an inline widget that provides a line break.
+ */
+class __declspec(dllexport) WBreak : public WWebWidget
+{
+  //MOC: W_OBJECT WBreak:WWebWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Construct a line break.
+   */
+  WBreak(WContainerWidget *parent = 0);
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+#endif // WBREAK_H_

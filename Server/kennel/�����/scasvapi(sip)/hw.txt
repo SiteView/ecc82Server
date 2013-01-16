@@ -1,0 +1,56 @@
+SubmitUnivData(ForestMap & fmap,const NodeData & inwhat, string & estr):
+"fmap"的数据类型：ForestMap: map< string, map<string,string> >
+"inwhat"的数据类型：NodeData: map< string, string >
+
+
+设置cpe参数：
+
+in parameter "inwhat":
+
+"dowhat"   ="setParameter"
+"id"       =entityID
+
+
+in parameter "fmap":
+
+["setParameter"]
+setParamName1=value1
+setParamName2=value2
+...
+setParamNameN=valueN
+
+
+return:
+in parameter "fmap":
+["return"]
+"return" =true/false
+
+
+
+
+读cpe参数：
+
+in parameter "inwhat":
+
+"dowhat"   ="getParameter"
+"id"       =entityID
+
+
+in parameter "fmap":
+
+["getParameter"]
+"getParam1"=paramName1
+"getParam2"=paramName2
+...
+"getParamN"=paramNameN
+
+
+return:
+in parameter "fmap":
+["return"]
+"return" =true/false
+["parameter"]
+paramName1=value1
+paramName2=value2
+...
+paramNameN=valueN

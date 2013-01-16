@@ -1,0 +1,6 @@
+; db2_7.def : 声明 DLL 的模块参数。
+
+LIBRARY      "db2_7"
+
+EXPORTS
+    ; 此处可以是显式导出

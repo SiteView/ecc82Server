@@ -1,0 +1,53 @@
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+// This may look like C code, but it's really -*- C++ -*-
+#ifndef WTABWIDGET_H_
+#define WTABWIDGET_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WTable>
+
+class WAbstractTab;
+
+class __declspec(dllexport) WTabWidget : public WTable
+{
+  //MOC: W_OBJECT WTabWidget:WTable
+  W_OBJECT;
+
+public:
+  WTabWidget(WContainerWidget *parent = 0);
+
+  int count() const;
+
+  void addTab(WAbstractTab *tab);
+  WAbstractTab *getTab(int index) const;
+  void insertTab(int index, WAbstractTab *tab);
+
+  int currentIndex() const { return currentIndex_; }
+
+public slots:
+  //MOC: SLOT WTabWidget::setCurrentIndex(int index)
+  void setCurrentIndex(int index);
+  //MOC: SLOT WTabWidget::setCurrentTab(WAbstractTab *tab)
+  void setCurrentTab(WAbstractTab *tab);
+
+private:
+  std::vector<WAbstractTab *> tabs_;
+  int currentIndex_;
+
+  WTable *tabBar_;
+  WContainerWidget *tabWindowParent_;
+
+  WContainerWidget *tabBarCell(int index);
+  WContainerWidget *tabWindowParent() const { return tabWindowParent_; }
+
+  friend class WAbstractTab;
+};
+
+#endif // WTABWIDGET_H_

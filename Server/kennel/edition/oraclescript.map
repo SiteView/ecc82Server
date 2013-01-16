@@ -1,0 +1,321 @@
+ oraclescript
+
+ Timestamp is 501a258c (Thu Aug 02 15:00:28 2012)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00000a78H .text                   CODE
+ 0001:00000a80 00000012H .text$x                 CODE
+ 0001:00000aa0 00000042H .text$yc                CODE
+ 0001:00000af0 0000001eH .text$yd                CODE
+ 0002:00000000 00000170H .idata$5                DATA
+ 0002:00000170 00000220H .rdata                  DATA
+ 0002:00000390 000000c0H .rdata$r                DATA
+ 0002:00000450 00000008H .rdata$sxdata           DATA
+ 0002:00000458 00000004H .rtc$IAA                DATA
+ 0002:0000045c 00000004H .rtc$IZZ                DATA
+ 0002:00000460 00000004H .rtc$TAA                DATA
+ 0002:00000464 00000004H .rtc$TZZ                DATA
+ 0002:00000468 00000024H .xdata$x                DATA
+ 0002:0000048c 00000000H ATL$__a                 DATA
+ 0002:0000048c 00000000H ATL$__z                 DATA
+ 0002:0000048c 0000003cH .idata$2                DATA
+ 0002:000004c8 00000014H .idata$3                DATA
+ 0002:000004dc 00000170H .idata$4                DATA
+ 0002:0000064c 000001fcH .idata$6                DATA
+ 0002:00000850 00000039H .edata                  DATA
+ 0003:00000000 00000004H .CRT$XCA                DATA
+ 0003:00000004 00000004H .CRT$XCAA               DATA
+ 0003:00000008 00000008H .CRT$XCL                DATA
+ 0003:00000010 00000004H .CRT$XCU                DATA
+ 0003:00000014 00000004H .CRT$XCZ                DATA
+ 0003:00000018 00000004H .CRT$XIA                DATA
+ 0003:0000001c 00000004H .CRT$XIZ                DATA
+ 0003:00000020 0000008cH .data                   DATA
+ 0003:000000b0 000011a8H .bss                    DATA
+ 0004:00000000 00000058H .rsrc$01                DATA
+ 0004:00000060 000002d8H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       __except_list              00000000     <absolute>
+ 0000:00000002       ___safe_se_handler_count   00000002     <absolute>
+ 0000:00009876       __ldused                   00009876     <absolute>
+ 0000:00009876       __fltused                  00009876     <absolute>
+ 0000:00000000       ___ImageBase               10000000     <linker-defined>
+ 0001:00000000       ?GetMessageMap@CoraclescriptApp@@MBEPBUAFX_MSGMAP@@XZ 10001000 f   oraclescript.obj
+ 0001:00000010       ??0CoraclescriptApp@@QAE@XZ 10001010 f   oraclescript.obj
+ 0001:00000030       ??1CoraclescriptApp@@UAE@XZ 10001030 f i oraclescript.obj
+ 0001:00000040       ?InitInstance@CoraclescriptApp@@UAEHXZ 10001040 f   oraclescript.obj
+ 0001:00000050       ?AssertValid@CObject@@UBEXXZ 10001050 f i oraclescript.obj
+ 0001:00000060       ?Serialize@CObject@@UAEXAAVCArchive@@@Z 10001060 f i oraclescript.obj
+ 0001:00000060       ?Dump@CObject@@UBEXAAVCDumpContext@@@Z 10001060 f i oraclescript.obj
+ 0001:00000070       ??_ECoraclescriptApp@@UAEPAXI@Z 10001070 f i oraclescript.obj
+ 0001:00000070       ??_GCoraclescriptApp@@UAEPAXI@Z 10001070 f i oraclescript.obj
+ 0001:0000008e       ?GetThisMessageMap@CWinApp@@KGPBUAFX_MSGMAP@@XZ 1000108e f   mfc71:MFC71.DLL
+ 0001:00000094       ?LoadSysPolicies@CWinApp@@UAEHXZ 10001094 f   mfc71:MFC71.DLL
+ 0001:0000009a       ?LoadAppLangResourceDLL@CWinApp@@UAEPAUHINSTANCE__@@XZ 1000109a f   mfc71:MFC71.DLL
+ 0001:000000a0       ?WinHelpInternal@CWinApp@@UAEXKI@Z 100010a0 f   mfc71:MFC71.DLL
+ 0001:000000a6       ?HtmlHelpA@CWinApp@@UAEXKI@Z 100010a6 f   mfc71:MFC71.DLL
+ 0001:000000ac       ?WinHelpA@CWinApp@@UAEXKI@Z 100010ac f   mfc71:MFC71.DLL
+ 0001:000000b2       ?OnDDECommand@CWinApp@@UAEHPAD@Z 100010b2 f   mfc71:MFC71.DLL
+ 0001:000000b8       ?DoWaitCursor@CWinApp@@UAEXH@Z 100010b8 f   mfc71:MFC71.DLL
+ 0001:000000be       ?DoMessageBox@CWinApp@@UAEHPBDII@Z 100010be f   mfc71:MFC71.DLL
+ 0001:000000c4       ?SaveAllModified@CWinApp@@UAEHXZ 100010c4 f   mfc71:MFC71.DLL
+ 0001:000000ca       ?InitApplication@CWinApp@@UAEHXZ 100010ca f   mfc71:MFC71.DLL
+ 0001:000000d0       ?AddToRecentFileList@CWinApp@@UAEXPBD@Z 100010d0 f   mfc71:MFC71.DLL
+ 0001:000000d6       ?OpenDocumentFile@CWinApp@@UAEPAVCDocument@@PBD@Z 100010d6 f   mfc71:MFC71.DLL
+ 0001:000000dc       ?Unregister@CWinApp@@UAEHXZ 100010dc f   mfc71:MFC71.DLL
+ 0001:000000e2       ?Register@CWinApp@@UAEHXZ  100010e2 f   mfc71:MFC71.DLL
+ 0001:000000e8       ?InitLibId@CWinApp@@UAEXXZ 100010e8 f   mfc71:MFC71.DLL
+ 0001:000000ee       ?Delete@CWinThread@@UAEXXZ 100010ee f   mfc71:MFC71.DLL
+ 0001:000000f4       ?GetMainWnd@CWinThread@@UAEPAVCWnd@@XZ 100010f4 f   mfc71:MFC71.DLL
+ 0001:000000fa       ?ProcessMessageFilter@CWinThread@@UAEHHPAUtagMSG@@@Z 100010fa f   mfc71:MFC71.DLL
+ 0001:00000100       ?ProcessWndProcException@CWinApp@@UAEJPAVCException@@PBUtagMSG@@@Z 10001100 f   mfc71:MFC71.DLL
+ 0001:00000106       ?ExitInstance@CWinApp@@UAEHXZ 10001106 f   mfc71:MFC71.DLL
+ 0001:0000010c       ?IsIdleMessage@CWinThread@@UAEHPAUtagMSG@@@Z 1000110c f   mfc71:MFC71.DLL
+ 0001:00000112       ?OnIdle@CWinApp@@UAEHJ@Z   10001112 f   mfc71:MFC71.DLL
+ 0001:00000118       ?PumpMessage@CWinThread@@UAEHXZ 10001118 f   mfc71:MFC71.DLL
+ 0001:0000011e       ?PreTranslateMessage@CWinThread@@UAEHPAUtagMSG@@@Z 1000111e f   mfc71:MFC71.DLL
+ 0001:00000124       ?Run@CWinApp@@UAEHXZ       10001124 f   mfc71:MFC71.DLL
+ 0001:0000012a       ?GetConnectionHook@CCmdTarget@@MAEPAUIConnectionPoint@@ABU_GUID@@@Z 1000112a f   mfc71:MFC71.DLL
+ 0001:00000130       ?GetExtraConnectionPoints@CCmdTarget@@MAEHPAVCPtrArray@@@Z 10001130 f   mfc71:MFC71.DLL
+ 0001:00000136       ?GetInterfaceHook@CCmdTarget@@UAEPAUIUnknown@@PBX@Z 10001136 f   mfc71:MFC71.DLL
+ 0001:0000013c       ?OnCreateAggregates@CCmdTarget@@UAEHXZ 1000113c f   mfc71:MFC71.DLL
+ 0001:00000142       ?GetEventSinkMap@CCmdTarget@@MBEPBUAFX_EVENTSINKMAP@@XZ 10001142 f   mfc71:MFC71.DLL
+ 0001:00000148       ?GetInterfaceMap@CCmdTarget@@MBEPBUAFX_INTERFACEMAP@@XZ 10001148 f   mfc71:MFC71.DLL
+ 0001:0000014e       ?GetConnectionMap@CCmdTarget@@MBEPBUAFX_CONNECTIONMAP@@XZ 1000114e f   mfc71:MFC71.DLL
+ 0001:00000154       ?GetDispatchMap@CCmdTarget@@MBEPBUAFX_DISPMAP@@XZ 10001154 f   mfc71:MFC71.DLL
+ 0001:0000015a       ?GetCommandMap@CCmdTarget@@MBEPBUAFX_OLECMDMAP@@XZ 1000115a f   mfc71:MFC71.DLL
+ 0001:00000160       ?GetTypeLib@CCmdTarget@@UAEJKPAPAUITypeLib@@@Z 10001160 f   mfc71:MFC71.DLL
+ 0001:00000166       ?GetTypeLibCache@CCmdTarget@@UAEPAVCTypeLibCache@@XZ 10001166 f   mfc71:MFC71.DLL
+ 0001:0000016c       ?GetTypeInfoCount@CCmdTarget@@UAEIXZ 1000116c f   mfc71:MFC71.DLL
+ 0001:00000172       ?GetDispatchIID@CCmdTarget@@UAEHPAU_GUID@@@Z 10001172 f   mfc71:MFC71.DLL
+ 0001:00000178       ?IsInvokeAllowed@CCmdTarget@@UAEHJ@Z 10001178 f   mfc71:MFC71.DLL
+ 0001:0000017e       ?OnFinalRelease@CCmdTarget@@UAEXXZ 1000117e f   mfc71:MFC71.DLL
+ 0001:00000184       ?OnCmdMsg@CCmdTarget@@UAEHIHPAXPAUAFX_CMDHANDLERINFO@@@Z 10001184 f   mfc71:MFC71.DLL
+ 0001:0000018a       ?GetRuntimeClass@CWinApp@@UBEPAUCRuntimeClass@@XZ 1000118a f   mfc71:MFC71.DLL
+ 0001:00000190       ??0CWinApp@@QAE@PBD@Z      10001190 f   mfc71:MFC71.DLL
+ 0001:00000196       ??1CWinApp@@UAE@XZ         10001196 f   mfc71:MFC71.DLL
+ 0001:0000019c       ?InitInstance@CWinApp@@UAEHXZ 1000119c f   mfc71:MFC71.DLL
+ 0001:000001a2       ??3@YAXPAX@Z               100011a2 f   mfc71:MFC71.DLL
+ 0001:000001a8       ??1_AFX_DLL_MODULE_STATE@@UAE@XZ 100011a8 f i mfcs71:dllmodul.obj
+ 0001:000001ad       _RawDllMain@12             100011ad f   mfcs71:dllmodul.obj
+ 0001:000001fe       ??1AFX_MAINTAIN_STATE2@@QAE@XZ 100011fe f i mfcs71:dllmodul.obj
+ 0001:00000207       ?AfxWndProcDllStatic@@YGJPAUHWND__@@IIJ@Z 10001207 f   mfcs71:dllmodul.obj
+ 0001:0000024c       _DllMain@12                1000124c f   mfcs71:dllmodul.obj
+ 0001:00000373       ??0_AFX_DLL_MODULE_STATE@@QAE@XZ 10001373 f i mfcs71:dllmodul.obj
+ 0001:00000393       ??_E_AFX_DLL_MODULE_STATE@@UAEPAXI@Z 10001393 f i mfcs71:dllmodul.obj
+ 0001:00000393       ??_G_AFX_DLL_MODULE_STATE@@UAEPAXI@Z 10001393 f i mfcs71:dllmodul.obj
+ 0001:000003ae       ??0CComCriticalSection@ATL@@QAE@XZ 100013ae f i mfcs71:stdafx.obj
+ 0001:000003c2       ?Init@CComCriticalSection@ATL@@QAEJXZ 100013c2 f i mfcs71:stdafx.obj
+ 0001:00000412       __onexit                   10001412 f   msvcrt:atonexit.obj
+ 0001:00000438       _atexit                    10001438 f   msvcrt:atonexit.obj
+ 0001:0000044a       _free                      1000144a f   msvcrt:MSVCR71.dll
+ 0001:00000450       __except_handler3          10001450 f   msvcrt:MSVCR71.dll
+ 0001:00000460       __alloca_probe             10001460     msvcrt:chkstk.obj
+ 0001:00000460       __chkstk                   10001460 f   msvcrt:chkstk.obj
+ 0001:000004ce       @__security_check_cookie@4 100014ce f   msvcrt:secchk.obj
+ 0001:000004dc       ___CxxFrameHandler         100014dc f   msvcrt:MSVCR71.dll
+ 0001:000004e2       __CRT_INIT@12              100014e2 f   msvcrt:crtdll.obj
+ 0001:000005a0       __DllMainCRTStartup@12     100015a0 f   msvcrt:crtdll.obj
+ 0001:00000684       ??2@YAPAXI@Z               10001684 f   msvcrt:MSVCR71.dll
+ 0001:0000068c       __EH_prolog                1000168c f   msvcrt:ehprolog.obj
+ 0001:000006ab       ??_Etype_info@@UAEPAXI@Z   100016ab f i msvcrt:ti_inst.obj
+ 0001:000006f8       __SEH_prolog               100016f8 f   msvcrt:sehprolg.obj
+ 0001:00000733       __SEH_epilog               10001733 f   msvcrt:sehprolg.obj
+ 0001:00000744       _memset                    10001744 f   msvcrt:MSVCR71.dll
+ 0001:0000074a       ?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z 1000174a f   msvcrt:ehvecdtr.obj
+ 0001:000007a8       ??_M@YGXPAXIHP6EX0@Z@Z     100017a8 f   msvcrt:ehvecdtr.obj
+ 0001:00000808       ___dllonexit               10001808 f   msvcrt:MSVCR71.dll
+ 0001:0000080e       ___security_init_cookie    1000180e f   msvcrt:seccinit.obj
+ 0001:00000874       ___security_error_handler  10001874 f   msvcrt:MSVCR71.dll
+ 0001:0000087a       __initterm                 1000187a f   msvcrt:MSVCR71.dll
+ 0001:00000880       __RTC_Initialize           10001880 f   msvcrt:initsect.obj
+ 0001:000008c4       __RTC_Terminate            100018c4 f   msvcrt:initsect.obj
+ 0001:00000908       ___CppXcptFilter           10001908 f   msvcrt:MSVCR71.dll
+ 0001:0000090e       ??1type_info@@UAE@XZ       1000190e f   msvcrt:MSVCR71.dll
+ 0001:00000914       ?terminate@@YAXXZ          10001914 f   msvcrt:MSVCR71.dll
+ 0001:0000091a       ?RemoveAll@?$CSimpleArray@PAUHINSTANCE__@@V?$CSimpleArrayEqualHelper@PAUHINSTANCE__@@@ATL@@@ATL@@QAEXXZ 1000191a f i atls:atlbase.obj
+ 0001:00000937       ??0_ATL_BASE_MODULE70@ATL@@QAE@XZ 10001937 f i atls:atlbase.obj
+ 0001:00000951       ??1CAtlBaseModule@ATL@@QAE@XZ 10001951 f   atls:atlbase.obj
+ 0001:00000967       ??0CAtlBaseModule@ATL@@QAE@XZ 10001967 f   atls:atlbase.obj
+ 0001:00000a12       ??1AFX_MODULE_STATE@@UAE@XZ 10001a12 f   mfc71:MFC71.DLL
+ 0001:00000a18       ?AfxSetModuleState@@YGPAVAFX_MODULE_STATE@@PAV1@@Z 10001a18 f   mfc71:MFC71.DLL
+ 0001:00000a1e       ?AfxGetThreadState@@YGPAV_AFX_THREAD_STATE@@XZ 10001a1e f   mfc71:MFC71.DLL
+ 0001:00000a24       ?AfxGetModuleState@@YGPAVAFX_MODULE_STATE@@XZ 10001a24 f   mfc71:MFC71.DLL
+ 0001:00000a2a       ?AfxWndProc@@YGJPAUHWND__@@IIJ@Z 10001a2a f   mfc71:MFC71.DLL
+ 0001:00000a30       ??0AFX_MAINTAIN_STATE2@@QAE@PAVAFX_MODULE_STATE@@@Z 10001a30 f   mfc71:MFC71.DLL
+ 0001:00000a36       ?AfxTermThread@@YGXPAUHINSTANCE__@@@Z 10001a36 f   mfc71:MFC71.DLL
+ 0001:00000a3c       ?AfxTermExtensionModule@@YGXAAUAFX_EXTENSION_MODULE@@H@Z 10001a3c f   mfc71:MFC71.DLL
+ 0001:00000a42       ?AfxUnlockTempMaps@@YGHH@Z 10001a42 f   mfc71:MFC71.DLL
+ 0001:00000a48       ?AfxLockTempMaps@@YGXXZ    10001a48 f   mfc71:MFC71.DLL
+ 0001:00000a4e       ??0CDynLinkLibrary@@QAE@AAUAFX_EXTENSION_MODULE@@H@Z 10001a4e f   mfc71:MFC71.DLL
+ 0001:00000a54       ?AfxInitExtensionModule@@YGHAAUAFX_EXTENSION_MODULE@@PAUHINSTANCE__@@@Z 10001a54 f   mfc71:MFC71.DLL
+ 0001:00000a5a       ?AfxWinTerm@@YGXXZ         10001a5a f   mfc71:MFC71.DLL
+ 0001:00000a60       ?AfxWinInit@@YGHPAUHINSTANCE__@@0PADH@Z 10001a60 f   mfc71:MFC71.DLL
+ 0001:00000a66       ?AfxCoreInitModule@@YGXXZ  10001a66 f   mfc71:MFC71.DLL
+ 0001:00000a6c       ??0AFX_MODULE_STATE@@QAE@HP6GJPAUHWND__@@IIJ@ZKH@Z 10001a6c f   mfc71:MFC71.DLL
+ 0001:00000a72       ??3CNoTrackObject@@SGXPAX@Z 10001a72 f   mfc71:MFC71.DLL
+ 0002:00000000       __imp__GetSystemTimeAsFileTime@4 10002000     kernel32:KERNEL32.dll
+ 0002:00000004       __imp__GetCurrentProcessId@0 10002004     kernel32:KERNEL32.dll
+ 0002:00000008       __imp__GetCurrentThreadId@0 10002008     kernel32:KERNEL32.dll
+ 0002:0000000c       __imp__GetTickCount@0      1000200c     kernel32:KERNEL32.dll
+ 0002:00000010       __imp__QueryPerformanceCounter@4 10002010     kernel32:KERNEL32.dll
+ 0002:00000014       __imp__ExitProcess@4       10002014     kernel32:KERNEL32.dll
+ 0002:00000018       __imp__DeleteCriticalSection@4 10002018     kernel32:KERNEL32.dll
+ 0002:0000001c       __imp__InitializeCriticalSection@4 1000201c     kernel32:KERNEL32.dll
+ 0002:00000020       __imp__LocalAlloc@8        10002020     kernel32:KERNEL32.dll
+ 0002:00000024       __imp__LocalFree@4         10002024     kernel32:KERNEL32.dll
+ 0002:00000028       __imp__GetVersionExA@4     10002028     kernel32:KERNEL32.dll
+ 0002:0000002c       \177KERNEL32_NULL_THUNK_DATA 1000202c     kernel32:KERNEL32.dll
+ 0002:00000030       __imp_?GetDispatchMap@CCmdTarget@@MBEPBUAFX_DISPMAP@@XZ 10002030     mfc71:MFC71.DLL
+ 0002:00000034       __imp_?GetCommandMap@CCmdTarget@@MBEPBUAFX_OLECMDMAP@@XZ 10002034     mfc71:MFC71.DLL
+ 0002:00000038       __imp_?GetTypeLib@CCmdTarget@@UAEJKPAPAUITypeLib@@@Z 10002038     mfc71:MFC71.DLL
+ 0002:0000003c       __imp_?GetTypeLibCache@CCmdTarget@@UAEPAVCTypeLibCache@@XZ 1000203c     mfc71:MFC71.DLL
+ 0002:00000040       __imp_?GetTypeInfoCount@CCmdTarget@@UAEIXZ 10002040     mfc71:MFC71.DLL
+ 0002:00000044       __imp_?GetDispatchIID@CCmdTarget@@UAEHPAU_GUID@@@Z 10002044     mfc71:MFC71.DLL
+ 0002:00000048       __imp_?IsInvokeAllowed@CCmdTarget@@UAEHJ@Z 10002048     mfc71:MFC71.DLL
+ 0002:0000004c       __imp_?OnFinalRelease@CCmdTarget@@UAEXXZ 1000204c     mfc71:MFC71.DLL
+ 0002:00000050       __imp_?OnCmdMsg@CCmdTarget@@UAEHIHPAXPAUAFX_CMDHANDLERINFO@@@Z 10002050     mfc71:MFC71.DLL
+ 0002:00000054       __imp_?GetRuntimeClass@CWinApp@@UBEPAUCRuntimeClass@@XZ 10002054     mfc71:MFC71.DLL
+ 0002:00000058       __imp_??0CWinApp@@QAE@PBD@Z 10002058     mfc71:MFC71.DLL
+ 0002:0000005c       __imp_??1CWinApp@@UAE@XZ   1000205c     mfc71:MFC71.DLL
+ 0002:00000060       __imp_?InitInstance@CWinApp@@UAEHXZ 10002060     mfc71:MFC71.DLL
+ 0002:00000064       __imp_??3@YAXPAX@Z         10002064     mfc71:MFC71.DLL
+ 0002:00000068       __imp_?GetConnectionMap@CCmdTarget@@MBEPBUAFX_CONNECTIONMAP@@XZ 10002068     mfc71:MFC71.DLL
+ 0002:0000006c       __imp_?GetInterfaceMap@CCmdTarget@@MBEPBUAFX_INTERFACEMAP@@XZ 1000206c     mfc71:MFC71.DLL
+ 0002:00000070       __imp_??3CNoTrackObject@@SGXPAX@Z 10002070     mfc71:MFC71.DLL
+ 0002:00000074       __imp_??0AFX_MODULE_STATE@@QAE@HP6GJPAUHWND__@@IIJ@ZKH@Z 10002074     mfc71:MFC71.DLL
+ 0002:00000078       __imp_?AfxCoreInitModule@@YGXXZ 10002078     mfc71:MFC71.DLL
+ 0002:0000007c       __imp_?AfxWinInit@@YGHPAUHINSTANCE__@@0PADH@Z 1000207c     mfc71:MFC71.DLL
+ 0002:00000080       __imp_?AfxWinTerm@@YGXXZ   10002080     mfc71:MFC71.DLL
+ 0002:00000084       __imp_?AfxInitExtensionModule@@YGHAAUAFX_EXTENSION_MODULE@@PAUHINSTANCE__@@@Z 10002084     mfc71:MFC71.DLL
+ 0002:00000088       __imp_??0CDynLinkLibrary@@QAE@AAUAFX_EXTENSION_MODULE@@H@Z 10002088     mfc71:MFC71.DLL
+ 0002:0000008c       __imp_?AfxLockTempMaps@@YGXXZ 1000208c     mfc71:MFC71.DLL
+ 0002:00000090       __imp_?AfxUnlockTempMaps@@YGHH@Z 10002090     mfc71:MFC71.DLL
+ 0002:00000094       __imp_?AfxTermExtensionModule@@YGXAAUAFX_EXTENSION_MODULE@@H@Z 10002094     mfc71:MFC71.DLL
+ 0002:00000098       __imp_?AfxTermThread@@YGXPAUHINSTANCE__@@@Z 10002098     mfc71:MFC71.DLL
+ 0002:0000009c       __imp_??0AFX_MAINTAIN_STATE2@@QAE@PAVAFX_MODULE_STATE@@@Z 1000209c     mfc71:MFC71.DLL
+ 0002:000000a0       __imp_?GetThisMessageMap@CWinApp@@KGPBUAFX_MSGMAP@@XZ 100020a0     mfc71:MFC71.DLL
+ 0002:000000a4       __imp_?AfxWndProc@@YGJPAUHWND__@@IIJ@Z 100020a4     mfc71:MFC71.DLL
+ 0002:000000a8       __imp_?AfxGetModuleState@@YGPAVAFX_MODULE_STATE@@XZ 100020a8     mfc71:MFC71.DLL
+ 0002:000000ac       __imp_?AfxGetThreadState@@YGPAV_AFX_THREAD_STATE@@XZ 100020ac     mfc71:MFC71.DLL
+ 0002:000000b0       __imp_?GetEventSinkMap@CCmdTarget@@MBEPBUAFX_EVENTSINKMAP@@XZ 100020b0     mfc71:MFC71.DLL
+ 0002:000000b4       __imp_?OnCreateAggregates@CCmdTarget@@UAEHXZ 100020b4     mfc71:MFC71.DLL
+ 0002:000000b8       __imp_?GetInterfaceHook@CCmdTarget@@UAEPAUIUnknown@@PBX@Z 100020b8     mfc71:MFC71.DLL
+ 0002:000000bc       __imp_?GetExtraConnectionPoints@CCmdTarget@@MAEHPAVCPtrArray@@@Z 100020bc     mfc71:MFC71.DLL
+ 0002:000000c0       __imp_?GetConnectionHook@CCmdTarget@@MAEPAUIConnectionPoint@@ABU_GUID@@@Z 100020c0     mfc71:MFC71.DLL
+ 0002:000000c4       __imp_?Run@CWinApp@@UAEHXZ 100020c4     mfc71:MFC71.DLL
+ 0002:000000c8       __imp_?PreTranslateMessage@CWinThread@@UAEHPAUtagMSG@@@Z 100020c8     mfc71:MFC71.DLL
+ 0002:000000cc       __imp_?PumpMessage@CWinThread@@UAEHXZ 100020cc     mfc71:MFC71.DLL
+ 0002:000000d0       __imp_?OnIdle@CWinApp@@UAEHJ@Z 100020d0     mfc71:MFC71.DLL
+ 0002:000000d4       __imp_?IsIdleMessage@CWinThread@@UAEHPAUtagMSG@@@Z 100020d4     mfc71:MFC71.DLL
+ 0002:000000d8       __imp_?ExitInstance@CWinApp@@UAEHXZ 100020d8     mfc71:MFC71.DLL
+ 0002:000000dc       __imp_?ProcessWndProcException@CWinApp@@UAEJPAVCException@@PBUtagMSG@@@Z 100020dc     mfc71:MFC71.DLL
+ 0002:000000e0       __imp_?ProcessMessageFilter@CWinThread@@UAEHHPAUtagMSG@@@Z 100020e0     mfc71:MFC71.DLL
+ 0002:000000e4       __imp_?GetMainWnd@CWinThread@@UAEPAVCWnd@@XZ 100020e4     mfc71:MFC71.DLL
+ 0002:000000e8       __imp_?Delete@CWinThread@@UAEXXZ 100020e8     mfc71:MFC71.DLL
+ 0002:000000ec       __imp_?InitLibId@CWinApp@@UAEXXZ 100020ec     mfc71:MFC71.DLL
+ 0002:000000f0       __imp_?Register@CWinApp@@UAEHXZ 100020f0     mfc71:MFC71.DLL
+ 0002:000000f4       __imp_?Unregister@CWinApp@@UAEHXZ 100020f4     mfc71:MFC71.DLL
+ 0002:000000f8       __imp_?OpenDocumentFile@CWinApp@@UAEPAVCDocument@@PBD@Z 100020f8     mfc71:MFC71.DLL
+ 0002:000000fc       __imp_?AddToRecentFileList@CWinApp@@UAEXPBD@Z 100020fc     mfc71:MFC71.DLL
+ 0002:00000100       __imp_?InitApplication@CWinApp@@UAEHXZ 10002100     mfc71:MFC71.DLL
+ 0002:00000104       __imp_?SaveAllModified@CWinApp@@UAEHXZ 10002104     mfc71:MFC71.DLL
+ 0002:00000108       __imp_?DoMessageBox@CWinApp@@UAEHPBDII@Z 10002108     mfc71:MFC71.DLL
+ 0002:0000010c       __imp_?DoWaitCursor@CWinApp@@UAEXH@Z 1000210c     mfc71:MFC71.DLL
+ 0002:00000110       __imp_?OnDDECommand@CWinApp@@UAEHPAD@Z 10002110     mfc71:MFC71.DLL
+ 0002:00000114       __imp_?WinHelpA@CWinApp@@UAEXKI@Z 10002114     mfc71:MFC71.DLL
+ 0002:00000118       __imp_?HtmlHelpA@CWinApp@@UAEXKI@Z 10002118     mfc71:MFC71.DLL
+ 0002:0000011c       __imp_?WinHelpInternal@CWinApp@@UAEXKI@Z 1000211c     mfc71:MFC71.DLL
+ 0002:00000120       __imp_?LoadAppLangResourceDLL@CWinApp@@UAEPAUHINSTANCE__@@XZ 10002120     mfc71:MFC71.DLL
+ 0002:00000124       __imp_?LoadSysPolicies@CWinApp@@UAEHXZ 10002124     mfc71:MFC71.DLL
+ 0002:00000128       __imp_?AfxSetModuleState@@YGPAVAFX_MODULE_STATE@@PAV1@@Z 10002128     mfc71:MFC71.DLL
+ 0002:0000012c       __imp_??1AFX_MODULE_STATE@@UAE@XZ 1000212c     mfc71:MFC71.DLL
+ 0002:00000130       \177MFC71_NULL_THUNK_DATA  10002130     mfc71:MFC71.DLL
+ 0002:00000134       __imp____security_error_handler 10002134     msvcrt:MSVCR71.dll
+ 0002:00000138       __imp__malloc              10002138     msvcrt:MSVCR71.dll
+ 0002:0000013c       __imp__free                1000213c     msvcrt:MSVCR71.dll
+ 0002:00000140       __imp___except_handler3    10002140     msvcrt:MSVCR71.dll
+ 0002:00000144       __imp_?terminate@@YAXXZ    10002144     msvcrt:MSVCR71.dll
+ 0002:00000148       __imp_??1type_info@@UAE@XZ 10002148     msvcrt:MSVCR71.dll
+ 0002:0000014c       __imp___adjust_fdiv        1000214c     msvcrt:MSVCR71.dll
+ 0002:00000150       __imp___initterm           10002150     msvcrt:MSVCR71.dll
+ 0002:00000154       __imp____CppXcptFilter     10002154     msvcrt:MSVCR71.dll
+ 0002:00000158       __imp___onexit             10002158     msvcrt:MSVCR71.dll
+ 0002:0000015c       __imp____dllonexit         1000215c     msvcrt:MSVCR71.dll
+ 0002:00000160       __imp__memset              10002160     msvcrt:MSVCR71.dll
+ 0002:00000164       __imp_??2@YAPAXI@Z         10002164     msvcrt:MSVCR71.dll
+ 0002:00000168       __imp____CxxFrameHandler   10002168     msvcrt:MSVCR71.dll
+ 0002:0000016c       \177MSVCR71_NULL_THUNK_DATA 1000216c     msvcrt:MSVCR71.dll
+ 0002:00000170       ?messageMap@CoraclescriptApp@@1UAFX_MSGMAP@@B 10002170     oraclescript.obj
+ 0002:00000178       ?_messageEntries@CoraclescriptApp@@0QBUAFX_MSGMAP_ENTRY@@B 10002178     oraclescript.obj
+ 0002:00000190       ??_7CoraclescriptApp@@6B@  10002190     oraclescript.obj
+ 0002:00000250       ??_C@_00CNPNBAHC@?$AA@     10002250     mfcs71:dllmodul.obj
+ 0002:00000258       ??_7_AFX_DLL_MODULE_STATE@@6B@ 10002258     mfcs71:dllmodul.obj
+ 0002:0000027c       ??_C@_06JBKGCNBB@Delete?$AA@ 1000227c     mfcs71:stdafx.obj
+ 0002:00000284       ??_C@_08KAAPDIAN@NoRemove?$AA@ 10002284     mfcs71:stdafx.obj
+ 0002:00000290       ??_C@_0M@DBGDLGLL@ForceRemove?$AA@ 10002290     mfcs71:stdafx.obj
+ 0002:0000029c       ??_C@_03LAIAPFCB@Val?$AA@  1000229c     mfcs71:stdafx.obj
+ 0002:000002a0       ??_C@_01HMGJMAIH@B?$AA@    100022a0     mfcs71:stdafx.obj
+ 0002:000002a4       ??_C@_01CKDDGHAB@D?$AA@    100022a4     mfcs71:stdafx.obj
+ 0002:000002a8       ??_C@_01PLPBNMEI@M?$AA@    100022a8     mfcs71:stdafx.obj
+ 0002:000002ac       ??_C@_01CPLAODJH@S?$AA@    100022ac     mfcs71:stdafx.obj
+ 0002:000002e0       ??_7type_info@@6B@         100022e0     msvcrt:ti_inst.obj
+ 0002:00000324       _GUID_ATLVer30             10002324     atls:atlbase.obj
+ 0002:00000334       _GUID_ATLVer70             10002334     atls:atlbase.obj
+ 0002:00000348       __load_config_used         10002348     msvcrt:loadcfg.obj
+ 0002:00000390       ??_R1A@?0A@A@CNoTrackObject@@8 10002390     mfcs71:dllmodul.obj
+ 0002:000003a8       ??_R1A@?0A@A@AFX_MODULE_STATE@@8 100023a8     mfcs71:dllmodul.obj
+ 0002:000003c0       ??_R1A@?0A@A@_AFX_DLL_MODULE_STATE@@8 100023c0     mfcs71:dllmodul.obj
+ 0002:000003d8       ??_R2_AFX_DLL_MODULE_STATE@@8 100023d8     mfcs71:dllmodul.obj
+ 0002:000003e8       ??_R3_AFX_DLL_MODULE_STATE@@8 100023e8     mfcs71:dllmodul.obj
+ 0002:000003f8       ??_R4_AFX_DLL_MODULE_STATE@@6B@ 100023f8     mfcs71:dllmodul.obj
+ 0002:0000040c       ??_R1A@?0A@A@type_info@@8  1000240c     msvcrt:ti_inst.obj
+ 0002:00000424       ??_R2type_info@@8          10002424     msvcrt:ti_inst.obj
+ 0002:0000042c       ??_R3type_info@@8          1000242c     msvcrt:ti_inst.obj
+ 0002:0000043c       ??_R4type_info@@6B@        1000243c     msvcrt:ti_inst.obj
+ 0002:00000450       ___safe_se_handler_table   10002450     <linker-defined>
+ 0002:00000458       ___rtc_iaa                 10002458     msvcrt:initsect.obj
+ 0002:0000045c       ___rtc_izz                 1000245c     msvcrt:initsect.obj
+ 0002:00000460       ___rtc_taa                 10002460     msvcrt:initsect.obj
+ 0002:00000464       ___rtc_tzz                 10002464     msvcrt:initsect.obj
+ 0002:0000048c       __IMPORT_DESCRIPTOR_MFC71  1000248c     mfc71:MFC71.DLL
+ 0002:000004a0       __IMPORT_DESCRIPTOR_MSVCR71 100024a0     msvcrt:MSVCR71.dll
+ 0002:000004b4       __IMPORT_DESCRIPTOR_KERNEL32 100024b4     kernel32:KERNEL32.dll
+ 0002:000004c8       __NULL_IMPORT_DESCRIPTOR   100024c8     mfc71:MFC71.DLL
+ 0003:00000000       ___xc_a                    10003000     msvcrt:cinitexe.obj
+ 0003:00000014       ___xc_z                    10003014     msvcrt:cinitexe.obj
+ 0003:00000018       ___xi_a                    10003018     msvcrt:cinitexe.obj
+ 0003:0000001c       ___xi_z                    1000301c     msvcrt:cinitexe.obj
+ 0003:00000020       __pRawDllMain              10003020     mfcs71:dllmodul.obj
+ 0003:00000024       ??_R0?AVCNoTrackObject@@@8 10003024     mfcs71:dllmodul.obj
+ 0003:00000044       ??_R0?AVAFX_MODULE_STATE@@@8 10003044     mfcs71:dllmodul.obj
+ 0003:00000064       ??_R0?AV_AFX_DLL_MODULE_STATE@@@8 10003064     mfcs71:dllmodul.obj
+ 0003:00000090       ___security_cookie         10003090     msvcrt:seccook.obj
+ 0003:00000094       ??_R0?AVtype_info@@@8      10003094     msvcrt:ti_inst.obj
+ 0003:000000b0       ?theApp@@3VCoraclescriptApp@@A 100030b0     oraclescript.obj
+ 0003:00000154       ?m_bInitFailed@CAtlBaseModule@ATL@@2_NA 10003154     stdafx.obj
+ 0003:00000158       __afxForceEXCLUDE          10003158     mfcs71:nolib.obj
+ 0003:00000174       __afxForceUSRDLL           10003174     mfcs71:dllmodul.obj
+ 0003:00001208       __afxForceSTDAFX           10004208     mfcs71:stdafx.obj
+ 0003:00001210       ?_AtlBaseModule@ATL@@3VCAtlBaseModule@1@A 10004210     atls:atlbase.obj
+ 0003:0000124c       __adjust_fdiv              1000424c     <common>
+ 0003:00001250       ___onexitend               10004250     <common>
+ 0003:00001254       ___onexitbegin             10004254     <common>
+
+ entry point at        0001:000005a0
+
+ Static symbols
+
+ 0001:0000049d       _report_failure            1000149d f   msvcrt:secchk.obj
+ 0001:00000a80       $L185173                   10001a80 f   mfcs71:dllmodul.obj
+ 0001:00000a88       __ehhandler$?AfxWndProcDllStatic@@YGJPAUHWND__@@IIJ@Z 10001a88 f   mfcs71:dllmodul.obj
+ 0001:00000aa0       _$E1                       10001aa0 f   oraclescript.obj
+ 0001:00000ab6       _$E5                       10001ab6 f   mfcs71:dllmodul.obj
+ 0001:00000acc       _$E5                       10001acc f   atls:atlbase.obj
+ 0001:00000af0       _$E2                       10001af0 f   oraclescript.obj
+ 0001:00000afa       _$E6                       10001afa f   mfcs71:dllmodul.obj
+ 0001:00000b04       _$E6                       10001b04 f   atls:atlbase.obj

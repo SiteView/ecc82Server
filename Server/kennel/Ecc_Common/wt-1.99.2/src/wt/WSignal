@@ -1,0 +1,678 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2006 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSIGNAL_H_
+#define WSIGNAL_H_
+
+#include <WObject>
+#include <boost/signal.hpp>
+#include <boost/bind.hpp>
+
+namespace Wt {
+
+class WJavascriptSlot;
+class SlotLearnerInterface;
+class WStatelessSlot;
+class JavascriptEvent;
+
+#define SLOT(x, y) x, &y
+
+/*
+ * Base class for all Signals, which adds the capability to access the
+ * current sender (since boost does not pass the sender, we need to
+ * keep a stack of them in the current thread context).
+ */
+class SignalBase
+{
+public:
+  virtual ~SignalBase();
+  WObject *sender() const;
+  virtual boost::signals::connection connectBase(WObject *target,
+						 void (WObject::*method)())
+    = 0;
+
+protected:
+  SignalBase(WObject *sender);
+
+  void pushSender(WObject *sender);
+  void popSender();
+
+private:
+  WObject *sender_;
+
+  static WObject *currentSender();  
+
+  friend class WObject;
+};
+
+/*
+ * Normal signals wrap simply around boost signals
+ */
+
+struct None
+{ 
+  static None none;
+};
+
+/*! \class Signal WSignal WSignal
+ *  \brief Signal/Slot signal.
+ *
+ * Use Signal/slots to let one object (A) listen to events caused by
+ * another object (B). In this scenario, object B provides in its
+ * public interface a signal, to which object A connects one of its
+ * member function (which act as slot). Oidget A initiates the event
+ * (and triggers the connected callback functions), by emitting the
+ * signal. Signal/slot is a generalization of the popular observer
+ * pattern used in GUIs.
+ *
+ * A signal can provide details of the event, using an arbitrary number
+ * of parameters (the current implementation limits to 6 parameters).
+ * A slot must have a compatible signature to connect to a signal, based
+ * on its parameters. A compatible signature provides the same parameters
+ * in the member function, or less (leaving out parameters at the end).
+ *
+ * The signal automatically disconnects from the slot when the
+ * target is deleted. In addition, the signal may be deleted at any
+ * time, in particular also while it is emitted.
+ *
+ * Signal integrates with WObject objects. It requires that the target
+ * of a connection, i.e. the object that listens for an event, is a
+ * WObject. In addition, every signal may specify one WObject to be the
+ * owner of the signal, and a target may find out the sender of a signal
+ * emission, using WObject::sender.
+ */
+template <typename A1 = None, typename A2 = None,
+	  typename A3 = None, typename A4 = None,
+	  typename A5 = None, typename A6 = None>
+class Signal : public SignalBase
+{
+public:
+  /*! \brief Create a WSignal.
+   *
+   * The object that will be identified as sender() when executing
+   * connected slots may be passed as an argument.
+   */
+  Signal(WObject *sender = 0);
+
+  /*! \brief Delete a WSignal.
+   */
+  ~Signal();
+
+  /*! \brief Connect a slot that takes no arguments.
+   *
+   * This is always possible (even when the signal specifies a number
+   * of arguments).
+   *
+   * The slot is specified as a method of class V, which is equal to
+   * class V, or a base class of class V. Thus, the following statement
+   * must return a non-null pointer:
+   *
+   * <code>
+   *    V *v = dynamic_cast<V *>(target);
+   * </code>
+   *
+   * In practice, to facilitate automatic disconnects on deletion of the
+   * target, class T must be also be a descendant of WObject, but this
+   * is not enforced by the interface.
+   */
+  template<class T, class V>
+    boost::signals::connection connect(T *target, void (V::*method)());
+
+  /*! \brief Connect a slot that takes one argument.
+   *
+   * This is only possible for signals that take at least one argument.
+   *
+   * \sa connect(T *target, void (V::*method)())
+   */
+  template<class T, class V>
+    boost::signals::connection connect(T *target, void (V::*method)(A1));
+
+  /*! \brief Connect a slot that takes two arguments.
+   *
+   * This is only possible for signals that take at least two arguments.
+   *
+   * \sa connect(T *target, void (V::*method)())
+   */
+  template<class T, class V>
+    boost::signals::connection connect(T *target, void (V::*method)(A1, A2));
+
+  /*! \brief Connect a slot that takes three arguments.
+   *
+   * This is only possible for signals that take at least three arguments.
+   *
+   * \sa connect(T *target, void (V::*method)())
+   */
+  template<class T, class V>
+    boost::signals::connection connect(T *target,
+				       void (V::*method)(A1,A2,A3));
+
+  /*! \brief Connect a slot that takes four arguments.
+   *
+   * This is only possible for signals that take at least four arguments.
+   *
+   * \sa connect(T *target, void (V::*method)())
+   */
+  template<class T, class V>
+    boost::signals::connection connect(T *target,
+				       void (V::*method)(A1,A2,A3,A4));
+
+  /*! \brief Connect a slot that takes five arguments.
+   *
+   * This is only possible for signals that take at least five arguments.
+   *
+   * \sa connect(T *target, void (V::*method)())
+   */
+  template<class T, class V>
+    boost::signals::connection connect(T *target,
+				       void (V::*method)(A1,A2,A3,A4,A5));
+
+  /*! \brief Connect a slot that takes six arguments.
+   *
+   * This is only possible for signals that take at least six arguments.
+   *
+   * \sa connect(T *target, void (V::*method)())
+   */
+  template<class T, class V>
+    boost::signals::connection connect(T *target,
+				       void (V::*method)(A1,A2,A3,A4,A5,A6));
+
+  /*! \brief Emit the signal.
+   *
+   * The arguments must exactly match the arguments of the target
+   * function.
+   *
+   * This will cause all connected slots to be triggered, with the given
+   * arguments.
+   */
+  void emit(A1 a1 = None::none, A2 a2 = None::none,
+	    A3 a3 = None::none, A4 a4 = None::none,
+	    A5 a5 = None::none, A6 a6 = None::none);
+
+  /*! \brief Emit the signal.
+   *
+   * This is equivalent to emit().
+   *
+   * \sa emit
+   */
+  void operator()(A1 a1 = None::none, A2 a2 = None::none,
+		  A3 a3 = None::none, A4 a4 = None::none,
+		  A5 a5 = None::none, A6 a6 = None::none);
+
+  /*! \brief Is this signal connected to at least one slot ?
+   */
+  bool isConnected() const;
+
+  virtual boost::signals::connection connectBase(WObject *target,
+						 void (WObject::*method)());
+
+private:
+  boost::signal6<void, A1, A2, A3, A4, A5, A6> *impl_;
+
+};
+
+/*
+ * Normal signal -- specialization for void
+ */
+template<>
+class Signal<void> : public Signal<>
+{ 
+public:
+  Signal<void>(WObject *sender = 0);
+};
+
+/*
+ * Event signals do something in addition to boost signals
+ */
+class EventSignalBase : public SignalBase
+{
+public:
+  virtual ~EventSignalBase();
+
+  bool needUpdate() const;
+  void updateOk();
+  virtual bool isConnected() const;
+
+  const std::string encodeCmd() const;
+  const std::string javaScript() const;
+  bool isExposedSignal() const;
+  
+  typedef void (WObject::*WObjectMethod)();
+
+  boost::signals::connection connect(WObjectMethod method, 
+				     WObject *target, WStatelessSlot *slot);  
+  void connect(WJavascriptSlot& slot);
+
+protected:
+
+  EventSignalBase(WObject *sender);
+
+  void exposeSignal();
+  void senderRepaint();
+  void processNonLearnedStateless();
+
+private:
+  struct StatelessConnection {
+    boost::signals::connection connection;
+    WObject                   *target;
+    WStatelessSlot            *slot;
+
+    bool ok() const;
+
+    StatelessConnection(const boost::signals::connection& c,
+			WObject *target, WStatelessSlot *slot);
+  };
+
+  struct Impl {
+    std::vector<StatelessConnection> connections_;
+    bool needUpdate_;
+    mutable int id_;
+    static int nextId_;
+
+    /*
+     * Dummy signal used for knowing if stateless connections are still
+     * connected.
+     */
+    boost::signal0<void> dummy_;
+
+    Impl();
+  };
+
+  mutable Impl *impl_;
+
+  /*
+   * Our own list of connections to process them in a custom way.
+   */
+
+  void removeSlot(WStatelessSlot *slot);
+
+  void processPreLearnStateless(SlotLearnerInterface *learner);
+  void processAutoLearnStateless(SlotLearnerInterface *learner);
+  void processLearnedStateless();
+  virtual void processDynamic(const JavascriptEvent& e) = 0;
+
+  friend struct WStatelessSlot;
+  friend class WebRenderer;
+  friend class WebController;
+};
+
+/*! \class EventSignal WSignal WSignal
+ *  \brief UI event Signal/Slot signal.
+ *
+ * An EventSignal is a special kind of Signal that is triggered by user
+ * interface events such as a mouse click, key press, or focus change.
+ * They are tightly integrated with the library, and should not be
+ * instantiated directly.
+ *
+ * In addition to the behaviour of Signal, they support stateless
+ * slot learning, when connected to a slot that has a stateless
+ * implementation, using WObject::implementStateless().
+ *
+ * A stateless slot specifies a contract that the slot implementation
+ * will do always exactly the same, regardless of any state. This
+ * requirement may be relaxed by calling WObject::resetLearnedSlot()
+ * when the slot implementation changes.
+ */
+template<typename E>
+class EventSignal : public EventSignalBase
+{
+public:
+  EventSignal(WObject *sender);
+  ~EventSignal();
+
+  /*! \brief Is this signal connected to at least one slot ?
+   */
+  virtual bool isConnected() const;
+
+  /*! \brief Connect a slot that takes no arguments.
+   *
+   * If a stateless implementation is specified for the slot, then
+   * the visual behaviour will be learned in terms of JavaScript, and
+   * will be cached on the client side for instant feed-back, in
+   * addition running the slot on the server.
+   *
+   * The slot is specified as a method of class V, which is equal to
+   * class V, or a base class of class V. In addition, to check for
+   * stateless implementations, class T must be also be a descendant of
+   * WObject. Thus, the following statement must return a non-null pointer:
+   *
+   * <code>
+   *    WObject *o = dynamic_cast<WObject *>(dynamic_cast<V *>(target));
+   * </code>
+   */
+  template<class T, class V>
+    boost::signals::connection connect(T *target, void (V::*method)());
+
+  /*! \brief Connect a slot that takes one argument.
+   *
+   * This is only possible for signals that take at least one argument.
+   */
+  template<class T, class V>
+    boost::signals::connection connect(T *target, void (V::*method)(E));
+
+  /*! \brief Connect a slot that is specified as JavaScript only.
+   *
+   * This will provide a client-side connection between the event and
+   * some javascript code as implemented by the slot. Unlike other connects,
+   * this does not cause the event to propagated to the application, and thus
+   * the state may not be tracked.
+   */
+  void connect(WJavascriptSlot& slot);
+
+  /*! \brief Emit the signal.
+   *
+   * This will cause all connected slots to be triggered, with the given
+   * argument.
+   */
+  void emit(E e);
+
+  /*! \brief Emit the signal.
+   *
+   * This is equivalent to emit().
+   *
+   * \sa emit()
+   */
+  void operator()(E e);
+
+  virtual boost::signals::connection connectBase(WObject *target,
+						 void (WObject::*method)());
+
+private:
+  /*
+   * Signal used for dynamic connections.
+   */
+  boost::signal1<void, E> *dynamic_;
+
+  void processDynamic(const JavascriptEvent& e);
+};
+
+/*
+ * Event signals -- specialization for void
+ */
+
+template<>
+class EventSignal<void> : public EventSignalBase
+{
+public:
+  EventSignal(WObject *sender);
+  EventSignal(EventSignalBase *e); // proxy for other signal
+  ~EventSignal();
+
+  virtual bool isConnected() const;
+
+  template<class T, class V>
+    boost::signals::connection connect(T *target, void (V::*method)());
+
+  void connect(WJavascriptSlot& slot);
+
+  void emit();
+  void operator()();
+
+  virtual boost::signals::connection connectBase(WObject *target,
+						 void (WObject::*method)());
+
+private:
+  /*
+   * Signal used for dynamic connections.
+   */
+  boost::signal0<void> *dynamic_;
+  EventSignalBase      *relay_;
+
+  void processDynamic(const JavascriptEvent& e);
+};
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+Signal<A1, A2, A3, A4, A5, A6>::Signal(WObject *sender)
+  : SignalBase(sender),
+    impl_(0)
+{ }
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+Signal<A1, A2, A3, A4, A5, A6>::~Signal()
+{
+  delete impl_;
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+template <class T, class V>
+boost::signals::connection Signal<A1, A2, A3, A4, A5, A6>
+::connect(T *target, void (V::*method)(A1, A2, A3, A4, A5, A6))
+{
+  assert(dynamic_cast<V *>(target));
+  if (!impl_)
+    impl_ = new boost::signal6<void, A1, A2, A3, A4, A5, A6>;
+  return impl_->connect(boost::bind(method, target, _1, _2, _3, _4, _5, _6));
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+template <class T, class V>
+boost::signals::connection Signal<A1, A2, A3, A4, A5, A6>
+::connect(T *target, void (V::*method)(A1, A2, A3, A4, A5))
+{
+  assert(dynamic_cast<V *>(target));
+  if (!impl_)
+    impl_ = new boost::signal6<void, A1, A2, A3, A4, A5, A6>;
+  return impl_->connect(boost::bind(method, target, _1, _2, _3, _4, _5));
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+template <class T, class V>
+boost::signals::connection Signal<A1, A2, A3, A4, A5, A6>
+::connect(T *target, void (V::*method)(A1, A2, A3, A4))
+{
+  assert(dynamic_cast<V *>(target));
+  if (!impl_)
+    impl_ = new boost::signal6<void, A1, A2, A3, A4, A5, A6>;
+  return impl_->connect(boost::bind(method, target, _1, _2, _3, _4));
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+template <class T, class V>
+boost::signals::connection Signal<A1, A2, A3, A4, A5, A6>
+::connect(T *target, void (V::*method)(A1, A2, A3))
+{
+  assert(dynamic_cast<V *>(target));
+  if (!impl_)
+    impl_ = new boost::signal6<void, A1, A2, A3, A4, A5, A6>;
+  return impl_->connect(boost::bind(method, target, _1, _2, _3));
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+template <class T, class V>
+boost::signals::connection Signal<A1, A2, A3, A4, A5, A6>
+::connect(T *target, void (V::*method)(A1, A2))
+{
+  assert(dynamic_cast<V *>(target));
+  if (!impl_)
+    impl_ = new boost::signal6<void, A1, A2, A3, A4, A5, A6>;
+  return impl_->connect(boost::bind(method, target, _1, _2));
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+template <class T, class V>
+boost::signals::connection Signal<A1, A2, A3, A4, A5, A6>
+::connect(T *target, void (V::*method)(A1))
+{
+  assert(dynamic_cast<V *>(target));
+  if (!impl_)
+    impl_ = new boost::signal6<void, A1, A2, A3, A4, A5, A6>;
+  return impl_->connect(boost::bind(method, target, _1));
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+template <class T, class V>
+boost::signals::connection Signal<A1, A2, A3, A4, A5, A6>
+::connect(T *target, void (V::*method)())
+{
+  assert(dynamic_cast<V *>(target));
+  if (!impl_)
+    impl_ = new boost::signal6<void, A1, A2, A3, A4, A5, A6>;
+  return impl_->connect(boost::bind(method, target));
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+boost::signals::connection Signal<A1, A2, A3, A4, A5, A6>
+::connectBase(WObject *target, void (WObject::*method)())
+{
+  return connect(target, method);
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+void Signal<A1, A2, A3, A4, A5, A6>::emit(A1 a1, A2 a2, A3 a3,
+					  A4 a4, A5 a5, A6 a6)
+{
+  if (impl_) {
+    pushSender(sender());
+    (*impl_)(a1, a2, a3, a4, a5, a6);
+    popSender();
+  }
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+void Signal<A1, A2, A3, A4, A5, A6>::operator()(A1 a1, A2 a2, A3 a3,
+						A4 a4, A5 a5, A6 a6)
+{
+  emit(a1, a2, a3, a4, a5, a6);
+}
+
+template <typename A1, typename A2, typename A3,
+	  typename A4, typename A5, typename A6>
+bool Signal<A1, A2, A3, A4, A5, A6>::isConnected() const
+{
+  return impl_ ? impl_->num_slots() > 0 : false;
+}
+
+template <typename E>
+EventSignal<E>::EventSignal(WObject *sender)
+  : EventSignalBase(sender),
+    dynamic_(0)
+{ }
+
+template <typename E>
+EventSignal<E>::~EventSignal()
+{
+  if (dynamic_)
+    delete dynamic_;
+}
+
+template <typename E>
+bool EventSignal<E>::isConnected() const
+{
+  return EventSignalBase::isConnected()
+    || (dynamic_ && dynamic_->num_slots() > 0);
+}
+
+template <typename E>
+template <class T, class V>
+boost::signals::connection EventSignal<E>::connect(T *target,
+						   void (V::*method)())
+{
+  exposeSignal();
+  WObject *o = dynamic_cast<WObject *>(dynamic_cast<V *>(target));
+  assert(o);
+
+  WStatelessSlot *s = o->isStateless(static_cast<WObjectMethod>(method));
+
+  if (s)
+    return EventSignalBase::connect(static_cast<WObjectMethod>(method), o, s);
+  else {
+    if (!dynamic_)
+      dynamic_ = new boost::signal1<void, E>;
+    return dynamic_->connect(boost::bind(method, target));
+  }
+}
+
+template <typename E>
+template <class T, class V>
+boost::signals::connection EventSignal<E>::connect(T *target,
+						   void (V::*method)(E))
+{
+  exposeSignal();
+  assert(dynamic_cast<V *>(target));
+
+  if (!dynamic_)
+    dynamic_ = new boost::signal1<void, E>;
+
+  return dynamic_->connect(boost::bind(method, target, _1));
+}
+
+template <typename E>
+void EventSignal<E>::connect(WJavascriptSlot& slot)
+{
+  EventSignalBase::connect(slot);
+}
+
+template <typename E>
+boost::signals::connection
+EventSignal<E>::connectBase(WObject *target, void (WObject::*method)())
+{
+  return connect(target, method);
+}
+
+template <typename E>
+void EventSignal<E>::emit(E e)
+{
+  if (dynamic_) {
+    pushSender(sender());
+    (*dynamic_)(e);
+    popSender();
+  }
+}
+
+template <typename E>
+void EventSignal<E>::operator()(E e)
+{
+  emit(e);
+}
+
+template <typename E>
+void EventSignal<E>::processDynamic(const JavascriptEvent& jse)
+{
+  processNonLearnedStateless();
+
+  E event(jse);
+  emit(event);
+}
+
+template <class T, class V>
+boost::signals::connection EventSignal<void>::connect(T *target,
+						      void (V::*method)())
+{
+  WObject *o = dynamic_cast<WObject *>(dynamic_cast<V *>(target));
+  assert(o);
+
+  if (relay_)
+    return relay_->connectBase(o, static_cast<WObjectMethod>(method));
+  else {
+    exposeSignal();
+
+    WStatelessSlot *s = o->isStateless(static_cast<WObjectMethod>(method));
+
+    if (s)
+      return EventSignalBase::connect(static_cast<WObjectMethod>(method),
+				      o, s);
+    else {
+      if (!dynamic_)
+	dynamic_ = new boost::signal0<void>;
+      return dynamic_->connect(boost::bind(method, target));
+    }
+  }
+}
+
+}
+
+#endif // WSIGNAL_H_

@@ -1,0 +1,88 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2007 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WTREETABLE_H_
+#define WTREETABLE_H_
+
+#include <WCompositeWidget>
+
+namespace Wt {
+
+class WTreeTableNode;
+class WText;
+
+/*! \class WTreeTable WTreeTable WTreeTable
+ *  \brief A table, with a tree list in the first column.
+ *
+ * A WTreeTable implements a tree list, which has additional data associated
+ * with each item, which is organized in columns.
+ *
+ * The actual data is organized and provided by WTreeTableNode objects.
+ *
+ * To use the tree table, one should first use addColumn() to add
+ * columns, by specifying a header label, and a width. Then, the tree
+ * root must be set, and data bound with each node using
+ * WTreeTableNode::setColumnWidget().
+ *
+ * \sa WTreeTableNode
+ */
+class WT_API WTreeTable : public WCompositeWidget
+{
+public:
+  /*! \brief Construct a new WTreeTable.
+   *
+   * The treeRoot() is 0. The table should first be properly dimensioned
+   * using addColumn() calls, and then data using setTreeRoot().
+   */
+  WTreeTable(WContainerWidget *parent);
+
+  /*! \brief Add a column.
+   *
+   * Add a column, by specifying a header and a column width.
+   */
+  void addColumn(const WMessage& header, WLength width);
+
+  /*! \brief The number of columns in this table.
+   *
+   * Returns the number of columns in the table, including in the count
+   * the first column which contains the tree.
+   */
+  int numColumns() const { return columnWidths_.size(); }
+
+  /*! \brief Set the tree root.
+   *
+   * Sets the data for the tree table, and specify the header for the
+   * first column.
+   */
+  void setTreeRoot(WTreeTableNode *root, const WMessage& header);
+
+  /*! \brief Get the tree root.
+   */
+  WTreeTableNode *treeRoot() const { return treeRoot_; }
+
+  /*! \brief Get the column width for the given column.
+   *
+   * The width of the first column (with index 0), containing the
+   * tree, is implied by the width set for the table minus the width
+   * of all other columns.
+   */
+  WLength columnWidth(int column) const { return columnWidths_[column]; }
+
+  /*! \brief Get the header for the given column.
+   */
+  WText *header(int column) const;
+
+private:
+  WContainerWidget *impl_;
+  WContainerWidget *headerContainer_;
+  WTreeTableNode   *treeRoot_;
+
+  std::vector<WLength> columnWidths_;  
+};
+
+}
+
+#endif // WTREETABLE_H_

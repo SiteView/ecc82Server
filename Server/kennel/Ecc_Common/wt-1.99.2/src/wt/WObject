@@ -1,0 +1,214 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WOBJECT_H_
+#define WOBJECT_H_
+
+#include <WDllDefs.h>
+
+#include <boost/signals/trackable.hpp>
+#include <vector>
+#include <map>
+
+#define slots
+
+namespace Wt
+{
+
+class CgiEntry;
+class WStatelessSlot;
+
+/*! \class WObject WObject WObject
+ *  \brief This class is the base class of all %Wt objects and widgets.
+ *
+ * The main feature offered by WObject is a signal/slot
+ * system. Connections between signals and slots of WObject implement
+ * a type-safe event callback system. For example, one can simply
+ * connect() the WInteractWidget::clicked signal of a WPushButton to
+ * the WApplication::quit() method, to exit the application when the
+ * button is clicked.
+ *
+ * WObjects can be organized in object trees. When an object is created with 
+ * another object as parent, it's added to the parent's children list, and is 
+ * deleted when the parent is. Child objects may also be deleted manually, 
+ * they will remove themselves from their parent in the process.
+ *
+ * \sa Signal, EventSignal
+ */
+class WT_API WObject : public boost::signals::trackable
+{
+
+public:
+  /*! \brief Create a WObject with parent object, parent. 
+   * 
+   * If the optional parent is specified, the parent object will destroy 
+   * all child objects. Set parent to 0 to create an object with no parent. 
+   */
+  WObject(WObject* parent = 0);
+
+  /*! \brief Destroy the WObject.
+   *
+   * This automatically deletes all child objects including connections from 
+   * and to signals and slots of this WObject.
+   */
+  virtual ~WObject();  
+
+  /*
+   * Formname: for widgets is the name of the equivalent web widget
+   *           for resources is the id of the widget
+   *
+   * Note that it is not unique, some widgets will share the same
+   * formname. In particular this is true for web widgets.
+   */
+  virtual const std::string formName() const;
+  virtual void setFormData(CgiEntry *entry);
+  virtual void formDataSet();
+  virtual void setNoFormData();
+  virtual void requestTooLarge(int size);
+
+  /*
+   * Id: unique number for all WObjects
+   */
+  int internalId() const { return id_; }
+
+  /*! \brief Reset learned stateless slot implementations.
+   *
+   * Clears the stateless implementation for all slots declared to be
+   * implemented with a stateless implementation.
+   *
+   * \sa resetLearnedSlot(), implementStateless() 
+   */
+  void resetLearnedSlots();
+
+  /*! \brief Reset a learned stateless slot implementation.
+   *
+   * Clears the stateless implementation for the given slot that
+   * was declared to be implemented with a stateless implementation.
+   *
+   * When something has changed that breaks the contract of a
+   * stateless slot to always have the same effect, you may call this
+   * method to force the application to discard the current
+   * implementation.
+   *
+   * \sa implementStateless()
+   */
+  template <class T>
+    void resetLearnedSlot(void (T::*method)());
+   
+  /*! \brief Declare a slot to be stateless, for improved user
+   *         interface performance.
+   *
+   * Indicate that the given slot is stateless, and meets the requirement
+   * that the slot's code does not depend on any state of the object, and
+   * performs the same visual effect regardless of any state, or at
+   * least until resetLearnedSlot() is called.
+   *
+   * When this slot is connected to an EventSignal (such as those exposed
+   * by WInteractWidget and WFormWidget), the %Wt library may decide to
+   * cache the visual effect of this slot in JavaScript code at client-side:
+   * this effect will be learned automatically at the first invocation.
+   * This has no consequences for the normal event handling, since the slot
+   * implementation is still executed in response to any event notification.
+   * Therefore, it is merely an optimization of the latency for the visual
+   * effect, but it does not change the behaviour of the application.
+   *
+   * When for some reason the visual effect does change, one may use
+   * resetLearnedSlot() or resetLearnedSlots() to flush the existing cached
+   * visual effect, forcing the library to relearn it.
+   *
+   * It is crucial that this function be applied first to a slot that is 
+   * intended to be stateless before any %EventSignal connects to that slot.
+   * Otherwise, the connecting %EventSignal cannot find the stateless
+   * slot implementation for the intended slot, and the statement will have
+   * no effect for that connection.
+   *
+   * \sa resetLearnedSlot(), EventSignal
+   */
+  template <class T>
+    void implementStateless(void (T::*method)());
+
+  /*! \brief Declare a slot to be stateless, for improved user
+   *         interface performance.
+   *
+   * This method has the same effect as
+   *\link implementStateless() implementStateless(void (T::*method)())\endlink,
+   * but learns the visual effect of the slot before the first
+   * invocation of the event.
+   *
+   * To learn the visual effect, the library will simulate the event and
+   * record the visual effect. To restore the application state, it will
+   * call the undoMethod which must restore the effect of method. 
+   *
+   * \sa \link implementStateless() implementStateless(void (T::*method)())\endlink
+   */
+  template <class T>
+    void implementStateless(void (T::*method)(), void (T::*undoMethod)());
+ 
+protected:
+  virtual void signalConnectionsChanged();
+
+  /*! \brief Get the sender of the current slot call.
+   *
+   * Use this function to know who emitted the signal that triggered this
+   * slot call. It may be 0 if the signal has now owner information, or
+   * if there is no signal triggering the current slot, but instead the slot
+   * method is called directly.
+   */
+  static WObject *sender();
+
+private:
+  void implementPrelearn(void (WObject::*method)(),
+			 void (WObject::*undoMethod)());
+  void implementAutolearn(void (WObject::*method)());
+  void resetLearnedSlot(void (WObject::*method)());
+
+  WStatelessSlot* isStateless(void (WObject::*method)());
+
+  std::vector<WStatelessSlot *> statelessSlots_;
+  
+  WObject(const WObject&);
+  int id_;
+
+  static int nextObjId_;
+
+  std::vector<WObject *> *children_;
+  WObject                *parent_;
+
+  template <typename E> friend class EventSignal;
+  friend class EventSignalBase;
+};
+
+template <class T>
+void WObject::resetLearnedSlot(void (T::*method)())
+{
+  assert(dynamic_cast<T *>(this));
+  resetLearnedSlot(static_cast<void (WObject::*)()>(method));
+}
+
+
+template <class T>
+void WObject::implementStateless(void (T::*method)())
+{
+  assert(dynamic_cast<T *>(this));
+  implementAutolearn(static_cast<void (WObject::*)()>(method));
+}
+
+template <class T>
+void WObject::implementStateless(void (T::*method)(),
+				 void (T::*undoMethod)())
+{
+  assert(dynamic_cast<T *>(this));
+  implementPrelearn(static_cast<void (WObject::*)()>(method),
+		    static_cast<void (WObject::*)()>(undoMethod));
+}
+
+}
+
+#ifdef USING_NAMESPACE_WT
+using namespace Wt;
+#endif // USING_NAMESPACE_WT
+
+#endif // WOBJECT_H_

@@ -1,0 +1,123 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WFORM_WIDGET_H_
+#define WFORM_WIDGET_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WInteractWidget>
+
+class WLabel;
+
+/*! \brief A WWidget that correspond to a HTML form elements.
+ *
+ * A WFormWidget may receive focus, can be disabled, and can have a
+ * label that acts as proxy for getting focus. It provides signals
+ * which reflect changes to its value, or changes to its focus.
+ */
+class __declspec(dllexport) WFormWidget : public WInteractWidget
+{
+  //MOC: W_OBJECT WFormWidget:WInteractWidget
+  W_OBJECT;
+public:
+  /*! \brief Construct a WFormWidget with an optional parent.
+   */
+  WFormWidget(WContainerWidget *parent = 0);
+
+  /*! \brief Destroy a WFormWidget.
+   *
+   * If a label was associated with the widget, the label is updated
+   * as well to indicate the loss of the buddy.
+   */
+  ~WFormWidget();
+
+  /*! \brief Get the label associated with this widget.
+   *
+   * Returns the label (if there is one) that acts as a proxy for this widget.
+   *
+   * \sa WLabel::setBuddy(WFormWidget *)
+   */
+  WLabel *label() const { return label_; }
+
+  /*! \brief Set the hidden state of this widget.
+   *
+   * If the widget has a label, it hidden or shown together with this
+   * widget.
+   */
+  void setHidden(bool hidden);
+
+  /*! \brief Return whether the widget is enabled.
+   */
+  bool isEnabled() const { return enabled_; }
+
+public slots:
+
+  //MOC: STATIC SLOT WFormWidget::enable()
+  /*! \brief Enable the widget.
+   *
+   * This is a static slot !
+   * \sa setEnabled(bool)
+   */
+  void enable();
+
+  //MOC: STATIC SLOT WFormWidget::disable()
+  /*! \brief Disable the widget.
+   *
+   * This is a static slot !
+   * \sa setEnabled(bool)
+   */
+  void disable();
+
+public slots:
+  //MOC: SLOT WFormWidget::setEnabled(bool enabled)
+  /*! \brief Change the enabled state of the widget.
+   *
+   * A widget that is disabled cannot receive focus or user interaction.
+   *
+   */
+  void setEnabled(bool enabled);
+
+public signals:
+  //MOC: EVENT SIGNAL WFormWidget::changed()
+  /*! \brief Signal emitted when the value was changed.
+   */
+  void changed();
+  //MOC: EVENT SIGNAL WFormWidget::selected()
+  /*! \brief Signal emitted when ?.
+   */
+  void selected();
+  //MOC: EVENT SIGNAL WFormWidget::blurred()
+  /*! \brief Signal emitted when the widget lost focus.
+   */
+  void blurred();
+  //MOC: EVENT SIGNAL WFormWidget::focussed()
+  /*! \brief Signal emitted when the widget recieved focus.
+   */
+  void focussed();
+
+protected:
+  WLabel *label_;
+  bool enabled_;
+
+private:
+  bool enabledChanged_;
+  bool wasEnabled_;
+
+  void undoEnable();
+  void undoDisable();
+
+  void setLabel(WLabel *label);
+
+protected:
+  void updateDom(DomElement& element, bool all);
+
+  friend class WLabel;
+};
+
+#endif // WINTERACT_WIDGET_H_

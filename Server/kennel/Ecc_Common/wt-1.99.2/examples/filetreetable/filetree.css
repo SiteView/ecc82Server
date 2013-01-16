@@ -1,0 +1,23 @@
+body {
+  font-family:arial,sans-serif; font-size: smaller;
+
+}
+
+.treenodelabel {
+}
+
+.treenodechildcount {
+  color:blue;
+}
+
+.header * {
+  font-weight: bold;
+}
+
+.date {
+  text-align: right;
+}
+
+.fsize {
+  text-align: right;
+}

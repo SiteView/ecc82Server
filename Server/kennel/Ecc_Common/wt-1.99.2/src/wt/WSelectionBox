@@ -1,0 +1,47 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSELECTIONBOX_H_
+#define WSELECTIONBOX_H_
+
+#include <WComboBox>
+
+namespace Wt {
+
+/*! \class WSelectionBox WSelectionBox WSelectionBox
+ *  \brief A selection box provides the same functionality as
+ *         combo box but presents the options in a list that is
+ *         always visible.
+ *
+ * WSelectionBox is an \link WWidget::setInline(bool) inline \endlink widget.
+ */
+class WSelectionBox : public WComboBox
+{
+public:
+  WSelectionBox(WContainerWidget *parent = 0);
+
+  /*! \brief Set the number of items that are visible.
+   *
+   * If more items are available, a scroll-bar is provided.
+   */
+  int  verticalSize() const { return verticalSize_; }
+
+  /*! \brief Get the number of items that are visible.
+   */
+  void setVerticalSize(int items);
+
+private:
+  int verticalSize_;
+
+  bool verticalSizeChanged_;
+
+protected:
+  void        updateDom(DomElement& element, bool all);
+};
+
+}
+
+#endif // WSELECTIONBOX_

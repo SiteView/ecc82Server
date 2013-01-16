@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" dir="ltr">
+<head>
+<meta http-equiv='Pragma' content='no-cache' />
+<title>${TITLE}</title>
+${STYLESHEETS}
+<style type="text/css">
+${STYLESHEET}
+</style>
+</head>
+<body>
+<form method='post' action='${RELATIVE_URL}' id='form' enctype='multipart/form-data'>
+  <input name='request' id='request' type='hidden' value='page'></input>
+  ${HTML}
+</form>
+<meta http-equiv='refresh' content='${REFRESH}' />
+</body></html>

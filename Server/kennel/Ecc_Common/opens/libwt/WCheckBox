@@ -1,0 +1,54 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WCHECKBOX_H_
+#define WCHECKBOX_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WAbstractToggleButton>
+#include <WWidget>
+/*! \brief A user control that represents a check box.
+ *
+ * A WCheckbox is by default an inline widget.
+ *
+ * \sa WAbstractToggleButton
+ */
+class __declspec(dllexport) WCheckBox : public WAbstractToggleButton
+{
+  //MOC: W_OBJECT WCheckBox:WAbstractToggleButton
+  W_OBJECT;
+
+public:
+  /*! \brief Create a checkbox with empty label.
+   */
+  WCheckBox(WContainerWidget *parent = 0);
+
+  /*! \brief Create a checkbox with given label.
+   */
+  WCheckBox(const std::string text, WContainerWidget *parent = 0);
+  bool nCheck;
+  bool  _CheckChanged;
+  void SetCheck(bool bChecked);
+
+  char nSetName[64];
+  char id_[64];
+  bool _SetNameChanged;
+  bool _SetIdChanged;
+//  void SetName(char * nName);
+  void SetId(char * nId);
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+
+protected:
+  virtual DomElement *createDomElement();
+//  virtual void        getDomChanges(std::vector<DomElement *>& result);
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual void setParent(WWidget *parent);
+};
+
+#endif // WCHECKBOX_H_

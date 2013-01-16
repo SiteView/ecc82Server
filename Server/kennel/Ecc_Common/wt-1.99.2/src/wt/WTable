@@ -1,0 +1,145 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WTABLE_H_
+#define WTABLE_H_
+
+#include <WInteractWidget>
+
+namespace Wt {
+
+class WTableCell;
+class WTable;
+
+class WT_API WTableRow : public WObject 
+{
+public:
+  WTable *table() const { return table_; }
+  int rowNum() const;
+  void insertColumn(int column);
+
+private:
+  WTableRow(WTable *table, int numCells);
+  void expand(int numCells);
+
+  struct TableData {
+    WTableCell *cell;
+
+    /* used during rendering */
+    bool overSpanned;
+
+    TableData();
+  };
+
+  WTable *table_;
+  std::vector<TableData> cells_;
+
+  friend class WTable;
+};
+
+/*! \class WTable WTable WTable
+ *  \brief WTable manages children in a table.
+ *
+ * WTable is a \link WWidget::setInline(bool) stacked \endlink widget.
+ *
+ * A WTable provides a way to manage the lay-out of children differently
+ * from the default inline or stacked layout of a WContainerWidget, by
+ * using a grid.
+ *
+ * Access to the contents of a WTable happens through WTableCell
+ * widgets. Use elementAt(int row, int column) to access the cell at a
+ * particular position in the table. The WTable automatically resizes
+ * when necessary.
+ *
+ * It is possible to insert and delete entire rows or columns from the
+ * table using the insertColumn(int column), insertRow(int row),
+ * deleteColumn(int column), or deleteRow(int row) methods.
+ */
+class WT_API WTable : public WInteractWidget
+{
+public:
+  /*! \brief Construct an empty table.
+   */
+  WTable(WContainerWidget *parent = 0);
+
+  /*! \brief Delete the table and its entire contents.
+   */
+  ~WTable();
+
+  /*! \brief Access the table element at the given row and column.
+   *
+   * If necessary, the table is resized to create the given row or
+   * column.
+   */
+  WTableCell *elementAt(int row, int column);
+
+  /*! \brief Delete the given table cell and its contents.
+   *
+   * The table cell at that position is recreated.
+   */
+  void removeCell(WTableCell *item);
+
+  /*! \brief Delete the table cell at the given position.
+   *
+   * \sa removeCell(WTableCell)
+   */
+  void removeCell(int row, int column);
+
+  /*! \brief Insert an empty row.
+   */
+  void insertRow(int row);
+
+  /*! \brief Delete the given row and all its contents.
+   *
+   * Rows below the given row are shifted up.
+   */
+  void deleteRow(int row);
+
+  /*! \brief Insert an empty column.
+   */
+  void insertColumn(int column);
+
+  /*! \brief Delete the given column and all its contents.
+   */
+  void deleteColumn(int column);
+
+  /*! \brief Clear the entire table.
+   */
+  void clear();
+
+  /*! \brief The number of rows in the table.
+   */
+  int numRows() const;
+
+  /*! \brief The number of columns in the table.
+   */
+  int numColumns() const;
+
+  void setCellPadding(int pixels);
+
+  void printDebug();
+
+private:
+  std::vector<WTableRow *> rows_;
+  int                      cellPadding_;
+  bool                     gridChanged_;
+  bool                     paddingChanged_;
+
+  void expand(int row, int column, int rowSpan, int columnSpan);
+  WTableRow::TableData& itemAt(int row, int column);
+
+  friend class WTableCell;
+  friend class WTableRow;
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+}
+
+#endif // WTABLE_H_

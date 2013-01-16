@@ -1,0 +1,50 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WBUTTONGROUP_H_
+#define WBUTTONGROUP_H_
+
+#include <WObject>
+
+namespace Wt {
+
+class WRadioButton;
+
+/*! \class WButtonGroup WButtonGroup WButtonGroup
+ *  \brief Class for grouping radio buttons logically together.
+ *
+ * A button group manages a set of \link WRadioButton radio buttons
+ * \endlink, making them exclusive of each other.
+ */
+class WButtonGroup : public WObject
+{
+public:
+  /*! \brief Create a new empty button group.
+   */
+  WButtonGroup(WObject* parent = 0);
+
+  /*! \brief Delete a button group.
+   *
+   * This does not delete the radio buttons, but simply removes them
+   * from the group.
+   */
+  ~WButtonGroup();
+
+  /*! \brief Add a radio button to the group.
+   */
+  void addButton(WRadioButton *button);
+
+  /*! \brief Remove a radio button from the group.
+   */
+  void removeButton(WRadioButton *button);
+
+private:    
+  std::vector<WRadioButton *> buttons_;
+};
+
+}
+
+#endif // WBUTTONGROUP_H_

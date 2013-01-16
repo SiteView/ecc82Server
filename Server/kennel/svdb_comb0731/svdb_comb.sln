@@ -1,0 +1,51 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "svdb", "svdb.vcproj", "{0DABDAAE-2110-46E1-9EC3-1DF9A0B9B2B0}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "svapi", "svapi\svapi.vcproj", "{A81C3A80-FC13-47AF-AAC2-FA8054AE6DF5}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libutil", "libutil\libutil.vcproj", "{20272ADB-E404-40AA-A450-FAA7DAF2A9D2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+		ReleaseAMD64 = ReleaseAMD64
+		ReleaseItanium = ReleaseItanium
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{0DABDAAE-2110-46E1-9EC3-1DF9A0B9B2B0}.Debug.ActiveCfg = Debug|Win32
+		{0DABDAAE-2110-46E1-9EC3-1DF9A0B9B2B0}.Debug.Build.0 = Debug|Win32
+		{0DABDAAE-2110-46E1-9EC3-1DF9A0B9B2B0}.Release.ActiveCfg = Release|Win32
+		{0DABDAAE-2110-46E1-9EC3-1DF9A0B9B2B0}.Release.Build.0 = Release|Win32
+		{0DABDAAE-2110-46E1-9EC3-1DF9A0B9B2B0}.ReleaseAMD64.ActiveCfg = Release|Win32
+		{0DABDAAE-2110-46E1-9EC3-1DF9A0B9B2B0}.ReleaseAMD64.Build.0 = Release|Win32
+		{0DABDAAE-2110-46E1-9EC3-1DF9A0B9B2B0}.ReleaseItanium.ActiveCfg = Release|Win32
+		{0DABDAAE-2110-46E1-9EC3-1DF9A0B9B2B0}.ReleaseItanium.Build.0 = Release|Win32
+		{A81C3A80-FC13-47AF-AAC2-FA8054AE6DF5}.Debug.ActiveCfg = Debug|Win32
+		{A81C3A80-FC13-47AF-AAC2-FA8054AE6DF5}.Debug.Build.0 = Debug|Win32
+		{A81C3A80-FC13-47AF-AAC2-FA8054AE6DF5}.Release.ActiveCfg = Release|Win32
+		{A81C3A80-FC13-47AF-AAC2-FA8054AE6DF5}.Release.Build.0 = Release|Win32
+		{A81C3A80-FC13-47AF-AAC2-FA8054AE6DF5}.ReleaseAMD64.ActiveCfg = Release|Win32
+		{A81C3A80-FC13-47AF-AAC2-FA8054AE6DF5}.ReleaseAMD64.Build.0 = Release|Win32
+		{A81C3A80-FC13-47AF-AAC2-FA8054AE6DF5}.ReleaseItanium.ActiveCfg = Release|Win32
+		{A81C3A80-FC13-47AF-AAC2-FA8054AE6DF5}.ReleaseItanium.Build.0 = Release|Win32
+		{20272ADB-E404-40AA-A450-FAA7DAF2A9D2}.Debug.ActiveCfg = Debug|Win32
+		{20272ADB-E404-40AA-A450-FAA7DAF2A9D2}.Debug.Build.0 = Debug|Win32
+		{20272ADB-E404-40AA-A450-FAA7DAF2A9D2}.Release.ActiveCfg = Release|Win32
+		{20272ADB-E404-40AA-A450-FAA7DAF2A9D2}.Release.Build.0 = Release|Win32
+		{20272ADB-E404-40AA-A450-FAA7DAF2A9D2}.ReleaseAMD64.ActiveCfg = Release|Win32
+		{20272ADB-E404-40AA-A450-FAA7DAF2A9D2}.ReleaseAMD64.Build.0 = Release|Win32
+		{20272ADB-E404-40AA-A450-FAA7DAF2A9D2}.ReleaseItanium.ActiveCfg = Release|Win32
+		{20272ADB-E404-40AA-A450-FAA7DAF2A9D2}.ReleaseItanium.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

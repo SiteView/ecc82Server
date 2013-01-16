@@ -1,0 +1,78 @@
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+// This may look like C code, but it's really -*- C++ -*-
+#ifndef WCSS_STYLE_SHEET_H_
+#define WCSS_STYLE_SHEET_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <map>
+#include <string>
+#include <WCssDecorationStyle>
+
+class __declspec(dllexport) WCssRule
+{
+public:
+  WCssRule(std::string selector);
+  virtual ~WCssRule();
+
+  const std::string selector() const { return selector_; }
+
+  virtual const std::string declarations() const = 0;
+
+private:
+  std::string selector_;
+};
+
+class WCssDecorationRule : public WCssRule
+{
+public:
+  WCssDecorationRule(std::string selector, const WCssDecorationStyle& style);
+
+  WCssDecorationStyle& style() { return style_; }
+
+  const std::string declarations() const;
+
+private:
+  WCssDecorationStyle style_;
+};
+
+class WCssOtherRule : public WCssRule
+{
+public:
+  WCssOtherRule(std::string selector, const std::string declarations);
+
+  const std::string declarations() const { return declarations_; }
+
+private:
+  std::string declarations_;
+};
+
+/*! \brief A CSS style sheet.
+ *
+ * \sa WApplication::styleSheet()
+ */
+class WCssStyleSheet
+{
+public:
+  /*! \brief Create a new empty style sheet.
+   */
+  WCssStyleSheet();
+  ~WCssStyleSheet();
+
+  /*! \brief Add a decoration rule.
+   */
+  void addRule(const std::string selector, const WCssDecorationStyle& style);
+  void addRule(const std::string selector, const std::string declarations);
+  std::string cssText() const;
+
+private:
+  std::map<std::string, WCssRule *> rules_;
+};
+
+#endif // WCSS_STYLE_SHEET_H_

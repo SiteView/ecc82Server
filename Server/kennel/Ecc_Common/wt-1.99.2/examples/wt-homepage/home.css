@@ -1,0 +1,40 @@
+body {
+  font-family:arial,sans-serif;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h2, h3, h4, h5 {
+  color: #505050;
+}
+
+h2 {
+  padding-left: 30px;
+  border-bottom: 1px solid #000;
+}
+
+h2 span {
+  border-bottom: 0.2em solid #000;
+}
+
+.menu * .item {
+  cursor: pointer; cursor: hand;
+  color: blue;
+  text-decoration: underline;
+}
+
+.menu * .itemselected {
+  color: blue;
+  text-decoration: underline;
+  font-weight: bold;  
+}
+
+.treenodelabel {
+  font-size: smaller;
+}
+.treenodechildcount {
+  font-size: smaller;
+  color:blue;
+}

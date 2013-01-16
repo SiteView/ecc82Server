@@ -1,0 +1,82 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WMESSAGE_RESOURCE_BUNDLE_
+#define WMESSAGE_RESOURCE_BUNDLE_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <string>
+#include <vector>
+
+class WMessage;
+class WMessageResources;
+
+/*! \brief The message-resource-bundle of a WApplication manages its
+ *         localazible messages.
+ *
+ * The resource bundle manages a number of resource files, which allow
+ * the developer to conceptually manage its messages in a number of
+ * libraries.
+ *
+ * For example, a WApplication may have a generic message library, that is
+ * shared with many other libraries, with re-occurring messages (such as
+ * 'welcome', 'add to shopping cart', and 'pay'), and a specific message
+ * library for specific messages.
+ */
+class __declspec(dllexport) WMessageResourceBundle
+{
+public:
+  /*! \brief Add a (series) of message resource files to be used.
+   *
+   * When you give as path: /path/to/name, then the following message
+   * resource files will be used:
+   *  - /path/to/name.xml (default, English)
+   *  - /path/to/name_nl.xml (for Dutch)
+   *  - /path/to/name_fr.xml (for French)
+   *  - etc...
+   *
+   * The message file that will be currently used depends on the application's
+   * locale.
+   *
+   * A Message resource file must be formatted as follows:
+   * \code
+     <messages>
+       <message id='welcome-text'>
+         Welcome dear visiter of the WFooBar magic website !
+       </message>
+       <message id='company-policy'>
+         The company policy is to <b>please the dear share-holders</b>.
+       </message>
+     </messages>
+     \endcode
+   *
+   * This resource file would correspond to WMessage("welcome-text") and
+   * WMessage("company-policy") instances.
+   *
+   * \sa WApplication::locale()
+   */
+  void use(const std::string path);
+
+  /*! \brief Get the value for a particular message in the current locale.
+   */
+  std::string getValue(const WMessage& message) const;
+
+  /*! \brief Reread the message resources.
+   */
+  void refresh();
+
+private:
+  std::vector<WMessageResources *> messageResources_;
+
+  WMessageResourceBundle();
+
+  friend class WApplication;
+};
+
+#endif // WMESSAGE_RESOURCE_BUNDLE_

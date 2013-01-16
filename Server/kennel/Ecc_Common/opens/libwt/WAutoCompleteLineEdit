@@ -1,0 +1,108 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WAUTOCOMPLETE_LINEEDIT_H_
+#define WAUTOCOMPLETE_LINEEDIT_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WCompositeWidget>
+
+class WLineEdit;
+class WTable;
+
+/*! \brief A LineEdit which suggests possible completions.
+ *
+ * This widgets provides a line edit, which popups up a window right
+ * below when the user starts modifying the line edit contents. In
+ * this window it presents a list with possible completions from which
+ * the user may select one.
+ *
+ * The look and feel of a suggestion is styled using the style class
+ * "suggestion"
+ *
+ * The default implementation only matches suggestions that start with
+ * exactly the same text as the current line edit contents, and inserts
+ * the selected suggestion literally when a suggestion is clicked. If
+ * you want different functionality, you can overload this class and
+ * reimplement the methods suggestionMatches(int) const and
+ * selectSuggestion(int)
+ *
+ * FIXME: this widget's visual layout is bad !
+ *        And besides, it requires server interaction which makes it a bit a
+ *        dumb widget ?
+ *
+ * A WAutoCompleteLineEdit is by default an inline widget.
+ *
+ */
+class __declspec(dllexport) WAutoCompleteLineEdit : public WCompositeWidget {
+  //MOC: W_OBJECT WAutoCompleteLineEdit:WCompositeWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Create a WAutoCompleteLineEdit with empty suggestion list
+   *         and empty lineedit content.
+   */
+  WAutoCompleteLineEdit(WContainerWidget *parent = 0);
+
+  /*! \brief Create a WAutoCompleteLineEdit with empty suggestion list
+   *         and given lineedit content.
+   */
+  WAutoCompleteLineEdit(const std::string content,
+			WContainerWidget *parent = 0);
+
+    /*! \brief The line edit itself.
+   */
+  WLineEdit  *lineEdit() const { return lineEdit_; }
+
+  /*! \brief Set the complete list of suggestions that are available.
+   *
+   * These are not the suggestions that will be shown, since only those
+   * suggestions that match, as determined with suggestionMatches(int) are
+   * actually shown.
+   */
+  void        setSuggestions(const std::vector<std::string>& suggestions);
+
+  /*! \brief Get the text associated with a particular suggestion.
+   */
+  std::string suggestion(int suggestionIndex) const;
+
+private slots:
+  //MOC: SLOT WAutoCompleteLineEdit::lineEditKeyUp(int keycode)
+  void lineEditKeyUp(int keycode);
+
+private:
+  std::vector<std::string> suggestions_;
+
+  WTable    *layout_;
+  WLineEdit *lineEdit_;
+  WTable    *suggestionsList_;
+
+  void create(WContainerWidget *parent);
+  void filterSuggestions(const std::string text);
+
+  friend class WAutoCompleteSuggestion;
+
+protected:
+  /*! \brief Act on the user clicking a particular suggestion.
+   *
+   * Override this method if you want to act differently on the
+   * user having indicated a particular suggestion.
+   */
+  virtual void selectSuggestion(int suggestionIndex);
+
+  /*! \brief Determine if a particular suggestion matches the
+   *         current text, and thus should be shown.
+   *
+   * Override this method if you want to act differently on changed
+   * input.
+   */
+  virtual bool suggestionMatches(int suggestionIndex) const;
+};
+
+#endif // WAUTOCOMPLETE_LINEEDIT_H_

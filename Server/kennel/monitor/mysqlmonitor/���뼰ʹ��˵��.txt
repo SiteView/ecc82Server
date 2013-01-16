@@ -1,0 +1,56 @@
+为MySql监视器提供的DLL程序：mysqlmonitor.dll
+
+编译环境：VS2003
+编译条件：
+1、安装MySql数据库；
+2、在mysqlmonitor属性页”-〉“C/C++”-〉“常规”
+-〉“附加包含目录”中加入“D:\mysql\include”
+（MySql安装在D盘）；
+3、在mysqlmonitor属性页”-〉“链接器”-〉“常规”
+-〉“附加库目录”中加入svapi.lib文件的所在路径。；
+4、在mysqlmonitor属性页”-〉“链接器”-〉“常规”
+-〉“附加库目录”中加入libmySQL.lib文件的所在路径：“D:\mysql\lib\opt”
+（MySql安装在D盘，代码里面用到了MySQL提供的API，所以需要包含这个LIB）；
+5、在mysqlmonitor属性页”-〉“链接器”-〉“输入”
+-〉“附加依赖项”中加入“svapi.lib”。
+6、在mysqlmonitor属性页”-〉“链接器”-〉“输入”
+-〉“附加依赖项”中加入“libmySQL.lib”。
+
+
+监视器名称：MySql
+调用的函数：MySQL
+监视指标：thread 	指标类型：Int
+监视指标：querycount 	指标类型：Int
+监视指标：slowquery 	指标类型：Int
+监视指标：opentable 	指标类型：Int
+监视指标：uptime 	指标类型：Int
+监视指标：flushtable 	指标类型：Int
+监视指标：querys1s 	指标类型：Int
+
+监视器名称：MySqlMem
+调用的函数：MySqlMem
+监视指标：MySqlPhyMem 		指标类型：Int
+监视指标：MySqlPhyMemUsage 	指标类型：Float
+监视指标：TotalPhyMem		指标类型：Int
+
+监视器名称：MySQL进程信息
+调用的函数：ProInfo
+监视指标：nTotalConn 指标类型：Int
+监视指标：result 指标类型：String
+
+监视器名称：MySQL同步状态
+调用的函数：SlaveStatus
+监视指标：SlaveIOState 指标类型：String
+监视指标：MasterHost 指标类型：String
+监视指标：MasterUser 指标类型：String
+监视指标：MasterPort 指标类型：Int
+监视指标：SecondsBehindMaster 指标类型：String
+
+监视器名称：MySQL内存状态
+调用的函数：MemoryStatus
+监视指标：PageSize 指标类型：Int
+监视指标：TotalPages 指标类型：Int
+监视指标：FreePages 指标类型：Int
+监视指标：DataPages 指标类型：Int
+监视指标：DirtyPages 指标类型：Int
+监视指标：LatchedPages 指标类型：Int

@@ -1,0 +1,38 @@
+为Sybase监视器提供的DLL程序：sybasemonitor.dll
+
+编译环境：VS2003
+编译条件：
+1、安装Sybase数据库；
+2、在sybasemonitor属性页”-〉“链接器”-〉“常规”
+-〉“附加库目录”中加入svapi.lib文件的所在路径。；
+3、在sybasemonitor属性页”-〉“链接器”-〉“输入”
+-〉“附加依赖项”中加入“svapi.lib”。
+
+
+监视器名称：Sybase数据库表空间
+调用的函数：GetDataSpace
+监视指标：usedPercent	指标类型：Float
+监视指标：used		指标类型：Float
+监视指标：freePercent	指标类型：Float
+监视指标：freeSpace	指标类型：Float
+监视指标：total		指标类型：Float
+
+监视器名称：Sybase性能
+调用的函数：SpMonitor
+监视指标：per_total_errors	指标类型：int
+监视指标：per_io_busy		指标类型：int
+监视指标：per_pack_received	指标类型：int
+监视指标：per_pack_sent		指标类型：int
+监视指标：per_pack_errors	指标类型：int
+监视指标：per_total_read	指标类型：int
+监视指标：per_total_write	指标类型：int
+监视指标：per_cpu_busy		指标类型：int
+监视指标：per_connections	指标类型：int
+监视指标：per_idle		指标类型：int
+
+监视器名称：Sybase死锁
+调用的函数：DeadLock
+监视指标：DeadLockProID	指标类型：String
+监视指标：DeadLockTime	指标类型：int
+监视指标：DeadLockNum	指标类型：int
+监视指标：DeadLockInfo	指标类型：String

@@ -1,0 +1,33 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSIGNAL_H_
+#define WSIGNAL_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <string>
+
+#include "WObject"
+
+class __declspec(dllexport) WSignal_ {
+
+public:
+  WSignal_();
+  WSignal_(const std::string name, bool event);
+
+  const std::string name() const { return name_; }
+  bool good() const { return name_.length() != 0; }
+  bool exposable() const { return event_; }
+
+private:
+  std::string name_;
+  bool        event_;
+};
+
+#endif // WSIGNAL_H_

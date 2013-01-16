@@ -1,0 +1,126 @@
+<!--
+    Wt Configuration File.
+
+    The Wt configuration file manages, for every Wt application, settings
+    for session management, debugging, directory for runtime information
+    such as session sockets, and some security settings.
+
+    Settings may be specified globally, or for a single application path.
+
+    The path should be as configured in the Wt build process, where it
+    defaults to /etc/wt/wt_config.xml
+  -->
+
+<server>
+
+  <!-- Default application settings -->
+  <application-settings location="*">
+
+    <!-- Session management. -->
+    <session-management>
+
+      <!-- Every session runs within a dedicated process.
+
+           This mode guarantees kernel-level session privacy, but as every
+	   session requires a seperate process, it is also an easy target
+	   for DoS attacks if not shielded by access control.
+
+           It is also a convenient mode during development, as it is easy
+	   to enable disable debugging using valgrind, and it always starts
+	   the latest deployed executable for a new session.
+       -->
+      <!--
+      <dedicated-process>
+         <max-num-sessions>100</max-num-sessions>
+      </dedicated-process>
+      -->
+
+      <!-- Multiple sessions within one process.
+
+           This mode spawns a number of processes, and sessions are allocated
+	   randomly to one of these processes (you should not use this for
+	   dynamic FCGI servers, but only in conjunction with a fixed number.
+
+           This requires careful programming, as memory corruption in one
+	   session will kill all of the sessions in the same process. You
+	   should debug extensively using valgrind. Also, it is your
+	   responsibility to keep session state not interfering and seperated.
+
+           On the other hand, sessions are inexpensive, and this mode suffers
+	   far less from DoS attacks than dedicated-process mode. Use it for
+	   non-critical and well-debugged web applications.
+        -->
+      <shared-process>
+	<num-processes>1</num-processes>
+      </shared-process>
+
+      <!-- Session tracking strategy.
+
+         Possible values:
+	 Auto: cookies is available, otherwise URL rewriting
+	 URL:  only URL rewriting
+      -->
+      <tracking>Auto</tracking>
+
+      <!-- How reload should be handled.
+
+         When reload should spawn a new session, cookies for session management
+	 then the URL will not be cluttered with a session id if URL rewriting
+	 is used for session management.
+	 However, WApplication::refresh() will never be called. It is nice to
+	 have in some cases.
+      -->
+      <reload-is-new-session>true</reload-is-new-session>
+
+      <!-- Session timeout (seconds).
+
+         When a session remains inactive for this amount of time, it is cleaned
+	 up.
+      -->
+      <timeout>600</timeout>
+
+    </session-management>
+
+    <!-- maximum HTTP request size (Kb) -->
+    <max-request-size>128</max-request-size>
+
+
+    <!-- Enable debug
+
+      Allow debugging by appending 'debug' to the initial query for starting
+      the application.
+    -->
+    <enable-debug>true</enable-debug>
+
+    <!-- Valgrind path
+
+      If debugging is enabled and this path is not empty, then valgrind
+      will be started for every shared process, or for every session which
+      has ?debug appended to the command line.
+    -->
+    <valgrind-path></valgrind-path>
+
+    <!-- Run directory
+
+      Path used by Wt to do session management.
+    -->
+    <run-directory>/usr/wt/run</run-directory>
+
+    <!-- Session id length
+
+      Length of the session Id (number of characters).
+    -->
+    <session-id-length>16</session-id-length>
+
+  </application-settings>
+
+
+  <!-- Override settings for specific applications.
+
+    Location refers to physical filesystem location
+    of the application
+  -->  
+  <application-settings
+      location = "/var/www/localhost/wt/examples/hello.fcg">
+  </application-settings>
+</server>

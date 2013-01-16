@@ -1,0 +1,40 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WCONNECTION_H_
+#define WCONNECTION_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WObject>
+#include <string>
+
+class __declspec(dllexport) WConnection_ {
+public:
+  WConnection_(WSignalInstance_*signal,
+	       WSlotInstance_ *slot,
+	       WObject::ConnectionType type);
+  ~WConnection_();
+
+static int m_nCount;
+
+  WSignalInstance_ *signal() const { return signal_; }
+  WSlotInstance_   *slot() const { return slot_; }
+  WObject::ConnectionType type() const { return type_; }
+  bool trigger(void **args);
+
+  std::string getStaticCode() const;
+
+private:
+  WSignalInstance_       *signal_;
+  WSlotInstance_         *slot_;
+  WObject::ConnectionType type_;
+  friend class WebSession;
+};
+
+#endif // WCONNECTION_H_

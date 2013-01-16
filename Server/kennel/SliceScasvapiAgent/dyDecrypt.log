@@ -1,0 +1,287 @@
+09/19/12 17:35:08 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/19/12 17:35:41 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/19/12 17:38:12 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/19/12 17:41:10 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/19/12 17:42:33 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/19/12 17:46:14 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 10:00:48 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 10:26:52 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 10:28:04 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 10:30:52 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 10:35:55 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 10:36:07 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 10:41:55 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 10:45:29 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 10:58:37 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 11:01:51 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 11:09:49 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 11:11:32 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 11:22:00 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 11:23:50 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 11:34:54 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 11:36:22 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 11:57:09 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 13:22:04 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 13:23:51 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 13:26:51 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 13:29:45 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 13:33:03 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 13:46:59 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 13:50:06 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 13:51:56 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 13:57:13 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:10:13 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:11:20 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:24:08 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:25:39 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:28:19 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:29:57 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:37:40 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:39:35 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:48:22 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:49:12 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 14:51:20 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 15:20:54 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 15:24:16 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 15:25:29 	传入参数:
+dowhat=GetMonitor
+id=1.26.19.1
+
+09/20/12 15:26:17 	advance_parameter:
+_SendBytes=64
+_SendNums=6
+_Timeout=20000
+
+09/20/12 15:26:17 	error:
+sv_conditioncount=1
+sv_expression=1
+sv_operate1===
+sv_paramname1=packetsGoodPercent
+sv_paramvalue1=0
+
+09/20/12 15:26:17 	good:
+sv_conditioncount=1
+sv_expression=1
+sv_operate1=>
+sv_paramname1=packetsGoodPercent
+sv_paramvalue1=75
+
+09/20/12 15:26:17 	parameter:
+_frequency=5
+_frequencyUnit=1
+sv_checkerr=true
+sv_description=
+sv_errfreq=0
+sv_errfreqsave=
+sv_errfrequint=1
+sv_plan=7x24
+sv_reportdesc=
+
+09/20/12 15:26:17 	property:
+sv_dependson=
+sv_disable=false
+sv_endtime=
+sv_intpos=1
+sv_monitortype=5
+sv_name=Ping
+sv_starttime=
+
+09/20/12 15:26:17 	return:
+id=1.26.19.1
+return=true
+
+09/20/12 15:26:17 	warning:
+sv_conditioncount=1
+sv_expression=1
+sv_operate1=<=
+sv_paramname1=packetsGoodPercent
+sv_paramvalue1=75
+
+09/20/12 15:26:17 	warning:
+sv_conditioncount=1
+sv_expression=1
+sv_operate1=<=
+sv_paramname1=packetsGoodPercent
+sv_paramvalue1=75
+dowhat=GetMonitor
+id=1.26.19.1
+
+10/10/12 16:31:41 	
+
+----------------have password----------------
+10/10/12 16:31:41 	_Community
+10/10/12 16:31:41 	name = Version
+10/10/12 16:31:41 	value = 1
+10/10/12 16:31:41 	name = _Community
+10/10/12 16:31:41 	value = public
+10/10/12 16:31:41 	===isDecrypt = 0 ===find name = _Community
+10/10/12 16:31:41 	加密
+10/10/12 16:31:41 	===加strret = R71Kz11G7zGGeI4O
+10/10/12 16:31:41 	name = _MachineName
+10/10/12 16:31:41 	value = 127.0.0.1
+10/10/12 16:31:41 	name = _Port
+10/10/12 16:31:41 	value = 161
+10/10/12 16:31:41 	name = creat_timeb
+10/10/12 16:31:41 	value = 2012-10-10 16:31:41
+10/10/12 16:31:41 	name = sv_dependscondition
+10/10/12 16:31:41 	value = 3
+10/10/12 16:31:41 	name = sv_dependson
+10/10/12 16:31:41 	value = 
+10/10/12 16:31:41 	name = sv_description
+10/10/12 16:31:41 	value = xcvxcvzxc
+10/10/12 16:31:41 	name = sv_devicetype
+10/10/12 16:31:41 	value = _SnmpWin
+10/10/12 16:31:41 	name = sv_name
+10/10/12 16:31:41 	value = 127.0.0.1(Snmp Windows)
+10/10/12 16:31:41 	name = sv_network
+10/10/12 16:31:41 	value = false
+10/10/12 16:31:53 	
+
+===================
+10/10/12 16:31:53 	SubmitMonitor
+10/10/12 16:31:53 	===================
+10/10/12 16:31:53 	
+
+===================
+10/10/12 16:31:53 	SubmitMonitor
+10/10/12 16:31:53 	===================
+10/10/12 16:31:53 	
+
+===================
+10/10/12 16:31:53 	SubmitMonitor
+10/10/12 16:31:53 	===================

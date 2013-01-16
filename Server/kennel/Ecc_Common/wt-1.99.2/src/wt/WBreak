@@ -1,0 +1,36 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WBREAK_H_
+#define WBREAK_H_
+
+#include <WWebWidget>
+
+namespace Wt {
+
+/*! \class WBreak WBreak WBreak
+ *  \brief WBreak provides a line break between inline widgets.
+ *
+ * This is an \link WWidget::setInline(bool) inline \endlink widget
+ * that provides a line break inbetween its sibling \link
+ * WWidget::setInline(bool) inline \endlink widgets (such as WText).
+ */
+class WT_API WBreak : public WWebWidget
+{
+public:
+  /*! \brief Construct a line break.
+   */
+  WBreak(WContainerWidget *parent = 0);
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+}
+
+#endif // WBREAK_H_

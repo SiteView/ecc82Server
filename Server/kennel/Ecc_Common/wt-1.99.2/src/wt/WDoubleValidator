@@ -1,0 +1,66 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2006 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WDOUBLEVALIDATOR_H_
+#define WDOUBLEVALIDATOR_H_
+
+#include <limits>
+
+#include <WValidator>
+
+namespace Wt {
+
+/*! \class WDoubleValidator WDoubleValidator WDoubleValidator
+ *  \brief A WDoubleValidator is used to validate floating point user input.
+ *
+ * This validator checks whether user input is a double in the pre-defined
+ * range.
+ */
+class WDoubleValidator : public WValidator
+{
+public:
+  /*! \brief Create a new double validator that accepts double
+   *         within the given range.
+   */
+  WDoubleValidator(double minimum = std::numeric_limits<double>::min(),
+		   double maximum = std::numeric_limits<double>::max());
+
+  /*! \brief Return the bottom of the valid double range.
+   */
+  double bottom() const { return bottom_; }
+
+  /*! \brief Set the bottom of the valid double range.
+   */
+  void setBottom(double bottom);
+
+  /*! \brief Return the top of the valid double range.
+   */
+  double top() const { return top_; }
+
+  /*! \brief Set the top of the valid double range.
+   */
+  void setTop(double top);
+
+  /*! \brief Set the range of valid doubles.
+   */
+  virtual void setRange(double bottom, double top);
+
+  /*! \brief Validate the input as an double within the given range.
+   *
+   * Returns Valid if the input is an double in the given range.
+   * Returns Invalid if the input is not an double, or outside of the
+   * given range.        
+   */
+  virtual State validate(std::wstring& input, int& pos) const;
+
+private:
+  double bottom_;
+  double top_;
+};
+
+}
+
+#endif // WDOUBLEVALIDATOR_H_

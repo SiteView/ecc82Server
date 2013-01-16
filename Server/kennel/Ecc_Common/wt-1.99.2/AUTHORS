@@ -1,0 +1,11 @@
+Wt is being developed jointly by the following authors:
+
+* Koen Deforche (koen.deforche@gmail.com)
+  Initial developer.
+
+* Abdiel Janulgue (xynopsis@yahoo.com)
+  Contributed XLObject (template based signal/slot system).
+
+* Wim Dumon (wim.dumon@gmail.com)
+  Contributed the hangman example, and tutorial.
+

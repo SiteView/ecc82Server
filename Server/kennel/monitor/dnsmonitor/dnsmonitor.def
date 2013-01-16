@@ -1,0 +1,7 @@
+; DnsMonitor.def : Declares the module parameters for the DLL.
+
+LIBRARY      "DnsMonitor"
+DESCRIPTION  'DnsMonitor Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

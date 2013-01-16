@@ -1,0 +1,173 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WMENU_H_
+#define WMENU_H_
+
+#include <vector>
+
+#include <WCompositeWidget>
+#include <WMenuItem>
+
+namespace Wt {
+
+class WStackedWidget;
+class WTable;
+
+/*! \class WMenu WMenu WMenu
+ *  \brief The Menu widget offers a menu of options, which correspond to
+ *         several tabs in a WStackedWidget.
+ *
+ * The WMenu widget offers menu navigation in conjunction with a
+ * WStackedWidget, where different 'contents' are stacked upon each other.
+ * Each choice in the menu (which is implemented as a WMenuItem) corresponds
+ * to a tab in the contents stack.
+ *
+ * An example for using the WMenu is:
+ *
+ * \code
+   // create the stack where the contents will be located
+   WStackedWidget *contents = new WStackedWidget(contentsParent);
+
+   // create a menu
+   WMenu *menu = new WMenu(contents, WMenu::Vertical, menuParent);
+
+   // add four items using the default lazy loading policy.
+   menu->addItem("Introduction", new WText(WMessage("intro")));
+   menu->addItem("Download", new WText("Not yet available"));
+   menu->addItem("Demo", new DemoWidget());
+   menu->addItem(new WMenuItem("Demo2", new DemoWidget()));
+
+ * \endcode
+ *
+ * After contruction, by default, the first entry will be selected.
+ * At any time, it is possible to select a particular item using the
+ * select() member.
+ *
+ * The WMenu implementation offers fine-grained control on how
+ * contents should be preloaded. By default, all contents is
+ * lazy-loaded, only when needed. To improve response time, an item
+ * may also be preloaded (using addItem()). In that case, the item
+ * will be loaded in the background, before its first use. Once
+ * loaded, the contents will be 'cached', and menu operation is also
+ * completely client-side.
+ *
+ * The layout of the menu may be Horizontal or Vertical. The look of
+ * the items may be defined through style sheets. The default WMenuItem
+ * implementation uses two style classes to distinguish between activated
+ * and inactivated menu items: "item" and "itemselected". By using
+ * CSS nested selectors, a different style may be defined for items in a
+ * different menu.
+ *
+ * For example, the Wt homepage uses the following CSS rules to
+ * style the two menu (which both are assigned the style class .menu):
+ *
+ * \code
+.menu * .item {
+  cursor: pointer; cursor: hand;
+  color: blue;
+  text-decoration: underline;
+}
+
+.menu * .itemselected {
+  color: blue;
+  text-decoration: underline;
+  font-weight: bold;  
+}
+ * \endcode
+ *
+ * \sa WMenuItem
+ */
+class WT_API WMenu : public WCompositeWidget
+{
+public:
+  /*! \brief Menu orientation
+   */
+  enum Orientation { Vertical,   //!< Vertical
+		     Horizontal  //!< Horizontal
+  };
+
+  /*! \brief Construct a new WMenu.
+   *
+   * Construct a menu to manage the widgets in the given contents stack,
+   * and with the given orientation.
+   */
+  WMenu(WStackedWidget *contentsStack,
+	Orientation orientation,
+	WContainerWidget *parent = 0);
+
+  /*! \brief Destructor.
+   */
+  ~WMenu();
+
+  /*! \brief Make the menu react to browser history.
+   *
+   * The id must be an application-wide unique id that identifies this
+   * menu.
+   */
+  void enableBrowserHistory(const std::string id);
+
+  /*! \brief Add a menu item.
+   *
+   * Adds a menu text item, associated with the contents.
+   *
+   * Returns the corresponding WMenuItem.
+   *
+   * \sa select(WMenuItem *)
+   * \sa addItem(WMenuItem *)
+   */
+  WMenuItem *addItem(const WMessage& name, WWidget *contents,
+		     WMenuItem::LoadPolicy policy = WMenuItem::LazyLoading);
+
+  /*! \brief Add a menu item.
+   *
+   * Adds a menu item. Use this form to add specialized WMenuItem
+   * implementations (with a different look than the default text).
+   */
+  WMenuItem *addItem(WMenuItem *item);
+
+  /*! \brief Select the menu item.
+   *
+   * Select the given menu item.
+   */
+  void select(WMenuItem *item);
+
+  /*! \brief Select the menu item with the given index number.
+   *
+   * Menu items in a menu with N items are indexed from 0 to N-1.
+   */
+  void select(int index);
+
+  /*! \brief Signal emitted when a new item is selected.
+   *
+   * This signal is emitted when a new menu item is selected, either by
+   * the user or through a call to one of the select() methods.
+   */
+  Signal<WMenuItem *> itemSelected;
+
+private:
+  WTable         *layout_;
+  WStackedWidget *contentsStack_;
+  Orientation     orientation_;
+  std::string     historyScope_;
+
+  std::vector<WMenuItem *> items_;
+
+  int current_;
+  int previousCurrent_;
+
+  int indexOf(WMenuItem *item);
+
+  void undoSelect();
+  friend class WMenuItem;
+
+  void appStateChanged(std::string scope, std::string value);
+  void setFromState(std::string value);
+};
+
+}
+
+#endif // HOME_H_

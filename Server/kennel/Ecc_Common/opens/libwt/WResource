@@ -1,0 +1,81 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WRESOURCE_H_
+#define WRESOURCE_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WObject>
+#include <stdio.h>
+
+#define NO_FCGI_DEFINES
+#include <fcgi_stdio.h>
+
+
+/*! \brief An object which can be rendered in the HTTP protocol.
+ *
+ * Besides the main page, other objects may be rendered as additional
+ * resources, such as frames or dynamic images.
+ */
+class __declspec(dllexport) WResource : public WObject
+{
+  //MOC: W_OBJECT WResource:WObject
+  W_OBJECT;
+
+public:
+  /*! \brief create a new resource.
+   */
+  WResource();
+
+  /*! \brief destroy the resource.
+   *
+   * It is up to the user to make sure that the resource is nog longer in use.
+   */
+  ~WResource();
+
+  /*! \brief generate an URL for this resource.
+   *
+   * For every call, a new url is generated that refers to this resource.
+   * The url is unique to assure that it is not cached by the web browser.
+   * Therefore, when the signal dataChanged() is emitted, the widget that
+   * uses this resource should call generateUrl() to refer to the changed
+   * version of this resource.
+   */
+  const std::string generateUrl() const;
+
+public signals:
+  //MOC: SIGNAL WResource::dataChanged()
+  /*! \brief emit this signal if the data presented in this resource
+   *         has changed.
+   */
+  void dataChanged();
+
+protected:
+
+  /*! \brief return the mimetype.
+   *
+   * Implement this method to return the correct mime type for your
+   * resource, e.g. "text/html".
+   */
+  virtual std::string resourceMimeType() const = 0;
+
+  /*! \brief stream the data for this resource.
+   *
+   * Implement this method to output the data for this resource.
+   * Note that you currently need to use FCGI_ functions to manipulate
+   * the stream. This is admittely a kludge.
+   */
+  virtual void streamResourceData(FCGI_FILE *stream) = 0;
+
+  static WResource *decodeResource(const std::string id);
+
+  friend class WebSession;
+};
+
+#endif // WRESOURCE_H_

@@ -1,0 +1,58 @@
+scasvapi.dll的接口：
+
+bool SubmitUnivData(ForestMap & fmap,const NodeData & inwhat, string & estr);
+
+1 valuechange和boot方法：
+
+传入参数：
+
+in parameter "fmap":
+"fmap"的数据类型：ForestMap: map< string, map<string,string> >
+
+["ParameterList"]
+chgParamName1=value1
+chgParamName2=value2
+...
+chgParamNameN=valueN
+
+serverIP=XXX // 仅boot中存在
+
+
+in parameter "inwhat":
+"inwhat"的数据类型：NodeData: map< string, string >
+
+"dowhat"       ="valueChange"/"boot"
+"manufacturer" =value1
+"oui"          =value2
+"productClass" =value3
+"serialNumber" =value4
+"MaxEnvelopes" =value5
+"CurrentTime"  =value6
+"RetryCount"   =value7
+"IP"           =value8
+
+
+
+
+2 获取报警设备ID：
+
+传入参数：
+in parameter "inwhat":
+"inwhat"的数据类型：NodeData: map< string, string >
+
+"dowhat"       ="getAlertID"
+"manufacturer" =value1
+"oui"          =value2
+"productClass" =value3
+"serialNumber" =value4
+
+返回值：
+in parameter "fmap":
+"fmap"的数据类型：ForestMap: map< string, map<string,string> >
+
+["return"]
+"alertID" = value
+
+
+
+

@@ -1,0 +1,758 @@
+ mysqlmonitor
+
+ Timestamp is 50220fa0 (Wed Aug 08 15:05:04 2012)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 000059b0H .text                   CODE
+ 0001:000059b0 0000048aH .text$x                 CODE
+ 0001:00005e40 00000092H .text$yc                CODE
+ 0001:00005ee0 00000060H .text$yd                CODE
+ 0002:00000000 000002c8H .idata$5                DATA
+ 0002:000002d0 000009a0H .rdata                  DATA
+ 0002:00000c70 00000075H .rdata$debug            DATA
+ 0002:00000ce8 00000104H .rdata$r                DATA
+ 0002:00000df0 00000050H .rdata$sxdata           DATA
+ 0002:00000e40 00000004H .rtc$IAA                DATA
+ 0002:00000e44 00000004H .rtc$IZZ                DATA
+ 0002:00000e48 00000004H .rtc$TAA                DATA
+ 0002:00000e4c 00000004H .rtc$TZZ                DATA
+ 0002:00000e50 000006c8H .xdata$x                DATA
+ 0002:00001518 00000000H ATL$__a                 DATA
+ 0002:00001518 00000000H ATL$__z                 DATA
+ 0002:00001518 000000b4H .idata$2                DATA
+ 0002:000015cc 00000014H .idata$3                DATA
+ 0002:000015e0 000002c8H .idata$4                DATA
+ 0002:000018a8 0000076eH .idata$6                DATA
+ 0002:00002020 000000d6H .edata                  DATA
+ 0003:00000000 00000004H .CRT$XCA                DATA
+ 0003:00000004 00000004H .CRT$XCAA               DATA
+ 0003:00000008 00000008H .CRT$XCL                DATA
+ 0003:00000010 00000010H .CRT$XCU                DATA
+ 0003:00000020 00000004H .CRT$XCZ                DATA
+ 0003:00000024 00000004H .CRT$XIA                DATA
+ 0003:00000028 00000004H .CRT$XIZ                DATA
+ 0003:00000030 00000130H .data                   DATA
+ 0003:00000160 000011e0H .bss                    DATA
+ 0004:00000000 00000058H .rsrc$01                DATA
+ 0004:00000060 00000310H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       __except_list              00000000     <absolute>
+ 0000:00000014       ___safe_se_handler_count   00000014     <absolute>
+ 0000:00009876       __ldused                   00009876     <absolute>
+ 0000:00009876       __fltused                  00009876     <absolute>
+ 0000:00000000       ___ImageBase               10000000     <linker-defined>
+ 0001:00000000       ?FuncGetInstallPath@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@XZ 10001000 f   funcGeneral.obj
+ 0001:000000a0       ?FuncGetInstallRootSCPath@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@XZ 100010a0 f   funcGeneral.obj
+ 0001:000000c0       ?MakeStringListByChar@@YA_NAAVCStringList@@PBD@Z 100010c0 f   funcGeneral.obj
+ 0001:00000100       ?MakeCharByString@@YA_NPADAAHV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 10001100 f   funcGeneral.obj
+ 0001:000001a0       ?GetSEIP@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ 100011a0 f   funcGeneral.obj
+ 0001:00000300       ?GetResourceValue@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@Z 10001300 f   funcGeneral.obj
+ 0001:00000440       ?FuncGetStringFromIDS@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@PBD0@Z 10001440 f   funcGeneral.obj
+ 0001:00000540       ??1AFX_MAINTAIN_STATE2@@QAE@XZ 10001540 f i mysqlmonitor.obj
+ 0001:00000550       ??1logic_error@std@@UAE@XZ 10001550 f i mysqlmonitor.obj
+ 0001:000005b0       ?what@logic_error@std@@UBEPBDXZ 100015b0 f i mysqlmonitor.obj
+ 0001:000005c0       ??_Elogic_error@std@@UAEPAXI@Z 100015c0 f i mysqlmonitor.obj
+ 0001:000005c0       ??_Glogic_error@std@@UAEPAXI@Z 100015c0 f i mysqlmonitor.obj
+ 0001:000005e0       ??_Elength_error@std@@UAEPAXI@Z 100015e0 f i mysqlmonitor.obj
+ 0001:000005e0       ??_Glength_error@std@@UAEPAXI@Z 100015e0 f i mysqlmonitor.obj
+ 0001:00000600       ??1length_error@std@@UAE@XZ 10001600 f i mysqlmonitor.obj
+ 0001:00000610       ??_Gout_of_range@std@@UAEPAXI@Z 10001610 f i mysqlmonitor.obj
+ 0001:00000610       ??_Eout_of_range@std@@UAEPAXI@Z 10001610 f i mysqlmonitor.obj
+ 0001:00000630       ??1out_of_range@std@@UAE@XZ 10001630 f i mysqlmonitor.obj
+ 0001:00000640       ??1_variant_t@@QAE@XZ      10001640 f i mysqlmonitor.obj
+ 0001:00000660       ??1_com_error@@UAE@XZ      10001660 f i mysqlmonitor.obj
+ 0001:00000690       ?ErrorInfo@_com_error@@QBEPAUIErrorInfo@@XZ 10001690 f i mysqlmonitor.obj
+ 0001:000006b0       ??_E_com_error@@UAEPAXI@Z  100016b0 f i mysqlmonitor.obj
+ 0001:000006b0       ??_G_com_error@@UAEPAXI@Z  100016b0 f i mysqlmonitor.obj
+ 0001:000006f0       ?GetValue@ISWbemProperty@WbemScripting@@QAE?AV_variant_t@@XZ 100016f0 f i mysqlmonitor.obj
+ 0001:00000750       ?GetMessageMap@CMySQLMonitorApp@@MBEPBUAFX_MSGMAP@@XZ 10001750 f   mysqlmonitor.obj
+ 0001:00000760       ??0CMySQLMonitorApp@@QAE@XZ 10001760 f   mysqlmonitor.obj
+ 0001:00000780       ??3@YAXPAX0@Z              10001780 f i mysqlmonitor.obj
+ 0001:00000780       ?AssertValid@CObject@@UBEXXZ 10001780 f i mysqlmonitor.obj
+ 0001:00000790       ?Serialize@CObject@@UAEXAAVCArchive@@@Z 10001790 f i mysqlmonitor.obj
+ 0001:00000790       ?Dump@CObject@@UBEXAAVCDumpContext@@@Z 10001790 f i mysqlmonitor.obj
+ 0001:000007a0       ??1CMySQLMonitorApp@@UAE@XZ 100017a0 f i mysqlmonitor.obj
+ 0001:000007b0       ??1?$pair@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@QAE@XZ 100017b0 f i mysqlmonitor.obj
+ 0001:000007b0       ??1?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@QAE@XZ 100017b0 f i mysqlmonitor.obj
+ 0001:000007c0       _ProList                   100017c0 f   mysqlmonitor.obj
+ 0001:00000c10       _SlaveStatus               10001c10 f   mysqlmonitor.obj
+ 0001:00001230       _Status                    10002230 f   mysqlmonitor.obj
+ 0001:00001260       _MemoryStatus              10002260 f   mysqlmonitor.obj
+ 0001:00001780       ?Parser@@YAXPBD0PAD@Z      10002780 f   mysqlmonitor.obj
+ 0001:000018f0       _TestMySQLConn             100028f0 f   mysqlmonitor.obj
+ 0001:00001d40       ??0?$pair@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@QAE@ABV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@ABH@Z 10002d40 f i mysqlmonitor.obj
+ 0001:00001d60       ?_Min@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@KAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@PAU342@@Z 10002d60 f i mysqlmonitor.obj
+ 0001:00001d80       ?_Max@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@KAPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@PAU342@@Z 10002d80 f i mysqlmonitor.obj
+ 0001:00001da0       ??$?0V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@QAE@ABU?$pair@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@1@@Z 10002da0 f i mysqlmonitor.obj
+ 0001:00001dc0       ??1_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@QAE@XZ 10002dc0 f i mysqlmonitor.obj
+ 0001:00001dd0       ??0_bstr_t@@QAE@PBD@Z      10002dd0 f i mysqlmonitor.obj
+ 0001:00001e60       ??B_variant_t@@QBEHXZ      10002e60 f i mysqlmonitor.obj
+ 0001:00001f10       ??_GCMySQLMonitorApp@@UAEPAXI@Z 10002f10 f i mysqlmonitor.obj
+ 0001:00001f10       ??_ECMySQLMonitorApp@@UAEPAXI@Z 10002f10 f i mysqlmonitor.obj
+ 0001:00001f30       _MySQL                     10002f30 f   mysqlmonitor.obj
+ 0001:000022e0       ?IsLocalHost@@YAHV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 100032e0 f   mysqlmonitor.obj
+ 0001:00002420       ??1?$_com_ptr_t@V?$_com_IIID@UISWbemObjectSet@WbemScripting@@$1?_GUID_76a6415f_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@QAE@XZ 10003420 f i mysqlmonitor.obj
+ 0001:00002420       ??1?$_com_ptr_t@V?$_com_IIID@UIEnumVARIANT@@$1?_GUID_00020404_0000_0000_c000_000000000046@@3U__s_GUID@@B@@@@QAE@XZ 10003420 f i mysqlmonitor.obj
+ 0001:00002420       ??1?$_com_ptr_t@V?$_com_IIID@UISWbemServices@WbemScripting@@$1?_GUID_76a6415c_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@QAE@XZ 10003420 f i mysqlmonitor.obj
+ 0001:00002420       ??1?$_com_ptr_t@V?$_com_IIID@UISWbemPropertySet@WbemScripting@@$1?_GUID_dea0a7b2_d4ba_11d1_8b09_00600806d9b6@@3U__s_GUID@@B@@@@QAE@XZ 10003420 f i mysqlmonitor.obj
+ 0001:00002420       ??1?$_com_ptr_t@V?$_com_IIID@UIUnknown@@$1?_GUID_00000000_0000_0000_c000_000000000046@@3U__s_GUID@@B@@@@QAE@XZ 10003420 f i mysqlmonitor.obj
+ 0001:00002420       ??1?$_com_ptr_t@V?$_com_IIID@UISWbemProperty@WbemScripting@@$1?_GUID_1a388f98_d4ba_11d1_8b09_00600806d9b6@@3U__s_GUID@@B@@@@QAE@XZ 10003420 f i mysqlmonitor.obj
+ 0001:00002420       ??1?$_com_ptr_t@V?$_com_IIID@UISWbemLocator@WbemScripting@@$1?_GUID_76a6415b_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@QAE@XZ 10003420 f i mysqlmonitor.obj
+ 0001:00002420       ??1?$_com_ptr_t@V?$_com_IIID@UISWbemObject@WbemScripting@@$1?_GUID_76a6415a_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@QAE@XZ 10003420 f i mysqlmonitor.obj
+ 0001:00002430       ??R?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@QBE_NABV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@0@Z 10003430 f i mysqlmonitor.obj
+ 0001:00002450       ?_Lbound@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@IBEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@ABV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 10003450 f i mysqlmonitor.obj
+ 0001:00002490       ?_Lrotate@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@IAEXPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@@Z 10003490 f i mysqlmonitor.obj
+ 0001:000024f0       ?_Rrotate@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@IAEXPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@@Z 100034f0 f i mysqlmonitor.obj
+ 0001:00002550       ?_Inc@const_iterator@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@QAEXXZ 10003550 f i mysqlmonitor.obj
+ 0001:000025b0       ?_Dec@const_iterator@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@QAEXXZ 100035b0 f i mysqlmonitor.obj
+ 0001:00002610       ?Release@Data_t@_bstr_t@@QAEKXZ 10003610 f i mysqlmonitor.obj
+ 0001:00002660       ?GetProperties_@ISWbemObject@WbemScripting@@QAE?AV?$_com_ptr_t@V?$_com_IIID@UISWbemPropertySet@WbemScripting@@$1?_GUID_dea0a7b2_d4ba_11d1_8b09_00600806d9b6@@3U__s_GUID@@B@@@@XZ 10003660 f i mysqlmonitor.obj
+ 0001:000026b0       ?Get_NewEnum@ISWbemObjectSet@WbemScripting@@QAE?AV?$_com_ptr_t@V?$_com_IIID@UIUnknown@@$1?_GUID_00000000_0000_0000_c000_000000000046@@3U__s_GUID@@B@@@@XZ 100036b0 f i mysqlmonitor.obj
+ 0001:00002700       ?_Buynode@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@PAU342@00ABU?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@2@D@Z 10003700 f i mysqlmonitor.obj
+ 0001:000027a0       ?_Buynode@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@XZ 100037a0 f i mysqlmonitor.obj
+ 0001:000027e0       ??$_QueryInterface@PAUIDispatch@@@?$_com_ptr_t@V?$_com_IIID@UISWbemObject@WbemScripting@@$1?_GUID_76a6415a_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@AAEJPAUIDispatch@@@Z 100037e0 f i mysqlmonitor.obj
+ 0001:000027e0       ??$_QueryInterface@PAUIUnknown@@@?$_com_ptr_t@V?$_com_IIID@UISWbemObject@WbemScripting@@$1?_GUID_76a6415a_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@AAEJPAUIUnknown@@@Z 100037e0 f i mysqlmonitor.obj
+ 0001:00002840       ??$_QueryInterface@V?$_com_ptr_t@V?$_com_IIID@UIUnknown@@$1?_GUID_00000000_0000_0000_c000_000000000046@@3U__s_GUID@@B@@@@@?$_com_ptr_t@V?$_com_IIID@UIEnumVARIANT@@$1?_GUID_00020404_0000_0000_c000_000000000046@@3U__s_GUID@@B@@@@AAEJV?$_com_ptr_t@V?$_com_IIID@UIUnknown@@$1?_GUID_00000000_0000_0000_c000_000000000046@@3U__s_GUID@@B@@@@@Z 10003840 f i mysqlmonitor.obj
+ 0001:000028b0       ?find@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@ABV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 100038b0 f i mysqlmonitor.obj
+ 0001:00002910       ?QueryStdInterfaces@?$_com_ptr_t@V?$_com_IIID@UISWbemObject@WbemScripting@@$1?_GUID_76a6415a_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@AAEJABV_variant_t@@@Z 10003910 f i mysqlmonitor.obj
+ 0001:000029d0       ?_Insert@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@ABU?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@2@@Z 100039d0 f i mysqlmonitor.obj
+ 0001:00002b90       ??0logic_error@std@@QAE@ABV01@@Z 10003b90 f i mysqlmonitor.obj
+ 0001:00002bf0       ??0length_error@std@@QAE@ABV01@@Z 10003bf0 f i mysqlmonitor.obj
+ 0001:00002c10       ??1_bstr_t@@QAE@XZ         10003c10 f i mysqlmonitor.obj
+ 0001:00002c30       ??4_bstr_t@@QAEAAV0@PBD@Z  10003c30 f i mysqlmonitor.obj
+ 0001:00002cd0       ?Item@ISWbemPropertySet@WbemScripting@@QAE?AV?$_com_ptr_t@V?$_com_IIID@UISWbemProperty@WbemScripting@@$1?_GUID_1a388f98_d4ba_11d1_8b09_00600806d9b6@@3U__s_GUID@@B@@@@V_bstr_t@@J@Z 10003cd0 f i mysqlmonitor.obj
+ 0001:00002d60       ?InstancesOf@ISWbemServices@WbemScripting@@QAE?AV?$_com_ptr_t@V?$_com_IIID@UISWbemObjectSet@WbemScripting@@$1?_GUID_76a6415f_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@V_bstr_t@@JPAUIDispatch@@@Z 10003d60 f i mysqlmonitor.obj
+ 0001:00002df0       ?ExecQuery@ISWbemServices@WbemScripting@@QAE?AV?$_com_ptr_t@V?$_com_IIID@UISWbemObjectSet@WbemScripting@@$1?_GUID_76a6415f_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@V_bstr_t@@0JPAUIDispatch@@@Z 10003df0 f i mysqlmonitor.obj
+ 0001:00002ea0       ?ConnectServer@ISWbemLocator@WbemScripting@@QAE?AV?$_com_ptr_t@V?$_com_IIID@UISWbemServices@WbemScripting@@$1?_GUID_76a6415c_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@V_bstr_t@@00000JPAUIDispatch@@@Z 10003ea0 f i mysqlmonitor.obj
+ 0001:00002fd0       ?insert@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@QAE?AU?$pair@Viterator@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@_N@2@ABU?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@2@@Z 10003fd0 f i mysqlmonitor.obj
+ 0001:00003090       ?insert@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@V312@ABU?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@2@@Z 10004090 f i mysqlmonitor.obj
+ 0001:00003240       ?erase@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@V312@@Z 10004240 f i mysqlmonitor.obj
+ 0001:00003520       ??0out_of_range@std@@QAE@ABV01@@Z 10004520 f i mysqlmonitor.obj
+ 0001:00003540       ?_Erase@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@IAEXPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@@Z 10004540 f i mysqlmonitor.obj
+ 0001:00003580       _MySqlMem                  10004580 f   mysqlmonitor.obj
+ 0001:000041e0       ??A?$map@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@@std@@QAEAAHABV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 100051e0 f i mysqlmonitor.obj
+ 0001:00004270       ?erase@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@V312@0@Z 10005270 f i mysqlmonitor.obj
+ 0001:00004330       ??1?$map@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@@std@@QAE@XZ 10005330 f i mysqlmonitor.obj
+ 0001:00004360       ??0?$map@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@@std@@QAE@XZ 10005360 f i mysqlmonitor.obj
+ 0001:00004390       _ProInfo                   10005390 f   mysqlmonitor.obj
+ 0001:00004b94       _mysql_error@4             10005b94 f   libmysql:LIBMYSQL.dll
+ 0001:00004b9a       _mysql_close@4             10005b9a f   libmysql:LIBMYSQL.dll
+ 0001:00004ba0       _mysql_free_result@4       10005ba0 f   libmysql:LIBMYSQL.dll
+ 0001:00004ba6       _mysql_fetch_row@4         10005ba6 f   libmysql:LIBMYSQL.dll
+ 0001:00004bac       _mysql_thread_id@4         10005bac f   libmysql:LIBMYSQL.dll
+ 0001:00004bb2       _mysql_list_processes@4    10005bb2 f   libmysql:LIBMYSQL.dll
+ 0001:00004bb8       _mysql_real_connect@32     10005bb8 f   libmysql:LIBMYSQL.dll
+ 0001:00004bbe       _mysql_init@4              10005bbe f   libmysql:LIBMYSQL.dll
+ 0001:00004bc4       _mysql_store_result@4      10005bc4 f   libmysql:LIBMYSQL.dll
+ 0001:00004bca       _mysql_query@8             10005bca f   libmysql:LIBMYSQL.dll
+ 0001:00004bd0       _mysql_stat@4              10005bd0 f   libmysql:LIBMYSQL.dll
+ 0001:00004bd6       ?AfxThrowInvalidArgException@@YGXXZ 10005bd6 f   mfc71:MFC71.DLL
+ 0001:00004bdc       ?AddHead@CStringList@@QAEPAU__POSITION@@PBD@Z 10005bdc f   mfc71:MFC71.DLL
+ 0001:00004be2       ??3@YAXPAX@Z               10005be2 f   mfc71:MFC71.DLL
+ 0001:00004be8       ??_V@YAXPAX@Z              10005be8 f   mfc71:MFC71.DLL
+ 0001:00004bee       ?GetThisMessageMap@CWinApp@@KGPBUAFX_MSGMAP@@XZ 10005bee f   mfc71:MFC71.DLL
+ 0001:00004bf4       ??2@YAPAXI@Z               10005bf4 f   mfc71:MFC71.DLL
+ 0001:00004bfa       ?LoadSysPolicies@CWinApp@@UAEHXZ 10005bfa f   mfc71:MFC71.DLL
+ 0001:00004c00       ?LoadAppLangResourceDLL@CWinApp@@UAEPAUHINSTANCE__@@XZ 10005c00 f   mfc71:MFC71.DLL
+ 0001:00004c06       ?WinHelpInternal@CWinApp@@UAEXKI@Z 10005c06 f   mfc71:MFC71.DLL
+ 0001:00004c0c       ?HtmlHelpA@CWinApp@@UAEXKI@Z 10005c0c f   mfc71:MFC71.DLL
+ 0001:00004c12       ?WinHelpA@CWinApp@@UAEXKI@Z 10005c12 f   mfc71:MFC71.DLL
+ 0001:00004c18       ?OnDDECommand@CWinApp@@UAEHPAD@Z 10005c18 f   mfc71:MFC71.DLL
+ 0001:00004c1e       ?DoWaitCursor@CWinApp@@UAEXH@Z 10005c1e f   mfc71:MFC71.DLL
+ 0001:00004c24       ?DoMessageBox@CWinApp@@UAEHPBDII@Z 10005c24 f   mfc71:MFC71.DLL
+ 0001:00004c2a       ?SaveAllModified@CWinApp@@UAEHXZ 10005c2a f   mfc71:MFC71.DLL
+ 0001:00004c30       ?InitApplication@CWinApp@@UAEHXZ 10005c30 f   mfc71:MFC71.DLL
+ 0001:00004c36       ?AddToRecentFileList@CWinApp@@UAEXPBD@Z 10005c36 f   mfc71:MFC71.DLL
+ 0001:00004c3c       ?OpenDocumentFile@CWinApp@@UAEPAVCDocument@@PBD@Z 10005c3c f   mfc71:MFC71.DLL
+ 0001:00004c42       ?Unregister@CWinApp@@UAEHXZ 10005c42 f   mfc71:MFC71.DLL
+ 0001:00004c48       ?Register@CWinApp@@UAEHXZ  10005c48 f   mfc71:MFC71.DLL
+ 0001:00004c4e       ?InitLibId@CWinApp@@UAEXXZ 10005c4e f   mfc71:MFC71.DLL
+ 0001:00004c54       ?Delete@CWinThread@@UAEXXZ 10005c54 f   mfc71:MFC71.DLL
+ 0001:00004c5a       ?GetMainWnd@CWinThread@@UAEPAVCWnd@@XZ 10005c5a f   mfc71:MFC71.DLL
+ 0001:00004c60       ?ProcessMessageFilter@CWinThread@@UAEHHPAUtagMSG@@@Z 10005c60 f   mfc71:MFC71.DLL
+ 0001:00004c66       ?ProcessWndProcException@CWinApp@@UAEJPAVCException@@PBUtagMSG@@@Z 10005c66 f   mfc71:MFC71.DLL
+ 0001:00004c6c       ?ExitInstance@CWinApp@@UAEHXZ 10005c6c f   mfc71:MFC71.DLL
+ 0001:00004c72       ?IsIdleMessage@CWinThread@@UAEHPAUtagMSG@@@Z 10005c72 f   mfc71:MFC71.DLL
+ 0001:00004c78       ?OnIdle@CWinApp@@UAEHJ@Z   10005c78 f   mfc71:MFC71.DLL
+ 0001:00004c7e       ?PumpMessage@CWinThread@@UAEHXZ 10005c7e f   mfc71:MFC71.DLL
+ 0001:00004c84       ?PreTranslateMessage@CWinThread@@UAEHPAUtagMSG@@@Z 10005c84 f   mfc71:MFC71.DLL
+ 0001:00004c8a       ?Run@CWinApp@@UAEHXZ       10005c8a f   mfc71:MFC71.DLL
+ 0001:00004c90       ?InitInstance@CWinApp@@UAEHXZ 10005c90 f   mfc71:MFC71.DLL
+ 0001:00004c96       ?GetConnectionHook@CCmdTarget@@MAEPAUIConnectionPoint@@ABU_GUID@@@Z 10005c96 f   mfc71:MFC71.DLL
+ 0001:00004c9c       ?GetExtraConnectionPoints@CCmdTarget@@MAEHPAVCPtrArray@@@Z 10005c9c f   mfc71:MFC71.DLL
+ 0001:00004ca2       ?GetInterfaceHook@CCmdTarget@@UAEPAUIUnknown@@PBX@Z 10005ca2 f   mfc71:MFC71.DLL
+ 0001:00004ca8       ?OnCreateAggregates@CCmdTarget@@UAEHXZ 10005ca8 f   mfc71:MFC71.DLL
+ 0001:00004cae       ?GetEventSinkMap@CCmdTarget@@MBEPBUAFX_EVENTSINKMAP@@XZ 10005cae f   mfc71:MFC71.DLL
+ 0001:00004cb4       ?GetInterfaceMap@CCmdTarget@@MBEPBUAFX_INTERFACEMAP@@XZ 10005cb4 f   mfc71:MFC71.DLL
+ 0001:00004cba       ?GetConnectionMap@CCmdTarget@@MBEPBUAFX_CONNECTIONMAP@@XZ 10005cba f   mfc71:MFC71.DLL
+ 0001:00004cc0       ?GetDispatchMap@CCmdTarget@@MBEPBUAFX_DISPMAP@@XZ 10005cc0 f   mfc71:MFC71.DLL
+ 0001:00004cc6       ?GetCommandMap@CCmdTarget@@MBEPBUAFX_OLECMDMAP@@XZ 10005cc6 f   mfc71:MFC71.DLL
+ 0001:00004ccc       ?GetTypeLib@CCmdTarget@@UAEJKPAPAUITypeLib@@@Z 10005ccc f   mfc71:MFC71.DLL
+ 0001:00004cd2       ?GetTypeLibCache@CCmdTarget@@UAEPAVCTypeLibCache@@XZ 10005cd2 f   mfc71:MFC71.DLL
+ 0001:00004cd8       ?GetTypeInfoCount@CCmdTarget@@UAEIXZ 10005cd8 f   mfc71:MFC71.DLL
+ 0001:00004cde       ?GetDispatchIID@CCmdTarget@@UAEHPAU_GUID@@@Z 10005cde f   mfc71:MFC71.DLL
+ 0001:00004ce4       ?IsInvokeAllowed@CCmdTarget@@UAEHJ@Z 10005ce4 f   mfc71:MFC71.DLL
+ 0001:00004cea       ?OnFinalRelease@CCmdTarget@@UAEXXZ 10005cea f   mfc71:MFC71.DLL
+ 0001:00004cf0       ?OnCmdMsg@CCmdTarget@@UAEHIHPAXPAUAFX_CMDHANDLERINFO@@@Z 10005cf0 f   mfc71:MFC71.DLL
+ 0001:00004cf6       ?GetRuntimeClass@CWinApp@@UBEPAUCRuntimeClass@@XZ 10005cf6 f   mfc71:MFC71.DLL
+ 0001:00004cfc       ??0CWinApp@@QAE@PBD@Z      10005cfc f   mfc71:MFC71.DLL
+ 0001:00004d02       ??1CWinApp@@UAE@XZ         10005d02 f   mfc71:MFC71.DLL
+ 0001:00004d08       ??1CStringList@@UAE@XZ     10005d08 f   mfc71:MFC71.DLL
+ 0001:00004d0e       ??0CStringList@@QAE@H@Z    10005d0e f   mfc71:MFC71.DLL
+ 0001:00004d14       ??0AFX_MAINTAIN_STATE2@@QAE@PAVAFX_MODULE_STATE@@@Z 10005d14 f   mfc71:MFC71.DLL
+ 0001:00004d1a       ??1_AFX_DLL_MODULE_STATE@@UAE@XZ 10005d1a f i mfcs71:dllmodul.obj
+ 0001:00004d1f       ?AfxGetStaticModuleState@@YGPAVAFX_MODULE_STATE@@XZ 10005d1f f   mfcs71:dllmodul.obj
+ 0001:00004d25       _RawDllMain@12             10005d25 f   mfcs71:dllmodul.obj
+ 0001:00004d76       ?AfxWndProcDllStatic@@YGJPAUHWND__@@IIJ@Z 10005d76 f   mfcs71:dllmodul.obj
+ 0001:00004dbb       _DllMain@12                10005dbb f   mfcs71:dllmodul.obj
+ 0001:00004ee2       ??0_AFX_DLL_MODULE_STATE@@QAE@XZ 10005ee2 f i mfcs71:dllmodul.obj
+ 0001:00004f02       ??_E_AFX_DLL_MODULE_STATE@@UAEPAXI@Z 10005f02 f i mfcs71:dllmodul.obj
+ 0001:00004f02       ??_G_AFX_DLL_MODULE_STATE@@UAEPAXI@Z 10005f02 f i mfcs71:dllmodul.obj
+ 0001:00004f1d       ??0CComCriticalSection@ATL@@QAE@XZ 10005f1d f i mfcs71:stdafx.obj
+ 0001:00004f31       ?Init@CComCriticalSection@ATL@@QAEJXZ 10005f31 f i mfcs71:stdafx.obj
+ 0001:00004f82       _malloc                    10005f82 f   msvcrt:MSVCR71.dll
+ 0001:00004f88       _free                      10005f88 f   msvcrt:MSVCR71.dll
+ 0001:00004f90       __except_handler3          10005f90 f   msvcrt:MSVCR71.dll
+ 0001:00004fa0       __chkstk                   10005fa0 f   msvcrt:chkstk.obj
+ 0001:00004fa0       __alloca_probe             10005fa0     msvcrt:chkstk.obj
+ 0001:0000500e       @__security_check_cookie@4 1000600e f   msvcrt:secchk.obj
+ 0001:0000501c       ___CxxFrameHandler         1000601c f   msvcrt:MSVCR71.dll
+ 0001:00005022       ??0exception@@QAE@ABV0@@Z  10006022 f   msvcrt:MSVCR71.dll
+ 0001:00005028       ??_Etype_info@@UAEPAXI@Z   10006028 f i msvcrt:ti_inst.obj
+ 0001:00005074       __CxxThrowException@8      10006074 f   msvcrt:MSVCR71.dll
+ 0001:0000507a       ?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z 1000607a f   msvcrt:ehvecdtr.obj
+ 0001:000050d8       ??_M@YGXPAXIHP6EX0@Z@Z     100060d8 f   msvcrt:ehvecdtr.obj
+ 0001:00005138       __onexit                   10006138 f   msvcrt:atonexit.obj
+ 0001:0000515e       _atexit                    1000615e f   msvcrt:atonexit.obj
+ 0001:00005170       __CRT_INIT@12              10006170 f   msvcrt:crtdll.obj
+ 0001:0000522e       __DllMainCRTStartup@12     1000622e f   msvcrt:crtdll.obj
+ 0001:00005314       __EH_prolog                10006314 f   msvcrt:ehprolog.obj
+ 0001:00005334       __SEH_prolog               10006334 f   msvcrt:sehprolg.obj
+ 0001:0000536f       __SEH_epilog               1000636f f   msvcrt:sehprolg.obj
+ 0001:00005380       _memset                    10006380 f   msvcrt:MSVCR71.dll
+ 0001:00005386       ___security_init_cookie    10006386 f   msvcrt:seccinit.obj
+ 0001:000053ec       ___security_error_handler  100063ec f   msvcrt:MSVCR71.dll
+ 0001:000053f2       ??1type_info@@UAE@XZ       100063f2 f   msvcrt:MSVCR71.dll
+ 0001:000053f8       ?terminate@@YAXXZ          100063f8 f   msvcrt:MSVCR71.dll
+ 0001:000053fe       ___dllonexit               100063fe f   msvcrt:MSVCR71.dll
+ 0001:00005404       __initterm                 10006404 f   msvcrt:MSVCR71.dll
+ 0001:0000540a       __RTC_Initialize           1000640a f   msvcrt:initsect.obj
+ 0001:0000544e       __RTC_Terminate            1000644e f   msvcrt:initsect.obj
+ 0001:00005492       ___CppXcptFilter           10006492 f   msvcrt:MSVCR71.dll
+ 0001:000054a0       ?_com_issue_error@@YGXJ@Z  100064a0 f   comsuppw:comsupp.obj
+ 0001:000054b0       ?_com_issue_errorex@@YGXJPAUIUnknown@@ABU_GUID@@@Z 100064b0 f   comsuppw:comsupp.obj
+ 0001:00005520       ?ConvertStringToBSTR@_com_util@@YGPA_WPBD@Z 10006520 f   comsuppw:comutil.obj
+ 0001:00005680       ?ConvertBSTRToString@_com_util@@YGPADPA_W@Z 10006680 f   comsuppw:comutil.obj
+ 0001:000057e0       ?_com_raise_error@@YGXJPAUIErrorInfo@@@Z 100067e0 f   comsuppw:comraise.obj
+ 0001:00005820       ??0_com_error@@QAE@ABV0@@Z 10006820 f i comsuppw:comraise.obj
+ 0001:00005852       ?RemoveAll@?$CSimpleArray@PAUHINSTANCE__@@V?$CSimpleArrayEqualHelper@PAUHINSTANCE__@@@ATL@@@ATL@@QAEXXZ 10006852 f i atls:atlbase.obj
+ 0001:0000586f       ??0_ATL_BASE_MODULE70@ATL@@QAE@XZ 1000686f f i atls:atlbase.obj
+ 0001:00005889       ??1CAtlBaseModule@ATL@@QAE@XZ 10006889 f   atls:atlbase.obj
+ 0001:0000589f       ??0CAtlBaseModule@ATL@@QAE@XZ 1000689f f   atls:atlbase.obj
+ 0001:0000594a       ??1AFX_MODULE_STATE@@UAE@XZ 1000694a f   mfc71:MFC71.DLL
+ 0001:00005950       ?AfxSetModuleState@@YGPAVAFX_MODULE_STATE@@PAV1@@Z 10006950 f   mfc71:MFC71.DLL
+ 0001:00005956       ?AfxGetThreadState@@YGPAV_AFX_THREAD_STATE@@XZ 10006956 f   mfc71:MFC71.DLL
+ 0001:0000595c       ?AfxGetModuleState@@YGPAVAFX_MODULE_STATE@@XZ 1000695c f   mfc71:MFC71.DLL
+ 0001:00005962       ?AfxWndProc@@YGJPAUHWND__@@IIJ@Z 10006962 f   mfc71:MFC71.DLL
+ 0001:00005968       ?AfxTermThread@@YGXPAUHINSTANCE__@@@Z 10006968 f   mfc71:MFC71.DLL
+ 0001:0000596e       ?AfxTermExtensionModule@@YGXAAUAFX_EXTENSION_MODULE@@H@Z 1000696e f   mfc71:MFC71.DLL
+ 0001:00005974       ?AfxUnlockTempMaps@@YGHH@Z 10006974 f   mfc71:MFC71.DLL
+ 0001:0000597a       ?AfxLockTempMaps@@YGXXZ    1000697a f   mfc71:MFC71.DLL
+ 0001:00005980       ??0CDynLinkLibrary@@QAE@AAUAFX_EXTENSION_MODULE@@H@Z 10006980 f   mfc71:MFC71.DLL
+ 0001:00005986       ?AfxInitExtensionModule@@YGHAAUAFX_EXTENSION_MODULE@@PAUHINSTANCE__@@@Z 10006986 f   mfc71:MFC71.DLL
+ 0001:0000598c       ?AfxWinTerm@@YGXXZ         1000698c f   mfc71:MFC71.DLL
+ 0001:00005992       ?AfxWinInit@@YGHPAUHINSTANCE__@@0PADH@Z 10006992 f   mfc71:MFC71.DLL
+ 0001:00005998       ?AfxCoreInitModule@@YGXXZ  10006998 f   mfc71:MFC71.DLL
+ 0001:0000599e       ??0AFX_MODULE_STATE@@QAE@HP6GJPAUHWND__@@IIJ@ZKH@Z 1000699e f   mfc71:MFC71.DLL
+ 0001:000059a4       ??3CNoTrackObject@@SGXPAX@Z 100069a4 f   mfc71:MFC71.DLL
+ 0001:000059aa       _wcslen                    100069aa f   msvcrt:MSVCR71.dll
+ 0002:00000000       __imp__GetVersionExA@4     10007000     kernel32:KERNEL32.dll
+ 0002:00000004       __imp__MultiByteToWideChar@24 10007004     kernel32:KERNEL32.dll
+ 0002:00000008       __imp__WideCharToMultiByte@32 10007008     kernel32:KERNEL32.dll
+ 0002:0000000c       __imp__GetLastError@0      1000700c     kernel32:KERNEL32.dll
+ 0002:00000010       __imp__GetPrivateProfileStringA@24 10007010     kernel32:KERNEL32.dll
+ 0002:00000014       __imp__GetSystemTimeAsFileTime@4 10007014     kernel32:KERNEL32.dll
+ 0002:00000018       __imp__GetCurrentProcessId@0 10007018     kernel32:KERNEL32.dll
+ 0002:0000001c       __imp__GetCurrentThreadId@0 1000701c     kernel32:KERNEL32.dll
+ 0002:00000020       __imp__QueryPerformanceCounter@4 10007020     kernel32:KERNEL32.dll
+ 0002:00000024       __imp__ExitProcess@4       10007024     kernel32:KERNEL32.dll
+ 0002:00000028       __imp__DeleteCriticalSection@4 10007028     kernel32:KERNEL32.dll
+ 0002:0000002c       __imp__InitializeCriticalSection@4 1000702c     kernel32:KERNEL32.dll
+ 0002:00000030       __imp__LocalAlloc@8        10007030     kernel32:KERNEL32.dll
+ 0002:00000034       __imp__InterlockedDecrement@4 10007034     kernel32:KERNEL32.dll
+ 0002:00000038       __imp__GetTickCount@0      10007038     kernel32:KERNEL32.dll
+ 0002:0000003c       __imp__LocalFree@4         1000703c     kernel32:KERNEL32.dll
+ 0002:00000040       __imp__InterlockedIncrement@4 10007040     kernel32:KERNEL32.dll
+ 0002:00000044       __imp__GetPrivateProfileIntA@16 10007044     kernel32:KERNEL32.dll
+ 0002:00000048       __imp__lstrlenA@4          10007048     kernel32:KERNEL32.dll
+ 0002:0000004c       \177KERNEL32_NULL_THUNK_DATA 1000704c     kernel32:KERNEL32.dll
+ 0002:00000050       __imp__mysql_stat@4        10007050     libmysql:LIBMYSQL.dll
+ 0002:00000054       __imp__mysql_query@8       10007054     libmysql:LIBMYSQL.dll
+ 0002:00000058       __imp__mysql_store_result@4 10007058     libmysql:LIBMYSQL.dll
+ 0002:0000005c       __imp__mysql_init@4        1000705c     libmysql:LIBMYSQL.dll
+ 0002:00000060       __imp__mysql_real_connect@32 10007060     libmysql:LIBMYSQL.dll
+ 0002:00000064       __imp__mysql_list_processes@4 10007064     libmysql:LIBMYSQL.dll
+ 0002:00000068       __imp__mysql_thread_id@4   10007068     libmysql:LIBMYSQL.dll
+ 0002:0000006c       __imp__mysql_fetch_row@4   1000706c     libmysql:LIBMYSQL.dll
+ 0002:00000070       __imp__mysql_free_result@4 10007070     libmysql:LIBMYSQL.dll
+ 0002:00000074       __imp__mysql_close@4       10007074     libmysql:LIBMYSQL.dll
+ 0002:00000078       __imp__mysql_error@4       10007078     libmysql:LIBMYSQL.dll
+ 0002:0000007c       \177LIBMYSQL_NULL_THUNK_DATA 1000707c     libmysql:LIBMYSQL.dll
+ 0002:00000080       __imp_?Unregister@CWinApp@@UAEHXZ 10007080     mfc71:MFC71.DLL
+ 0002:00000084       __imp_?Register@CWinApp@@UAEHXZ 10007084     mfc71:MFC71.DLL
+ 0002:00000088       __imp_?InitLibId@CWinApp@@UAEXXZ 10007088     mfc71:MFC71.DLL
+ 0002:0000008c       __imp_?Delete@CWinThread@@UAEXXZ 1000708c     mfc71:MFC71.DLL
+ 0002:00000090       __imp_?GetMainWnd@CWinThread@@UAEPAVCWnd@@XZ 10007090     mfc71:MFC71.DLL
+ 0002:00000094       __imp_?ProcessMessageFilter@CWinThread@@UAEHHPAUtagMSG@@@Z 10007094     mfc71:MFC71.DLL
+ 0002:00000098       __imp_?ProcessWndProcException@CWinApp@@UAEJPAVCException@@PBUtagMSG@@@Z 10007098     mfc71:MFC71.DLL
+ 0002:0000009c       __imp_?ExitInstance@CWinApp@@UAEHXZ 1000709c     mfc71:MFC71.DLL
+ 0002:000000a0       __imp_?IsIdleMessage@CWinThread@@UAEHPAUtagMSG@@@Z 100070a0     mfc71:MFC71.DLL
+ 0002:000000a4       __imp_?OnIdle@CWinApp@@UAEHJ@Z 100070a4     mfc71:MFC71.DLL
+ 0002:000000a8       __imp_?PumpMessage@CWinThread@@UAEHXZ 100070a8     mfc71:MFC71.DLL
+ 0002:000000ac       __imp_?PreTranslateMessage@CWinThread@@UAEHPAUtagMSG@@@Z 100070ac     mfc71:MFC71.DLL
+ 0002:000000b0       __imp_?Run@CWinApp@@UAEHXZ 100070b0     mfc71:MFC71.DLL
+ 0002:000000b4       __imp_?InitInstance@CWinApp@@UAEHXZ 100070b4     mfc71:MFC71.DLL
+ 0002:000000b8       __imp_?GetConnectionHook@CCmdTarget@@MAEPAUIConnectionPoint@@ABU_GUID@@@Z 100070b8     mfc71:MFC71.DLL
+ 0002:000000bc       __imp_?GetExtraConnectionPoints@CCmdTarget@@MAEHPAVCPtrArray@@@Z 100070bc     mfc71:MFC71.DLL
+ 0002:000000c0       __imp_?GetInterfaceHook@CCmdTarget@@UAEPAUIUnknown@@PBX@Z 100070c0     mfc71:MFC71.DLL
+ 0002:000000c4       __imp_?OnCreateAggregates@CCmdTarget@@UAEHXZ 100070c4     mfc71:MFC71.DLL
+ 0002:000000c8       __imp_?GetEventSinkMap@CCmdTarget@@MBEPBUAFX_EVENTSINKMAP@@XZ 100070c8     mfc71:MFC71.DLL
+ 0002:000000cc       __imp_?GetInterfaceMap@CCmdTarget@@MBEPBUAFX_INTERFACEMAP@@XZ 100070cc     mfc71:MFC71.DLL
+ 0002:000000d0       __imp_?GetConnectionMap@CCmdTarget@@MBEPBUAFX_CONNECTIONMAP@@XZ 100070d0     mfc71:MFC71.DLL
+ 0002:000000d4       __imp_?GetDispatchMap@CCmdTarget@@MBEPBUAFX_DISPMAP@@XZ 100070d4     mfc71:MFC71.DLL
+ 0002:000000d8       __imp_?GetCommandMap@CCmdTarget@@MBEPBUAFX_OLECMDMAP@@XZ 100070d8     mfc71:MFC71.DLL
+ 0002:000000dc       __imp_?GetTypeLib@CCmdTarget@@UAEJKPAPAUITypeLib@@@Z 100070dc     mfc71:MFC71.DLL
+ 0002:000000e0       __imp_?GetTypeLibCache@CCmdTarget@@UAEPAVCTypeLibCache@@XZ 100070e0     mfc71:MFC71.DLL
+ 0002:000000e4       __imp_?GetTypeInfoCount@CCmdTarget@@UAEIXZ 100070e4     mfc71:MFC71.DLL
+ 0002:000000e8       __imp_?GetDispatchIID@CCmdTarget@@UAEHPAU_GUID@@@Z 100070e8     mfc71:MFC71.DLL
+ 0002:000000ec       __imp_?IsInvokeAllowed@CCmdTarget@@UAEHJ@Z 100070ec     mfc71:MFC71.DLL
+ 0002:000000f0       __imp_?OnFinalRelease@CCmdTarget@@UAEXXZ 100070f0     mfc71:MFC71.DLL
+ 0002:000000f4       __imp_?OnCmdMsg@CCmdTarget@@UAEHIHPAXPAUAFX_CMDHANDLERINFO@@@Z 100070f4     mfc71:MFC71.DLL
+ 0002:000000f8       __imp_?GetRuntimeClass@CWinApp@@UBEPAUCRuntimeClass@@XZ 100070f8     mfc71:MFC71.DLL
+ 0002:000000fc       __imp_??0CWinApp@@QAE@PBD@Z 100070fc     mfc71:MFC71.DLL
+ 0002:00000100       __imp_??1CWinApp@@UAE@XZ   10007100     mfc71:MFC71.DLL
+ 0002:00000104       __imp_??Y?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEAAV01@PBD@Z 10007104     mfc71:MFC71.DLL
+ 0002:00000108       __imp_??1CStringList@@UAE@XZ 10007108     mfc71:MFC71.DLL
+ 0002:0000010c       __imp_??0CStringList@@QAE@H@Z 1000710c     mfc71:MFC71.DLL
+ 0002:00000110       __imp_??0AFX_MAINTAIN_STATE2@@QAE@PAVAFX_MODULE_STATE@@@Z 10007110     mfc71:MFC71.DLL
+ 0002:00000114       __imp_?MakeLower@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEAAV12@XZ 10007114     mfc71:MFC71.DLL
+ 0002:00000118       __imp_?TrimRight@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEAAV12@XZ 10007118     mfc71:MFC71.DLL
+ 0002:0000011c       __imp_?Delete@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEHHH@Z 1000711c     mfc71:MFC71.DLL
+ 0002:00000120       __imp_?Find@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QBEHDH@Z 10007120     mfc71:MFC71.DLL
+ 0002:00000124       __imp_?AfxSetModuleState@@YGPAVAFX_MODULE_STATE@@PAV1@@Z 10007124     mfc71:MFC71.DLL
+ 0002:00000128       __imp_??1AFX_MODULE_STATE@@UAE@XZ 10007128     mfc71:MFC71.DLL
+ 0002:0000012c       __imp_?AfxGetModuleState@@YGPAVAFX_MODULE_STATE@@XZ 1000712c     mfc71:MFC71.DLL
+ 0002:00000130       __imp_?AfxWndProc@@YGJPAUHWND__@@IIJ@Z 10007130     mfc71:MFC71.DLL
+ 0002:00000134       __imp_?AfxTermThread@@YGXPAUHINSTANCE__@@@Z 10007134     mfc71:MFC71.DLL
+ 0002:00000138       __imp_?AfxTermExtensionModule@@YGXAAUAFX_EXTENSION_MODULE@@H@Z 10007138     mfc71:MFC71.DLL
+ 0002:0000013c       __imp_?AfxUnlockTempMaps@@YGHH@Z 1000713c     mfc71:MFC71.DLL
+ 0002:00000140       __imp_?AfxLockTempMaps@@YGXXZ 10007140     mfc71:MFC71.DLL
+ 0002:00000144       __imp_??0CDynLinkLibrary@@QAE@AAUAFX_EXTENSION_MODULE@@H@Z 10007144     mfc71:MFC71.DLL
+ 0002:00000148       __imp_?AfxInitExtensionModule@@YGHAAUAFX_EXTENSION_MODULE@@PAUHINSTANCE__@@@Z 10007148     mfc71:MFC71.DLL
+ 0002:0000014c       __imp_?AfxWinTerm@@YGXXZ   1000714c     mfc71:MFC71.DLL
+ 0002:00000150       __imp_?AfxWinInit@@YGHPAUHINSTANCE__@@0PADH@Z 10007150     mfc71:MFC71.DLL
+ 0002:00000154       __imp_?AfxCoreInitModule@@YGXXZ 10007154     mfc71:MFC71.DLL
+ 0002:00000158       __imp_??0AFX_MODULE_STATE@@QAE@HP6GJPAUHWND__@@IIJ@ZKH@Z 10007158     mfc71:MFC71.DLL
+ 0002:0000015c       __imp_??3CNoTrackObject@@SGXPAX@Z 1000715c     mfc71:MFC71.DLL
+ 0002:00000160       __imp_?AfxThrowInvalidArgException@@YGXXZ 10007160     mfc71:MFC71.DLL
+ 0002:00000164       __imp_??1?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAE@XZ 10007164     mfc71:MFC71.DLL
+ 0002:00000168       __imp_??0?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAE@ABV01@@Z 10007168     mfc71:MFC71.DLL
+ 0002:0000016c       __imp_??4?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEAAV01@PBD@Z 1000716c     mfc71:MFC71.DLL
+ 0002:00000170       __imp_??0?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAE@PBD@Z 10007170     mfc71:MFC71.DLL
+ 0002:00000174       __imp_??4?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAEAAV01@ABV01@@Z 10007174     mfc71:MFC71.DLL
+ 0002:00000178       __imp_?Right@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QBE?AV12@H@Z 10007178     mfc71:MFC71.DLL
+ 0002:0000017c       __imp_?Find@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QBEHPBDH@Z 1000717c     mfc71:MFC71.DLL
+ 0002:00000180       __imp_?Format@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAAXPBDZZ 10007180     mfc71:MFC71.DLL
+ 0002:00000184       __imp_?GetBuffer@?$CSimpleStringT@D$00@ATL@@QAEPADH@Z 10007184     mfc71:MFC71.DLL
+ 0002:00000188       __imp_?Left@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QBE?AV12@H@Z 10007188     mfc71:MFC71.DLL
+ 0002:0000018c       __imp_??0?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QAE@XZ 1000718c     mfc71:MFC71.DLL
+ 0002:00000190       __imp_?AddHead@CStringList@@QAEPAU__POSITION@@PBD@Z 10007190     mfc71:MFC71.DLL
+ 0002:00000194       __imp_?Compare@?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@QBEHPBD@Z 10007194     mfc71:MFC71.DLL
+ 0002:00000198       __imp_??3@YAXPAX@Z         10007198     mfc71:MFC71.DLL
+ 0002:0000019c       __imp_??_V@YAXPAX@Z        1000719c     mfc71:MFC71.DLL
+ 0002:000001a0       __imp_?OpenDocumentFile@CWinApp@@UAEPAVCDocument@@PBD@Z 100071a0     mfc71:MFC71.DLL
+ 0002:000001a4       __imp_?AddToRecentFileList@CWinApp@@UAEXPBD@Z 100071a4     mfc71:MFC71.DLL
+ 0002:000001a8       __imp_?InitApplication@CWinApp@@UAEHXZ 100071a8     mfc71:MFC71.DLL
+ 0002:000001ac       __imp_?SaveAllModified@CWinApp@@UAEHXZ 100071ac     mfc71:MFC71.DLL
+ 0002:000001b0       __imp_?DoMessageBox@CWinApp@@UAEHPBDII@Z 100071b0     mfc71:MFC71.DLL
+ 0002:000001b4       __imp_?DoWaitCursor@CWinApp@@UAEXH@Z 100071b4     mfc71:MFC71.DLL
+ 0002:000001b8       __imp_?OnDDECommand@CWinApp@@UAEHPAD@Z 100071b8     mfc71:MFC71.DLL
+ 0002:000001bc       __imp_?WinHelpA@CWinApp@@UAEXKI@Z 100071bc     mfc71:MFC71.DLL
+ 0002:000001c0       __imp_?HtmlHelpA@CWinApp@@UAEXKI@Z 100071c0     mfc71:MFC71.DLL
+ 0002:000001c4       __imp_?WinHelpInternal@CWinApp@@UAEXKI@Z 100071c4     mfc71:MFC71.DLL
+ 0002:000001c8       __imp_?LoadAppLangResourceDLL@CWinApp@@UAEPAUHINSTANCE__@@XZ 100071c8     mfc71:MFC71.DLL
+ 0002:000001cc       __imp_?LoadSysPolicies@CWinApp@@UAEHXZ 100071cc     mfc71:MFC71.DLL
+ 0002:000001d0       __imp_??2@YAPAXI@Z         100071d0     mfc71:MFC71.DLL
+ 0002:000001d4       __imp_?GetThisMessageMap@CWinApp@@KGPBUAFX_MSGMAP@@XZ 100071d4     mfc71:MFC71.DLL
+ 0002:000001d8       __imp_?AfxGetThreadState@@YGPAV_AFX_THREAD_STATE@@XZ 100071d8     mfc71:MFC71.DLL
+ 0002:000001dc       \177MFC71_NULL_THUNK_DATA  100071dc     mfc71:MFC71.DLL
+ 0002:000001e0       __imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ 100071e0     msvcprt:MSVCP71.dll
+ 0002:000001e4       __imp_??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z 100071e4     msvcprt:MSVCP71.dll
+ 0002:000001e8       __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ 100071e8     msvcprt:MSVCP71.dll
+ 0002:000001ec       __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z 100071ec     msvcprt:MSVCP71.dll
+ 0002:000001f0       __imp_??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z 100071f0     msvcprt:MSVCP71.dll
+ 0002:000001f4       \177MSVCP71_NULL_THUNK_DATA 100071f4     msvcprt:MSVCP71.dll
+ 0002:000001f8       __imp_??0exception@@QAE@XZ 100071f8     msvcrt:MSVCR71.dll
+ 0002:000001fc       __imp__malloc              100071fc     msvcrt:MSVCR71.dll
+ 0002:00000200       __imp__free                10007200     msvcrt:MSVCR71.dll
+ 0002:00000204       __imp___except_handler3    10007204     msvcrt:MSVCR71.dll
+ 0002:00000208       __imp__sprintf             10007208     msvcrt:MSVCR71.dll
+ 0002:0000020c       __imp__atoi                1000720c     msvcrt:MSVCR71.dll
+ 0002:00000210       __imp__puts                10007210     msvcrt:MSVCR71.dll
+ 0002:00000214       __imp_??0exception@@QAE@ABV0@@Z 10007214     msvcrt:MSVCR71.dll
+ 0002:00000218       __imp__wcslen              10007218     msvcrt:MSVCR71.dll
+ 0002:0000021c       __imp____CxxFrameHandler   1000721c     msvcrt:MSVCR71.dll
+ 0002:00000220       __imp____CppXcptFilter     10007220     msvcrt:MSVCR71.dll
+ 0002:00000224       __imp___CxxThrowException@8 10007224     msvcrt:MSVCR71.dll
+ 0002:00000228       __imp__fprintf             10007228     msvcrt:MSVCR71.dll
+ 0002:0000022c       __imp_??1exception@@UAE@XZ 1000722c     msvcrt:MSVCR71.dll
+ 0002:00000230       __imp___iob                10007230     msvcrt:MSVCR71.dll
+ 0002:00000234       __imp__sscanf              10007234     msvcrt:MSVCR71.dll
+ 0002:00000238       __imp__strstr              10007238     msvcrt:MSVCR71.dll
+ 0002:0000023c       __imp__printf              1000723c     msvcrt:MSVCR71.dll
+ 0002:00000240       __imp__memset              10007240     msvcrt:MSVCR71.dll
+ 0002:00000244       __imp____security_error_handler 10007244     msvcrt:MSVCR71.dll
+ 0002:00000248       __imp_??1type_info@@UAE@XZ 10007248     msvcrt:MSVCR71.dll
+ 0002:0000024c       __imp_?terminate@@YAXXZ    1000724c     msvcrt:MSVCR71.dll
+ 0002:00000250       __imp____dllonexit         10007250     msvcrt:MSVCR71.dll
+ 0002:00000254       __imp___onexit             10007254     msvcrt:MSVCR71.dll
+ 0002:00000258       __imp___initterm           10007258     msvcrt:MSVCR71.dll
+ 0002:0000025c       __imp___adjust_fdiv        1000725c     msvcrt:MSVCR71.dll
+ 0002:00000260       \177MSVCR71_NULL_THUNK_DATA 10007260     msvcrt:MSVCR71.dll
+ 0002:00000264       __imp__SysAllocString@4    10007264     oleaut32:OLEAUT32.dll
+ 0002:00000268       __imp__GetErrorInfo@8      10007268     oleaut32:OLEAUT32.dll
+ 0002:0000026c       __imp__SysFreeString@4     1000726c     oleaut32:OLEAUT32.dll
+ 0002:00000270       __imp__VariantInit@4       10007270     oleaut32:OLEAUT32.dll
+ 0002:00000274       __imp__VariantCopy@8       10007274     oleaut32:OLEAUT32.dll
+ 0002:00000278       __imp__VariantChangeType@16 10007278     oleaut32:OLEAUT32.dll
+ 0002:0000027c       __imp__VariantClear@4      1000727c     oleaut32:OLEAUT32.dll
+ 0002:00000280       \177OLEAUT32_NULL_THUNK_DATA 10007280     oleaut32:OLEAUT32.dll
+ 0002:00000284       __imp__inet_ntoa@4         10007284     ws2_32:WS2_32.dll
+ 0002:00000288       __imp__gethostbyname@4     10007288     ws2_32:WS2_32.dll
+ 0002:0000028c       __imp__gethostname@8       1000728c     ws2_32:WS2_32.dll
+ 0002:00000290       __imp__WSACleanup@0        10007290     ws2_32:WS2_32.dll
+ 0002:00000294       __imp__WSAStartup@8        10007294     ws2_32:WS2_32.dll
+ 0002:00000298       \177WS2_32_NULL_THUNK_DATA 10007298     ws2_32:WS2_32.dll
+ 0002:0000029c       __imp__CoUninitialize@0    1000729c     ole32:ole32.dll
+ 0002:000002a0       __imp__CoCreateInstance@20 100072a0     ole32:ole32.dll
+ 0002:000002a4       __imp__OleRun@4            100072a4     ole32:ole32.dll
+ 0002:000002a8       __imp__CoInitialize@4      100072a8     ole32:ole32.dll
+ 0002:000002ac       \177ole32_NULL_THUNK_DATA  100072ac     ole32:ole32.dll
+ 0002:000002b0       __imp_?GetSiteViewRootPath@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ 100072b0     svapi:svapi.dll
+ 0002:000002b4       __imp_?LoadResource@@YAPAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z 100072b4     svapi:svapi.dll
+ 0002:000002b8       __imp_?FindNodeValue@@YA_NPAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV12@@Z 100072b8     svapi:svapi.dll
+ 0002:000002bc       __imp_?GetResourceNode@@YAPAXPAX@Z 100072bc     svapi:svapi.dll
+ 0002:000002c0       __imp_?CloseResource@@YA_NAAPAX@Z 100072c0     svapi:svapi.dll
+ 0002:000002c4       \177svapi_NULL_THUNK_DATA  100072c4     svapi:svapi.dll
+ 0002:000002ec       ??_C@_00CNPNBAHC@?$AA@     100072ec     funcGeneral.obj
+ 0002:000002f0       ??_C@_02DPKJAMEF@?$CFd?$AA@ 100072f0     funcGeneral.obj
+ 0002:000002f4       ??_C@_0L@HPMGBIOI@ServerHost?$AA@ 100072f4     funcGeneral.obj
+ 0002:00000300       ??_C@_09IPAEKDAI@localhost?$AA@ 10007300     funcGeneral.obj
+ 0002:0000030c       ??_C@_0BA@GGPFGLLN@MonitorSchedule?$AA@ 1000730c     funcGeneral.obj
+ 0002:0000031c       ??_C@_04BPKCJLI@SEID?$AA@  1000731c     funcGeneral.obj
+ 0002:00000324       ??_C@_0BG@BFJACLLI@?$CFs?2fcgi?9bin?2mc?4config?$AA@ 10007324     funcGeneral.obj
+ 0002:0000033c       ??_C@_07DLHCIBDH@default?$AA@ 1000733c     funcGeneral.obj
+ 0002:00000344       ?messageMap@CMySQLMonitorApp@@1UAFX_MSGMAP@@B 10007344     mysqlmonitor.obj
+ 0002:0000034c       ?_messageEntries@CMySQLMonitorApp@@0QBUAFX_MSGMAP_ENTRY@@B 1000734c     mysqlmonitor.obj
+ 0002:00000364       _CLSID_SWbemLocator        10007364     mysqlmonitor.obj
+ 0002:00000374       ??_7logic_error@std@@6B@   10007374     mysqlmonitor.obj
+ 0002:0000037c       ??_7length_error@std@@6B@  1000737c     mysqlmonitor.obj
+ 0002:00000384       ??_7out_of_range@std@@6B@  10007384     mysqlmonitor.obj
+ 0002:0000038c       __GUID_1a388f98_d4ba_11d1_8b09_00600806d9b6 1000738c     mysqlmonitor.obj
+ 0002:000003a0       ??_7CMySQLMonitorApp@@6B@  100073a0     mysqlmonitor.obj
+ 0002:00000460       ??_C@_0CK@JIBNGCIN@Failed?5to?5connect?5to?5database?3?5E@ 10007460     mysqlmonitor.obj
+ 0002:0000048c       ??_C@_0BB@KMFKGOGO@error?$DN?$CFs?$CI?$CFs?3?$CFd?$CJ$?$AA@ 1000748c     mysqlmonitor.obj
+ 0002:000004a0       ??_C@_0BO@GILMCPPM@MYSQL_CONNECT_DATABASE_FAILED?$AA@ 100074a0     mysqlmonitor.obj
+ 0002:000004c0       ??_C@_03OOAIEIEA@?$CFs$?$AA@ 100074c0     mysqlmonitor.obj
+ 0002:000004c4       ??_C@_06BMBINKJH@?$CFd?$DN?$CFd$?$AA@ 100074c4     mysqlmonitor.obj
+ 0002:000004cc       ??_C@_0BJ@FMFLDFFK@MYSQL_SERVER_PORT_IS_BAD?$AA@ 100074cc     mysqlmonitor.obj
+ 0002:000004e8       ??_C@_0L@CPJFMBIL@error?5?$DN?5?$CFs?$AA@ 100074e8     mysqlmonitor.obj
+ 0002:000004f4       ??_C@_08HKDCKFDH@SV_MYSQL?$AA@ 100074f4     mysqlmonitor.obj
+ 0002:00000500       ??_C@_0BK@OMDMDFNA@MYSQL_SERVER_HOST_IS_NULL?$AA@ 10007500     mysqlmonitor.obj
+ 0002:0000051c       ??_C@_0L@JMIELDBN@_PassWord?$DN?$AA@ 1000751c     mysqlmonitor.obj
+ 0002:00000528       ??_C@_0O@MMDPHNLM@_UserAccount?$DN?$AA@ 10007528     mysqlmonitor.obj
+ 0002:00000538       ??_C@_0M@GDHHJPPP@_MySQLPort?$DN?$AA@ 10007538     mysqlmonitor.obj
+ 0002:00000544       ??_C@_0O@INBMCBCC@_MachineName?$DN?$AA@ 10007544     mysqlmonitor.obj
+ 0002:00000558       ??_C@_0HH@CKDFNGJF@SlaveIOState?$DN?$CFs$MasterHost?$DN?$CFs$Ma@ 10007558     mysqlmonitor.obj
+ 0002:000005d0       ??_C@_04MLLLIHIP@null?$AA@ 100075d0     mysqlmonitor.obj
+ 0002:000005d8       ??_C@_0BC@DNJAGBFL@show?5slave?5status?$AA@ 100075d8     mysqlmonitor.obj
+ 0002:000005ec       ??_C@_08NIOFPIDH@error?$DN?$CFs?$AA@ 100075ec     mysqlmonitor.obj
+ 0002:000005f8       ??_C@_0FD@KCDGBJLB@PageSize?$DN?$CFd$TotalPages?$DN?$CFd$FreePa@ 100075f8     mysqlmonitor.obj
+ 0002:0000064c       ??_C@_0CB@BDDBAAM@Innodb_buffer_pool_pages_latched@ 1000764c     mysqlmonitor.obj
+ 0002:00000670       ??_C@_0BP@FHPOOHGB@Innodb_buffer_pool_pages_dirty?$AA@ 10007670     mysqlmonitor.obj
+ 0002:00000690       ??_C@_0BO@EJAHDPKF@Innodb_buffer_pool_pages_data?$AA@ 10007690     mysqlmonitor.obj
+ 0002:000006b0       ??_C@_0BO@IODJIPH@Innodb_buffer_pool_pages_free?$AA@ 100076b0     mysqlmonitor.obj
+ 0002:000006d0       ??_C@_0BP@NDFLMIAJ@Innodb_buffer_pool_pages_total?$AA@ 100076d0     mysqlmonitor.obj
+ 0002:000006f0       ??_C@_0BB@HNNLKJPM@Innodb_page_size?$AA@ 100076f0     mysqlmonitor.obj
+ 0002:00000704       ??_C@_0M@CLKFOCIH@show?5status?$AA@ 10007704     mysqlmonitor.obj
+ 0002:00000710       ??_C@_09EJINKBFB@error?$DN?$CFs$?$AA@ 10007710     mysqlmonitor.obj
+ 0002:00000720       ??_C@_0FJ@DNLNPEIA@uptime?$DN?$CFd$thread?$DN?$CFd$querycount?$DN?$CF@ 10007720     mysqlmonitor.obj
+ 0002:0000077c       ??_C@_02NJPGOMH@?$CFf?$AA@ 1000777c     mysqlmonitor.obj
+ 0002:00000780       ??_C@_0BJ@KHONMKJB@Queries?5per?5second?5avg?3?5?$AA@ 10007780     mysqlmonitor.obj
+ 0002:0000079c       ??_C@_0O@DIKCAPPH@Open?5tables?3?5?$AA@ 1000779c     mysqlmonitor.obj
+ 0002:000007ac       ??_C@_0P@HBHBLGBH@Flush?5tables?3?5?$AA@ 100077ac     mysqlmonitor.obj
+ 0002:000007bc       ??_C@_0P@BFLFGOEI@Slow?5queries?3?5?$AA@ 100077bc     mysqlmonitor.obj
+ 0002:000007cc       ??_C@_0M@HOAHEIAP@Questions?3?5?$AA@ 100077cc     mysqlmonitor.obj
+ 0002:000007d8       ??_C@_09BGCCCBEM@Threads?3?5?$AA@ 100077d8     mysqlmonitor.obj
+ 0002:000007e4       ??_C@_08GLJNCEHL@Uptime?3?5?$AA@ 100077e4     mysqlmonitor.obj
+ 0002:000007f0       ??_C@_0BJ@MNNJCIIC@status?$DNOK$time?$CI?$LK?A?C?k?$CJ?$DN?$CFd$?$AA@ 100077f0     mysqlmonitor.obj
+ 0002:0000080c       __GUID_76a6415b_cb41_11d1_8b02_00600806d9b6 1000780c     mysqlmonitor.obj
+ 0002:0000081c       __GUID_76a6415a_cb41_11d1_8b02_00600806d9b6 1000781c     mysqlmonitor.obj
+ 0002:0000082c       __GUID_00020404_0000_0000_c000_000000000046 1000782c     mysqlmonitor.obj
+ 0002:0000083c       ??_C@_0BI@JKBJOCPF@MYSQL_QUERY_STAT_FAILED?$AA@ 1000783c     mysqlmonitor.obj
+ 0002:00000854       ??_C@_0BO@FDBEPOLF@?9?9?9?9?9?9?9?9?9?9?$CFs?9?9?$CFs?9?9?$CFs?9?9?9?9?9?9?9?9?6?$AA@ 10007854     mysqlmonitor.obj
+ 0002:00000874       ??_C@_09PFCHIMEP@127?40?40?41?$AA@ 10007874     mysqlmonitor.obj
+ 0002:00000880       __GUID_76a6415f_cb41_11d1_8b02_00600806d9b6 10007880     mysqlmonitor.obj
+ 0002:00000890       __GUID_00000000_0000_0000_c000_000000000046 10007890     mysqlmonitor.obj
+ 0002:000008a0       ??_C@_0BE@JONHPENG@map?1set?$DMT?$DO?5too?5long?$AA@ 100078a0     mysqlmonitor.obj
+ 0002:000008b4       __GUID_dea0a7b2_d4ba_11d1_8b09_00600806d9b6 100078b4     mysqlmonitor.obj
+ 0002:000008c4       __GUID_76a6415c_cb41_11d1_8b02_00600806d9b6 100078c4     mysqlmonitor.obj
+ 0002:000008d4       ??_C@_0BM@PAPJHAGI@invalid?5map?1set?$DMT?$DO?5iterator?$AA@ 100078d4     mysqlmonitor.obj
+ 0002:000008f0       ??_C@_0BH@BDEJFLID@error?$DNError?5ocured?3?5?$CFd?$AA@ 100078f0     mysqlmonitor.obj
+ 0002:00000908       ??_C@_0BK@EKJBJMEF@error?$DNError?5ocured?3?$CFx?3?5?$CFs?$AA@ 10007908     mysqlmonitor.obj
+ 0002:00000924       ??_C@_0CH@BBPHFIK@error?$DNMySql?5is?5not?5run?5on?5this?5s@ 10007924     mysqlmonitor.obj
+ 0002:00000950       ??_C@_0GJ@HONEOKOJ@MySqlPhyMem?$DN?$CFd$MySqlVirMem?$DN?$CFd$My@ 10007950     mysqlmonitor.obj
+ 0002:000009bc       __real@42c80000            100079bc     mysqlmonitor.obj
+ 0002:000009c0       ??_C@_0N@EDDDJICG@PrivateBytes?$AA@ 100079c0     mysqlmonitor.obj
+ 0002:000009d0       ??_C@_0L@GNPAFHMD@WorkingSet?$AA@ 100079d0     mysqlmonitor.obj
+ 0002:000009dc       ??_C@_03LJNDFDHG@WQL?$AA@  100079dc     mysqlmonitor.obj
+ 0002:000009e0       ??_C@_0FJ@NMHMMCA@SELECT?5?$CK?5FROM?5Win32_PerfRawData_@ 100079e0     mysqlmonitor.obj
+ 0002:00000a3c       ??_C@_0BD@NOKMDJPF@TotalVirtualMemory?$AA@ 10007a3c     mysqlmonitor.obj
+ 0002:00000a50       ??_C@_0BE@LPDNMOEG@TotalPhysicalMemory?$AA@ 10007a50     mysqlmonitor.obj
+ 0002:00000a64       ??_C@_0CB@EFOHADDN@Win32_LogicalMemoryConfiguration@ 10007a64     mysqlmonitor.obj
+ 0002:00000a88       ??_C@_01LFCBOECM@?4?$AA@   10007a88     mysqlmonitor.obj
+ 0002:00000a8c       ??_C@_0L@DDGNKPIF@root?2cimv2?$AA@ 10007a8c     mysqlmonitor.obj
+ 0002:00000a98       ??_C@_0O@HPMBPHDB@_WinPassWord?$DN?$AA@ 10007a98     mysqlmonitor.obj
+ 0002:00000aa8       ??_C@_0BB@GPMLPNMF@_WinUserAccount?$DN?$AA@ 10007aa8     mysqlmonitor.obj
+ 0002:00000abc       ??_C@_0BI@EIEBIALO@nTotalConn?$DN?$CFd$result?$DN?$CFs?$AA@ 10007abc     mysqlmonitor.obj
+ 0002:00000ad4       ??_C@_0BC@JPAHOOBJ@?$CFs?$CFs?$LF?D?A?$KM?$LN?S?J?$PN?J?G?$CFd?0?$AA@ 10007ad4     mysqlmonitor.obj
+ 0002:00000ae8       ??_C@_07LFKDEFLG@kill?5?$CFd?$AA@ 10007ae8     mysqlmonitor.obj
+ 0002:00000af0       ??_C@_0BB@GJDFIGBB@show?5processlist?$AA@ 10007af0     mysqlmonitor.obj
+ 0002:00000b04       ??_C@_07JDOBBOAI@_ProID?$DN?$AA@ 10007b04     mysqlmonitor.obj
+ 0002:00000b10       ??_7_AFX_DLL_MODULE_STATE@@6B@ 10007b10     mfcs71:dllmodul.obj
+ 0002:00000b34       ??_C@_06JBKGCNBB@Delete?$AA@ 10007b34     mfcs71:stdafx.obj
+ 0002:00000b3c       ??_C@_08KAAPDIAN@NoRemove?$AA@ 10007b3c     mfcs71:stdafx.obj
+ 0002:00000b48       ??_C@_0M@DBGDLGLL@ForceRemove?$AA@ 10007b48     mfcs71:stdafx.obj
+ 0002:00000b54       ??_C@_03LAIAPFCB@Val?$AA@  10007b54     mfcs71:stdafx.obj
+ 0002:00000b58       ??_C@_01HMGJMAIH@B?$AA@    10007b58     mfcs71:stdafx.obj
+ 0002:00000b5c       ??_C@_01CKDDGHAB@D?$AA@    10007b5c     mfcs71:stdafx.obj
+ 0002:00000b60       ??_C@_01PLPBNMEI@M?$AA@    10007b60     mfcs71:stdafx.obj
+ 0002:00000b64       ??_C@_01CPLAODJH@S?$AA@    10007b64     mfcs71:stdafx.obj
+ 0002:00000b88       ??_7type_info@@6B@         10007b88     msvcrt:ti_inst.obj
+ 0002:00000bdc       __GUID_df0b3d60_548f_101b_8e65_08002b2bd119 10007bdc     comsuppw:comsupp.obj
+ 0002:00000c00       ??_7_com_error@@6B@        10007c00     comsuppw:comraise.obj
+ 0002:00000c04       _GUID_ATLVer30             10007c04     atls:atlbase.obj
+ 0002:00000c14       _GUID_ATLVer70             10007c14     atls:atlbase.obj
+ 0002:00000c28       __load_config_used         10007c28     msvcrt:loadcfg.obj
+ 0002:00000ce8       ??_R1A@?0A@A@CNoTrackObject@@8 10007ce8     mfcs71:dllmodul.obj
+ 0002:00000d00       ??_R1A@?0A@A@AFX_MODULE_STATE@@8 10007d00     mfcs71:dllmodul.obj
+ 0002:00000d18       ??_R1A@?0A@A@_AFX_DLL_MODULE_STATE@@8 10007d18     mfcs71:dllmodul.obj
+ 0002:00000d30       ??_R2_AFX_DLL_MODULE_STATE@@8 10007d30     mfcs71:dllmodul.obj
+ 0002:00000d40       ??_R3_AFX_DLL_MODULE_STATE@@8 10007d40     mfcs71:dllmodul.obj
+ 0002:00000d50       ??_R4_AFX_DLL_MODULE_STATE@@6B@ 10007d50     mfcs71:dllmodul.obj
+ 0002:00000d64       ??_R1A@?0A@A@type_info@@8  10007d64     msvcrt:ti_inst.obj
+ 0002:00000d7c       ??_R2type_info@@8          10007d7c     msvcrt:ti_inst.obj
+ 0002:00000d84       ??_R3type_info@@8          10007d84     msvcrt:ti_inst.obj
+ 0002:00000d94       ??_R4type_info@@6B@        10007d94     msvcrt:ti_inst.obj
+ 0002:00000da8       ??_R1A@?0A@A@_com_error@@8 10007da8     comsuppw:comraise.obj
+ 0002:00000dc0       ??_R2_com_error@@8         10007dc0     comsuppw:comraise.obj
+ 0002:00000dc8       ??_R3_com_error@@8         10007dc8     comsuppw:comraise.obj
+ 0002:00000dd8       ??_R4_com_error@@6B@       10007dd8     comsuppw:comraise.obj
+ 0002:00000df0       ___safe_se_handler_table   10007df0     <linker-defined>
+ 0002:00000e40       ___rtc_iaa                 10007e40     msvcrt:initsect.obj
+ 0002:00000e44       ___rtc_izz                 10007e44     msvcrt:initsect.obj
+ 0002:00000e48       ___rtc_taa                 10007e48     msvcrt:initsect.obj
+ 0002:00000e4c       ___rtc_tzz                 10007e4c     msvcrt:initsect.obj
+ 0002:00000f08       __CT??_R0?AVexception@@@8??0exception@@QAE@ABV0@@Z12 10007f08     funcGeneral.obj
+ 0002:000010a8       __CT??_R0?AVlogic_error@std@@@8??0logic_error@std@@QAE@ABV01@@Z40 100080a8     mysqlmonitor.obj
+ 0002:000010c4       __CT??_R0?AVlength_error@std@@@8??0length_error@std@@QAE@ABV01@@Z40 100080c4     mysqlmonitor.obj
+ 0002:000010e0       __CTA3?AVlength_error@std@@ 100080e0     mysqlmonitor.obj
+ 0002:000010f0       __TI3?AVlength_error@std@@ 100080f0     mysqlmonitor.obj
+ 0002:000011e4       __CT??_R0?AVout_of_range@std@@@8??0out_of_range@std@@QAE@ABV01@@Z40 100081e4     mysqlmonitor.obj
+ 0002:00001200       __CTA3?AVout_of_range@std@@ 10008200     mysqlmonitor.obj
+ 0002:00001210       __TI3?AVout_of_range@std@@ 10008210     mysqlmonitor.obj
+ 0002:000014e4       __CT??_R0?AV_com_error@@@8??0_com_error@@QAE@ABV0@@Z16 100084e4     comsuppw:comraise.obj
+ 0002:00001500       __CTA1?AV_com_error@@      10008500     comsuppw:comraise.obj
+ 0002:00001508       __TI1?AV_com_error@@       10008508     comsuppw:comraise.obj
+ 0002:00001518       __IMPORT_DESCRIPTOR_LIBMYSQL 10008518     libmysql:LIBMYSQL.dll
+ 0002:0000152c       __IMPORT_DESCRIPTOR_svapi  1000852c     svapi:svapi.dll
+ 0002:00001540       __IMPORT_DESCRIPTOR_MFC71  10008540     mfc71:MFC71.DLL
+ 0002:00001554       __IMPORT_DESCRIPTOR_MSVCR71 10008554     msvcrt:MSVCR71.dll
+ 0002:00001568       __IMPORT_DESCRIPTOR_KERNEL32 10008568     kernel32:KERNEL32.dll
+ 0002:0000157c       __IMPORT_DESCRIPTOR_ole32  1000857c     ole32:ole32.dll
+ 0002:00001590       __IMPORT_DESCRIPTOR_OLEAUT32 10008590     oleaut32:OLEAUT32.dll
+ 0002:000015a4       __IMPORT_DESCRIPTOR_MSVCP71 100085a4     msvcprt:MSVCP71.dll
+ 0002:000015b8       __IMPORT_DESCRIPTOR_WS2_32 100085b8     ws2_32:WS2_32.dll
+ 0002:000015cc       __NULL_IMPORT_DESCRIPTOR   100085cc     libmysql:LIBMYSQL.dll
+ 0003:00000000       ___xc_a                    1000a000     msvcrt:cinitexe.obj
+ 0003:00000020       ___xc_z                    1000a020     msvcrt:cinitexe.obj
+ 0003:00000024       ___xi_a                    1000a024     msvcrt:cinitexe.obj
+ 0003:00000028       ___xi_z                    1000a028     msvcrt:cinitexe.obj
+ 0003:00000030       ??_R0?AVexception@@@8      1000a030     funcGeneral.obj
+ 0003:00000048       ??_R0?AVlogic_error@std@@@8 1000a048     mysqlmonitor.obj
+ 0003:00000068       ??_R0?AVlength_error@std@@@8 1000a068     mysqlmonitor.obj
+ 0003:00000088       ??_R0?AVout_of_range@std@@@8 1000a088     mysqlmonitor.obj
+ 0003:000000a8       ??_R0?AV_com_error@@@8     1000a0a8     mysqlmonitor.obj
+ 0003:000000c4       __pRawDllMain              1000a0c4     mfcs71:dllmodul.obj
+ 0003:000000c8       ??_R0?AVCNoTrackObject@@@8 1000a0c8     mfcs71:dllmodul.obj
+ 0003:000000e8       ??_R0?AVAFX_MODULE_STATE@@@8 1000a0e8     mfcs71:dllmodul.obj
+ 0003:00000108       ??_R0?AV_AFX_DLL_MODULE_STATE@@@8 1000a108     mfcs71:dllmodul.obj
+ 0003:00000130       ___security_cookie         1000a130     msvcrt:seccook.obj
+ 0003:00000134       ??_R0?AVtype_info@@@8      1000a134     msvcrt:ti_inst.obj
+ 0003:0000014c       ?__errorPfn@@3P6GXJPAUIErrorInfo@@@ZA 1000a14c     comsuppw:comsupp.obj
+ 0003:00000150       ?vtMissing@@3V_variant_t@@A 1000a150     comsuppw:comutil.obj
+ 0003:00000160       ?m_bInitFailed@CAtlBaseModule@ATL@@2_NA 1000a160     funcGeneral.obj
+ 0003:00000180       ?theApp@@3VCMySQLMonitorApp@@A 1000a180     mysqlmonitor.obj
+ 0003:00000240       __afxForceEXCLUDE          1000a240     mfcs71:nolib.obj
+ 0003:0000025c       __afxForceUSRDLL           1000a25c     mfcs71:dllmodul.obj
+ 0003:000012f0       __afxForceSTDAFX           1000b2f0     mfcs71:stdafx.obj
+ 0003:000012f8       ?_AtlBaseModule@ATL@@3VCAtlBaseModule@1@A 1000b2f8     atls:atlbase.obj
+ 0003:00001334       __adjust_fdiv              1000b334     <common>
+ 0003:00001338       ___onexitend               1000b338     <common>
+ 0003:0000133c       ___onexitbegin             1000b33c     <common>
+
+ entry point at        0001:0000522e
+
+ Static symbols
+
+ 0001:00001c82       $L142060                   10002c82 f   mysqlmonitor.obj
+ 0001:00002787       $L145367                   10003787 f i mysqlmonitor.obj
+ 0001:00004164       $L148200                   10005164 f   mysqlmonitor.obj
+ 0001:000041b6       $L148201                   100051b6 f   mysqlmonitor.obj
+ 0001:00004fdd       _report_failure            10005fdd f   msvcrt:secchk.obj
+ 0001:0000573c       $L60940                    1000673c f   comsuppw:comutil.obj
+ 0001:000059b0       $L118748                   100069b0 f   funcGeneral.obj
+ 0001:000059b9       $L118749                   100069b9 f   funcGeneral.obj
+ 0001:000059c2       __ehhandler$?FuncGetInstallPath@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@XZ 100069c2 f   funcGeneral.obj
+ 0001:000059d0       $L119369                   100069d0 f   funcGeneral.obj
+ 0001:000059d9       __ehhandler$?MakeCharByString@@YA_NPADAAHV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 100069d9 f   funcGeneral.obj
+ 0001:000059f0       $L119401                   100069f0 f   funcGeneral.obj
+ 0001:000059fc       $L119402                   100069fc f   funcGeneral.obj
+ 0001:00005a08       __ehhandler$?GetSEIP@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ 10006a08 f   funcGeneral.obj
+ 0001:00005a20       $L119420                   10006a20 f   funcGeneral.obj
+ 0001:00005a29       $L119421                   10006a29 f   funcGeneral.obj
+ 0001:00005a32       $L119422                   10006a32 f   funcGeneral.obj
+ 0001:00005a3b       $L119424                   10006a3b f   funcGeneral.obj
+ 0001:00005a55       __ehhandler$?GetResourceValue@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@Z 10006a55 f   funcGeneral.obj
+ 0001:00005a60       $L119939                   10006a60 f   funcGeneral.obj
+ 0001:00005a69       $L119940                   10006a69 f   funcGeneral.obj
+ 0001:00005a72       $L119942                   10006a72 f   funcGeneral.obj
+ 0001:00005a7b       $L119943                   10006a7b f   funcGeneral.obj
+ 0001:00005a95       __ehhandler$?FuncGetStringFromIDS@@YA?AV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@PBD0@Z 10006a95 f   funcGeneral.obj
+ 0001:00005aa0       $L141416                   10006aa0 f   mysqlmonitor.obj
+ 0001:00005aa0       $L146267                   10006aa0 f   mysqlmonitor.obj
+ 0001:00005aa9       __ehhandler$??1logic_error@std@@UAE@XZ 10006aa9 f   mysqlmonitor.obj
+ 0001:00005aa9       __ehhandler$??0logic_error@std@@QAE@ABV01@@Z 10006aa9 f   mysqlmonitor.obj
+ 0001:00005ac0       $L142061                   10006ac0 f   mysqlmonitor.obj
+ 0001:00005ac8       $L142062                   10006ac8 f   mysqlmonitor.obj
+ 0001:00005ad1       $L142063                   10006ad1 f   mysqlmonitor.obj
+ 0001:00005ada       $L142064                   10006ada f   mysqlmonitor.obj
+ 0001:00005ae3       $L142065                   10006ae3 f   mysqlmonitor.obj
+ 0001:00005aeb       $L142066                   10006aeb f   mysqlmonitor.obj
+ 0001:00005af4       $L142067                   10006af4 f   mysqlmonitor.obj
+ 0001:00005afd       $L142069                   10006afd f   mysqlmonitor.obj
+ 0001:00005b06       $L142070                   10006b06 f   mysqlmonitor.obj
+ 0001:00005b0f       $L142073                   10006b0f f   mysqlmonitor.obj
+ 0001:00005b18       $L142075                   10006b18 f   mysqlmonitor.obj
+ 0001:00005b21       __ehhandler$_TestMySQLConn 10006b21 f   mysqlmonitor.obj
+ 0001:00005b30       $L142977                   10006b30 f   mysqlmonitor.obj
+ 0001:00005b38       __ehhandler$??B_variant_t@@QBEHXZ 10006b38 f   mysqlmonitor.obj
+ 0001:00005b50       $L143158                   10006b50 f   mysqlmonitor.obj
+ 0001:00005b59       __ehhandler$?IsLocalHost@@YAHV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 10006b59 f   mysqlmonitor.obj
+ 0001:00005b70       $L145368                   10006b70 f   mysqlmonitor.obj
+ 0001:00005b81       __ehhandler$?_Buynode@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@IAEPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@PAU342@00ABU?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@2@D@Z 10006b81 f   mysqlmonitor.obj
+ 0001:00005b90       $L147687                   10006b90 f   mysqlmonitor.obj
+ 0001:00005b90       $L145989                   10006b90 f   mysqlmonitor.obj
+ 0001:00005b99       $L146009                   10006b99 f   mysqlmonitor.obj
+ 0001:00005b99       $L147697                   10006b99 f   mysqlmonitor.obj
+ 0001:00005ba2       __ehhandler$?_Insert@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@IAE?AViterator@12@_NPAU_Node@?$_Tree_nod@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@2@ABU?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@2@@Z 10006ba2 f   mysqlmonitor.obj
+ 0001:00005ba2       __ehhandler$?erase@?$_Tree@V?$_Tmap_traits@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@$0A@@std@@@std@@QAE?AViterator@12@V312@@Z 10006ba2 f   mysqlmonitor.obj
+ 0001:00005bb0       $L146425                   10006bb0 f   mysqlmonitor.obj
+ 0001:00005bb0       $L142934                   10006bb0 f   mysqlmonitor.obj
+ 0001:00005bbb       __ehhandler$??4_bstr_t@@QAEAAV0@PBD@Z 10006bbb f   mysqlmonitor.obj
+ 0001:00005bbb       __ehhandler$??0_bstr_t@@QAE@PBD@Z 10006bbb f   mysqlmonitor.obj
+ 0001:00005bd0       $L146446                   10006bd0 f   mysqlmonitor.obj
+ 0001:00005bd0       $L146494                   10006bd0 f   mysqlmonitor.obj
+ 0001:00005bd8       __ehhandler$?Item@ISWbemPropertySet@WbemScripting@@QAE?AV?$_com_ptr_t@V?$_com_IIID@UISWbemProperty@WbemScripting@@$1?_GUID_1a388f98_d4ba_11d1_8b09_00600806d9b6@@3U__s_GUID@@B@@@@V_bstr_t@@J@Z 10006bd8 f   mysqlmonitor.obj
+ 0001:00005bd8       __ehhandler$?InstancesOf@ISWbemServices@WbemScripting@@QAE?AV?$_com_ptr_t@V?$_com_IIID@UISWbemObjectSet@WbemScripting@@$1?_GUID_76a6415f_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@V_bstr_t@@JPAUIDispatch@@@Z 10006bd8 f   mysqlmonitor.obj
+ 0001:00005bf0       $L146542                   10006bf0 f   mysqlmonitor.obj
+ 0001:00005bf8       $L146543                   10006bf8 f   mysqlmonitor.obj
+ 0001:00005c00       __ehhandler$?ExecQuery@ISWbemServices@WbemScripting@@QAE?AV?$_com_ptr_t@V?$_com_IIID@UISWbemObjectSet@WbemScripting@@$1?_GUID_76a6415f_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@V_bstr_t@@0JPAUIDispatch@@@Z 10006c00 f   mysqlmonitor.obj
+ 0001:00005c10       $L146613                   10006c10 f   mysqlmonitor.obj
+ 0001:00005c18       $L146614                   10006c18 f   mysqlmonitor.obj
+ 0001:00005c20       $L146615                   10006c20 f   mysqlmonitor.obj
+ 0001:00005c28       $L146616                   10006c28 f   mysqlmonitor.obj
+ 0001:00005c30       $L146617                   10006c30 f   mysqlmonitor.obj
+ 0001:00005c38       $L146618                   10006c38 f   mysqlmonitor.obj
+ 0001:00005c40       __ehhandler$?ConnectServer@ISWbemLocator@WbemScripting@@QAE?AV?$_com_ptr_t@V?$_com_IIID@UISWbemServices@WbemScripting@@$1?_GUID_76a6415c_cb41_11d1_8b02_00600806d9b6@@3U__s_GUID@@B@@@@V_bstr_t@@00000JPAUIDispatch@@@Z 10006c40 f   mysqlmonitor.obj
+ 0001:00005c50       $L148202                   10006c50 f   mysqlmonitor.obj
+ 0001:00005c59       $L148203                   10006c59 f   mysqlmonitor.obj
+ 0001:00005c62       $L148204                   10006c62 f   mysqlmonitor.obj
+ 0001:00005c6b       $L148205                   10006c6b f   mysqlmonitor.obj
+ 0001:00005c74       $L148206                   10006c74 f   mysqlmonitor.obj
+ 0001:00005c7f       $L148207                   10006c7f f   mysqlmonitor.obj
+ 0001:00005c88       $L148208                   10006c88 f   mysqlmonitor.obj
+ 0001:00005c91       $L148209                   10006c91 f   mysqlmonitor.obj
+ 0001:00005c9a       $L148210                   10006c9a f   mysqlmonitor.obj
+ 0001:00005ca3       $L148211                   10006ca3 f   mysqlmonitor.obj
+ 0001:00005cab       $L148212                   10006cab f   mysqlmonitor.obj
+ 0001:00005cb3       $L148214                   10006cb3 f   mysqlmonitor.obj
+ 0001:00005cbb       $L148215                   10006cbb f   mysqlmonitor.obj
+ 0001:00005cc3       $L148216                   10006cc3 f   mysqlmonitor.obj
+ 0001:00005ccb       $L148217                   10006ccb f   mysqlmonitor.obj
+ 0001:00005cd3       $L148218                   10006cd3 f   mysqlmonitor.obj
+ 0001:00005cdb       $L148219                   10006cdb f   mysqlmonitor.obj
+ 0001:00005ce3       $L148221                   10006ce3 f   mysqlmonitor.obj
+ 0001:00005ceb       $L148222                   10006ceb f   mysqlmonitor.obj
+ 0001:00005cf3       $L148223                   10006cf3 f   mysqlmonitor.obj
+ 0001:00005cfb       $L148224                   10006cfb f   mysqlmonitor.obj
+ 0001:00005d03       $L148225                   10006d03 f   mysqlmonitor.obj
+ 0001:00005d0b       $L148226                   10006d0b f   mysqlmonitor.obj
+ 0001:00005d13       $L148228                   10006d13 f   mysqlmonitor.obj
+ 0001:00005d1b       $L148229                   10006d1b f   mysqlmonitor.obj
+ 0001:00005d23       $L148230                   10006d23 f   mysqlmonitor.obj
+ 0001:00005d2b       $L148231                   10006d2b f   mysqlmonitor.obj
+ 0001:00005d33       $L148232                   10006d33 f   mysqlmonitor.obj
+ 0001:00005d3b       $L148233                   10006d3b f   mysqlmonitor.obj
+ 0001:00005d43       $L148234                   10006d43 f   mysqlmonitor.obj
+ 0001:00005d4b       $L148235                   10006d4b f   mysqlmonitor.obj
+ 0001:00005d53       $L148236                   10006d53 f   mysqlmonitor.obj
+ 0001:00005d5b       $L148237                   10006d5b f   mysqlmonitor.obj
+ 0001:00005d63       $L148238                   10006d63 f   mysqlmonitor.obj
+ 0001:00005d6b       $L148240                   10006d6b f   mysqlmonitor.obj
+ 0001:00005d76       $L148241                   10006d76 f   mysqlmonitor.obj
+ 0001:00005d7e       $L148242                   10006d7e f   mysqlmonitor.obj
+ 0001:00005d86       $L148243                   10006d86 f   mysqlmonitor.obj
+ 0001:00005d8e       $L148245                   10006d8e f   mysqlmonitor.obj
+ 0001:00005d96       $L148246                   10006d96 f   mysqlmonitor.obj
+ 0001:00005d9e       $L148247                   10006d9e f   mysqlmonitor.obj
+ 0001:00005da6       $L148248                   10006da6 f   mysqlmonitor.obj
+ 0001:00005dae       $L148249                   10006dae f   mysqlmonitor.obj
+ 0001:00005db6       $L148250                   10006db6 f   mysqlmonitor.obj
+ 0001:00005dbe       $L148251                   10006dbe f   mysqlmonitor.obj
+ 0001:00005dc6       $L148252                   10006dc6 f   mysqlmonitor.obj
+ 0001:00005dce       $L148254                   10006dce f   mysqlmonitor.obj
+ 0001:00005dd9       $L148256                   10006dd9 f   mysqlmonitor.obj
+ 0001:00005de2       $L148255                   10006de2 f   mysqlmonitor.obj
+ 0001:00005ded       __ehhandler$_MySqlMem      10006ded f   mysqlmonitor.obj
+ 0001:00005e00       $L149231                   10006e00 f   mysqlmonitor.obj
+ 0001:00005e08       __ehhandler$??A?$map@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@HU?$less@V?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@std@@V?$allocator@U?$pair@$$CBV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@H@std@@@4@@std@@QAEAAHABV?$CStringT@DV?$StrTraitMFC_DLL@DV?$ChTraitsCRT@D@ATL@@@@@ATL@@@Z 10006e08 f   mysqlmonitor.obj
+ 0001:00005e12       $L185173                   10006e12 f   mfcs71:dllmodul.obj
+ 0001:00005e1a       __ehhandler$?AfxWndProcDllStatic@@YGJPAUHWND__@@IIJ@Z 10006e1a f   mfcs71:dllmodul.obj
+ 0001:00005e30       __ehhandler$?ConvertBSTRToString@_com_util@@YGPADPA_W@Z 10006e30 f   comsuppw:comutil.obj
+ 0001:00005e40       _$E1                       10006e40 f   funcGeneral.obj
+ 0001:00005e60       _$E1                       10006e60 f   mysqlmonitor.obj
+ 0001:00005e80       _$E4                       10006e80 f   mysqlmonitor.obj
+ 0001:00005e96       _$E5                       10006e96 f   mfcs71:dllmodul.obj
+ 0001:00005eb0       _$E1                       10006eb0 f   comsuppw:comutil.obj
+ 0001:00005ebc       _$E5                       10006ebc f   atls:atlbase.obj
+ 0001:00005ee0       _$E2                       10006ee0 f   funcGeneral.obj
+ 0001:00005ef0       _$E2                       10006ef0 f   mysqlmonitor.obj
+ 0001:00005f00       _$E5                       10006f00 f   mysqlmonitor.obj
+ 0001:00005f0a       _$E6                       10006f0a f   mfcs71:dllmodul.obj
+ 0001:00005f20       _$E2                       10006f20 f   comsuppw:comutil.obj
+ 0001:00005f36       _$E6                       10006f36 f   atls:atlbase.obj

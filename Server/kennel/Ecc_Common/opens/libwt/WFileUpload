@@ -1,0 +1,80 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WFILEUPLOAD_H_
+#define WFILEUPLOAD_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WFormWidget>
+
+/*! \brief A widget which manages a file that may be uploaded.
+ *
+ * This widget is displayed as a line edit (for chosing a new file
+ * name), with besides it a browse button. The widget is non-functional,
+ * until WApplication::scheduleUploadFiles() is triggered. Only then,
+ * its content is uploaded, and newFileUploaded() is emitted.
+ *
+ * Do not rely on the InteractWidget and FormWidget events, they are
+ * broken in most browsers.
+ *
+ * <b>Warning!</b> Currently only text files are supported.
+ * 
+ */
+class __declspec(dllexport) WFileUpload : public WFormWidget {
+  //MOC: W_OBJECT WFileUpload:WFormWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Construct a file upload widget
+   */
+  WFileUpload(WContainerWidget *parent = 0);
+
+  ~WFileUpload();
+
+  /*! \brief Get the current content.
+   *
+   * \sa fileContentLength()
+   */
+  const char *fileContent() const { return content_; }
+
+  /*! \brief Get the content length.
+   *
+   * \sa fileContent()
+   */
+  int fileContentLength() const { return contentLength_; }
+
+  /*! \brief Get the filename.
+   */
+  const std::string fileName() const { return fileName_; }
+
+public signals:
+  //MOC: SIGNAL WFileUpload::newFileUploaded()
+  /*! \brief Signal emitted when a new file was uploaded.
+   *
+   * This signal is emitted when a new file has been received.
+   * \sa WApplication::scheduleUploadFiles()
+   */
+  void newFileUploaded();
+
+private:
+  char *content_;
+  int   contentLength_;
+  std::string fileName_;
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+
+  virtual void        setFormData(const char *value, int length,
+				  const char *filename);
+  virtual void        setNoFormData();
+};
+
+#endif // WFILEUPLOAD_H_

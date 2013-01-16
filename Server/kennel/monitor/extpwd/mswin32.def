@@ -1,0 +1,6 @@
+LIBRARY     nEXTPWD
+DESCRIPTION 'Extension manager. Copyright(C) 1998 Lotus Development Corp.'
+
+EXPORTS
+  MainEntryPoint  @1
+  DllMain         @2

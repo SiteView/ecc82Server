@@ -1,0 +1,177 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WTABLE_H_
+#define WTABLE_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WInteractWidget>
+#include "WContainerWidget"
+
+class WTableCell;
+class WTable;
+
+//class __declspec(dllexport) WTableRow : public WObject {
+class __declspec(dllexport) WTableRow : public WContainerWidget {
+  //MOC: W_OBJECT WTableRow:WObject
+  W_OBJECT;
+
+public:
+  
+  WTableRow(WTable *table, int numCells);
+  WTable *table() const { return table_; }
+  int rowNum() const;
+  void insertColumn(int column);
+
+  std::string property;
+  
+
+private:
+  
+  void expand(int numCells);
+
+  struct TableData {
+    WTableCell *cell;
+
+    /* used during rendering */
+    bool overSpanned;
+
+    TableData();
+  };
+
+  WTable *table_;
+
+  std::vector<TableData> cells_;
+
+  friend class WTable;
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *	createDomElement();
+
+};
+
+/*! \brief A Widget that manages children in a table.
+ *
+ * A WTable provides a way to manage the lay-out of children differently
+ * from the default inline or stacked layout of a WContainerWidget.
+ *
+ * Access to the contents of a WTable happens through WTableCell
+ * widgets. Use elementAt(int row, int column) to access the cell at a
+ * particular position in the table. The WTable automatically resizes
+ * when necessary.
+ *
+ * It is possible to insert and delete entire rows or columns from the
+ * table using the insertColumn(int column), insertRow(int row),
+ * deleteColumn(int column), or deleteRow(int row) methods.
+ *
+ * A Wtable is by default not inline.
+ *
+ */
+class __declspec(dllexport) WTable : public WInteractWidget
+{
+  //MOC: W_OBJECT WTable:WInteractWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Construct an empty table.
+   */
+  WTable(WContainerWidget *parent = 0);
+
+  /*! \brief Delete the table and its entire contents.
+   */
+  ~WTable();
+
+  /*! \brief Access the table element at the given row and column.
+   *
+   * If necessary, the table is resized to create the given row or
+   * column.
+   */
+  WTableCell *elementAt(int row, int column);
+
+  /*! \brief Delete the given table cell and its contents.
+   *
+   * The table cell at that position is recreated.
+   */
+  void removeCell(WTableCell *item);
+
+  /*! \brief Delete the table cell at the given position.
+   *
+   * \sa removeCell(WTableCell)
+   */
+  void removeCell(int row, int column);
+
+  /*! \brief Insert an empty row.
+   */
+  void insertRow(int row);
+
+  void insertRow(int row, std::string property);
+
+  /*! \brief Delete the given row and all its contents.
+   *
+   * Rows below the given row are shifted up.
+   */
+  void deleteRow(int row);
+
+  /*! \brief Insert an empty column.
+   */
+  void insertColumn(int column);
+
+  /*! \brief Delete the given column and all its contents.
+   */
+  void deleteColumn(int column);
+
+  /*! \brief Clear the entire table.
+   */
+  void clear();
+
+  /*! \brief The number of rows in the table.
+   */
+  int numRows() const;
+
+  /*! \brief The number of columns in the table.
+   */
+  int numColumns() const;
+
+  void setCellPadding(int pixels);
+  void setCellSpaceing(int nSpace);
+
+  void adjustRowStyle(std::string strFirstCss,std::string strNextCss);
+  void printDebug();
+
+  void SetLine(bool bsetLine);
+
+  WTableRow * GetRow(int row);
+
+  int tableprop_;
+  char* tableprop;
+private:
+  std::vector<WTableRow *> rows_;
+  int                      cellPadding_;
+  int					   cellSpacing_;
+  bool                     gridChanged_;
+  bool                     paddingChanged_;
+ 
+  char					   strCellPadding[10];
+  char					   strCellSpacing[10];
+ 
+
+  void expand(int row, int column, int rowSpan, int columnSpan);
+  WTableRow::TableData& itemAt(int row, int column);
+
+  friend class WTableCell;
+  friend class WTableRow;
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+#endif // WTEXT_H_

@@ -1,0 +1,104 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WTEXT_H_
+#define WTEXT_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WInteractWidget>
+#include <WMessage>
+
+/*! \brief A Widget that displays text.
+ *
+ * This is by default an inline widget.
+ *
+ * Use setFormatting to configure the formatting of the text. It may
+ * either be XHMTLText (which is the default), or plain text.
+ *
+ * The XHMTLText formatting allows any XHMTL formatting to be included in the
+ * text, and this formatting is used in rendering the text. In contrast,
+ * the PlainText format will display the text literally.
+ *
+ * The text can be set directly, or using a WMessage (for text contained
+ * in resource files for convenience or i18n).
+ */
+
+class __declspec(dllexport) WText : public WInteractWidget
+{
+  //MOC: W_OBJECT WText:WInteractWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Formatting for the text.
+   */
+  enum Formatting { XHMTLFormatting, //!< Format as XHTML markup'ed text
+		    PlainFormatting  //!< Format as plain text.
+  };
+
+  /*! \brief Construct a WText widget with empty text
+   */
+  WText(WContainerWidget *parent = 0);
+
+  /*! \brief Construct a WText widget with given text
+   */
+  WText(const std::string text, WContainerWidget *parent = 0);
+
+  /*! \brief Construct a WText widget with a given message.
+   */
+  WText(const WMessage& message, WContainerWidget *parent = 0);
+
+  /*! \brief Get the text.
+   *
+   * If the text was set using a message, then get the current message
+   * value.
+   */
+  const std::string text() const { return text_; }
+
+  /*! \brief Change the text.
+   */
+  void setText(const std::string text);
+
+  /*! \brief Get the message.
+   */
+  const WMessage& message() const { return message_; }
+
+  /*! \brief Change the message.
+   */
+  void setMessage(const WMessage& message);
+
+  /*! \brief Set the formatting.
+   */
+  void setFormatting(Formatting formatting);
+
+  /*! \brief Get the formatting.
+   */
+  Formatting formatting() const { return formatting_; }
+
+  virtual void refresh();
+
+  WLength hintedWidth() const;
+
+  
+public:
+  WMessage     message_;
+  std::string  text_;
+  Formatting   formatting_;
+
+  bool         textChanged_;
+
+
+  std::string  formattedText() const;
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& changes);
+};
+
+#endif // WTEXT_H_

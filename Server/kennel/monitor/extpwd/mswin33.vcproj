@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="mswin33"
+	ProjectGUID="{52E51CC1-12F6-4FC1-9E5F-16F6AAB64E6E}"
+	SccProjectName=""
+	SccAuxPath=""
+	SccLocalPath=""
+	SccProvider=""
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory=".\Release"
+			IntermediateDirectory=".\Release"
+			ConfigurationType="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="NMAKE /f mswin32.mak"
+				ReBuildCommandLine="NMAKE /f mswin32.mak /a"
+				Output="mswin33.exe"/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory=".\Debug"
+			IntermediateDirectory=".\Debug"
+			ConfigurationType="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="NMAKE /f mswin32.mak"
+				ReBuildCommandLine="NMAKE /f mswin32.mak /a"
+				Output="mswin33.exe"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath=".\editfax.lib">
+		</File>
+		<File
+			RelativePath=".\Extenv.h">
+		</File>
+		<File
+			RelativePath=".\extman.c">
+		</File>
+		<File
+			RelativePath=".\Extpwd.c">
+		</File>
+		<File
+			RelativePath=".\Extpwd.h">
+		</File>
+		<File
+			RelativePath=".\mswin32.def">
+		</File>
+		<File
+			RelativePath="mswin32.mak">
+		</File>
+		<File
+			RelativePath=".\mswin32a.def">
+		</File>
+		<File
+			RelativePath=".\nextpwd.lib">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

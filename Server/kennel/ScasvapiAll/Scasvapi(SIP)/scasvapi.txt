@@ -1,0 +1,441 @@
+
+
+
+
+
+请求传出的数据 fmap 中，都有一个 map 键为 "return" ，其内有一对值 键为 "return" 值为原 svapi 函数的函数返回值
+每一个 dowhat 都对应着 svapi 同名函数，此处注释重点描述接口需求，函数功能请查询 svapi.h  svdbapi.h  (甚至 svnnmapi.h)
+
+
+typedef std::map<string,string>		NodeData;
+typedef std::list< NodeData >		ForestList;
+typedef std::map< string, NodeData >	ForestMap; 
+
+
+
+SCA_SVAPI
+bool GetUnivData(ForestMap & fmap, const NodeData & what, const string & estr);
+//      从 svdb 服务器请求获得的数据       传入的请求     返回的错误信息 便于调试					
+
+
+dowhat= SetSvdbAddrByFile ，filename= XXX
+dowhat= GetSvdbAddr 
+
+dowhat= DelChildren ,		parentid= XXX,XXX,XXX...	 autoDelTable= true/false (默认为 true ，即若不填为 true )
+dowhat= DeleteSVSE ，		id= XXX
+
+//删除某个表中的指定时间以前的记录，没法精确删除指定时间之前的记录,可能会少删	
+dowhat= DeleteRecords  ,    id= XXX ,  year= XXX,  month= XXX, day= XXX,  hour= XXX,  minute= XXX,  second= XXX,  
+
+
+dowhat= GetCommonData,		type= XXX (svse/group/entity/monitor),  id= XXX ; //即可提供以下四个函数的功能
+dowhat= GetSVSE ,		id= XXX				;
+dowhat= GetGroup ,		id= XXX	,  sv_depends=true	; 正常传出的 fmap 中有如下健的 map : return, property, subgroup, subentiey(id保存在key中，其value为空)
+dowhat= GetEntity ,		id= XXX	,  sv_depends=true	; 正常的 fmap 中有如下健的 map : return, property, submonitor
+dowhat= GetMonitor ,		id= XXX				; 正常的 fmap 中有如下健的 map : return, property, parameter, advance_parameter, error, warning, good
+					当 sv_depends== true 时,将增加 sv_dependson_svname = ??:??:??:??
+
+
+dowhat= LoadResourceByKeys ,needkeys= XXX,	language= XXX(通常为 default,即服务器端的启动语言,或者不填)
+dowhat= LoadResource,		language= XXX(通常为 default,即服务器端的启动语言,或者不填)
+
+dowhat= GetAllMonitorTempletInfo ;		//获取所有的	MonitorTemplet　的 property 数据
+dowhat= GetAllEntityTempletInfo ;		//获取所有的	EntityTemplet　	的 property 及　sub_monitor 数据
+dowhat= GetMonitorTemplet ,	id= XXX		//获取某个	MonitorTemplet　的详细数据
+dowhat= GetEntityTemplet ,	id= XXX	　　	//获取某个　	EntityTemplet　	的详细数据
+dowhat= GetEntityGroup ,	id= XXX		//获取某个　	EntityGroup　　	的详细数据
+dowhat= GetAllEntityGroups ;			//获取所有的　	EntityGroup　	的　property　数据
+
+
+
+//获取多个 section 的全部键值
+dowhat= GetSvIniFileBySections, filename= XXX,  user= XXX,	sections= XXX (通常为 default,即全部）(user 通常为 default ,当为 idc 用户时须传入 useid)
+
+// 删除指定section的全部键值
+dowhat= DeleteIniFileSection,	
+filename= XXX,  user= XXX,	
+sections= XXX,XXX,XXX... 
+delFile = true/false（确认是否删除对应section的文件）
+
+//给多个 section 的某个 key 写值
+dowhat= WriteIniFileData,		filename= XXX,  user= XXX,  key= XXX,   value= XXX,   value_type= string/int,	sections= XXX,XXX,XXX...   
+
+//删除多个 section 的某个 key 
+dowhat= DeleteIniFileData,		filename= XXX,  user= XXX,  key= XXX,   sections= XXX,XXX,XXX...   
+
+//删除某个 section 的多个 key 
+dowhat= DeleteIniFileKeys,		filename= XXX,  user= XXX,  section= XXX,   keys= XXX,XXX,XXX...   
+
+
+dowhat= WriteIniFileString,	filename= XXX,  user= XXX,	section= XXX,	key= XXX, value= XXX ;
+dowhat= WriteIniFileInt,	filename= XXX,  user= XXX,	section= XXX,	key= XXX, value= XXX (服务器端将 value 转为 int 保存);
+dowhat= DeleteIniFileKey,	filename= XXX,  user= XXX,	section= XXX,	key= XXX ;
+dowhat= EditIniFileSection,	filename= XXX,  user= XXX,	section= XXX,	new_section= XXX ;
+dowhat= EditIniFileKey,		filename= XXX,  user= XXX,	section= XXX,	key= XXX, new_key= XXX ;
+dowhat= GetIniFileSections,	filename= XXX,  user= XXX ; 
+dowhat= GetIniFileKeys,		filename= XXX,  user= XXX,	section= XXX ;
+dowhat= GetIniFileString,	filename= XXX,  user= XXX,	section= XXX,	key= XXX;
+
+
+dowhat= CreateQueue,		queuename= XXX;
+dowhat= PushStringMessage,	queuename= XXX,	label= XXX, content= XXX ;
+dowhat= GetMQRecordCount,	queuename= XXX;
+dowhat= GetAllQueueNames ;
+dowhat= DeleteQueue,		queuename= XXX;
+dowhat= ClearQueueMessage,	queuename= XXX;
+
+dowhat= GetTask ,		id= XXX	;
+dowhat= CreateTask ,		id= XXX	; //在服务器端创建一个新 task
+dowhat= GetAllTaskName ;
+dowhat= DeleteTask ,	id= XXX	;
+dowhat= GetAllTask 	;
+
+
+dowhat= TryLogin ,		LoginName= XXX,		PassWord= XXX;	
+			//返回	(可否登录)Available: true/false		(是否试用版)isTrial: true/false	
+			//	(是否管理员)isAdmin: true/false		(用户名)UserName=XXX
+			//	(许可监测点数)monitorNum=XXX		(许可网络设备数)networkNum=XXX
+			//	(是否显示监测点数)showpoint= 1/0	(是否显示网络设备数)shownw= 1/0
+			//  (模块授权)subMenu= XXX (例如： 101110000000000 , 仅有狗时才有此值)
+			//  (该用户在ini中的section)section= XXX 		
+
+
+dowhat= encrypt ,		X1= , X2= , X3= ,	...		//逐个加密完后返回
+dowhat= decrypt ,		X1= , X2= , X3= ,	...		//逐个解密完后返回
+
+
+dowhat= MonitorCopy	,	sourceId= XXX,		targetParentId= XXX,		autoCreateTable= true/false (默认为 true ，即若不填为 true );
+dowhat= EntityCopy ,		sourceId= XXX,		targetParentId= XXX,		autoCreateTable= true/false (默认为 true ，即若不填为 true );
+
+
+//以下 3 个功能对 传入的每个X1、X2... 等节点及其所有子孙起作用,  X1、X2... 不能是“default”,不能是 se 
+dowhat= DisableForever  ,	X1= , X2= , X3= ,	...					  //永久禁止监测器
+dowhat= DisableTemp  ,		X1= , X2= , X3= ,	...  sv_starttime=XXX ,  sv_endtime=XXX;  //时段禁止监测器
+dowhat= Enable  ,		X1= , X2= , X3= ,	...					  //启动监测器
+
+
+// 取得动态数据用于填充下拉列表（如磁盘监测器的 c: d: e:）
+dowhat= GetDynamicData  ,	entityId= XXX ,         (监测器模板的id) monitorTplId= XXX;   //返回数据在　DynamicData 中
+dowhat= GetEntityDynamicData ,  parentid= XXX ,        (设备模板的id) entityTplId= XXX ;     //返回数据在　DynamicData 中
+
+
+//以下三个用于刷新监测器
+dowhat= RefreshMonitors ,   id= X1,X2, ... X10 ,  parentid= XXX ,   instantReturn= true/false;  (默认为 false ，即若不填为 false );
+                     // parentid 是所有 id 的共同父亲   // 若选择不立即返回，则该函数会等待,直到消息队列 告知全部刷新结束时，才统一返回最新的监测数据
+                                                        // 若选择立即返回，则配合下一个函数，可以模仿原 cgi 程序的逐个取得监测结果的效果
+                                                        // 另，返回的 return 中有 queueName= XXX ,传给下一个函数.    
+dowhat= GetLatestRefresh ,  queueName= XXX ;   // 返回的 return 中有 isDone= true/false  ，反复调用该函数直到 isDone==true (或函数的 bool 状态为 false ) ，每次返回值中还有 dstr 等监测信息
+											   // 返回的刷新数据在　RefreshData 中
+
+dowhat= GetRefreshed ,queueName= XXX ,parentid= XXX ;// 返回的 return 中有 isDone= true/false  ，反复调用该函数直到 isDone==true (或函数的 bool 状态为 false ) ，每次返回值中还有 dstr 等监测信息
+											         // 返回的刷新数据在　RefreshData_1, RefreshData_2... 中
+											         // parentid 越向上性能越低，如 "1" 就比 "1.2.2" 性能低
+											   
+
+
+//设备测试
+dowhat= TestEntity  ,       entityId= XXX ;	   //返回数据在　DynamicData 中
+
+
+//统计监测数据      id 可以是逗号分隔的多个id  ,默认压缩数据（即若不填则为 true ；另注：<400个数据不压缩，>=400个压缩到200个；不压缩数据的个数极限为50000)
+dowhat= QueryReportData  ,  id= XXX ,      compress=true/false,     dstrNeed=true/false 默认不给dstr（即若不填则为 false),    byCount= 123 (如果有值则按个数查询，而不是按时间)
+                           begin_year= XXX,  begin_month= XXX,  begin_day= XXX,  begin_hour= XXX,  begin_minute= XXX,  begin_second= XXX,  
+                           end_year= XXX,    end_month= XXX,    end_day= XXX,    end_hour= XXX,    end_minute= XXX,    end_second= XXX,
+//详细颗粒数据如下，从新到旧依次追加 2007-03-15 12:38:02=20.5747,2007-02-27 14:20:21=(status)bad,2007-02-26 19:10:21=(status)null,2007-02-24 19:16:21=(status)disable,2007-01-15 09:26:01=27.8916,
+//详细颗粒数据是将原始数据根据压缩率平均处理后的数据，而最大值、最小值和 dstr 的数据是原始数据
+
+
+
+//查询所有的监测器信息
+dowhat= QueryAllMonitorInfo
+
+
+//查询 group、entity、monitor 需要键的值, 注：monitor 无法获取其parameter、advance parameter、error、warn、ok 中的值
+dowhat= QueryInfo，    needkey= XXX,XXX,XXX...    (选填)needtype= group(或entity或monitor,不填则3种),    (选填)parentid= XXX ; //指定父亲 parentid 速度可以更快,该项不添则返回所有节点的数据
+
+
+//发送测试短信
+dowhat= SmsTest，   phoneNumber= XXX,XXX,XXX...         ByWebSms=true/false (即web短信/串口短信，默认前者)   
+
+
+//获取定制开发的发送短信的 dll名
+dowhat= GetSmsDllName;
+
+//通过定制开发的发送短信的dll，发送测试短信
+dowhat= SmsTestByDll，  phoneNumber= XXX,XXX,XXX...     parameter= XXX,      dllName= XXX ;
+
+
+//发送测试邮件    
+dowhat= EmailTest，mailServer= XXX, mailTo= XXX, mailFrom= XXX, user= XXX, password= XXX, subject= XXX, content= XXX; // mailTo 即接收人地址可以是逗号分隔的多个地址
+
+
+//获取服务器上的文件，返回文件的 Base64 编码或其指纹   
+dowhat= GetFileWithBase64，   absoluteFileName= XXX,  FileName= XXX,  fileMark= true/false //默认前者,即默认只返回文件指纹,用于确定文件是否被修改
+// absoluteFileName 如果有值将忽略 FileName ;
+//绝对文件名例子：  absoluteFileName= "c:\\windows\\regedit.exe";   
+//相对文件名例子：  FileName= "..\\webapps\\ROOT\\Report\\ReportTemplate\\ReportServerCfg.gif";
+//相对文件名的当前目录是: tomcat-6.0.14\bin
+
+
+dowhat= GetFileNameList，      absoluteDirName= XXX,   DirName= XXX;
+dowhat= DeleteFile，            absoluteFileName= XXX,  FileName= XXX;
+dowhat= UploadFileWithBase64， absoluteFileName= XXX,  FileName= XXX,  ValueBase64= XXX;
+
+
+
+// 获取所有虚拟视图的名字，返回每个 view 的 viewName= XXX,  fileName= XXX,
+dowhat= GetAllView
+
+// 创建一个虚拟视图,或修改虚拟视图名字
+dowhat= AddView,  viewName= XXX,  fileName= XXX,   newViewName= XXX //这项有值则修改 view 的名字，否则新建 view 
+
+// 删除一个虚拟视图
+dowhat= DeleteView,  viewName= XXX,
+
+// 删除一个虚拟项目，及其所有子 item
+dowhat= DeleteViewItem,   fileName= XXX,   item_id= XXX,XXX,XXX...   
+
+
+// getSipIsdn: 获取sip的isdn数目
+// 增加人：邹晓
+// 增加时间：2009.06.19
+// 输入参数：
+inwhat:
+dowhat= getSipIsdn;	
+parentid= XXX;	
+monitorTemplateId=XXX;
+
+// 输出参数：
+fmap:
+return: return=false/true, isdnNum=value;
+
+
+
+
+
+
+
+
+
+
+
+
+
+SCA_SVAPI
+bool SubmitUnivData(ForestMap & fmap, const NodeData & what, const string & estr);
+//            提交给 svdb 服务器的数据/及返回数据     传入的请求       返回的错误信息 便于调试					
+
+
+// 以下 submit 函数，若传入的 fmap 中的 return 有 id= XXX， 则修改服务器端已有节点的数据 ，否则创建一个新节点（该动作内嵌了权限控制,并返回该新节点的 id）
+// fmap 提供的数据用于覆盖服务器端的数据，fmap 如果是服务器端的数据的子集，则服务器端 是否 删除与 fmap 对应的补集 ，决定于 del_supplement .
+
+dowhat= SubmitGroup ,		del_supplement= true/false (是否删除补集, 默认为 true ，即若不填为 true ) , parentid= XXX (新建节点时需要此值);
+dowhat= SubmitEntity ,		del_supplement= true/false , parentid= XXX (新建节点时需要此值) ;
+dowhat= SubmitMonitor ,		del_supplement= true/false , parentid= XXX (新建节点时需要此值)  , autoCreateTable= true/false (默认为 false ，即若不填为 false );
+dowhat= SubmitSVSE  ;
+dowhat= SubmitTask ,		del_supplement= true/false ;
+
+
+dowhat= AddManyMonitor ,	    parentid= XXX ,    autoCreateTable= true/false (默认为 false ，即若不填为 false );
+dowhat= AdvanceAddManyMonitor ,	autoCreateTable= true/false (默认为 false ，即若不填为 false );
+
+dowhat= SetValueInManyMonitor ,	 id= X1,X2, ... X10
+
+dowhat= AppendOperateLog
+
+
+//写之前会先清空该 section 
+//假如有个 section: user1, 则在map: fmap.user1 中保存所有string型value,  在map: fmap.(INT_VALUE)user1 中保存所有 int 型value
+// user 通常为 default ,当为 idc 用户时须传入 user 
+dowhat= WriteIniFileSection, filename= XXX,  user= XXX,	section= XXX    
+
+
+
+// 添加或修改一个或多个虚拟项目
+//修改 viewItem (或按传入的 item_id 创建)，校验时只要有错整个请求都拒绝，保存前会先清空该 item 原先的数据，例如 item_id: 1.2,  则在 fmap."1.2" 中的数据如下
+                        sv_id= XXX,  type= XXX,  withAllSubMonitor= true (默认为 false )
+//由后台创建 viewItem，例如 item_id: index-1,  则在map: fmap."index-1" 中的数据如下
+                       parent_item_id= XXX,  sv_id= XXX,  type= XXX,  withAllSubMonitor= true (默认为 false )
+//修改报警、报告等 viewItem (或按传入的 item_id 创建)，保存前会先清空该 item 原先的数据，例如 item_id: report-1,  则在map: fmap."report-1" 中的数据如下
+                       CheckNothing= true,   YY= XX,  YYY= XXX, ... 可以是任意数据
+dowhat= AddViewItem ,    fileName= XXX,
+
+
+
+// MassMoveEntity: 实现批量移动设备
+// 增加人：邹晓
+// 增加时间：2009.06.05
+// 输入参数：
+what:
+dowhat= MassMoveEntity;	
+targetParentId= XXX;	
+autoCreateTable= true/false (默认为 true ，即若不填为 true );
+
+fmap:
+idPair: id1=id1,id2=id2,...,idN=idN.
+
+// 输出参数：
+fmap:
+return: return=false/true, moveNum=value;
+idPair: id1=newId1,id2=newId2,...,id(moveNum)=newId(moveNum).
+
+
+// SaveConditionToMTP: 实现保存默认报警阀值
+// 增加人：邹晓
+// 增加时间：2009.06.16
+// 输入参数：
+inwhat:
+dowhat=saveConditionToMTP;
+monitorType=XXX;
+
+fmap:
+good:sv_operate1=xxx,sv_paramname1=xxx,sv_paramvalue1,sv_value=xxx,sv_conditioncount=xxx,sv_expression=x      xx,sv_name=xxx;
+
+error:sv_operate1=xxx,sv_paramname1=xxx,sv_paramvalue1,sv_value=xxx,sv_conditioncount=xxx,sv_expression=      xxx,sv_name=xxx;
+
+warning:sv_operate1=xxx,sv_paramname1=xxx,sv_paramvalue1,sv_value=xxx,sv_conditioncount=xxx,sv_expressio        n=xxx,sv_name=xxx;
+
+
+
+
+// massAddMonitor: 实现批量添加监测器
+// 增加人：邹晓
+// 增加时间：2009.06.29
+// 输入参数：
+inwhat:
+dowhat=massAddMonitor;
+monitorType=XXX;
+
+fmap:
+entityId1: 
+entityId2: 
+...
+entityIdN: 
+
+
+// 输出参数：
+fmap:
+entityId1: monitorId=XXX; monitorName=XXX;
+entityId2: monitorId=XXX; monitorName=XXX;
+...
+entityIdN: monitorId=XXX; monitorName=XXX;
+
+
+
+// massGetSipIsdn: 实现批量获取设备isdn
+// 增加人：邹晓
+// 增加时间：2009.06.29
+// 输入参数：
+inwhat:
+dowhat=massGetSipIsdn;
+monitorType=XXX;
+
+fmap:
+entity: entityId1=entityId1, entityId2=entityId2, ..., entityIdN=entityIdN;
+
+
+// 输出参数：
+fmap:
+entity: entityId1=XXX, entityId2=XXX, ..., entityIdN=XXX;
+
+
+//SipDownload:
+//added by lifeng.wang at 2009.10.9
+//input parameters:
+inwhat:
+dowhat = SipDownload;
+manufacture=XXX;			//厂商
+productclass=XXX;			//设备类型
+version=XXX;				//版本
+filename=XXX;				//文件名
+EnIds=XXX;					//待升级的设备id串
+UpCount=XXX;				//同时升级设备数量
+IsImmedBegin=true/false;	//是否马上开始升级
+BeginTime=XXX;				//升级开始时间，例如：2009-10-09 14:58:14
+
+//output parameters:
+fmap:
+return = true/false;
+
+QueryDownloadStatus
+输入部分
+[inwhat]
+“dowhat”= “QueryDownloadStatus”
+“EntityId1” = entityId;
+“EntityId 2”= entityId;
+……
+“EntityId N” = hwId;
+
+返回部分：
+fmap:
+[return]
+“return”=true/false;
+
+[EntityId1]
+“EntityName”=name;
+“UpdateState”=status;
+“Now_version”=version;
+“DeviceId”=hwId
+
+[EntityId2]
+“EntityName”=name;
+“UpdateState”=status;
+“Now_version”=version;
+“DeviceId”=hwId
+……
+[EntityIdN]
+“EntityName”=name;
+“UpdateState”=status;
+“Now_version”=version;
+“DeviceId”=hwId
+
+SipReboot
+输入部分：
+[inwhat]
+“dowhat” = “SipReboot”
+“EntityId” = svId
+“CommandKey” = CommandKey
+返回部分：
+fmap:
+[return]
+return=true/false;
+
+SCA_SVAPI
+bool GetForestData(ForestList & flist, const NodeData & inwhat, string & estr);
+//      从 svdb 服务器请求获得的树数据       传入的请求     返回的错误信息 便于调试	
+
+dowhat= GetTreeData ,　parentid= XXX ,	onlySon= true/false (默认为true　,即若不填为true )，　LoginName= XXX (即登录对话框中输入的名字, 如果不填则不做权限过滤、速度更快，填上后将作权限过滤);
+dowhat= GetTreeData2 , parentid= XXX,	onlySon= true/false，　LoginName= XXX,   needKeys= XXX,XXX,XXX... ; //根据需要的键 needKeys ,过滤 GetTreeData 返回的数据
+
+
+//以下两函数对应 svapi 函数是：QueryRecords, 查询数据库监测记录  ; 记录个数极限为50000
+dowhat= QueryRecordsByTime ,	id= XXX ,   begin_year= XXX,  begin_month= XXX,  begin_day= XXX,  begin_hour= XXX,  begin_minute= XXX,  begin_second= XXX,  end_year= XXX,  end_month= XXX,  end_day= XXX,  end_hour= XXX,  end_minute= XXX,  end_second= XXX,
+dowhat= QueryRecordsByCount ,	id= XXX ,   count= XXX;
+
+
+
+//查询报警日志 ; 记录个数极限为50000
+dowhat= QueryAlertLog,	begin_year= XXX,  begin_month= XXX,  begin_day= XXX,  begin_hour= XXX,  begin_minute= XXX,  begin_second= XXX,  end_year= XXX,  end_month= XXX,  end_day= XXX,  end_hour= XXX,  end_minute= XXX,  end_second= XXX,
+					 ,  alertName= XXX,   alertReceive= XXX, alertType= XXX; 
+//alertIndex、alertName、alertReceive、alertType 是 and 关系，如果为空则为全部。
+
+// 查询报警日志：在原有要求的基础上，返回指定条数的报警日志
+// 增加人：邹晓
+// 增加时间：2009.06.04
+// 输入参数：
+dowhat= QueryMassAlertLog,	
+begin_year= XXX,  begin_month= XXX,  begin_day= XXX,  begin_hour= XXX,  begin_minute= XXX,  begin_second= XXX,  
+end_year= XXX,  end_month= XXX,  end_day= XXX,  end_hour= XXX,  end_minute= XXX,  end_second= XXX,// 第一级筛选条件，即时间条件
+alertName= XXX,   alertReceive= XXX, alertType= XXX,//alertIndex、alertName、alertReceive、alertType 是 and 关系，如果为空则为全部，第二级筛选条件
+alertBeginIndex=xxx, alertEndIndex=xxx;// 第三级筛选条件
+// 输出参数：
+flist: 1~N(alertlogs), N+1(符合第二级筛选条件的日志数目，保存在flist的最后一个元素中)
+
+
+// 获取某个虚拟视图的数据， 获取虚拟项目前检验对应真实项目的存在(如果某 item 有值 CheckNothing= true，则不校验)
+// 每个虚拟项目返回： item_id, sv_id, type 
+dowhat= GetViewData,  fileName= XXX,  needDynamicData= true (默认为 false, getTreeData 的动态值),    needKeys= XXX,XXX,XXX...
+
+
+
+

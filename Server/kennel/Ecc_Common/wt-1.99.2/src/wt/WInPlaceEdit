@@ -1,0 +1,56 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WINPLACE_EDIT_H_
+#define WINPLACE_EDIT_H_
+
+#include <WCompositeWidget>
+
+namespace Wt {
+
+class WText;
+class WLineEdit;
+class WPushButton;
+
+/*! \class WInPlaceEdit WInPlaceEdit WInPlaceEdit
+ *  \brief WInPlaceEdit provides an in-place-editable text.
+ *
+ * The WInplaceEdit provides a text that may be edited by the user.
+ * On activation, the text turns into a line edit with a save and cancel
+ * button.
+ *
+ * When the user saves the edit, the valueChanged signal is emitted.
+ */
+class WInPlaceEdit : public WCompositeWidget
+{
+public:
+  /*! \brief Create an in-place edit with the given text.
+   */
+  WInPlaceEdit(const std::wstring text, WContainerWidget *parent = 0);
+
+  /*! \brief The current saved text value.
+   */
+  const std::wstring text() const;
+
+public:
+  /*! \brief Signal emitted when the value has been changed.
+   */
+  Signal<std::wstring> valueChanged;
+
+private slots:
+  void save();
+
+private:
+  WContainerWidget *impl_;
+  WText            *text_;
+  WLineEdit        *edit_;
+  WPushButton      *save_;
+  WPushButton      *cancel_;
+};
+
+}
+
+#endif // WINPLACE_EDIT_H_

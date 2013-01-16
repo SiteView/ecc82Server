@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="complexFunc.cpp" />
+    <ClCompile Include="Des.cpp" />
+    <ClCompile Include="Edge.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityAPI.cpp" />
+    <ClCompile Include="EntityEx.cpp" />
+    <ClCompile Include="EntityGroup.cpp" />
+    <ClCompile Include="EntityGroupAPI.cpp" />
+    <ClCompile Include="EntityRelation.cpp" />
+    <ClCompile Include="EntityTemplet.cpp" />
+    <ClCompile Include="EntityTempletAPI.cpp" />
+    <ClCompile Include="General.cpp" />
+    <ClCompile Include="Group.cpp" />
+    <ClCompile Include="GroupAPI.cpp" />
+    <ClCompile Include="Monitor.cpp" />
+    <ClCompile Include="MonitorAPI.cpp" />
+    <ClCompile Include="MonitorTemplet.cpp" />
+    <ClCompile Include="MonitorTempletAPI.cpp" />
+    <ClCompile Include="MQapi.cpp" />
+    <ClCompile Include="MySocket.cpp" />
+    <ClCompile Include="MyTCPSocket.cpp" />
+    <ClCompile Include="MyTCPStream.cpp" />
+    <ClCompile Include="NNMEntityAPI.cpp" />
+    <ClCompile Include="ObjCache.cpp" />
+    <ClCompile Include="otherfunc.cpp" />
+    <ClCompile Include="otherfunc2.cpp" />
+    <ClCompile Include="Port.cpp" />
+    <ClCompile Include="QueryData.cpp" />
+    <ClCompile Include="QueueRecord.cpp" />
+    <ClCompile Include="RcdStat.cpp" />
+    <ClCompile Include="RecordSet.cpp" />
+    <ClCompile Include="RecordType.cpp" />
+    <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="ResourceAPI.cpp" />
+    <ClCompile Include="addonapi.cpp" />
+    <ClCompile Include="Section.cpp" />
+    <ClCompile Include="SerialBase.cpp" />
+    <ClCompile Include="ShareMemFile.cpp" />
+    <ClCompile Include="stlini.cpp" />
+    <ClCompile Include="StringMap.cpp" />
+    <ClCompile Include="svdbapi.cpp" />
+    <ClCompile Include="svdbtype.cpp" />
+    <ClCompile Include="SVSE.cpp" />
+    <ClCompile Include="SVSEAPI.cpp" />
+    <ClCompile Include="TaskAPI.cpp" />
+    <ClCompile Include="TopologyChart.cpp" />
+    <ClCompile Include="TopologyChartAPI.cpp" />
+    <ClCompile Include="util.cpp" />
+    <ClCompile Include="VirtualGroup.cpp" />
+    <ClCompile Include="VirtualGroupAPI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Des.h" />
+    <ClInclude Include="Edge.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityEx.h" />
+    <ClInclude Include="EntityGroup.h" />
+    <ClInclude Include="EntityRelation.h" />
+    <ClInclude Include="EntityTemplet.h" />
+    <ClInclude Include="Group.h" />
+    <ClInclude Include="Monitor.h" />
+    <ClInclude Include="MonitorTemplet.h" />
+    <ClInclude Include="MySocket.h" />
+    <ClInclude Include="MyTCPSocket.h" />
+    <ClInclude Include="MyTCPStream.h" />
+    <ClInclude Include="addonapi.h" />
+    <ClInclude Include="ObjCache.h" />
+    <ClInclude Include="otherfunc.h" />
+    <ClInclude Include="Port.h" />
+    <ClInclude Include="QueryData.h" />
+    <ClInclude Include="QueryProtocol.h" />
+    <ClInclude Include="QueueRecord.h" />
+    <ClInclude Include="RcdStat.h" />
+    <ClInclude Include="RecordSet.h" />
+    <ClInclude Include="RecordType.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="safedog.h" />
+    <ClInclude Include="Section.h" />
+    <ClInclude Include="SerialBase.h" />
+    <ClInclude Include="ShareMemFile.h" />
+    <ClInclude Include="stlini.h" />
+    <ClInclude Include="StringMap.h" />
+    <ClInclude Include="addon.h" />
+    <ClInclude Include="svdbapi.h" />
+    <ClInclude Include="SVDBError.h" />
+    <ClInclude Include="svdbtype.h" />
+    <ClInclude Include="svnnmapi.h" />
+    <ClInclude Include="SVSE.h" />
+    <ClInclude Include="TopologyChart.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="VirtualGroup.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DDEE4F19-8ED0-440A-AF60-188DB95452E9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>addon</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../;../svapi;../include;../include/w32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SCASVAPI_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>svapi.lib;svdes.lib;ws2_32.lib;ccgnu2.lib;usbdog.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)scasvapi.dll</OutputFile>
+      <AdditionalLibraryDirectories>../debuglib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)scasvapi.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(OutDir)scasvapi.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\w32;..\include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4018;4101;4503;4244;</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libutil.lib;ws2_32.lib;ccgnu2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>
+      </ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

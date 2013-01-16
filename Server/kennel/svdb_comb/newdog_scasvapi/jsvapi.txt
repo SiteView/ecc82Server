@@ -1,0 +1,48 @@
+
+
+该文档是  scasvapi.txt 的延续，其功能是针对 OneCMDB 而封装的
+
+
+
+SCA_SVAPI
+bool GetUnivData(ForestMap & fmap, const NodeData & what, const string & estr);
+//      从 svdb 服务器请求获得的数据       传入的请求     返回的错误信息 便于调试					
+
+dowhat= GetCiInstance	,	onecmdb_alias= XXX ;
+dowhat= GetJobInstance	,	onecmdb_alias= XXX ;
+
+//通用方法, 可以删除monitor, 也可以删除 entity(及所属 monitor) 
+dowhat= DeleteCMDBInstance	,	onecmdb_alias= XXX ,	autoDelTable= true/false (默认为 true ，即若不填为 true );
+
+//取得自上次调用该函数以来，所有更新了的 log 数据
+dowhat= RefreshLatestRecords ;
+
+
+
+
+SCA_SVAPI
+bool SubmitUnivData(     ForestMap & fmap, const NodeData & what, const string & estr);
+//            提交给 svdb 服务器的数据/及返回数据     传入的请求       返回的错误信息 便于调试					
+
+
+// fmap 提供的数据用于覆盖服务器端的数据，fmap 如果是服务器端的数据的子集，则服务器端 是否 删除与 fmap 对应的补集 ，决定于 del_supplement .
+
+dowhat= SubmitCiInstance	,	onecmdb_alias= XXX ,	create= true/false (true 则新建/false 则修改 )	,del_supplement= true/false (是否删除补集, 默认为 true ，即若不填为 true );
+dowhat= SubmitJobInstance	,	onecmdb_alias= XXX ,	create= true/false	,  parentCiInstance= XXX	,del_supplement= true/false,	autoCreateTable= true/false (默认为 false ，即若不填为 false )  ;
+
+
+
+
+
+SCA_SVAPI
+bool GetForestData(ForestList & flist, const NodeData & inwhat, string & estr);
+//      从 svdb 服务器请求获得的树数据       传入的请求     返回的错误信息 便于调试	
+
+
+
+
+
+
+
+
+

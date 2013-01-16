@@ -1,0 +1,47 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WRADIOBUTTON_H_
+#define WRADIOBUTTON_H_
+
+#include <WAbstractToggleButton>
+
+namespace Wt {
+
+class WButtonGroup;
+
+/*! \class WRadioButton WRadioButton WRadioButton
+ *  \brief A user control that represents a radio button.
+ *
+ * WRadioButton is an \link WWidget::setInline(bool) inline \endlink widget.
+ *
+ * Add the radio button to a WButtonGroup to group together different
+ * options that are mutually exclusive.
+ *
+ * \sa WAbstractToggleButton
+ */
+class WRadioButton : public WAbstractToggleButton
+{
+public:
+  WRadioButton(WContainerWidget *parent = 0);
+  WRadioButton(const WMessage& text, WContainerWidget *parent = 0);
+  ~WRadioButton();
+
+private:
+  WButtonGroup *buttonGroup_;
+
+  void setGroup(WButtonGroup *buttonGroup);
+  friend class WButtonGroup;
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+}
+
+#endif // WRADIOBUTTON_H_

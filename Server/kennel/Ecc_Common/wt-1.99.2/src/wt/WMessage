@@ -1,0 +1,161 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WMESSAGE_H_
+#define WMESSAGE_H_
+
+#include <string>
+#include <vector>
+#include "WDllDefs.h"
+
+namespace Wt {
+
+/*! \class WMessage WMessage WMessage
+ *  \brief A message which may be literal or localizable using a
+ *         message-resource bundle.
+ *
+ * A WMessage holds a string to be displayed. All %Wt widgets use
+ * WMessage for this purpose.
+ *
+ * In its simplest form, a WMessage is a literal string, which may be
+ * implicitly constructed from a std::string or a c-style string
+ * (const char *).
+ *
+ * By using the static functions WMessage::tr() or WWidget::tr(), one
+ * may construct an localized message. The key argument is used to
+ * retrieve its current value from the application's message-resource
+ * bundles. Arguments in the message, denoted using {<i>n</i>} for the
+ * <i>n</i>'th argument, may be substituted by arguments set using
+ * arg(int) and arg(std::string).
+ *
+ * By calling WApplication::refresh(), the contents of every WMessage
+ * must be refreshed by the owner (and this is done so for all %Wt
+ * widgets that own a WMessage), by calling refresh();
+ *
+ * \sa WApplication::messageResourceBundle()
+ * \sa WApplication::locale()
+ */
+class WT_API WMessage
+{
+public:
+  /*! \brief Construct a literal message.
+   *
+   * Use this implicit constructor for setting literal, non-localized, text
+   * to be displayed by widgets.
+   *
+   * <i>Careful!</i> The meaning of this constructor is different from
+   * the WMessage(const char *value) constructor prior to version
+   * %Wt 2.0.0. See the release notes how to port your application.
+   */
+  WMessage(const wchar_t *value = 0);
+
+  /*! \brief Construct a literal message.
+   *
+   * Use this implicit constructor for setting literal, non-localized, text
+   * to be displayed on widgets.
+   *
+   * <i>Careful!</i> The meaning of this constructor has changed in
+   * %Wt 2.0.0. See the release notes how to port your application.
+   */
+  WMessage(const std::wstring value);
+
+#ifdef WT_API_NARROW_CHAR
+  /*! \brief <i>Deprecated.</i> Construct a literal message.
+   *
+   * Use this implicit constructor for setting literal, non-localized, text
+   * to be displayed by widgets.
+   *
+   * <i>Careful!</i> The meaning of this constructor has changed in
+   * %Wt 2.0.0. See the release notes how to port your application.
+   *
+   * This constructor is only available when compiling with WT_API_NARROW_CHAR
+   * defined, and is only provided for legacy applications. Consider using
+   * WMessage(const wchar_t *value) instead.
+   */
+  WMessage(const char *value);
+
+  /*! \brief <i>Deprecated.</i> Construct a literal message.
+   *
+   * Use this implicit constructor for setting literal, non-localized, text
+   * to be displayed by widgets.
+   *
+   * <i>Careful!</i> The meaning of this constructor has changed in
+   * %Wt 2.0.0. See the release notes how to port your application.
+   *
+   * This constructor is only available when compiling with WT_API_NARROW_CHAR
+   * defined, and is only provided for legacy applications. Consider using
+   * WMessage(const wchar_t *value) instead.
+   */
+  WMessage(const std::string value);
+#endif // WT_API_NARROW_CHAR
+
+  /*! \brief Construct a localized message with the specified key.
+   *
+   * The key is looked up in the application message resource bundles. If
+   * the key cannot be resolved, the value is set to ??key??.
+   */
+  static WMessage tr(const char *key);
+
+  /*! \brief Get the current value.
+   *
+   * For a literal message, returns the literal value, and for a localized
+   * message, returns the current localized value. This does not result in
+   * a lookup in the message resource bundles.
+   */
+  const std::wstring value() const;
+
+  /*! \brief Is this a literal message?
+   *
+   * Returns true for a literal message, false for a localized message.
+   */
+  bool literal() const { return key_.empty(); }
+
+  /*! \brief Get the key for this message.
+   *
+   * When the message is a literal message, the result is undefined.
+   */
+  const std::string key() const { return key_; }
+
+  /*! \brief Add a value for the next positional string argument.
+   *
+   * In the resource, the <i>n</i>-th argument is reffered to as using
+   * '{<i>n</i>}'. For example: a resource message '{1} bought {2}
+   * apples in the shop.'  with first argument value 'Bart' and second
+   * argument value '5' becomes: 'Bart bought 5 apples in the shop.'.
+   */
+  WMessage& arg(const std::wstring value);
+
+  /*! \brief Add a value for the next positional integer argument.
+   *
+   * In the resource, the <i>n</i>-th argument is reffered to as using
+   * '{<i>n</i>}'. For example: a resource message '{1} bought {2}
+   * apples in the shop.'  with first argument value 'Bart' and second
+   * argument value '5' becomes: 'Bart bought 5 apples in the shop.'.
+   */
+  WMessage& arg(int value);
+
+  /*! \brief The list of arguments
+   */
+  const std::vector<std::wstring>& args() const { return arguments_; }
+
+  /*! \brief Refresh the message.
+   *
+   * Returns whether the value has changed.
+   */
+  bool refresh();
+
+private:
+  WMessage(const char *key, bool);
+
+  std::wstring      value_;
+  std::string       key_;
+
+  std::vector<std::wstring> arguments_;
+};
+
+}
+
+#endif // WMESSAGE_H_

@@ -1,0 +1,55 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WPUSHBUTTON_H_
+#define WPUSHBUTTON_H_
+
+#include <WFormWidget>
+
+namespace Wt {
+
+/*! \class WPushButton WPushButton WPushButton
+ *  \brief WPushButton represents a push button.
+ *
+ * WPushButton is an \link WWidget::setInline(bool) inline \endlink widget.
+ *
+ * To act on a button click, connect a slot to the clicked() signal.
+ */
+class WT_API WPushButton : public WFormWidget
+{
+public:
+  /*! \brief Create a push button with empty text.
+   */
+  WPushButton(WContainerWidget *parent = 0);
+
+  /*! \brief Create a push button with given message.
+   */
+  WPushButton(const WMessage& text, WContainerWidget *parent = 0);
+
+  /*! \brief Set the button text.
+   */
+  void setText(const WMessage& text);
+
+  /*! \brief Get the button text.
+   */
+  const WMessage& text() const { return text_; }
+
+  virtual void refresh();
+
+private:
+  WMessage text_;
+
+  bool textChanged_;
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+}
+
+#endif // WTEXT_H_

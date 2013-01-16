@@ -1,0 +1,14 @@
+base referer
+rect $classWt_1_1WAbstractToggleButton.html 114,455 301,482
+rect $classWt_1_1WComboBox.html 325,455 450,482
+rect $classWt_1_1WLineEdit.html 474,455 581,482
+rect $classWt_1_1WPushButton.html 605,455 733,482
+rect $classWt_1_1WTextArea.html 757,455 869,482
+rect $classWt_1_1WInteractWidget.html 455,306 599,333
+rect $classWt_1_1WWebWidget.html 463,231 591,258
+rect $classWt_1_1WWidget.html 477,157 578,183
+rect $classWt_1_1WResource.html 469,82 586,109
+rect $classWt_1_1WObject.html 479,7 575,34
+rect $classWt_1_1WCheckBox.html 7,530 127,557
+rect $classWt_1_1WRadioButton.html 151,530 285,557
+rect $classWt_1_1WSelectionBox.html 319,530 455,557

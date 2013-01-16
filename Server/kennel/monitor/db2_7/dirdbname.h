@@ -1,0 +1,1 @@
+int list_db (struct sqlca sqlca, char *param, char *szReturn, int * nSize1) ;

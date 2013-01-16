@@ -1,0 +1,95 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WABSTRACTTOGGLEBUTTON_H_
+#define WABSTRACTTOGGLEBUTTON_H_
+
+#include <WFormWidget>
+
+namespace Wt {
+
+class WLabel;
+
+/*! \brief Abstract base class for Radio button and Check boxes.
+ *
+ * A toggle button provides a button with a boolean state (checked or
+ * unchecked), and a text label.
+ *
+ * To act on a change of the state, either connect a slot to the changed()
+ * signal, or connect a slot to the checked() or unChecked() signals.
+ *
+ * The current state is available through the isChecked() method.
+ *
+ * FIXME: add image functionality for the label.
+ */
+class WT_API WAbstractToggleButton : public WFormWidget
+{
+public:
+  /*! \brief Create an unchecked toggle button with empty label and optional
+   *         parent.
+   */
+  WAbstractToggleButton(WContainerWidget *parent = 0);
+
+  /*! \brief Create an unchecked toggle button with given text and optional
+   *         parent.
+   */
+  WAbstractToggleButton(const WMessage& text, WContainerWidget *parent = 0);
+
+  /*! \brief Change the text of the label.
+   */
+  void setText(const WMessage& text);
+
+  /*! \brief Returns the state of the button.
+   */
+  bool isChecked() const { return checked_; }
+
+public slots:
+  /*! \brief Change the state of the button.
+   */
+  void setChecked(bool);
+
+  /*! \brief Set the button checked.
+   *
+   * This is a static slot!
+   *
+   * \sa setChecked(bool)
+   */
+  void setChecked();
+
+  /*! \brief Set the button unChecked.
+   *
+   * This is a static slot!
+   *
+   * \sa setChecked(bool)
+   */
+  void setUnChecked();
+
+public:
+  /*! \brief Signal emitted when the button gets checked.
+   */
+  EventSignal<void> checked;
+
+  /*! \brief Signal emitted when the button gets unChecked.
+   */
+  EventSignal<void> unChecked;
+
+private:        
+  bool checked_;
+  bool checkedChanged_;
+
+  bool wasChecked_;
+  void undoSetChecked();
+  void undoSetUnChecked();
+
+protected:
+  virtual void updateDom(DomElement& element, bool all);
+  virtual void setFormData(CgiEntry *entry);
+  virtual void setNoFormData();
+};
+
+}
+
+#endif // WABSTRACTTOGGLEBUTTON_H_

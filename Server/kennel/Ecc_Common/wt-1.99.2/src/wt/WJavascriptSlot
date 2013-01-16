@@ -1,0 +1,106 @@
+// -*- C++ -*-
+/***************************************************************************
+ *   Copyright (C) 2004 by Abdiel Janulgue                                 *
+ *   xynopsis at users dot sourceforge dot net                             *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ ***************************************************************************/
+#ifndef _WJAVASCRIPTSLOT_H_
+#define _WJAVASCRIPTSLOT_H_
+
+#include "WObject"
+
+namespace Wt {
+
+class WWidget;
+
+/*! \class WJavascriptSlot WJavascriptSlot WJavascriptSlot
+ *  \brief WJavascriptSlot implements a slot that is only implemented
+ *         in client side JavaScript code.
+ *
+ * This class provides a hook for adding your own JavaScript to respond to
+ * events.
+ *
+ * Carefully consider the use of this. Not only is writing cross-browser
+ * JavaScript hard and tedious, but one must also be aware of possible
+ * security problems (see further), and ofcourse, the event handling will
+ * not be available when JavaScript is disabled or not present at all.
+ * 
+ * If you wish to add client side event handling, which a fall-back to
+ * server-side event handling, without writing JavaScript code with the
+ * associated risks and problems, consider using stateless slot
+ * implementations instead.
+ *
+ * For some purposes, stateless slot implementations are not
+ * sufficient, since they do not allow state inspection. At the same
+ * time, the optional availability is also fine for some non-essential
+ * functionality (see for example the WSuggestionPopup widget). For these
+ * situations a WJavascriptSlot can be used to add client-side event
+ * handling.
+ *
+ * A WJavascriptSlot must be assigned to a WWidget (through the constructor).
+ * This JavaScript code will be associated with that widget, and be
+ * invalidated together with that widget.
+ *
+ * The JavaScript code may be set (or changed) using the setJavascript
+ * function which expects a JavaScript function with the following
+ * signature: 
+ *
+ * \code
+ * function(sender, event) {
+ *   // handle the event, and sender is a reference to the DOM element
+ *   // which captured the event (and holds the signal). Therefore it
+ *   // equivalent to the sender for a normal %Wt slot.
+ *
+ *   return true; // do normal event behaviour
+ * }
+ * \endcode
+ * 
+ * In the JavaScript code, you may use WWidget::jsRef() to obtain the DOM
+ * element corresponding to any WWidget. That's how far we can help you.
+ * For the rest you are left to yourself, buggy browsers and quirky
+ * JavaScript (http://www.quirksmode.org/ was a reliable companion
+ * to me) -- good luck.
+ */
+class WJavascriptSlot
+{
+public:
+  /*! \brief Construct a WJavascript slot within the parent scope.
+   *
+   * The javascript will reside within the scope of the given widget.
+   * By picking a long-lived parent, one may reuse a single block of
+   * javascript code for multiple widgets.
+   *
+   * If parent = 0, then the javascript will be inline.
+   */
+  WJavascriptSlot(WWidget *parent = 0);
+
+  /*! \brief Destructor.
+   */
+  ~WJavascriptSlot();
+
+  /*! \brief Set or modify the javascript code associated with the slot.
+   *
+   * When the slot is triggered, the corresponding JavaScript is executed.
+   */
+  void setJavascript(const std::string&);
+
+private:
+  WWidget *widget_;
+  WStatelessSlot* imp_;
+
+  std::string jsFunctionName() const;
+  WStatelessSlot* slotimp();
+
+  int fid_;
+  static int nextFid_;
+
+  friend class EventSignalBase;
+};
+
+}
+
+#endif

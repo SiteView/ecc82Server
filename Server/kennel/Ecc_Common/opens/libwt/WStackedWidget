@@ -1,0 +1,82 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSTACKEDWIDGET_H_
+#define WSTACKEDWIDGET_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WContainerWidget>
+
+/*! \brief A container widget that stacks its widgets on top of each
+ *         other.
+ *
+ * This is a container widgets which at all times has only one item
+ * visible. The widget accomplishes this using setHidden(bool) on the
+ * children.
+ *
+ * With currentIndex() and setCurrentIndex(int index) you can get
+ * or set which widget needs to be visible.
+ *
+ * A WStackedWidget, as any WContainerWidget, is by default not inline.
+ */
+class __declspec(dllexport) WStackedWidget : public WContainerWidget
+{
+  //MOC: W_OBJECT WStackedWidget:WContainerWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Created a new WStackedWidget.
+   */
+  WStackedWidget(WContainerWidget *parent = 0);
+
+  virtual void addWidget(WWidget *widget);
+
+  /*! \brief The number of widgets in the stack.
+   */
+  int count() const;
+
+  /*! \brief The index of the widget that is currently shown.
+   */
+  int currentIndex() const;
+
+  /*! \brief The widget that is currently shown.
+   */
+  WWidget *currentWidget() const;
+
+  /*! \brief The index of the given widget.
+   */
+  int indexOf(WWidget *widget) const;
+
+  /*! \brief Insert a widget at a given index
+   */
+  int insertWidget(int index, WWidget *widget);
+
+  virtual void removeWidget(WWidget *widget);
+
+  /*! \brief Get the widget at the specified index
+   */
+  WWidget *widget(int index) const;
+
+public slots:
+  //MOC: SLOT WStackedWidget::setCurrentIndex(int index)
+  /*! Set the widget at the given index to be shown.
+   */
+  void setCurrentIndex(int index);
+  //MOC: SLOT WStackedWidget::setCurrentWidget(WWidget *widget)
+
+  /*! Set the given widget to be shown.
+   */
+  void setCurrentWidget(WWidget *widget);
+
+private:
+  std::vector<WWidget *> widgets_;
+  int currentIndex_;
+};
+
+#endif // WSTACKEDWIDGET_H_

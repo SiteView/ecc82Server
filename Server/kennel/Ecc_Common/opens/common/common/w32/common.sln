@@ -1,0 +1,181 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SampleSocketPort", "demo\SampleSocketPort.vcproj", "{84618DB0-9D01-4A78-9913-F7505485037F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E1166905-585F-4154-98AD-B5120F6BB5AA} = {E1166905-585F-4154-98AD-B5120F6BB5AA}
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10} = {C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "buffer", "demo\buffer.vcproj", "{30DF9507-D3D6-43E4-A901-CAD89E2F4521}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10} = {C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ccext2", "ccext2.vcproj", "{E1166905-585F-4154-98AD-B5120F6BB5AA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10} = {C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ccgnu2", "ccgnu2.vcproj", "{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "crc32", "demo\crc32.vcproj", "{7560CA99-3744-4E17-BE82-0C4FCF285873}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E1166905-585F-4154-98AD-B5120F6BB5AA} = {E1166905-585F-4154-98AD-B5120F6BB5AA}
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10} = {C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "slogTest", "demo\slogTest.vcproj", "{B8B4DA1D-D6E4-421D-9580-CDC9B912B0CE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10} = {C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcp", "demo\tcp.vcproj", "{13499D69-ED8E-487A-9F58-D9054F2F8933}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10} = {C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcpservice", "demo\tcpservice.vcproj", "{8D23A860-D44C-4FDD-A986-CCE588552997}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E1166905-585F-4154-98AD-B5120F6BB5AA} = {E1166905-585F-4154-98AD-B5120F6BB5AA}
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10} = {C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcpthread", "demo\tcpthread.vcproj", "{E717CD47-85AB-4990-8C68-4CB32BD78E90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10} = {C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "urlfetch", "demo\urlfetch.vcproj", "{37DFA3DB-51DC-44AF-8AEF-26771FEC0D87}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E1166905-585F-4154-98AD-B5120F6BB5AA} = {E1166905-585F-4154-98AD-B5120F6BB5AA}
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10} = {C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xmlfetch", "demo\xmlfetch.vcproj", "{529EBD86-34AC-4C5A-9C5B-EEDCA6212C9B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E1166905-585F-4154-98AD-B5120F6BB5AA} = {E1166905-585F-4154-98AD-B5120F6BB5AA}
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10} = {C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "..\Test\Test.vcproj", "{C31E590D-7815-4FF8-A746-D0F4324DF82D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 13
+		SccProjectName0 = \u0022$/v70/opens/common/common\u0022,\u0020VVFAAAAA
+		SccLocalPath0 = ..
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection0 = w32\\
+		SolutionUniqueID = {77C9371F-3AFA-4E86-8F4F-E66F169BD653}
+		SccProjectUniqueName1 = ..\\Test\\Test.vcproj
+		SccLocalPath1 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection1 = Test\\
+		SccProjectUniqueName2 = ccext2.vcproj
+		SccLocalPath2 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection2 = w32\\
+		SccProjectUniqueName3 = ccgnu2.vcproj
+		SccLocalPath3 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection3 = w32\\
+		SccProjectUniqueName4 = demo\\buffer.vcproj
+		SccLocalPath4 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection4 = w32\\demo\\
+		SccProjectUniqueName5 = demo\\crc32.vcproj
+		SccLocalPath5 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection5 = w32\\demo\\
+		SccProjectUniqueName6 = demo\\SampleSocketPort.vcproj
+		SccLocalPath6 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection6 = w32\\demo\\
+		SccProjectUniqueName7 = demo\\slogTest.vcproj
+		SccLocalPath7 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection7 = w32\\demo\\
+		SccProjectUniqueName8 = demo\\tcp.vcproj
+		SccLocalPath8 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection8 = w32\\demo\\
+		SccProjectUniqueName9 = demo\\tcpservice.vcproj
+		SccLocalPath9 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection9 = w32\\demo\\
+		SccProjectUniqueName10 = demo\\tcpthread.vcproj
+		SccLocalPath10 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection10 = w32\\demo\\
+		SccProjectUniqueName11 = demo\\urlfetch.vcproj
+		SccLocalPath11 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection11 = w32\\demo\\
+		SccProjectUniqueName12 = demo\\xmlfetch.vcproj
+		SccLocalPath12 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection12 = w32\\demo\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{84618DB0-9D01-4A78-9913-F7505485037F}.Debug.ActiveCfg = Debug|Win32
+		{84618DB0-9D01-4A78-9913-F7505485037F}.Debug.Build.0 = Debug|Win32
+		{84618DB0-9D01-4A78-9913-F7505485037F}.Release.ActiveCfg = Release|Win32
+		{84618DB0-9D01-4A78-9913-F7505485037F}.Release.Build.0 = Release|Win32
+		{30DF9507-D3D6-43E4-A901-CAD89E2F4521}.Debug.ActiveCfg = Debug|Win32
+		{30DF9507-D3D6-43E4-A901-CAD89E2F4521}.Debug.Build.0 = Debug|Win32
+		{30DF9507-D3D6-43E4-A901-CAD89E2F4521}.Release.ActiveCfg = Release|Win32
+		{30DF9507-D3D6-43E4-A901-CAD89E2F4521}.Release.Build.0 = Release|Win32
+		{E1166905-585F-4154-98AD-B5120F6BB5AA}.Debug.ActiveCfg = Debug|Win32
+		{E1166905-585F-4154-98AD-B5120F6BB5AA}.Debug.Build.0 = Debug|Win32
+		{E1166905-585F-4154-98AD-B5120F6BB5AA}.Release.ActiveCfg = Release|Win32
+		{E1166905-585F-4154-98AD-B5120F6BB5AA}.Release.Build.0 = Release|Win32
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}.Debug.ActiveCfg = Debug|Win32
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}.Debug.Build.0 = Debug|Win32
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}.Release.ActiveCfg = Release|Win32
+		{C377A2E6-B32F-41F5-BF3A-E2B7064E9F10}.Release.Build.0 = Release|Win32
+		{7560CA99-3744-4E17-BE82-0C4FCF285873}.Debug.ActiveCfg = Debug|Win32
+		{7560CA99-3744-4E17-BE82-0C4FCF285873}.Debug.Build.0 = Debug|Win32
+		{7560CA99-3744-4E17-BE82-0C4FCF285873}.Release.ActiveCfg = Release|Win32
+		{7560CA99-3744-4E17-BE82-0C4FCF285873}.Release.Build.0 = Release|Win32
+		{B8B4DA1D-D6E4-421D-9580-CDC9B912B0CE}.Debug.ActiveCfg = Debug|Win32
+		{B8B4DA1D-D6E4-421D-9580-CDC9B912B0CE}.Debug.Build.0 = Debug|Win32
+		{B8B4DA1D-D6E4-421D-9580-CDC9B912B0CE}.Release.ActiveCfg = Release|Win32
+		{B8B4DA1D-D6E4-421D-9580-CDC9B912B0CE}.Release.Build.0 = Release|Win32
+		{13499D69-ED8E-487A-9F58-D9054F2F8933}.Debug.ActiveCfg = Debug|Win32
+		{13499D69-ED8E-487A-9F58-D9054F2F8933}.Debug.Build.0 = Debug|Win32
+		{13499D69-ED8E-487A-9F58-D9054F2F8933}.Release.ActiveCfg = Release|Win32
+		{13499D69-ED8E-487A-9F58-D9054F2F8933}.Release.Build.0 = Release|Win32
+		{8D23A860-D44C-4FDD-A986-CCE588552997}.Debug.ActiveCfg = Debug|Win32
+		{8D23A860-D44C-4FDD-A986-CCE588552997}.Debug.Build.0 = Debug|Win32
+		{8D23A860-D44C-4FDD-A986-CCE588552997}.Release.ActiveCfg = Release|Win32
+		{8D23A860-D44C-4FDD-A986-CCE588552997}.Release.Build.0 = Release|Win32
+		{E717CD47-85AB-4990-8C68-4CB32BD78E90}.Debug.ActiveCfg = Debug|Win32
+		{E717CD47-85AB-4990-8C68-4CB32BD78E90}.Debug.Build.0 = Debug|Win32
+		{E717CD47-85AB-4990-8C68-4CB32BD78E90}.Release.ActiveCfg = Release|Win32
+		{E717CD47-85AB-4990-8C68-4CB32BD78E90}.Release.Build.0 = Release|Win32
+		{37DFA3DB-51DC-44AF-8AEF-26771FEC0D87}.Debug.ActiveCfg = Debug|Win32
+		{37DFA3DB-51DC-44AF-8AEF-26771FEC0D87}.Debug.Build.0 = Debug|Win32
+		{37DFA3DB-51DC-44AF-8AEF-26771FEC0D87}.Release.ActiveCfg = Release|Win32
+		{37DFA3DB-51DC-44AF-8AEF-26771FEC0D87}.Release.Build.0 = Release|Win32
+		{529EBD86-34AC-4C5A-9C5B-EEDCA6212C9B}.Debug.ActiveCfg = Debug|Win32
+		{529EBD86-34AC-4C5A-9C5B-EEDCA6212C9B}.Debug.Build.0 = Debug|Win32
+		{529EBD86-34AC-4C5A-9C5B-EEDCA6212C9B}.Release.ActiveCfg = Release|Win32
+		{529EBD86-34AC-4C5A-9C5B-EEDCA6212C9B}.Release.Build.0 = Release|Win32
+		{C31E590D-7815-4FF8-A746-D0F4324DF82D}.Debug.ActiveCfg = Debug|Win32
+		{C31E590D-7815-4FF8-A746-D0F4324DF82D}.Debug.Build.0 = Debug|Win32
+		{C31E590D-7815-4FF8-A746-D0F4324DF82D}.Release.ActiveCfg = Release|Win32
+		{C31E590D-7815-4FF8-A746-D0F4324DF82D}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

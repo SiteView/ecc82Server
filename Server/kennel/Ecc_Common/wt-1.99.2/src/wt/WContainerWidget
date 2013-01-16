@@ -1,0 +1,122 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WCONTAINER_WIDGET_H_
+#define WCONTAINER_WIDGET_H_
+
+#include <WInteractWidget>
+
+namespace Wt {
+
+/*! \class WContainerWidget WContainerWidget WContainerWidget
+ *  \brief A WWidget that may hold (and manage) children.
+ *
+ * A WContainerWidget acts as a container for child widgets.
+ *
+ * By default, a WContainerWidget is \link WWidget::setInline()
+ * stacked \endlink and manages its children within a rectangle.  When
+ * setting the WContainerWidget \link WWidget::setInline() inline
+ * \endlink the container only acts as a conceptual container,
+ * offering a common style to its children. Inline children are still
+ * layed out inline within the flow of the parent container of this
+ * container, as if they were inserted directly into that parent
+ * container.
+ *
+ * FIXME: We still need to provide a method to specify an inline-block,
+ * this is a container that itself has an inline layout, but that manages
+ * it children in a block.
+ *
+ */
+class WT_API WContainerWidget : public WInteractWidget
+{
+public:
+  /*! \brief Create a container with optional parent.
+   */
+  WContainerWidget(WContainerWidget *parent = 0);
+
+  /*! \brief Add a child widget to this container.
+   *
+   * This is equivalent to passing this container as the parent when
+   * constructing the child. The widget is appended to the list of
+   * children, and thus also layed-out at the end.
+   */
+  virtual void addWidget(WWidget *widget);
+
+  /*! \brief insert a child widget in this container, before another
+   *         widget.
+   *
+   * The widget is inserted into the list of children right before another
+   * widget that is already inserted in this container widget.
+   */
+  virtual void insertWidget(WWidget *widget, WWidget *before);
+
+  /*! \brief Remove a child widget from this container.
+   *
+   * This removes the widget from this container, but does not delete
+   * the widget !
+   */
+  virtual void removeWidget(WWidget *widget);
+
+  /*! \brief Remove and delete all child widgets.
+   *
+   * This deletes all children that have been added to this container.
+   */
+  void clear();
+
+  /*! \brief Specify how child widgets must be aligned within the container
+   *
+   * Specify the horizontal alignment of child widgets. Note that there
+   * is no way to specify vertical alignment: children are always pushed
+   * to the top of the container. Only in a WTableCell, there is a method
+   * to align the children vertically.
+   */
+  void setContentAlignment(HorizontalAlignment contentAlignment);
+
+  /*! \brief Set padding inside the widget
+   *
+   * Setting padding has the effect of adding distance between the
+   * widget children and the border.
+   */
+  void setPadding(WLength padding, int sides = All);
+
+  /*! \brief Get the padding set for the widget.
+   *
+   * \sa setPadding(WLength padding, Side sides);
+   */
+  WLength padding(Side side) const;
+
+  /*! \brief Get the horizontal alignment of children
+   *
+   * \sa setContentAlignment(HorizontalAlignment)
+   */
+  HorizontalAlignment contentAlignment() const { return contentAlignment_; }
+
+  /*! \brief Get the children.
+   */
+  const std::vector<WWidget *>& children() const { return *children_; }
+
+private:
+  HorizontalAlignment       contentAlignment_;
+  std::vector<WWidget *>    *addedChildren_;
+
+  WLength		    padding_[4];
+
+  bool                      contentAlignmentChanged_;
+  bool                      paddingsChanged_;
+
+protected:
+  void                removeChild(WWidget *child);
+
+  void		      createDomChildren(DomElement& parent);
+
+  void                updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+}
+
+#endif // WCONTAINER_WIDGET_H_

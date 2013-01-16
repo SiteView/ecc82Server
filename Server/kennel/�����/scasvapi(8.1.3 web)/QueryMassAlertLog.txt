@@ -1,0 +1,13 @@
+SCA_SVAPI
+bool GetForestData(ForestList & flist, const NodeData & inwhat, string & estr);
+
+// 输入参数：
+dowhat= QueryMassAlertLog,	
+begin_year= XXX,  begin_month= XXX,  begin_day= XXX,  begin_hour= XXX,  begin_minute= XXX,  begin_second= XXX,  
+end_year= XXX,  end_month= XXX,  end_day= XXX,  end_hour= XXX,  end_minute= XXX,  end_second= XXX,// 第一级筛选条件，即时间条件
+alertName= XXX,   alertReceive= XXX, alertType= XXX,//alertIndex、alertName、alertReceive、alertType 是 and 关系，如果为空则为全部，第二级筛选条件
+alertBeginIndex=xxx, alertEndIndex=xxx;// 第三级筛选条件
+
+
+// 输出参数：
+flist: 1~N(alertlogs), N+1(符合第二级筛选条件的日志数目，保存在flist的最后一个元素中)

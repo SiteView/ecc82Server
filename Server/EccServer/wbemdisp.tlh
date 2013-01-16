@@ -1,0 +1,2402 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (f26880cf).
+//
+// wbemdisp.tlh
+//
+// C++ source equivalent of Win32 type library WbemScripting.SWbemLocator
+// compiler-generated file created 12/14/12 at 14:25:55 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+namespace WbemScripting {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("565783c6-cb41-11d1-8b02-00600806d9b6"))
+/* LIBID */ __WbemScripting;
+struct __declspec(uuid("76a6415c-cb41-11d1-8b02-00600806d9b6"))
+/* dual interface */ ISWbemServices;
+struct __declspec(uuid("76a6415a-cb41-11d1-8b02-00600806d9b6"))
+/* dual interface */ ISWbemObject;
+struct __declspec(uuid("5791bc27-ce9c-11d1-97bf-0000f81e849c"))
+/* dual interface */ ISWbemObjectPath;
+struct __declspec(uuid("cf2376ea-ce8c-11d1-8b05-00600806d9b6"))
+/* dual interface */ ISWbemNamedValueSet;
+struct __declspec(uuid("76a64164-cb41-11d1-8b02-00600806d9b6"))
+/* dual interface */ ISWbemNamedValue;
+struct __declspec(uuid("b54d66e6-2287-11d2-8b33-00600806d9b6"))
+/* dual interface */ ISWbemSecurity;
+enum WbemImpersonationLevelEnum;
+enum WbemAuthenticationLevelEnum;
+struct __declspec(uuid("26ee67bf-5804-11d2-8b4a-00600806d9b6"))
+/* dual interface */ ISWbemPrivilegeSet;
+enum WbemPrivilegeEnum;
+struct __declspec(uuid("26ee67bd-5804-11d2-8b4a-00600806d9b6"))
+/* dual interface */ ISWbemPrivilege;
+struct __declspec(uuid("76a6415f-cb41-11d1-8b02-00600806d9b6"))
+/* dual interface */ ISWbemObjectSet;
+struct __declspec(uuid("9b16ed16-d3df-11d1-8b08-00600806d9b6"))
+/* dual interface */ ISWbemQualifierSet;
+struct __declspec(uuid("79b05932-d3b7-11d1-8b06-00600806d9b6"))
+/* dual interface */ ISWbemQualifier;
+struct __declspec(uuid("dea0a7b2-d4ba-11d1-8b09-00600806d9b6"))
+/* dual interface */ ISWbemPropertySet;
+struct __declspec(uuid("1a388f98-d4ba-11d1-8b09-00600806d9b6"))
+/* dual interface */ ISWbemProperty;
+enum WbemCimtypeEnum;
+struct __declspec(uuid("c93ba292-d955-11d1-8b09-00600806d9b6"))
+/* dual interface */ ISWbemMethodSet;
+struct __declspec(uuid("422e8e90-d955-11d1-8b09-00600806d9b6"))
+/* dual interface */ ISWbemMethod;
+struct __declspec(uuid("27d54d92-0ebe-11d2-8b22-00600806d9b6"))
+/* dual interface */ ISWbemEventSource;
+struct __declspec(uuid("76a6415b-cb41-11d1-8b02-00600806d9b6"))
+/* dual interface */ ISWbemLocator;
+struct __declspec(uuid("d962db84-d4bb-11d1-8b09-00600806d9b6"))
+/* dual interface */ ISWbemLastError;
+struct __declspec(uuid("75718ca0-f029-11d1-a1ac-00c04fb6c223"))
+/* dispinterface */ ISWbemSinkEvents;
+enum WbemErrorEnum;
+struct __declspec(uuid("75718c9f-f029-11d1-a1ac-00c04fb6c223"))
+/* dual interface */ ISWbemSink;
+struct __declspec(uuid("d2f68443-85dc-427e-91d8-366554cc754c"))
+/* dual interface */ ISWbemServicesEx;
+struct __declspec(uuid("269ad56a-8a67-4129-bc8c-0506dcfe9880"))
+/* dual interface */ ISWbemObjectEx;
+enum WbemObjectTextFormatEnum;
+struct __declspec(uuid("5e97458a-cf77-11d3-b38f-00105a1f473a"))
+/* dual interface */ ISWbemDateTime;
+struct __declspec(uuid("14d8250e-d9c2-11d3-b38f-00105a1f473a"))
+/* dual interface */ ISWbemRefresher;
+struct __declspec(uuid("5ad4bf92-daab-11d3-b38f-00105a1f473a"))
+/* dual interface */ ISWbemRefreshableItem;
+enum WbemChangeFlagEnum;
+enum WbemFlagEnum;
+enum WbemQueryFlagEnum;
+enum WbemTextFlagEnum;
+enum WbemTimeout;
+enum WbemComparisonFlagEnum;
+enum WbemConnectOptionsEnum;
+struct /* coclass */ SWbemLocator;
+struct /* coclass */ SWbemNamedValueSet;
+struct /* coclass */ SWbemObjectPath;
+struct /* coclass */ SWbemLastError;
+struct /* coclass */ SWbemSink;
+struct /* coclass */ SWbemDateTime;
+struct /* coclass */ SWbemRefresher;
+struct /* coclass */ SWbemServices;
+struct /* coclass */ SWbemServicesEx;
+struct /* coclass */ SWbemObject;
+struct /* coclass */ SWbemObjectEx;
+struct /* coclass */ SWbemObjectSet;
+struct /* coclass */ SWbemNamedValue;
+struct /* coclass */ SWbemQualifier;
+struct /* coclass */ SWbemQualifierSet;
+struct /* coclass */ SWbemProperty;
+struct /* coclass */ SWbemPropertySet;
+struct /* coclass */ SWbemMethod;
+struct /* coclass */ SWbemMethodSet;
+struct /* coclass */ SWbemEventSource;
+struct /* coclass */ SWbemSecurity;
+struct /* coclass */ SWbemPrivilege;
+struct /* coclass */ SWbemPrivilegeSet;
+struct /* coclass */ SWbemRefreshableItem;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(ISWbemNamedValue, __uuidof(ISWbemNamedValue));
+_COM_SMARTPTR_TYPEDEF(ISWbemNamedValueSet, __uuidof(ISWbemNamedValueSet));
+_COM_SMARTPTR_TYPEDEF(ISWbemPrivilege, __uuidof(ISWbemPrivilege));
+_COM_SMARTPTR_TYPEDEF(ISWbemPrivilegeSet, __uuidof(ISWbemPrivilegeSet));
+_COM_SMARTPTR_TYPEDEF(ISWbemSecurity, __uuidof(ISWbemSecurity));
+_COM_SMARTPTR_TYPEDEF(ISWbemObjectPath, __uuidof(ISWbemObjectPath));
+_COM_SMARTPTR_TYPEDEF(ISWbemQualifier, __uuidof(ISWbemQualifier));
+_COM_SMARTPTR_TYPEDEF(ISWbemQualifierSet, __uuidof(ISWbemQualifierSet));
+_COM_SMARTPTR_TYPEDEF(ISWbemProperty, __uuidof(ISWbemProperty));
+_COM_SMARTPTR_TYPEDEF(ISWbemPropertySet, __uuidof(ISWbemPropertySet));
+_COM_SMARTPTR_TYPEDEF(ISWbemSinkEvents, __uuidof(ISWbemSinkEvents));
+_COM_SMARTPTR_TYPEDEF(ISWbemSink, __uuidof(ISWbemSink));
+_COM_SMARTPTR_TYPEDEF(ISWbemDateTime, __uuidof(ISWbemDateTime));
+_COM_SMARTPTR_TYPEDEF(ISWbemServices, __uuidof(ISWbemServices));
+_COM_SMARTPTR_TYPEDEF(ISWbemLocator, __uuidof(ISWbemLocator));
+_COM_SMARTPTR_TYPEDEF(ISWbemObject, __uuidof(ISWbemObject));
+_COM_SMARTPTR_TYPEDEF(ISWbemObjectSet, __uuidof(ISWbemObjectSet));
+_COM_SMARTPTR_TYPEDEF(ISWbemMethod, __uuidof(ISWbemMethod));
+_COM_SMARTPTR_TYPEDEF(ISWbemMethodSet, __uuidof(ISWbemMethodSet));
+_COM_SMARTPTR_TYPEDEF(ISWbemEventSource, __uuidof(ISWbemEventSource));
+_COM_SMARTPTR_TYPEDEF(ISWbemLastError, __uuidof(ISWbemLastError));
+_COM_SMARTPTR_TYPEDEF(ISWbemObjectEx, __uuidof(ISWbemObjectEx));
+_COM_SMARTPTR_TYPEDEF(ISWbemServicesEx, __uuidof(ISWbemServicesEx));
+_COM_SMARTPTR_TYPEDEF(ISWbemRefresher, __uuidof(ISWbemRefresher));
+_COM_SMARTPTR_TYPEDEF(ISWbemRefreshableItem, __uuidof(ISWbemRefreshableItem));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("76a64164-cb41-11d1-8b02-00600806d9b6"))
+ISWbemNamedValue : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetValue ( );
+    void PutValue (
+        VARIANT * varValue );
+    _bstr_t GetName ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Value (
+        /*[out,retval]*/ VARIANT * varValue ) = 0;
+      virtual HRESULT __stdcall put_Value (
+        /*[in]*/ VARIANT * varValue ) = 0;
+      virtual HRESULT __stdcall get_Name (
+        /*[out,retval]*/ BSTR * strName ) = 0;
+};
+
+struct __declspec(uuid("cf2376ea-ce8c-11d1-8b05-00600806d9b6"))
+ISWbemNamedValueSet : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IUnknownPtr Get_NewEnum ( );
+    ISWbemNamedValuePtr Item (
+        _bstr_t strName,
+        long iFlags );
+    long GetCount ( );
+    ISWbemNamedValuePtr Add (
+        _bstr_t strName,
+        VARIANT * varValue,
+        long iFlags );
+    HRESULT Remove (
+        _bstr_t strName,
+        long iFlags );
+    ISWbemNamedValueSetPtr Clone ( );
+    HRESULT DeleteAll ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get__NewEnum (
+        /*[out,retval]*/ IUnknown * * pUnk ) = 0;
+      virtual HRESULT __stdcall raw_Item (
+        /*[in]*/ BSTR strName,
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ struct ISWbemNamedValue * * objWbemNamedValue ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * iCount ) = 0;
+      virtual HRESULT __stdcall raw_Add (
+        /*[in]*/ BSTR strName,
+        /*[in]*/ VARIANT * varValue,
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ struct ISWbemNamedValue * * objWbemNamedValue ) = 0;
+      virtual HRESULT __stdcall raw_Remove (
+        /*[in]*/ BSTR strName,
+        /*[in]*/ long iFlags ) = 0;
+      virtual HRESULT __stdcall raw_Clone (
+        /*[out,retval]*/ struct ISWbemNamedValueSet * * objWbemNamedValueSet ) = 0;
+      virtual HRESULT __stdcall raw_DeleteAll ( ) = 0;
+};
+
+enum __declspec(uuid("b54d66e8-2287-11d2-8b33-00600806d9b6"))
+WbemImpersonationLevelEnum
+{
+    wbemImpersonationLevelAnonymous = 1,
+    wbemImpersonationLevelIdentify = 2,
+    wbemImpersonationLevelImpersonate = 3,
+    wbemImpersonationLevelDelegate = 4
+};
+
+enum __declspec(uuid("b54d66e7-2287-11d2-8b33-00600806d9b6"))
+WbemAuthenticationLevelEnum
+{
+    wbemAuthenticationLevelDefault = 0,
+    wbemAuthenticationLevelNone = 1,
+    wbemAuthenticationLevelConnect = 2,
+    wbemAuthenticationLevelCall = 3,
+    wbemAuthenticationLevelPkt = 4,
+    wbemAuthenticationLevelPktIntegrity = 5,
+    wbemAuthenticationLevelPktPrivacy = 6
+};
+
+enum __declspec(uuid("176d2f70-5af3-11d2-8b4a-00600806d9b6"))
+WbemPrivilegeEnum
+{
+    wbemPrivilegeCreateToken = 1,
+    wbemPrivilegePrimaryToken = 2,
+    wbemPrivilegeLockMemory = 3,
+    wbemPrivilegeIncreaseQuota = 4,
+    wbemPrivilegeMachineAccount = 5,
+    wbemPrivilegeTcb = 6,
+    wbemPrivilegeSecurity = 7,
+    wbemPrivilegeTakeOwnership = 8,
+    wbemPrivilegeLoadDriver = 9,
+    wbemPrivilegeSystemProfile = 10,
+    wbemPrivilegeSystemtime = 11,
+    wbemPrivilegeProfileSingleProcess = 12,
+    wbemPrivilegeIncreaseBasePriority = 13,
+    wbemPrivilegeCreatePagefile = 14,
+    wbemPrivilegeCreatePermanent = 15,
+    wbemPrivilegeBackup = 16,
+    wbemPrivilegeRestore = 17,
+    wbemPrivilegeShutdown = 18,
+    wbemPrivilegeDebug = 19,
+    wbemPrivilegeAudit = 20,
+    wbemPrivilegeSystemEnvironment = 21,
+    wbemPrivilegeChangeNotify = 22,
+    wbemPrivilegeRemoteShutdown = 23,
+    wbemPrivilegeUndock = 24,
+    wbemPrivilegeSyncAgent = 25,
+    wbemPrivilegeEnableDelegation = 26,
+    wbemPrivilegeManageVolume = 27
+};
+
+struct __declspec(uuid("26ee67bd-5804-11d2-8b4a-00600806d9b6"))
+ISWbemPrivilege : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetIsEnabled,put=PutIsEnabled))
+    VARIANT_BOOL IsEnabled;
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetDisplayName))
+    _bstr_t DisplayName;
+    __declspec(property(get=GetIdentifier))
+    enum WbemPrivilegeEnum Identifier;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL GetIsEnabled ( );
+    void PutIsEnabled (
+        VARIANT_BOOL bIsEnabled );
+    _bstr_t GetName ( );
+    _bstr_t GetDisplayName ( );
+    enum WbemPrivilegeEnum GetIdentifier ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_IsEnabled (
+        /*[out,retval]*/ VARIANT_BOOL * bIsEnabled ) = 0;
+      virtual HRESULT __stdcall put_IsEnabled (
+        /*[in]*/ VARIANT_BOOL bIsEnabled ) = 0;
+      virtual HRESULT __stdcall get_Name (
+        /*[out,retval]*/ BSTR * strDisplayName ) = 0;
+      virtual HRESULT __stdcall get_DisplayName (
+        /*[out,retval]*/ BSTR * strDisplayName ) = 0;
+      virtual HRESULT __stdcall get_Identifier (
+        /*[out,retval]*/ enum WbemPrivilegeEnum * iPrivilege ) = 0;
+};
+
+struct __declspec(uuid("26ee67bf-5804-11d2-8b4a-00600806d9b6"))
+ISWbemPrivilegeSet : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IUnknownPtr Get_NewEnum ( );
+    ISWbemPrivilegePtr Item (
+        enum WbemPrivilegeEnum iPrivilege );
+    long GetCount ( );
+    ISWbemPrivilegePtr Add (
+        enum WbemPrivilegeEnum iPrivilege,
+        VARIANT_BOOL bIsEnabled );
+    HRESULT Remove (
+        enum WbemPrivilegeEnum iPrivilege );
+    HRESULT DeleteAll ( );
+    ISWbemPrivilegePtr AddAsString (
+        _bstr_t strPrivilege,
+        VARIANT_BOOL bIsEnabled );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get__NewEnum (
+        /*[out,retval]*/ IUnknown * * pUnk ) = 0;
+      virtual HRESULT __stdcall raw_Item (
+        /*[in]*/ enum WbemPrivilegeEnum iPrivilege,
+        /*[out,retval]*/ struct ISWbemPrivilege * * objWbemPrivilege ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * iCount ) = 0;
+      virtual HRESULT __stdcall raw_Add (
+        /*[in]*/ enum WbemPrivilegeEnum iPrivilege,
+        /*[in]*/ VARIANT_BOOL bIsEnabled,
+        /*[out,retval]*/ struct ISWbemPrivilege * * objWbemPrivilege ) = 0;
+      virtual HRESULT __stdcall raw_Remove (
+        /*[in]*/ enum WbemPrivilegeEnum iPrivilege ) = 0;
+      virtual HRESULT __stdcall raw_DeleteAll ( ) = 0;
+      virtual HRESULT __stdcall raw_AddAsString (
+        /*[in]*/ BSTR strPrivilege,
+        /*[in]*/ VARIANT_BOOL bIsEnabled,
+        /*[out,retval]*/ struct ISWbemPrivilege * * objWbemPrivilege ) = 0;
+};
+
+struct __declspec(uuid("b54d66e6-2287-11d2-8b33-00600806d9b6"))
+ISWbemSecurity : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetImpersonationLevel,put=PutImpersonationLevel))
+    enum WbemImpersonationLevelEnum ImpersonationLevel;
+    __declspec(property(get=GetAuthenticationLevel,put=PutAuthenticationLevel))
+    enum WbemAuthenticationLevelEnum AuthenticationLevel;
+    __declspec(property(get=GetPrivileges))
+    ISWbemPrivilegeSetPtr Privileges;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    enum WbemImpersonationLevelEnum GetImpersonationLevel ( );
+    void PutImpersonationLevel (
+        enum WbemImpersonationLevelEnum iImpersonationLevel );
+    enum WbemAuthenticationLevelEnum GetAuthenticationLevel ( );
+    void PutAuthenticationLevel (
+        enum WbemAuthenticationLevelEnum iAuthenticationLevel );
+    ISWbemPrivilegeSetPtr GetPrivileges ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_ImpersonationLevel (
+        /*[out,retval]*/ enum WbemImpersonationLevelEnum * iImpersonationLevel ) = 0;
+      virtual HRESULT __stdcall put_ImpersonationLevel (
+        /*[in]*/ enum WbemImpersonationLevelEnum iImpersonationLevel ) = 0;
+      virtual HRESULT __stdcall get_AuthenticationLevel (
+        /*[out,retval]*/ enum WbemAuthenticationLevelEnum * iAuthenticationLevel ) = 0;
+      virtual HRESULT __stdcall put_AuthenticationLevel (
+        /*[in]*/ enum WbemAuthenticationLevelEnum iAuthenticationLevel ) = 0;
+      virtual HRESULT __stdcall get_Privileges (
+        /*[out,retval]*/ struct ISWbemPrivilegeSet * * objWbemPrivilegeSet ) = 0;
+};
+
+struct __declspec(uuid("5791bc27-ce9c-11d1-97bf-0000f81e849c"))
+ISWbemObjectPath : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetPath,put=PutPath))
+    _bstr_t Path;
+    __declspec(property(get=GetRelPath,put=PutRelPath))
+    _bstr_t RelPath;
+    __declspec(property(get=GetServer,put=PutServer))
+    _bstr_t Server;
+    __declspec(property(get=GetNamespace,put=PutNamespace))
+    _bstr_t Namespace;
+    __declspec(property(get=GetParentNamespace))
+    _bstr_t ParentNamespace;
+    __declspec(property(get=GetDisplayName,put=PutDisplayName))
+    _bstr_t DisplayName;
+    __declspec(property(get=GetClass,put=PutClass))
+    _bstr_t Class;
+    __declspec(property(get=GetIsClass))
+    VARIANT_BOOL IsClass;
+    __declspec(property(get=GetIsSingleton))
+    VARIANT_BOOL IsSingleton;
+    __declspec(property(get=GetKeys))
+    ISWbemNamedValueSetPtr Keys;
+    __declspec(property(get=GetSecurity_))
+    ISWbemSecurityPtr Security_;
+    __declspec(property(get=GetLocale,put=PutLocale))
+    _bstr_t Locale;
+    __declspec(property(get=GetAuthority,put=PutAuthority))
+    _bstr_t Authority;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetPath ( );
+    void PutPath (
+        _bstr_t strPath );
+    _bstr_t GetRelPath ( );
+    void PutRelPath (
+        _bstr_t strRelPath );
+    _bstr_t GetServer ( );
+    void PutServer (
+        _bstr_t strServer );
+    _bstr_t GetNamespace ( );
+    void PutNamespace (
+        _bstr_t strNamespace );
+    _bstr_t GetParentNamespace ( );
+    _bstr_t GetDisplayName ( );
+    void PutDisplayName (
+        _bstr_t strDisplayName );
+    _bstr_t GetClass ( );
+    void PutClass (
+        _bstr_t strClass );
+    VARIANT_BOOL GetIsClass ( );
+    HRESULT SetAsClass ( );
+    VARIANT_BOOL GetIsSingleton ( );
+    HRESULT SetAsSingleton ( );
+    ISWbemNamedValueSetPtr GetKeys ( );
+    ISWbemSecurityPtr GetSecurity_ ( );
+    _bstr_t GetLocale ( );
+    void PutLocale (
+        _bstr_t strLocale );
+    _bstr_t GetAuthority ( );
+    void PutAuthority (
+        _bstr_t strAuthority );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Path (
+        /*[out,retval]*/ BSTR * strPath ) = 0;
+      virtual HRESULT __stdcall put_Path (
+        /*[in]*/ BSTR strPath ) = 0;
+      virtual HRESULT __stdcall get_RelPath (
+        /*[out,retval]*/ BSTR * strRelPath ) = 0;
+      virtual HRESULT __stdcall put_RelPath (
+        /*[in]*/ BSTR strRelPath ) = 0;
+      virtual HRESULT __stdcall get_Server (
+        /*[out,retval]*/ BSTR * strServer ) = 0;
+      virtual HRESULT __stdcall put_Server (
+        /*[in]*/ BSTR strServer ) = 0;
+      virtual HRESULT __stdcall get_Namespace (
+        /*[out,retval]*/ BSTR * strNamespace ) = 0;
+      virtual HRESULT __stdcall put_Namespace (
+        /*[in]*/ BSTR strNamespace ) = 0;
+      virtual HRESULT __stdcall get_ParentNamespace (
+        /*[out,retval]*/ BSTR * strParentNamespace ) = 0;
+      virtual HRESULT __stdcall get_DisplayName (
+        /*[out,retval]*/ BSTR * strDisplayName ) = 0;
+      virtual HRESULT __stdcall put_DisplayName (
+        /*[in]*/ BSTR strDisplayName ) = 0;
+      virtual HRESULT __stdcall get_Class (
+        /*[out,retval]*/ BSTR * strClass ) = 0;
+      virtual HRESULT __stdcall put_Class (
+        /*[in]*/ BSTR strClass ) = 0;
+      virtual HRESULT __stdcall get_IsClass (
+        /*[out,retval]*/ VARIANT_BOOL * bIsClass ) = 0;
+      virtual HRESULT __stdcall raw_SetAsClass ( ) = 0;
+      virtual HRESULT __stdcall get_IsSingleton (
+        /*[out,retval]*/ VARIANT_BOOL * bIsSingleton ) = 0;
+      virtual HRESULT __stdcall raw_SetAsSingleton ( ) = 0;
+      virtual HRESULT __stdcall get_Keys (
+        /*[out,retval]*/ struct ISWbemNamedValueSet * * objWbemNamedValueSet ) = 0;
+      virtual HRESULT __stdcall get_Security_ (
+        /*[out,retval]*/ struct ISWbemSecurity * * objWbemSecurity ) = 0;
+      virtual HRESULT __stdcall get_Locale (
+        /*[out,retval]*/ BSTR * strLocale ) = 0;
+      virtual HRESULT __stdcall put_Locale (
+        /*[in]*/ BSTR strLocale ) = 0;
+      virtual HRESULT __stdcall get_Authority (
+        /*[out,retval]*/ BSTR * strAuthority ) = 0;
+      virtual HRESULT __stdcall put_Authority (
+        /*[in]*/ BSTR strAuthority ) = 0;
+};
+
+struct __declspec(uuid("79b05932-d3b7-11d1-8b06-00600806d9b6"))
+ISWbemQualifier : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetIsLocal))
+    VARIANT_BOOL IsLocal;
+    __declspec(property(get=GetPropagatesToSubclass,put=PutPropagatesToSubclass))
+    VARIANT_BOOL PropagatesToSubclass;
+    __declspec(property(get=GetPropagatesToInstance,put=PutPropagatesToInstance))
+    VARIANT_BOOL PropagatesToInstance;
+    __declspec(property(get=GetIsOverridable,put=PutIsOverridable))
+    VARIANT_BOOL IsOverridable;
+    __declspec(property(get=GetIsAmended))
+    VARIANT_BOOL IsAmended;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetValue ( );
+    void PutValue (
+        VARIANT * varValue );
+    _bstr_t GetName ( );
+    VARIANT_BOOL GetIsLocal ( );
+    VARIANT_BOOL GetPropagatesToSubclass ( );
+    void PutPropagatesToSubclass (
+        VARIANT_BOOL bPropagatesToSubclass );
+    VARIANT_BOOL GetPropagatesToInstance ( );
+    void PutPropagatesToInstance (
+        VARIANT_BOOL bPropagatesToInstance );
+    VARIANT_BOOL GetIsOverridable ( );
+    void PutIsOverridable (
+        VARIANT_BOOL bIsOverridable );
+    VARIANT_BOOL GetIsAmended ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Value (
+        /*[out,retval]*/ VARIANT * varValue ) = 0;
+      virtual HRESULT __stdcall put_Value (
+        /*[in]*/ VARIANT * varValue ) = 0;
+      virtual HRESULT __stdcall get_Name (
+        /*[out,retval]*/ BSTR * strName ) = 0;
+      virtual HRESULT __stdcall get_IsLocal (
+        /*[out,retval]*/ VARIANT_BOOL * bIsLocal ) = 0;
+      virtual HRESULT __stdcall get_PropagatesToSubclass (
+        /*[out,retval]*/ VARIANT_BOOL * bPropagatesToSubclass ) = 0;
+      virtual HRESULT __stdcall put_PropagatesToSubclass (
+        /*[in]*/ VARIANT_BOOL bPropagatesToSubclass ) = 0;
+      virtual HRESULT __stdcall get_PropagatesToInstance (
+        /*[out,retval]*/ VARIANT_BOOL * bPropagatesToInstance ) = 0;
+      virtual HRESULT __stdcall put_PropagatesToInstance (
+        /*[in]*/ VARIANT_BOOL bPropagatesToInstance ) = 0;
+      virtual HRESULT __stdcall get_IsOverridable (
+        /*[out,retval]*/ VARIANT_BOOL * bIsOverridable ) = 0;
+      virtual HRESULT __stdcall put_IsOverridable (
+        /*[in]*/ VARIANT_BOOL bIsOverridable ) = 0;
+      virtual HRESULT __stdcall get_IsAmended (
+        /*[out,retval]*/ VARIANT_BOOL * bIsAmended ) = 0;
+};
+
+struct __declspec(uuid("9b16ed16-d3df-11d1-8b08-00600806d9b6"))
+ISWbemQualifierSet : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IUnknownPtr Get_NewEnum ( );
+    ISWbemQualifierPtr Item (
+        _bstr_t Name,
+        long iFlags );
+    long GetCount ( );
+    ISWbemQualifierPtr Add (
+        _bstr_t strName,
+        VARIANT * varVal,
+        VARIANT_BOOL bPropagatesToSubclass,
+        VARIANT_BOOL bPropagatesToInstance,
+        VARIANT_BOOL bIsOverridable,
+        long iFlags );
+    HRESULT Remove (
+        _bstr_t strName,
+        long iFlags );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get__NewEnum (
+        /*[out,retval]*/ IUnknown * * pUnk ) = 0;
+      virtual HRESULT __stdcall raw_Item (
+        /*[in]*/ BSTR Name,
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ struct ISWbemQualifier * * objWbemQualifier ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * iCount ) = 0;
+      virtual HRESULT __stdcall raw_Add (
+        /*[in]*/ BSTR strName,
+        /*[in]*/ VARIANT * varVal,
+        /*[in]*/ VARIANT_BOOL bPropagatesToSubclass,
+        /*[in]*/ VARIANT_BOOL bPropagatesToInstance,
+        /*[in]*/ VARIANT_BOOL bIsOverridable,
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ struct ISWbemQualifier * * objWbemQualifier ) = 0;
+      virtual HRESULT __stdcall raw_Remove (
+        /*[in]*/ BSTR strName,
+        /*[in]*/ long iFlags ) = 0;
+};
+
+enum __declspec(uuid("4a249b7b-fc9a-11d1-8b1e-00600806d9b6"))
+WbemCimtypeEnum
+{
+    wbemCimtypeSint8 = 16,
+    wbemCimtypeUint8 = 17,
+    wbemCimtypeSint16 = 2,
+    wbemCimtypeUint16 = 18,
+    wbemCimtypeSint32 = 3,
+    wbemCimtypeUint32 = 19,
+    wbemCimtypeSint64 = 20,
+    wbemCimtypeUint64 = 21,
+    wbemCimtypeReal32 = 4,
+    wbemCimtypeReal64 = 5,
+    wbemCimtypeBoolean = 11,
+    wbemCimtypeString = 8,
+    wbemCimtypeDatetime = 101,
+    wbemCimtypeReference = 102,
+    wbemCimtypeChar16 = 103,
+    wbemCimtypeObject = 13
+};
+
+struct __declspec(uuid("1a388f98-d4ba-11d1-8b09-00600806d9b6"))
+ISWbemProperty : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetIsLocal))
+    VARIANT_BOOL IsLocal;
+    __declspec(property(get=GetOrigin))
+    _bstr_t Origin;
+    __declspec(property(get=GetCIMType))
+    enum WbemCimtypeEnum CIMType;
+    __declspec(property(get=GetQualifiers_))
+    ISWbemQualifierSetPtr Qualifiers_;
+    __declspec(property(get=GetIsArray))
+    VARIANT_BOOL IsArray;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetValue ( );
+    void PutValue (
+        VARIANT * varValue );
+    _bstr_t GetName ( );
+    VARIANT_BOOL GetIsLocal ( );
+    _bstr_t GetOrigin ( );
+    enum WbemCimtypeEnum GetCIMType ( );
+    ISWbemQualifierSetPtr GetQualifiers_ ( );
+    VARIANT_BOOL GetIsArray ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Value (
+        /*[out,retval]*/ VARIANT * varValue ) = 0;
+      virtual HRESULT __stdcall put_Value (
+        /*[in]*/ VARIANT * varValue ) = 0;
+      virtual HRESULT __stdcall get_Name (
+        /*[out,retval]*/ BSTR * strName ) = 0;
+      virtual HRESULT __stdcall get_IsLocal (
+        /*[out,retval]*/ VARIANT_BOOL * bIsLocal ) = 0;
+      virtual HRESULT __stdcall get_Origin (
+        /*[out,retval]*/ BSTR * strOrigin ) = 0;
+      virtual HRESULT __stdcall get_CIMType (
+        /*[out,retval]*/ enum WbemCimtypeEnum * iCimType ) = 0;
+      virtual HRESULT __stdcall get_Qualifiers_ (
+        /*[out,retval]*/ struct ISWbemQualifierSet * * objWbemQualifierSet ) = 0;
+      virtual HRESULT __stdcall get_IsArray (
+        /*[out,retval]*/ VARIANT_BOOL * bIsArray ) = 0;
+};
+
+struct __declspec(uuid("dea0a7b2-d4ba-11d1-8b09-00600806d9b6"))
+ISWbemPropertySet : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IUnknownPtr Get_NewEnum ( );
+    ISWbemPropertyPtr Item (
+        _bstr_t strName,
+        long iFlags );
+    long GetCount ( );
+    ISWbemPropertyPtr Add (
+        _bstr_t strName,
+        enum WbemCimtypeEnum iCimType,
+        VARIANT_BOOL bIsArray,
+        long iFlags );
+    HRESULT Remove (
+        _bstr_t strName,
+        long iFlags );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get__NewEnum (
+        /*[out,retval]*/ IUnknown * * pUnk ) = 0;
+      virtual HRESULT __stdcall raw_Item (
+        /*[in]*/ BSTR strName,
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ struct ISWbemProperty * * objWbemProperty ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * iCount ) = 0;
+      virtual HRESULT __stdcall raw_Add (
+        /*[in]*/ BSTR strName,
+        /*[in]*/ enum WbemCimtypeEnum iCimType,
+        /*[in]*/ VARIANT_BOOL bIsArray,
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ struct ISWbemProperty * * objWbemProperty ) = 0;
+      virtual HRESULT __stdcall raw_Remove (
+        /*[in]*/ BSTR strName,
+        /*[in]*/ long iFlags ) = 0;
+};
+
+struct __declspec(uuid("75718ca0-f029-11d1-a1ac-00c04fb6c223"))
+ISWbemSinkEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT OnObjectReady (
+        struct ISWbemObject * objWbemObject,
+        struct ISWbemNamedValueSet * objWbemAsyncContext );
+    HRESULT OnCompleted (
+        enum WbemErrorEnum iHResult,
+        struct ISWbemObject * objWbemErrorObject,
+        struct ISWbemNamedValueSet * objWbemAsyncContext );
+    HRESULT OnProgress (
+        long iUpperBound,
+        long iCurrent,
+        _bstr_t strMessage,
+        struct ISWbemNamedValueSet * objWbemAsyncContext );
+    HRESULT OnObjectPut (
+        struct ISWbemObjectPath * objWbemObjectPath,
+        struct ISWbemNamedValueSet * objWbemAsyncContext );
+};
+
+enum __declspec(uuid("4a249b7c-fc9a-11d1-8b1e-00600806d9b6"))
+WbemErrorEnum
+{
+    wbemNoErr = 0,
+    wbemErrFailed = -2147217407,
+    wbemErrNotFound = -2147217406,
+    wbemErrAccessDenied = -2147217405,
+    wbemErrProviderFailure = -2147217404,
+    wbemErrTypeMismatch = -2147217403,
+    wbemErrOutOfMemory = -2147217402,
+    wbemErrInvalidContext = -2147217401,
+    wbemErrInvalidParameter = -2147217400,
+    wbemErrNotAvailable = -2147217399,
+    wbemErrCriticalError = -2147217398,
+    wbemErrInvalidStream = -2147217397,
+    wbemErrNotSupported = -2147217396,
+    wbemErrInvalidSuperclass = -2147217395,
+    wbemErrInvalidNamespace = -2147217394,
+    wbemErrInvalidObject = -2147217393,
+    wbemErrInvalidClass = -2147217392,
+    wbemErrProviderNotFound = -2147217391,
+    wbemErrInvalidProviderRegistration = -2147217390,
+    wbemErrProviderLoadFailure = -2147217389,
+    wbemErrInitializationFailure = -2147217388,
+    wbemErrTransportFailure = -2147217387,
+    wbemErrInvalidOperation = -2147217386,
+    wbemErrInvalidQuery = -2147217385,
+    wbemErrInvalidQueryType = -2147217384,
+    wbemErrAlreadyExists = -2147217383,
+    wbemErrOverrideNotAllowed = -2147217382,
+    wbemErrPropagatedQualifier = -2147217381,
+    wbemErrPropagatedProperty = -2147217380,
+    wbemErrUnexpected = -2147217379,
+    wbemErrIllegalOperation = -2147217378,
+    wbemErrCannotBeKey = -2147217377,
+    wbemErrIncompleteClass = -2147217376,
+    wbemErrInvalidSyntax = -2147217375,
+    wbemErrNondecoratedObject = -2147217374,
+    wbemErrReadOnly = -2147217373,
+    wbemErrProviderNotCapable = -2147217372,
+    wbemErrClassHasChildren = -2147217371,
+    wbemErrClassHasInstances = -2147217370,
+    wbemErrQueryNotImplemented = -2147217369,
+    wbemErrIllegalNull = -2147217368,
+    wbemErrInvalidQualifierType = -2147217367,
+    wbemErrInvalidPropertyType = -2147217366,
+    wbemErrValueOutOfRange = -2147217365,
+    wbemErrCannotBeSingleton = -2147217364,
+    wbemErrInvalidCimType = -2147217363,
+    wbemErrInvalidMethod = -2147217362,
+    wbemErrInvalidMethodParameters = -2147217361,
+    wbemErrSystemProperty = -2147217360,
+    wbemErrInvalidProperty = -2147217359,
+    wbemErrCallCancelled = -2147217358,
+    wbemErrShuttingDown = -2147217357,
+    wbemErrPropagatedMethod = -2147217356,
+    wbemErrUnsupportedParameter = -2147217355,
+    wbemErrMissingParameter = -2147217354,
+    wbemErrInvalidParameterId = -2147217353,
+    wbemErrNonConsecutiveParameterIds = -2147217352,
+    wbemErrParameterIdOnRetval = -2147217351,
+    wbemErrInvalidObjectPath = -2147217350,
+    wbemErrOutOfDiskSpace = -2147217349,
+    wbemErrBufferTooSmall = -2147217348,
+    wbemErrUnsupportedPutExtension = -2147217347,
+    wbemErrUnknownObjectType = -2147217346,
+    wbemErrUnknownPacketType = -2147217345,
+    wbemErrMarshalVersionMismatch = -2147217344,
+    wbemErrMarshalInvalidSignature = -2147217343,
+    wbemErrInvalidQualifier = -2147217342,
+    wbemErrInvalidDuplicateParameter = -2147217341,
+    wbemErrTooMuchData = -2147217340,
+    wbemErrServerTooBusy = -2147217339,
+    wbemErrInvalidFlavor = -2147217338,
+    wbemErrCircularReference = -2147217337,
+    wbemErrUnsupportedClassUpdate = -2147217336,
+    wbemErrCannotChangeKeyInheritance = -2147217335,
+    wbemErrCannotChangeIndexInheritance = -2147217328,
+    wbemErrTooManyProperties = -2147217327,
+    wbemErrUpdateTypeMismatch = -2147217326,
+    wbemErrUpdateOverrideNotAllowed = -2147217325,
+    wbemErrUpdatePropagatedMethod = -2147217324,
+    wbemErrMethodNotImplemented = -2147217323,
+    wbemErrMethodDisabled = -2147217322,
+    wbemErrRefresherBusy = -2147217321,
+    wbemErrUnparsableQuery = -2147217320,
+    wbemErrNotEventClass = -2147217319,
+    wbemErrMissingGroupWithin = -2147217318,
+    wbemErrMissingAggregationList = -2147217317,
+    wbemErrPropertyNotAnObject = -2147217316,
+    wbemErrAggregatingByObject = -2147217315,
+    wbemErrUninterpretableProviderQuery = -2147217313,
+    wbemErrBackupRestoreWinmgmtRunning = -2147217312,
+    wbemErrQueueOverflow = -2147217311,
+    wbemErrPrivilegeNotHeld = -2147217310,
+    wbemErrInvalidOperator = -2147217309,
+    wbemErrLocalCredentials = -2147217308,
+    wbemErrCannotBeAbstract = -2147217307,
+    wbemErrAmendedObject = -2147217306,
+    wbemErrClientTooSlow = -2147217305,
+    wbemErrNullSecurityDescriptor = -2147217304,
+    wbemErrTimeout = -2147217303,
+    wbemErrInvalidAssociation = -2147217302,
+    wbemErrAmbiguousOperation = -2147217301,
+    wbemErrQuotaViolation = -2147217300,
+    wbemErrTransactionConflict = -2147217299,
+    wbemErrForcedRollback = -2147217298,
+    wbemErrUnsupportedLocale = -2147217297,
+    wbemErrHandleOutOfDate = -2147217296,
+    wbemErrConnectionFailed = -2147217295,
+    wbemErrInvalidHandleRequest = -2147217294,
+    wbemErrPropertyNameTooWide = -2147217293,
+    wbemErrClassNameTooWide = -2147217292,
+    wbemErrMethodNameTooWide = -2147217291,
+    wbemErrQualifierNameTooWide = -2147217290,
+    wbemErrRerunCommand = -2147217289,
+    wbemErrDatabaseVerMismatch = -2147217288,
+    wbemErrVetoPut = -2147217287,
+    wbemErrVetoDelete = -2147217286,
+    wbemErrInvalidLocale = -2147217280,
+    wbemErrProviderSuspended = -2147217279,
+    wbemErrSynchronizationRequired = -2147217278,
+    wbemErrNoSchema = -2147217277,
+    wbemErrProviderAlreadyRegistered = -2147217276,
+    wbemErrProviderNotRegistered = -2147217275,
+    wbemErrFatalTransportError = -2147217274,
+    wbemErrEncryptedConnectionRequired = -2147217273,
+    wbemErrRegistrationTooBroad = -2147213311,
+    wbemErrRegistrationTooPrecise = -2147213310,
+    wbemErrTimedout = -2147209215,
+    wbemErrResetToDefault = -2147209214
+};
+
+struct __declspec(uuid("75718c9f-f029-11d1-a1ac-00c04fb6c223"))
+ISWbemSink : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Cancel ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Cancel ( ) = 0;
+};
+
+enum __declspec(uuid("09ff1992-ea0e-11d3-b391-00105a1f473a"))
+WbemObjectTextFormatEnum
+{
+    wbemObjectTextFormatCIMDTD20 = 1,
+    wbemObjectTextFormatWMIDTD20 = 2
+};
+
+struct __declspec(uuid("5e97458a-cf77-11d3-b38f-00105a1f473a"))
+ISWbemDateTime : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetValue,put=PutValue))
+    _bstr_t Value;
+    __declspec(property(get=GetYear,put=PutYear))
+    long Year;
+    __declspec(property(get=GetYearSpecified,put=PutYearSpecified))
+    VARIANT_BOOL YearSpecified;
+    __declspec(property(get=GetMonth,put=PutMonth))
+    long Month;
+    __declspec(property(get=GetMonthSpecified,put=PutMonthSpecified))
+    VARIANT_BOOL MonthSpecified;
+    __declspec(property(get=GetDay,put=PutDay))
+    long Day;
+    __declspec(property(get=GetDaySpecified,put=PutDaySpecified))
+    VARIANT_BOOL DaySpecified;
+    __declspec(property(get=GetHours,put=PutHours))
+    long Hours;
+    __declspec(property(get=GetHoursSpecified,put=PutHoursSpecified))
+    VARIANT_BOOL HoursSpecified;
+    __declspec(property(get=GetMinutes,put=PutMinutes))
+    long Minutes;
+    __declspec(property(get=GetMinutesSpecified,put=PutMinutesSpecified))
+    VARIANT_BOOL MinutesSpecified;
+    __declspec(property(get=GetSeconds,put=PutSeconds))
+    long Seconds;
+    __declspec(property(get=GetSecondsSpecified,put=PutSecondsSpecified))
+    VARIANT_BOOL SecondsSpecified;
+    __declspec(property(get=GetMicroseconds,put=PutMicroseconds))
+    long Microseconds;
+    __declspec(property(get=GetMicrosecondsSpecified,put=PutMicrosecondsSpecified))
+    VARIANT_BOOL MicrosecondsSpecified;
+    __declspec(property(get=GetUTC,put=PutUTC))
+    long UTC;
+    __declspec(property(get=GetUTCSpecified,put=PutUTCSpecified))
+    VARIANT_BOOL UTCSpecified;
+    __declspec(property(get=GetIsInterval,put=PutIsInterval))
+    VARIANT_BOOL IsInterval;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetValue ( );
+    void PutValue (
+        _bstr_t strValue );
+    long GetYear ( );
+    void PutYear (
+        long iYear );
+    VARIANT_BOOL GetYearSpecified ( );
+    void PutYearSpecified (
+        VARIANT_BOOL bYearSpecified );
+    long GetMonth ( );
+    void PutMonth (
+        long iMonth );
+    VARIANT_BOOL GetMonthSpecified ( );
+    void PutMonthSpecified (
+        VARIANT_BOOL bMonthSpecified );
+    long GetDay ( );
+    void PutDay (
+        long iDay );
+    VARIANT_BOOL GetDaySpecified ( );
+    void PutDaySpecified (
+        VARIANT_BOOL bDaySpecified );
+    long GetHours ( );
+    void PutHours (
+        long iHours );
+    VARIANT_BOOL GetHoursSpecified ( );
+    void PutHoursSpecified (
+        VARIANT_BOOL bHoursSpecified );
+    long GetMinutes ( );
+    void PutMinutes (
+        long iMinutes );
+    VARIANT_BOOL GetMinutesSpecified ( );
+    void PutMinutesSpecified (
+        VARIANT_BOOL bMinutesSpecified );
+    long GetSeconds ( );
+    void PutSeconds (
+        long iSeconds );
+    VARIANT_BOOL GetSecondsSpecified ( );
+    void PutSecondsSpecified (
+        VARIANT_BOOL bSecondsSpecified );
+    long GetMicroseconds ( );
+    void PutMicroseconds (
+        long iMicroseconds );
+    VARIANT_BOOL GetMicrosecondsSpecified ( );
+    void PutMicrosecondsSpecified (
+        VARIANT_BOOL bMicrosecondsSpecified );
+    long GetUTC ( );
+    void PutUTC (
+        long iUTC );
+    VARIANT_BOOL GetUTCSpecified ( );
+    void PutUTCSpecified (
+        VARIANT_BOOL bUTCSpecified );
+    VARIANT_BOOL GetIsInterval ( );
+    void PutIsInterval (
+        VARIANT_BOOL bIsInterval );
+    DATE GetVarDate (
+        VARIANT_BOOL bIsLocal );
+    HRESULT SetVarDate (
+        DATE dVarDate,
+        VARIANT_BOOL bIsLocal );
+    _bstr_t GetFileTime (
+        VARIANT_BOOL bIsLocal );
+    HRESULT SetFileTime (
+        _bstr_t strFileTime,
+        VARIANT_BOOL bIsLocal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Value (
+        /*[out,retval]*/ BSTR * strValue ) = 0;
+      virtual HRESULT __stdcall put_Value (
+        /*[in]*/ BSTR strValue ) = 0;
+      virtual HRESULT __stdcall get_Year (
+        /*[out,retval]*/ long * iYear ) = 0;
+      virtual HRESULT __stdcall put_Year (
+        /*[in]*/ long iYear ) = 0;
+      virtual HRESULT __stdcall get_YearSpecified (
+        /*[out,retval]*/ VARIANT_BOOL * bYearSpecified ) = 0;
+      virtual HRESULT __stdcall put_YearSpecified (
+        /*[in]*/ VARIANT_BOOL bYearSpecified ) = 0;
+      virtual HRESULT __stdcall get_Month (
+        /*[out,retval]*/ long * iMonth ) = 0;
+      virtual HRESULT __stdcall put_Month (
+        /*[in]*/ long iMonth ) = 0;
+      virtual HRESULT __stdcall get_MonthSpecified (
+        /*[out,retval]*/ VARIANT_BOOL * bMonthSpecified ) = 0;
+      virtual HRESULT __stdcall put_MonthSpecified (
+        /*[in]*/ VARIANT_BOOL bMonthSpecified ) = 0;
+      virtual HRESULT __stdcall get_Day (
+        /*[out,retval]*/ long * iDay ) = 0;
+      virtual HRESULT __stdcall put_Day (
+        /*[in]*/ long iDay ) = 0;
+      virtual HRESULT __stdcall get_DaySpecified (
+        /*[out,retval]*/ VARIANT_BOOL * bDaySpecified ) = 0;
+      virtual HRESULT __stdcall put_DaySpecified (
+        /*[in]*/ VARIANT_BOOL bDaySpecified ) = 0;
+      virtual HRESULT __stdcall get_Hours (
+        /*[out,retval]*/ long * iHours ) = 0;
+      virtual HRESULT __stdcall put_Hours (
+        /*[in]*/ long iHours ) = 0;
+      virtual HRESULT __stdcall get_HoursSpecified (
+        /*[out,retval]*/ VARIANT_BOOL * bHoursSpecified ) = 0;
+      virtual HRESULT __stdcall put_HoursSpecified (
+        /*[in]*/ VARIANT_BOOL bHoursSpecified ) = 0;
+      virtual HRESULT __stdcall get_Minutes (
+        /*[out,retval]*/ long * iMinutes ) = 0;
+      virtual HRESULT __stdcall put_Minutes (
+        /*[in]*/ long iMinutes ) = 0;
+      virtual HRESULT __stdcall get_MinutesSpecified (
+        /*[out,retval]*/ VARIANT_BOOL * bMinutesSpecified ) = 0;
+      virtual HRESULT __stdcall put_MinutesSpecified (
+        /*[in]*/ VARIANT_BOOL bMinutesSpecified ) = 0;
+      virtual HRESULT __stdcall get_Seconds (
+        /*[out,retval]*/ long * iSeconds ) = 0;
+      virtual HRESULT __stdcall put_Seconds (
+        /*[in]*/ long iSeconds ) = 0;
+      virtual HRESULT __stdcall get_SecondsSpecified (
+        /*[out,retval]*/ VARIANT_BOOL * bSecondsSpecified ) = 0;
+      virtual HRESULT __stdcall put_SecondsSpecified (
+        /*[in]*/ VARIANT_BOOL bSecondsSpecified ) = 0;
+      virtual HRESULT __stdcall get_Microseconds (
+        /*[out,retval]*/ long * iMicroseconds ) = 0;
+      virtual HRESULT __stdcall put_Microseconds (
+        /*[in]*/ long iMicroseconds ) = 0;
+      virtual HRESULT __stdcall get_MicrosecondsSpecified (
+        /*[out,retval]*/ VARIANT_BOOL * bMicrosecondsSpecified ) = 0;
+      virtual HRESULT __stdcall put_MicrosecondsSpecified (
+        /*[in]*/ VARIANT_BOOL bMicrosecondsSpecified ) = 0;
+      virtual HRESULT __stdcall get_UTC (
+        /*[out,retval]*/ long * iUTC ) = 0;
+      virtual HRESULT __stdcall put_UTC (
+        /*[in]*/ long iUTC ) = 0;
+      virtual HRESULT __stdcall get_UTCSpecified (
+        /*[out,retval]*/ VARIANT_BOOL * bUTCSpecified ) = 0;
+      virtual HRESULT __stdcall put_UTCSpecified (
+        /*[in]*/ VARIANT_BOOL bUTCSpecified ) = 0;
+      virtual HRESULT __stdcall get_IsInterval (
+        /*[out,retval]*/ VARIANT_BOOL * bIsInterval ) = 0;
+      virtual HRESULT __stdcall put_IsInterval (
+        /*[in]*/ VARIANT_BOOL bIsInterval ) = 0;
+      virtual HRESULT __stdcall raw_GetVarDate (
+        /*[in]*/ VARIANT_BOOL bIsLocal,
+        /*[out,retval]*/ DATE * dVarDate ) = 0;
+      virtual HRESULT __stdcall raw_SetVarDate (
+        /*[in]*/ DATE dVarDate,
+        /*[in]*/ VARIANT_BOOL bIsLocal ) = 0;
+      virtual HRESULT __stdcall raw_GetFileTime (
+        /*[in]*/ VARIANT_BOOL bIsLocal,
+        /*[out,retval]*/ BSTR * strFileTime ) = 0;
+      virtual HRESULT __stdcall raw_SetFileTime (
+        /*[in]*/ BSTR strFileTime,
+        /*[in]*/ VARIANT_BOOL bIsLocal ) = 0;
+};
+
+enum __declspec(uuid("4a249b72-fc9a-11d1-8b1e-00600806d9b6"))
+WbemChangeFlagEnum
+{
+    wbemChangeFlagCreateOrUpdate = 0,
+    wbemChangeFlagUpdateOnly = 1,
+    wbemChangeFlagCreateOnly = 2,
+    wbemChangeFlagUpdateCompatible = 0,
+    wbemChangeFlagUpdateSafeMode = 32,
+    wbemChangeFlagUpdateForceMode = 64,
+    wbemChangeFlagStrongValidation = 128,
+    wbemChangeFlagAdvisory = 65536
+};
+
+enum __declspec(uuid("4a249b73-fc9a-11d1-8b1e-00600806d9b6"))
+WbemFlagEnum
+{
+    wbemFlagReturnImmediately = 16,
+    wbemFlagReturnWhenComplete = 0,
+    wbemFlagBidirectional = 0,
+    wbemFlagForwardOnly = 32,
+    wbemFlagNoErrorObject = 64,
+    wbemFlagReturnErrorObject = 0,
+    wbemFlagSendStatus = 128,
+    wbemFlagDontSendStatus = 0,
+    wbemFlagEnsureLocatable = 256,
+    wbemFlagDirectRead = 512,
+    wbemFlagSendOnlySelected = 0,
+    wbemFlagUseAmendedQualifiers = 131072,
+    wbemFlagGetDefault = 0,
+    wbemFlagSpawnInstance = 1,
+    wbemFlagUseCurrentTime = 1
+};
+
+enum __declspec(uuid("4a249b76-fc9a-11d1-8b1e-00600806d9b6"))
+WbemQueryFlagEnum
+{
+    wbemQueryFlagDeep = 0,
+    wbemQueryFlagShallow = 1,
+    wbemQueryFlagPrototype = 2
+};
+
+enum __declspec(uuid("4a249b78-fc9a-11d1-8b1e-00600806d9b6"))
+WbemTextFlagEnum
+{
+    wbemTextFlagNoFlavors = 1
+};
+
+enum __declspec(uuid("bf078c2a-07d9-11d2-8b21-00600806d9b6"))
+WbemTimeout
+{
+    wbemTimeoutInfinite = -1
+};
+
+enum __declspec(uuid("4a249b79-fc9a-11d1-8b1e-00600806d9b6"))
+WbemComparisonFlagEnum
+{
+    wbemComparisonFlagIncludeAll = 0,
+    wbemComparisonFlagIgnoreQualifiers = 1,
+    wbemComparisonFlagIgnoreObjectSource = 2,
+    wbemComparisonFlagIgnoreDefaultValues = 4,
+    wbemComparisonFlagIgnoreClass = 8,
+    wbemComparisonFlagIgnoreCase = 16,
+    wbemComparisonFlagIgnoreFlavor = 32
+};
+
+enum WbemConnectOptionsEnum
+{
+    wbemConnectFlagUseMaxWait = 128
+};
+
+struct __declspec(uuid("76a64158-cb41-11d1-8b02-00600806d9b6"))
+SWbemLocator;
+    // [ default ] interface ISWbemLocator
+
+struct __declspec(uuid("9aed384e-ce8b-11d1-8b05-00600806d9b6"))
+SWbemNamedValueSet;
+    // [ default ] interface ISWbemNamedValueSet
+
+struct __declspec(uuid("5791bc26-ce9c-11d1-97bf-0000f81e849c"))
+SWbemObjectPath;
+    // [ default ] interface ISWbemObjectPath
+
+struct __declspec(uuid("c2feeeac-cfcd-11d1-8b05-00600806d9b6"))
+SWbemLastError;
+    // [ default ] interface ISWbemLastError
+
+struct __declspec(uuid("75718c9a-f029-11d1-a1ac-00c04fb6c223"))
+SWbemSink;
+    // [ default ] interface ISWbemSink
+    // [ default, source ] dispinterface ISWbemSinkEvents
+
+struct __declspec(uuid("47dfbe54-cf76-11d3-b38f-00105a1f473a"))
+SWbemDateTime;
+    // [ default ] interface ISWbemDateTime
+
+struct __declspec(uuid("d269bf5c-d9c1-11d3-b38f-00105a1f473a"))
+SWbemRefresher;
+    // [ default ] interface ISWbemRefresher
+
+struct __declspec(uuid("04b83d63-21ae-11d2-8b33-00600806d9b6"))
+SWbemServices;
+    // [ default ] interface ISWbemServices
+
+struct __declspec(uuid("62e522dc-8cf3-40a8-8b2e-37d595651e40"))
+SWbemServicesEx;
+    // [ default ] interface ISWbemServicesEx
+
+struct __declspec(uuid("04b83d62-21ae-11d2-8b33-00600806d9b6"))
+SWbemObject;
+    // [ default ] interface ISWbemObject
+
+struct __declspec(uuid("d6bdafb2-9435-491f-bb87-6aa0f0bc31a2"))
+SWbemObjectEx;
+    // [ default ] interface ISWbemObjectEx
+
+struct __declspec(uuid("04b83d61-21ae-11d2-8b33-00600806d9b6"))
+SWbemObjectSet;
+    // [ default ] interface ISWbemObjectSet
+
+struct __declspec(uuid("04b83d60-21ae-11d2-8b33-00600806d9b6"))
+SWbemNamedValue;
+    // [ default ] interface ISWbemNamedValue
+
+struct __declspec(uuid("04b83d5f-21ae-11d2-8b33-00600806d9b6"))
+SWbemQualifier;
+    // [ default ] interface ISWbemQualifier
+
+struct __declspec(uuid("04b83d5e-21ae-11d2-8b33-00600806d9b6"))
+SWbemQualifierSet;
+    // [ default ] interface ISWbemQualifierSet
+
+struct __declspec(uuid("04b83d5d-21ae-11d2-8b33-00600806d9b6"))
+SWbemProperty;
+    // [ default ] interface ISWbemProperty
+
+struct __declspec(uuid("04b83d5c-21ae-11d2-8b33-00600806d9b6"))
+SWbemPropertySet;
+    // [ default ] interface ISWbemPropertySet
+
+struct __declspec(uuid("04b83d5b-21ae-11d2-8b33-00600806d9b6"))
+SWbemMethod;
+    // [ default ] interface ISWbemMethod
+
+struct __declspec(uuid("04b83d5a-21ae-11d2-8b33-00600806d9b6"))
+SWbemMethodSet;
+    // [ default ] interface ISWbemMethodSet
+
+struct __declspec(uuid("04b83d58-21ae-11d2-8b33-00600806d9b6"))
+SWbemEventSource;
+    // [ default ] interface ISWbemEventSource
+
+struct __declspec(uuid("b54d66e9-2287-11d2-8b33-00600806d9b6"))
+SWbemSecurity;
+    // [ default ] interface ISWbemSecurity
+
+struct __declspec(uuid("26ee67bc-5804-11d2-8b4a-00600806d9b6"))
+SWbemPrivilege;
+    // [ default ] interface ISWbemPrivilege
+
+struct __declspec(uuid("26ee67be-5804-11d2-8b4a-00600806d9b6"))
+SWbemPrivilegeSet;
+    // [ default ] interface ISWbemPrivilegeSet
+
+struct __declspec(uuid("8c6854bc-de4b-11d3-b390-00105a1f473a"))
+SWbemRefreshableItem;
+    // [ default ] interface ISWbemRefreshableItem
+
+struct __declspec(uuid("76a6415c-cb41-11d1-8b02-00600806d9b6"))
+ISWbemServices : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetSecurity_))
+    ISWbemSecurityPtr Security_;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ISWbemObjectPtr Get (
+        _bstr_t strObjectPath,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT GetAsync (
+        IDispatch * objWbemSink,
+        _bstr_t strObjectPath,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    HRESULT Delete (
+        _bstr_t strObjectPath,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT DeleteAsync (
+        IDispatch * objWbemSink,
+        _bstr_t strObjectPath,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectSetPtr InstancesOf (
+        _bstr_t strClass,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT InstancesOfAsync (
+        IDispatch * objWbemSink,
+        _bstr_t strClass,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectSetPtr SubclassesOf (
+        _bstr_t strSuperclass,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT SubclassesOfAsync (
+        IDispatch * objWbemSink,
+        _bstr_t strSuperclass,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectSetPtr ExecQuery (
+        _bstr_t strQuery,
+        _bstr_t strQueryLanguage,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT ExecQueryAsync (
+        IDispatch * objWbemSink,
+        _bstr_t strQuery,
+        _bstr_t strQueryLanguage,
+        long lFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectSetPtr AssociatorsOf (
+        _bstr_t strObjectPath,
+        _bstr_t strAssocClass,
+        _bstr_t strResultClass,
+        _bstr_t strResultRole,
+        _bstr_t strRole,
+        VARIANT_BOOL bClassesOnly,
+        VARIANT_BOOL bSchemaOnly,
+        _bstr_t strRequiredAssocQualifier,
+        _bstr_t strRequiredQualifier,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT AssociatorsOfAsync (
+        IDispatch * objWbemSink,
+        _bstr_t strObjectPath,
+        _bstr_t strAssocClass,
+        _bstr_t strResultClass,
+        _bstr_t strResultRole,
+        _bstr_t strRole,
+        VARIANT_BOOL bClassesOnly,
+        VARIANT_BOOL bSchemaOnly,
+        _bstr_t strRequiredAssocQualifier,
+        _bstr_t strRequiredQualifier,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectSetPtr ReferencesTo (
+        _bstr_t strObjectPath,
+        _bstr_t strResultClass,
+        _bstr_t strRole,
+        VARIANT_BOOL bClassesOnly,
+        VARIANT_BOOL bSchemaOnly,
+        _bstr_t strRequiredQualifier,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT ReferencesToAsync (
+        IDispatch * objWbemSink,
+        _bstr_t strObjectPath,
+        _bstr_t strResultClass,
+        _bstr_t strRole,
+        VARIANT_BOOL bClassesOnly,
+        VARIANT_BOOL bSchemaOnly,
+        _bstr_t strRequiredQualifier,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemEventSourcePtr ExecNotificationQuery (
+        _bstr_t strQuery,
+        _bstr_t strQueryLanguage,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT ExecNotificationQueryAsync (
+        IDispatch * objWbemSink,
+        _bstr_t strQuery,
+        _bstr_t strQueryLanguage,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectPtr ExecMethod (
+        _bstr_t strObjectPath,
+        _bstr_t strMethodName,
+        IDispatch * objWbemInParameters,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT ExecMethodAsync (
+        IDispatch * objWbemSink,
+        _bstr_t strObjectPath,
+        _bstr_t strMethodName,
+        IDispatch * objWbemInParameters,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemSecurityPtr GetSecurity_ ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Get (
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObject * * objWbemObject ) = 0;
+      virtual HRESULT __stdcall raw_GetAsync (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_Delete (
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet ) = 0;
+      virtual HRESULT __stdcall raw_DeleteAsync (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_InstancesOf (
+        /*[in]*/ BSTR strClass,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectSet * * objWbemObjectSet ) = 0;
+      virtual HRESULT __stdcall raw_InstancesOfAsync (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strClass,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_SubclassesOf (
+        /*[in]*/ BSTR strSuperclass,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectSet * * objWbemObjectSet ) = 0;
+      virtual HRESULT __stdcall raw_SubclassesOfAsync (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strSuperclass,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_ExecQuery (
+        /*[in]*/ BSTR strQuery,
+        /*[in]*/ BSTR strQueryLanguage,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectSet * * objWbemObjectSet ) = 0;
+      virtual HRESULT __stdcall raw_ExecQueryAsync (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strQuery,
+        /*[in]*/ BSTR strQueryLanguage,
+        /*[in]*/ long lFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_AssociatorsOf (
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ BSTR strAssocClass,
+        /*[in]*/ BSTR strResultClass,
+        /*[in]*/ BSTR strResultRole,
+        /*[in]*/ BSTR strRole,
+        /*[in]*/ VARIANT_BOOL bClassesOnly,
+        /*[in]*/ VARIANT_BOOL bSchemaOnly,
+        /*[in]*/ BSTR strRequiredAssocQualifier,
+        /*[in]*/ BSTR strRequiredQualifier,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectSet * * objWbemObjectSet ) = 0;
+      virtual HRESULT __stdcall raw_AssociatorsOfAsync (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ BSTR strAssocClass,
+        /*[in]*/ BSTR strResultClass,
+        /*[in]*/ BSTR strResultRole,
+        /*[in]*/ BSTR strRole,
+        /*[in]*/ VARIANT_BOOL bClassesOnly,
+        /*[in]*/ VARIANT_BOOL bSchemaOnly,
+        /*[in]*/ BSTR strRequiredAssocQualifier,
+        /*[in]*/ BSTR strRequiredQualifier,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_ReferencesTo (
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ BSTR strResultClass,
+        /*[in]*/ BSTR strRole,
+        /*[in]*/ VARIANT_BOOL bClassesOnly,
+        /*[in]*/ VARIANT_BOOL bSchemaOnly,
+        /*[in]*/ BSTR strRequiredQualifier,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectSet * * objWbemObjectSet ) = 0;
+      virtual HRESULT __stdcall raw_ReferencesToAsync (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ BSTR strResultClass,
+        /*[in]*/ BSTR strRole,
+        /*[in]*/ VARIANT_BOOL bClassesOnly,
+        /*[in]*/ VARIANT_BOOL bSchemaOnly,
+        /*[in]*/ BSTR strRequiredQualifier,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_ExecNotificationQuery (
+        /*[in]*/ BSTR strQuery,
+        /*[in]*/ BSTR strQueryLanguage,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemEventSource * * objWbemEventSource ) = 0;
+      virtual HRESULT __stdcall raw_ExecNotificationQueryAsync (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strQuery,
+        /*[in]*/ BSTR strQueryLanguage,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_ExecMethod (
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ BSTR strMethodName,
+        /*[in]*/ IDispatch * objWbemInParameters,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObject * * objWbemOutParameters ) = 0;
+      virtual HRESULT __stdcall raw_ExecMethodAsync (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ BSTR strMethodName,
+        /*[in]*/ IDispatch * objWbemInParameters,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall get_Security_ (
+        /*[out,retval]*/ struct ISWbemSecurity * * objWbemSecurity ) = 0;
+};
+
+struct __declspec(uuid("76a6415b-cb41-11d1-8b02-00600806d9b6"))
+ISWbemLocator : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetSecurity_))
+    ISWbemSecurityPtr Security_;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ISWbemServicesPtr ConnectServer (
+        _bstr_t strServer,
+        _bstr_t strNamespace,
+        _bstr_t strUser,
+        _bstr_t strPassword,
+        _bstr_t strLocale,
+        _bstr_t strAuthority,
+        long iSecurityFlags,
+        IDispatch * objWbemNamedValueSet );
+    ISWbemSecurityPtr GetSecurity_ ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_ConnectServer (
+        /*[in]*/ BSTR strServer,
+        /*[in]*/ BSTR strNamespace,
+        /*[in]*/ BSTR strUser,
+        /*[in]*/ BSTR strPassword,
+        /*[in]*/ BSTR strLocale,
+        /*[in]*/ BSTR strAuthority,
+        /*[in]*/ long iSecurityFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemServices * * objWbemServices ) = 0;
+      virtual HRESULT __stdcall get_Security_ (
+        /*[out,retval]*/ struct ISWbemSecurity * * objWbemSecurity ) = 0;
+};
+
+struct __declspec(uuid("76a6415a-cb41-11d1-8b02-00600806d9b6"))
+ISWbemObject : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetQualifiers_))
+    ISWbemQualifierSetPtr Qualifiers_;
+    __declspec(property(get=GetProperties_))
+    ISWbemPropertySetPtr Properties_;
+    __declspec(property(get=GetMethods_))
+    ISWbemMethodSetPtr Methods_;
+    __declspec(property(get=GetDerivation_))
+    _variant_t Derivation_;
+    __declspec(property(get=GetPath_))
+    ISWbemObjectPathPtr Path_;
+    __declspec(property(get=GetSecurity_))
+    ISWbemSecurityPtr Security_;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ISWbemObjectPathPtr Put_ (
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT PutAsync_ (
+        IDispatch * objWbemSink,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    HRESULT Delete_ (
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT DeleteAsync_ (
+        IDispatch * objWbemSink,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectSetPtr Instances_ (
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT InstancesAsync_ (
+        IDispatch * objWbemSink,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectSetPtr Subclasses_ (
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT SubclassesAsync_ (
+        IDispatch * objWbemSink,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectSetPtr Associators_ (
+        _bstr_t strAssocClass,
+        _bstr_t strResultClass,
+        _bstr_t strResultRole,
+        _bstr_t strRole,
+        VARIANT_BOOL bClassesOnly,
+        VARIANT_BOOL bSchemaOnly,
+        _bstr_t strRequiredAssocQualifier,
+        _bstr_t strRequiredQualifier,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT AssociatorsAsync_ (
+        IDispatch * objWbemSink,
+        _bstr_t strAssocClass,
+        _bstr_t strResultClass,
+        _bstr_t strResultRole,
+        _bstr_t strRole,
+        VARIANT_BOOL bClassesOnly,
+        VARIANT_BOOL bSchemaOnly,
+        _bstr_t strRequiredAssocQualifier,
+        _bstr_t strRequiredQualifier,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectSetPtr References_ (
+        _bstr_t strResultClass,
+        _bstr_t strRole,
+        VARIANT_BOOL bClassesOnly,
+        VARIANT_BOOL bSchemaOnly,
+        _bstr_t strRequiredQualifier,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT ReferencesAsync_ (
+        IDispatch * objWbemSink,
+        _bstr_t strResultClass,
+        _bstr_t strRole,
+        VARIANT_BOOL bClassesOnly,
+        VARIANT_BOOL bSchemaOnly,
+        _bstr_t strRequiredQualifier,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectPtr ExecMethod_ (
+        _bstr_t strMethodName,
+        IDispatch * objWbemInParameters,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT ExecMethodAsync_ (
+        IDispatch * objWbemSink,
+        _bstr_t strMethodName,
+        IDispatch * objWbemInParameters,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+    ISWbemObjectPtr Clone_ ( );
+    _bstr_t GetObjectText_ (
+        long iFlags );
+    ISWbemObjectPtr SpawnDerivedClass_ (
+        long iFlags );
+    ISWbemObjectPtr SpawnInstance_ (
+        long iFlags );
+    VARIANT_BOOL CompareTo_ (
+        IDispatch * objWbemObject,
+        long iFlags );
+    ISWbemQualifierSetPtr GetQualifiers_ ( );
+    ISWbemPropertySetPtr GetProperties_ ( );
+    ISWbemMethodSetPtr GetMethods_ ( );
+    _variant_t GetDerivation_ ( );
+    ISWbemObjectPathPtr GetPath_ ( );
+    ISWbemSecurityPtr GetSecurity_ ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Put_ (
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectPath * * objWbemObjectPath ) = 0;
+      virtual HRESULT __stdcall raw_PutAsync_ (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_Delete_ (
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet ) = 0;
+      virtual HRESULT __stdcall raw_DeleteAsync_ (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_Instances_ (
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectSet * * objWbemObjectSet ) = 0;
+      virtual HRESULT __stdcall raw_InstancesAsync_ (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_Subclasses_ (
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectSet * * objWbemObjectSet ) = 0;
+      virtual HRESULT __stdcall raw_SubclassesAsync_ (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_Associators_ (
+        /*[in]*/ BSTR strAssocClass,
+        /*[in]*/ BSTR strResultClass,
+        /*[in]*/ BSTR strResultRole,
+        /*[in]*/ BSTR strRole,
+        /*[in]*/ VARIANT_BOOL bClassesOnly,
+        /*[in]*/ VARIANT_BOOL bSchemaOnly,
+        /*[in]*/ BSTR strRequiredAssocQualifier,
+        /*[in]*/ BSTR strRequiredQualifier,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectSet * * objWbemObjectSet ) = 0;
+      virtual HRESULT __stdcall raw_AssociatorsAsync_ (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strAssocClass,
+        /*[in]*/ BSTR strResultClass,
+        /*[in]*/ BSTR strResultRole,
+        /*[in]*/ BSTR strRole,
+        /*[in]*/ VARIANT_BOOL bClassesOnly,
+        /*[in]*/ VARIANT_BOOL bSchemaOnly,
+        /*[in]*/ BSTR strRequiredAssocQualifier,
+        /*[in]*/ BSTR strRequiredQualifier,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_References_ (
+        /*[in]*/ BSTR strResultClass,
+        /*[in]*/ BSTR strRole,
+        /*[in]*/ VARIANT_BOOL bClassesOnly,
+        /*[in]*/ VARIANT_BOOL bSchemaOnly,
+        /*[in]*/ BSTR strRequiredQualifier,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectSet * * objWbemObjectSet ) = 0;
+      virtual HRESULT __stdcall raw_ReferencesAsync_ (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strResultClass,
+        /*[in]*/ BSTR strRole,
+        /*[in]*/ VARIANT_BOOL bClassesOnly,
+        /*[in]*/ VARIANT_BOOL bSchemaOnly,
+        /*[in]*/ BSTR strRequiredQualifier,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_ExecMethod_ (
+        /*[in]*/ BSTR strMethodName,
+        /*[in]*/ IDispatch * objWbemInParameters,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObject * * objWbemOutParameters ) = 0;
+      virtual HRESULT __stdcall raw_ExecMethodAsync_ (
+        /*[in]*/ IDispatch * objWbemSink,
+        /*[in]*/ BSTR strMethodName,
+        /*[in]*/ IDispatch * objWbemInParameters,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+      virtual HRESULT __stdcall raw_Clone_ (
+        /*[out,retval]*/ struct ISWbemObject * * objWbemObject ) = 0;
+      virtual HRESULT __stdcall raw_GetObjectText_ (
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ BSTR * strObjectText ) = 0;
+      virtual HRESULT __stdcall raw_SpawnDerivedClass_ (
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ struct ISWbemObject * * objWbemObject ) = 0;
+      virtual HRESULT __stdcall raw_SpawnInstance_ (
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ struct ISWbemObject * * objWbemObject ) = 0;
+      virtual HRESULT __stdcall raw_CompareTo_ (
+        /*[in]*/ IDispatch * objWbemObject,
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ VARIANT_BOOL * bResult ) = 0;
+      virtual HRESULT __stdcall get_Qualifiers_ (
+        /*[out,retval]*/ struct ISWbemQualifierSet * * objWbemQualifierSet ) = 0;
+      virtual HRESULT __stdcall get_Properties_ (
+        /*[out,retval]*/ struct ISWbemPropertySet * * objWbemPropertySet ) = 0;
+      virtual HRESULT __stdcall get_Methods_ (
+        /*[out,retval]*/ struct ISWbemMethodSet * * objWbemMethodSet ) = 0;
+      virtual HRESULT __stdcall get_Derivation_ (
+        /*[out,retval]*/ VARIANT * strClassNameArray ) = 0;
+      virtual HRESULT __stdcall get_Path_ (
+        /*[out,retval]*/ struct ISWbemObjectPath * * objWbemObjectPath ) = 0;
+      virtual HRESULT __stdcall get_Security_ (
+        /*[out,retval]*/ struct ISWbemSecurity * * objWbemSecurity ) = 0;
+};
+
+struct __declspec(uuid("76a6415f-cb41-11d1-8b02-00600806d9b6"))
+ISWbemObjectSet : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=GetSecurity_))
+    ISWbemSecurityPtr Security_;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IUnknownPtr Get_NewEnum ( );
+    ISWbemObjectPtr Item (
+        _bstr_t strObjectPath,
+        long iFlags );
+    long GetCount ( );
+    ISWbemSecurityPtr GetSecurity_ ( );
+    ISWbemObjectPtr ItemIndex (
+        long lIndex );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get__NewEnum (
+        /*[out,retval]*/ IUnknown * * pUnk ) = 0;
+      virtual HRESULT __stdcall raw_Item (
+        /*[in]*/ BSTR strObjectPath,
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ struct ISWbemObject * * objWbemObject ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * iCount ) = 0;
+      virtual HRESULT __stdcall get_Security_ (
+        /*[out,retval]*/ struct ISWbemSecurity * * objWbemSecurity ) = 0;
+      virtual HRESULT __stdcall raw_ItemIndex (
+        /*[in]*/ long lIndex,
+        /*[out,retval]*/ struct ISWbemObject * * objWbemObject ) = 0;
+};
+
+struct __declspec(uuid("422e8e90-d955-11d1-8b09-00600806d9b6"))
+ISWbemMethod : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetOrigin))
+    _bstr_t Origin;
+    __declspec(property(get=GetInParameters))
+    ISWbemObjectPtr InParameters;
+    __declspec(property(get=GetOutParameters))
+    ISWbemObjectPtr OutParameters;
+    __declspec(property(get=GetQualifiers_))
+    ISWbemQualifierSetPtr Qualifiers_;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetName ( );
+    _bstr_t GetOrigin ( );
+    ISWbemObjectPtr GetInParameters ( );
+    ISWbemObjectPtr GetOutParameters ( );
+    ISWbemQualifierSetPtr GetQualifiers_ ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Name (
+        /*[out,retval]*/ BSTR * strName ) = 0;
+      virtual HRESULT __stdcall get_Origin (
+        /*[out,retval]*/ BSTR * strOrigin ) = 0;
+      virtual HRESULT __stdcall get_InParameters (
+        /*[out,retval]*/ struct ISWbemObject * * objWbemInParameters ) = 0;
+      virtual HRESULT __stdcall get_OutParameters (
+        /*[out,retval]*/ struct ISWbemObject * * objWbemOutParameters ) = 0;
+      virtual HRESULT __stdcall get_Qualifiers_ (
+        /*[out,retval]*/ struct ISWbemQualifierSet * * objWbemQualifierSet ) = 0;
+};
+
+struct __declspec(uuid("c93ba292-d955-11d1-8b09-00600806d9b6"))
+ISWbemMethodSet : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IUnknownPtr Get_NewEnum ( );
+    ISWbemMethodPtr Item (
+        _bstr_t strName,
+        long iFlags );
+    long GetCount ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get__NewEnum (
+        /*[out,retval]*/ IUnknown * * pUnk ) = 0;
+      virtual HRESULT __stdcall raw_Item (
+        /*[in]*/ BSTR strName,
+        /*[in]*/ long iFlags,
+        /*[out,retval]*/ struct ISWbemMethod * * objWbemMethod ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * iCount ) = 0;
+};
+
+struct __declspec(uuid("27d54d92-0ebe-11d2-8b22-00600806d9b6"))
+ISWbemEventSource : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetSecurity_))
+    ISWbemSecurityPtr Security_;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ISWbemObjectPtr NextEvent (
+        long iTimeoutMs );
+    ISWbemSecurityPtr GetSecurity_ ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_NextEvent (
+        /*[in]*/ long iTimeoutMs,
+        /*[out,retval]*/ struct ISWbemObject * * objWbemObject ) = 0;
+      virtual HRESULT __stdcall get_Security_ (
+        /*[out,retval]*/ struct ISWbemSecurity * * objWbemSecurity ) = 0;
+};
+
+struct __declspec(uuid("d962db84-d4bb-11d1-8b09-00600806d9b6"))
+ISWbemLastError : ISWbemObject
+{};
+
+struct __declspec(uuid("269ad56a-8a67-4129-bc8c-0506dcfe9880"))
+ISWbemObjectEx : ISWbemObject
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetSystemProperties_))
+    ISWbemPropertySetPtr SystemProperties_;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Refresh_ (
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    ISWbemPropertySetPtr GetSystemProperties_ ( );
+    _bstr_t GetText_ (
+        enum WbemObjectTextFormatEnum iObjectTextFormat,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT SetFromText_ (
+        _bstr_t bsText,
+        enum WbemObjectTextFormatEnum iObjectTextFormat,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Refresh_ (
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet ) = 0;
+      virtual HRESULT __stdcall get_SystemProperties_ (
+        /*[out,retval]*/ struct ISWbemPropertySet * * objWbemPropertySet ) = 0;
+      virtual HRESULT __stdcall raw_GetText_ (
+        /*[in]*/ enum WbemObjectTextFormatEnum iObjectTextFormat,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ BSTR * bsText ) = 0;
+      virtual HRESULT __stdcall raw_SetFromText_ (
+        /*[in]*/ BSTR bsText,
+        /*[in]*/ enum WbemObjectTextFormatEnum iObjectTextFormat,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet ) = 0;
+};
+
+struct __declspec(uuid("d2f68443-85dc-427e-91d8-366554cc754c"))
+ISWbemServicesEx : ISWbemServices
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ISWbemObjectPathPtr Put (
+        struct ISWbemObjectEx * objWbemObject,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT PutAsync (
+        struct ISWbemSink * objWbemSink,
+        struct ISWbemObjectEx * objWbemObject,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet,
+        IDispatch * objWbemAsyncContext );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Put (
+        /*[in]*/ struct ISWbemObjectEx * objWbemObject,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemObjectPath * * objWbemObjectPath ) = 0;
+      virtual HRESULT __stdcall raw_PutAsync (
+        /*[in]*/ struct ISWbemSink * objWbemSink,
+        /*[in]*/ struct ISWbemObjectEx * objWbemObject,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[in]*/ IDispatch * objWbemAsyncContext ) = 0;
+};
+
+struct __declspec(uuid("14d8250e-d9c2-11d3-b38f-00105a1f473a"))
+ISWbemRefresher : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=GetAutoReconnect,put=PutAutoReconnect))
+    VARIANT_BOOL AutoReconnect;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IUnknownPtr Get_NewEnum ( );
+    ISWbemRefreshableItemPtr Item (
+        long iIndex );
+    long GetCount ( );
+    ISWbemRefreshableItemPtr Add (
+        struct ISWbemServicesEx * objWbemServices,
+        _bstr_t bsInstancePath,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    ISWbemRefreshableItemPtr AddEnum (
+        struct ISWbemServicesEx * objWbemServices,
+        _bstr_t bsClassName,
+        long iFlags,
+        IDispatch * objWbemNamedValueSet );
+    HRESULT Remove (
+        long iIndex,
+        long iFlags );
+    HRESULT Refresh (
+        long iFlags );
+    VARIANT_BOOL GetAutoReconnect ( );
+    void PutAutoReconnect (
+        VARIANT_BOOL bCount );
+    HRESULT DeleteAll ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get__NewEnum (
+        /*[out,retval]*/ IUnknown * * pUnk ) = 0;
+      virtual HRESULT __stdcall raw_Item (
+        /*[in]*/ long iIndex,
+        /*[out,retval]*/ struct ISWbemRefreshableItem * * objWbemRefreshableItem ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * iCount ) = 0;
+      virtual HRESULT __stdcall raw_Add (
+        /*[in]*/ struct ISWbemServicesEx * objWbemServices,
+        /*[in]*/ BSTR bsInstancePath,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemRefreshableItem * * objWbemRefreshableItem ) = 0;
+      virtual HRESULT __stdcall raw_AddEnum (
+        /*[in]*/ struct ISWbemServicesEx * objWbemServices,
+        /*[in]*/ BSTR bsClassName,
+        /*[in]*/ long iFlags,
+        /*[in]*/ IDispatch * objWbemNamedValueSet,
+        /*[out,retval]*/ struct ISWbemRefreshableItem * * objWbemRefreshableItem ) = 0;
+      virtual HRESULT __stdcall raw_Remove (
+        /*[in]*/ long iIndex,
+        /*[in]*/ long iFlags ) = 0;
+      virtual HRESULT __stdcall raw_Refresh (
+        /*[in]*/ long iFlags ) = 0;
+      virtual HRESULT __stdcall get_AutoReconnect (
+        /*[out,retval]*/ VARIANT_BOOL * bCount ) = 0;
+      virtual HRESULT __stdcall put_AutoReconnect (
+        /*[in]*/ VARIANT_BOOL bCount ) = 0;
+      virtual HRESULT __stdcall raw_DeleteAll ( ) = 0;
+};
+
+struct __declspec(uuid("5ad4bf92-daab-11d3-b38f-00105a1f473a"))
+ISWbemRefreshableItem : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetIndex))
+    long Index;
+    __declspec(property(get=GetRefresher))
+    ISWbemRefresherPtr Refresher;
+    __declspec(property(get=GetIsSet))
+    VARIANT_BOOL IsSet;
+    __declspec(property(get=GetObject))
+    ISWbemObjectExPtr Object;
+    __declspec(property(get=GetObjectSet))
+    ISWbemObjectSetPtr ObjectSet;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetIndex ( );
+    ISWbemRefresherPtr GetRefresher ( );
+    VARIANT_BOOL GetIsSet ( );
+    ISWbemObjectExPtr GetObject ( );
+    ISWbemObjectSetPtr GetObjectSet ( );
+    HRESULT Remove (
+        long iFlags );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Index (
+        /*[out,retval]*/ long * iIndex ) = 0;
+      virtual HRESULT __stdcall get_Refresher (
+        /*[out,retval]*/ struct ISWbemRefresher * * objWbemRefresher ) = 0;
+      virtual HRESULT __stdcall get_IsSet (
+        /*[out,retval]*/ VARIANT_BOOL * bIsSet ) = 0;
+      virtual HRESULT __stdcall get_Object (
+        /*[out,retval]*/ struct ISWbemObjectEx * * objWbemObject ) = 0;
+      virtual HRESULT __stdcall get_ObjectSet (
+        /*[out,retval]*/ struct ISWbemObjectSet * * objWbemObjectSet ) = 0;
+      virtual HRESULT __stdcall raw_Remove (
+        /*[in]*/ long iFlags ) = 0;
+};
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_WbemScripting =
+    {0x565783c6,0xcb41,0x11d1,{0x8b,0x02,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemNamedValue =
+    {0x76a64164,0xcb41,0x11d1,{0x8b,0x02,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemNamedValueSet =
+    {0xcf2376ea,0xce8c,0x11d1,{0x8b,0x05,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemPrivilege =
+    {0x26ee67bd,0x5804,0x11d2,{0x8b,0x4a,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemPrivilegeSet =
+    {0x26ee67bf,0x5804,0x11d2,{0x8b,0x4a,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemSecurity =
+    {0xb54d66e6,0x2287,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemObjectPath =
+    {0x5791bc27,0xce9c,0x11d1,{0x97,0xbf,0x00,0x00,0xf8,0x1e,0x84,0x9c}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemQualifier =
+    {0x79b05932,0xd3b7,0x11d1,{0x8b,0x06,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemQualifierSet =
+    {0x9b16ed16,0xd3df,0x11d1,{0x8b,0x08,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemProperty =
+    {0x1a388f98,0xd4ba,0x11d1,{0x8b,0x09,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemPropertySet =
+    {0xdea0a7b2,0xd4ba,0x11d1,{0x8b,0x09,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) DIID_ISWbemSinkEvents =
+    {0x75718ca0,0xf029,0x11d1,{0xa1,0xac,0x00,0xc0,0x4f,0xb6,0xc2,0x23}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemSink =
+    {0x75718c9f,0xf029,0x11d1,{0xa1,0xac,0x00,0xc0,0x4f,0xb6,0xc2,0x23}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemDateTime =
+    {0x5e97458a,0xcf77,0x11d3,{0xb3,0x8f,0x00,0x10,0x5a,0x1f,0x47,0x3a}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemLocator =
+    {0x76a64158,0xcb41,0x11d1,{0x8b,0x02,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemNamedValueSet =
+    {0x9aed384e,0xce8b,0x11d1,{0x8b,0x05,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemObjectPath =
+    {0x5791bc26,0xce9c,0x11d1,{0x97,0xbf,0x00,0x00,0xf8,0x1e,0x84,0x9c}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemLastError =
+    {0xc2feeeac,0xcfcd,0x11d1,{0x8b,0x05,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemSink =
+    {0x75718c9a,0xf029,0x11d1,{0xa1,0xac,0x00,0xc0,0x4f,0xb6,0xc2,0x23}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemDateTime =
+    {0x47dfbe54,0xcf76,0x11d3,{0xb3,0x8f,0x00,0x10,0x5a,0x1f,0x47,0x3a}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemRefresher =
+    {0xd269bf5c,0xd9c1,0x11d3,{0xb3,0x8f,0x00,0x10,0x5a,0x1f,0x47,0x3a}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemServices =
+    {0x04b83d63,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemServicesEx =
+    {0x62e522dc,0x8cf3,0x40a8,{0x8b,0x2e,0x37,0xd5,0x95,0x65,0x1e,0x40}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemObject =
+    {0x04b83d62,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemObjectEx =
+    {0xd6bdafb2,0x9435,0x491f,{0xbb,0x87,0x6a,0xa0,0xf0,0xbc,0x31,0xa2}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemObjectSet =
+    {0x04b83d61,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemNamedValue =
+    {0x04b83d60,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemQualifier =
+    {0x04b83d5f,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemQualifierSet =
+    {0x04b83d5e,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemProperty =
+    {0x04b83d5d,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemPropertySet =
+    {0x04b83d5c,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemMethod =
+    {0x04b83d5b,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemMethodSet =
+    {0x04b83d5a,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemEventSource =
+    {0x04b83d58,0x21ae,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemSecurity =
+    {0xb54d66e9,0x2287,0x11d2,{0x8b,0x33,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemPrivilege =
+    {0x26ee67bc,0x5804,0x11d2,{0x8b,0x4a,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemPrivilegeSet =
+    {0x26ee67be,0x5804,0x11d2,{0x8b,0x4a,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) CLSID_SWbemRefreshableItem =
+    {0x8c6854bc,0xde4b,0x11d3,{0xb3,0x90,0x00,0x10,0x5a,0x1f,0x47,0x3a}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemServices =
+    {0x76a6415c,0xcb41,0x11d1,{0x8b,0x02,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemLocator =
+    {0x76a6415b,0xcb41,0x11d1,{0x8b,0x02,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemObject =
+    {0x76a6415a,0xcb41,0x11d1,{0x8b,0x02,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemObjectSet =
+    {0x76a6415f,0xcb41,0x11d1,{0x8b,0x02,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemMethod =
+    {0x422e8e90,0xd955,0x11d1,{0x8b,0x09,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemMethodSet =
+    {0xc93ba292,0xd955,0x11d1,{0x8b,0x09,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemEventSource =
+    {0x27d54d92,0x0ebe,0x11d2,{0x8b,0x22,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemLastError =
+    {0xd962db84,0xd4bb,0x11d1,{0x8b,0x09,0x00,0x60,0x08,0x06,0xd9,0xb6}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemObjectEx =
+    {0x269ad56a,0x8a67,0x4129,{0xbc,0x8c,0x05,0x06,0xdc,0xfe,0x98,0x80}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemServicesEx =
+    {0xd2f68443,0x85dc,0x427e,{0x91,0xd8,0x36,0x65,0x54,0xcc,0x75,0x4c}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemRefresher =
+    {0x14d8250e,0xd9c2,0x11d3,{0xb3,0x8f,0x00,0x10,0x5a,0x1f,0x47,0x3a}};
+extern "C" const GUID __declspec(selectany) IID_ISWbemRefreshableItem =
+    {0x5ad4bf92,0xdaab,0x11d3,{0xb3,0x8f,0x00,0x10,0x5a,0x1f,0x47,0x3a}};
+
+//
+// Wrapper method implementations
+//
+
+#include "wbemdisp.tli"
+
+} // namespace WbemScripting
+
+#pragma pack(pop)

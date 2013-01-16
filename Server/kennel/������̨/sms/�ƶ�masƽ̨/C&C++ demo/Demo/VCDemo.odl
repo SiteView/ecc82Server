@@ -1,0 +1,42 @@
+// VCDemo.odl : type library source for VCDemo.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (VCDemo.tlb).
+
+[ uuid(CC7C2BD5-FE5B-4C4E-9AC0-40FD75715D82), version(1.0) ]
+library VCDemo
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CVCDemoDoc
+	
+	[ uuid(1CAF3AB5-0CB4-4396-AD3A-CAEC6E2D40A1) ]
+	dispinterface IVCDemo
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVCDemoDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVCDemoDlgAutoProxy)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CVCDemoDoc
+	
+	[ uuid(D387088D-30DC-4107-9142-F5FAA3DCEEC0) ]
+	coclass VCDemo
+	{
+		[default] dispinterface IVCDemo;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

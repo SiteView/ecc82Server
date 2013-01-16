@@ -1,0 +1,9 @@
+base referer
+rect $classWt_1_1WAnchor.html 7,157 109,184
+rect $classWt_1_1WContainerWidget.html 133,157 290,184
+rect $classWt_1_1WFormWidget.html 314,157 445,184
+rect $classWt_1_1WImage.html 469,157 565,184
+rect $classWt_1_1WLabel.html 589,157 679,184
+rect $classWt_1_1WTable.html 703,157 794,184
+rect $classWt_1_1WText.html 818,157 901,184
+rect $classWt_1_1WWebWidget.html 453,8 581,34

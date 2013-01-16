@@ -1,0 +1,61 @@
+为INFORMIX监视器提供的DLL程序：informixdll.dll
+
+编译环境：VS2003
+编译条件：
+1、安装INFORMIX数据库；
+2、在“informixdll属性页”-〉“链接器”-〉“常规”
+-〉“附加库目录”中加入svapi.lib文件的所在路径。；
+3、在“informixdll属性页”-〉“链接器”-〉“输入”
+-〉“附加依赖项”中加入“svapi.lib”。
+
+
+监视器名称：Infomix读写性能检测
+调用的函数：GetInformixInfo
+监视指标：reads  	指标类型：Float
+监视指标：pagesread 	指标类型：Float
+监视指标：writes	指标类型：Float
+监视指标：pageswritten 	指标类型：Float
+
+监视器名称：Infomix连接情况检测
+调用的函数：GetConnect
+监视指标：nPerNormal	指标类型：int
+监视指标：nPerWait	指标类型：int
+监视指标：nconnect 	指标类型：int
+监视指标：nwlatch	指标类型：int
+监视指标：nwlock	指标类型：int
+监视指标：nwbuff	指标类型：int
+监视指标：nwckpt	指标类型：int
+监视指标：nwlogbuf	指标类型：int
+监视指标：nwtrans	指标类型：int
+监视指标：nmonitor	指标类型：int
+监视指标：nincrit	指标类型：int
+
+
+监视器名称：Infomix锁情况
+调用的函数：GetLock
+监视指标：nLock		指标类型：int
+监视指标：nDeadLock	指标类型：int
+监视指标：nPerDeadLock	指标类型：int
+监视指标：B_Lock	指标类型：int
+监视指标：U_Lock 	指标类型：int
+监视指标：X_Lock	指标类型：int
+
+监视器名称：Infomix长事务等待
+调用的函数：GetWait
+监视指标：sid		指标类型：int
+监视指标：reason	指标类型：String
+监视指标：numwaits	指标类型：int
+监视指标：cumtime	指标类型：int
+监视指标：maxtime	指标类型：int
+
+
+监视器名称：Infomix数据库空间检测
+调用的函数：GetSpace
+监视指标：PerDbspaceUse		指标类型：Int
+监视指标：LogFileSum	 	指标类型：Int
+监视指标：LogFileSize		指标类型：Int
+监视指标：ChunkSum	 	指标类型：Int
+监视指标：ChunkTotalSize	指标类型：int
+监视指标：TabSum		指标类型：int
+监视指标：TabPageSum		指标类型：int
+监视指标：ChunkFreeSize	 	指标类型：int

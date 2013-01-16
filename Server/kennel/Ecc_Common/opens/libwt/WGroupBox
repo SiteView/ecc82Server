@@ -1,0 +1,68 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WGROUP_BOX_H_
+#define WGROUP_BOX_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WContainerWidget>
+
+/*! \brief Group widgets into a frame with a title.
+ *
+ * A WGroupBox, as any WContainerWidget, is by default not inline.
+ */
+class __declspec(dllexport) WGroupBox : public WContainerWidget
+{
+  //MOC: W_OBJECT WGroupBox:WContainerWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Create a groupbox with empty title.
+   */
+  WGroupBox(WContainerWidget *parent = 0);
+  
+  /*! \brief Create a groupbox with given title.
+   */
+  WGroupBox(const std::string title, WContainerWidget *parent = 0);
+
+  /*! \brief Create a groupbox with given title message.
+   */
+  WGroupBox(const WMessage& titleMessage, WContainerWidget *parent = 0);
+
+  /*! \brief Get the title.
+   */
+  const std::string title() const { return title_; }
+
+  /*! \brief Set the title.
+   */
+  void setTitle(const std::string title);
+
+  /*! \brief Get the title message.
+   */
+  const WMessage& titleMessage() const { return titleMessage_; }
+
+  /*! \brief Set the title message.
+   */
+  void setTitleMessage(const WMessage& message);
+
+  virtual void refresh();
+
+private:
+  std::string title_;
+  WMessage titleMessage_;
+
+  bool titleChanged_;
+
+protected:
+  virtual void  updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+};
+
+
+#endif // WGROUP_BOX_H_

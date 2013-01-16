@@ -1,0 +1,95 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2006 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSIGNALMAPPER_H_
+#define WSIGNALMAPPER_H_
+
+#include <map>
+#include <WSignal>
+
+namespace Wt {
+
+/*! \class WSignalMapper WSignalMapper WSignalMapper
+ *  \brief Utility class to connect multiple senders to a single slot
+ *         by associating additional information with each sender.
+ */
+template <typename T>
+class WSignalMapper : public WObject
+{
+public:
+  /*! \brief Create a new WSignalMapper.
+   */
+  WSignalMapper(WObject *parent = 0);
+
+  /*! \brief Associate data with a sender.
+   *
+   * Associate data with a sender, which wel emitted by the mapped
+   * signal, when the corresponding sender triggers the map() slot.
+   */
+  void setMapping(WObject *sender, const T& data);
+
+  /*! \brief Map a signal.
+   *
+   * Connect the given signal with the slot, and associate the data
+   * when it is triggered.
+   */
+  void mapConnect(SignalBase& signal, const T& data);
+
+  /*! \brief Signal emitted in response to a signal sent to the map() slot.
+   *
+   * The argument propagated is the argument set previously with
+   * setMapping().
+   */
+  Signal<T> mapped;
+
+public slots:
+  /*! \brief Slot for connecting signals to be mapped.
+   *
+   * When a signal triggers the slot, the sender is identified and used
+   * to find corresponding data set with setMapping(), which is then use
+   * to propagate further in the mapped signal.
+   */
+  void map();
+
+private:
+  typedef std::map<WObject *, T> DataMap;
+  DataMap mappings_;
+};
+
+template <typename T>
+WSignalMapper<T>::WSignalMapper(WObject *parent)
+  : WObject(parent),
+    mapped(this)
+{ }
+
+template <typename T>
+void WSignalMapper<T>::setMapping(WObject *sender, const T& data)
+{
+  mappings_[sender] = data;
+}
+
+template <typename T>
+void WSignalMapper<T>::mapConnect(SignalBase& signal, const T& data)
+{
+  mappings_[signal.sender()] = data;
+  signal.connectBase
+    (this, static_cast<void (WObject::*)()>(&WSignalMapper<T>::map));
+}
+
+template <typename T>
+void WSignalMapper<T>::map()
+{
+  WObject *theSender = sender();
+
+  typename DataMap::const_iterator i = mappings_.find(theSender);
+  if (i != mappings_.end()) {
+    mapped.emit(i->second);
+  }
+}
+
+}
+
+#endif // WSIGNALMAPPER_H_

@@ -1,0 +1,1 @@
+i.对于Visual Studio .NET 2003的设置很简单，只需要在IDE菜单的“工具”->“选项”->“项目”->“VC++目录”选项卡下，选择“可执行文件”下拉选项，增加“$(ICE_HOME)\ThirdParty\bin”、“$(ICE_HOME)\bin”等；选择“包含文件”下拉选项，增加“$(ICE_HOME)\include”、“$(ICE_HOME)\ThirdParty\include” 等；选择“库文件”下拉选项，增加“$(ICE_HOME)\ThirdParty\lib”、“$(ICE_HOME)\lib” 等就完成设置了；

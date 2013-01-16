@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MoniterEXE", "..\..\游龙网网络科技公司\程序\MoniterEXE\MoniterEXE.vcproj", "{5DE8902B-E2FE-4194-A2DC-639D9C672B5B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD} = {1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommonSnmpMonitor", "CommonNetworkDeviceMonitor.vcproj", "{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5DE8902B-E2FE-4194-A2DC-639D9C672B5B}.Debug.ActiveCfg = Debug|Win32
+		{5DE8902B-E2FE-4194-A2DC-639D9C672B5B}.Debug.Build.0 = Debug|Win32
+		{5DE8902B-E2FE-4194-A2DC-639D9C672B5B}.Release.ActiveCfg = Release|Win32
+		{5DE8902B-E2FE-4194-A2DC-639D9C672B5B}.Release.Build.0 = Release|Win32
+		{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}.Debug.ActiveCfg = Debug|Win32
+		{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}.Debug.Build.0 = Debug|Win32
+		{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}.Release.ActiveCfg = Release|Win32
+		{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

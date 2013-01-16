@@ -1,0 +1,23 @@
+﻿生成启动时间为 2013/1/14 15:31:56。
+     1>项目“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\addon_test.vcxproj”在节点 3 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test\addon_test.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\addon /I.\sv_addon /Zi /nologo /W3 /WX- /O2 /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _MBCS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test\\" /Fd"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test\vc100.pdb" /Gd /TP /wd4996 /wd4018 /wd4101 /wd4503 /wd4244 /analyze- /errorReport:prompt sv_addon\addonfunc.cpp
+         addonfunc.cpp
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ ws2_32.lib libutil.lib ccgnu2.lib addon.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test\addon_test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test.pdb" /MAP /MAPINFO:EXPORTS /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test.lib" /MACHINE:X86 E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test\addon_test.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test\addonfunc.obj
+         正在生成代码
+         已完成代码的生成
+         addon_test.vcxproj -> E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test.exe;#1" /manifest E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test\addon_test.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test\addon_test.unsuccessfulbuild”。
+         正在对“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\addon_test\addon_test.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\addon_test.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:13.54

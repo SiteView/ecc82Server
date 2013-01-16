@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SnmpMonitor", "SnmpMonitor.vcproj", "{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}.Debug.ActiveCfg = Debug|Win32
+		{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}.Debug.Build.0 = Debug|Win32
+		{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}.Release.ActiveCfg = Release|Win32
+		{1E37E7F6-B59B-4A6A-A3A3-EE8B6D0B27DD}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

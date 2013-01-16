@@ -1,0 +1,103 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WRESOURCE_H_
+#define WRESOURCE_H_
+
+#include <WObject>
+#include <WSignal>
+
+namespace Wt {
+
+/*! \class WResource WResource WResource
+ *  \brief An object which can be rendered in the HTTP protocol.
+ *
+ * Besides the main page, other objects may be rendered as additional
+ * resources, such as frames or dynamic images.
+ */
+class WT_API WResource : public WObject
+{
+public:
+  /*! \brief Create a new resource.
+   */
+  WResource(WObject* parent = 0);
+
+  /*! \brief Destroy the resource.
+   *
+   * It is up to the user to make sure that the resource is nog longer in use.
+   */
+  ~WResource();
+
+  /*! \brief Suggest a filename to the user for the data streamed by this
+   *         resource.
+   *
+   * For resources, intended to be downloaded by the user, suggest a
+   * name used for saving. The extension will help the browser to identify
+   * the correct program for opening the resource as well.
+   */
+  void suggestFilename(const std::string name);
+
+  /*! \brief Generate an URL for this resource.
+   *
+   * For every call, a new url is generated that refers to this resource.
+   * The url is unique to assure that it is not cached by the web browser.
+   * Therefore, when the signal dataChanged() is emitted, the widget that
+   * uses this resource should call generateUrl() to refer to the changed
+   * version of this resource.
+   */
+  const std::string generateUrl() const;
+
+  /*! \brief Can this resource be streamed reentrantly ?
+   *
+   * Reentrant resources may be streamed concurrently to the user. Thus,
+   * its resourceMimeType() and streamResourceData() functions must be
+   * implemented in a thread-safe way.
+   *
+   * \sa setReentrant()
+   */
+  bool reentrant() const { return reentrant_; }
+
+  /*! \brief Specify if this resource may be streamed reentrantly.
+   *
+   * A reentrant resource may stream its data concurrently with other
+   * resources (and with the main event handling ? perhaps this is not
+   * necessary...)
+   *
+   * \sa reentrant()
+   */
+  void setReentrant(bool reentrant);
+
+  /*! \brief Emit this signal if the data presented in this resource
+   *         has changed.
+   */
+  Signal<void> dataChanged;
+
+protected:
+
+  /*! \brief Return the mimetype.
+   *
+   * Implement this method to return the correct mime type for your
+   * resource, e.g. "text/html".
+   */
+  virtual const std::string resourceMimeType() const = 0;
+
+  /*! \brief Stream the data for this resource.
+   *
+   * Implement this method to output the data for this resource.
+   */
+  virtual void streamResourceData(std::ostream& stream) = 0;
+
+  friend class WebSession;
+  friend class WebController;
+
+private:
+  bool        reentrant_;
+  std::string fileName_;
+};
+
+}
+
+#endif // WRESOURCE_H_

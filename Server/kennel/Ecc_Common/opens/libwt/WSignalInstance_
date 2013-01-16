@@ -1,0 +1,65 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSIGNALINSTANCE_H_
+#define WSIGNALINSTANCE_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <vector>
+
+#include "WObject"
+class WSignal_;
+
+class __declspec(dllexport) WSignalInstance_ {
+
+public:
+  WSignalInstance_(WObject *object, WSignal_ *signal);
+  ~WSignalInstance_();
+
+	static int m_nCount;
+  const std::string encodeCmd() const;
+  static WSignalInstance_ *decodeSignal(const std::string cmd);
+
+  bool staticCodeChanged() const { return staticCodeChanged_; }
+  bool connectivityChanged() const { return connectivityChanged_; }
+  void connectivityOk();
+
+  WObject *object() const { return object_; }
+
+  void SetJsVal(const char* strJs , WObject::ConnectionType type);
+private:
+  WSignal_      *signal_;
+  WObject       *object_;
+  bool           exposed_;
+  mutable bool   staticCodeChanged_;
+  bool           connectivityChanged_;
+  std::vector<WConnection_ *> connections_;
+
+  int  nJavaSignal;
+  std::string strJsFun;
+  //
+
+  void trigger(WObject::ConnectionType type, void **args) const;
+  bool connect(WSlotInstance_ *slot, WObject::ConnectionType type);
+  void addConnection(WConnection_ *connection);
+  void removeConnection(WConnection_ *connection);
+  void getStaticCode(std::string& code) const;
+  bool isConnected() const {  if(nJavaSignal<0)  return !connections_.empty(); else return true; }
+  WSlotInstance_ *findConnectedNeedTriggerStaticSlot() const;
+
+  void setStaticCodeChanged();
+
+  friend class WConnection_;
+  friend class WSlotInstance_;
+  friend class WObject;
+  friend class WebSession;
+  friend class DomElement;
+};
+
+#endif // WSIGNALINSTANCE_H_

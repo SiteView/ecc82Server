@@ -1,0 +1,50 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSLOTINSTANCE_H_
+#define WSLOTINSTANCE_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <vector>
+#include <string>
+
+class WObject;
+class WSlot_;
+class WConnection_;
+
+class __declspec(dllexport) WSlotInstance_ {
+public:
+  WSlotInstance_(WObject *object, WSlot_ *slot);
+  ~WSlotInstance_();
+
+static int m_nCount;
+
+  void addConnection(WConnection_ *connection);
+  void removeConnection(WConnection_ *connection);
+
+  bool staticCodeCollected() const { return staticCodeCollected_; }
+  const std::string staticCode() const { return staticCode_; }
+  void invalidateStaticCode();
+  void setStaticCode(const std::string s);
+  std::string getStaticCode() { return staticCode_; }
+
+  bool trigger(WObject *sender, void **args);
+  void undoTrigger(void **args);
+  bool needTriggerStatic() const;
+
+private:
+  WSlot_  *slot_;
+  WObject *object_;
+  std::vector<WConnection_ *> rConnections_;
+
+  bool        staticCodeCollected_;
+  std::string staticCode_;
+};
+
+#endif // WSLOTINSTANCE_H_

@@ -1,0 +1,9 @@
+为北京气象局监视器提供的DLL程序：WeatherMonitor.dll
+
+编译环境：VS2003
+编译条件：
+1、在WeatherMonitor属性页”-〉“链接器”-〉“常规”
+-〉“附加库目录”中加入svapi.lib文件的所在路径。；
+2、在WeatherMonitor属性页”-〉“链接器”-〉“输入”
+-〉“附加依赖项”中加入“svapi.lib”。
+

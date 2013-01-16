@@ -1,0 +1,9 @@
+base referer
+rect $classWt_1_1WCheckBox.html 7,530 127,557
+rect $classWt_1_1WRadioButton.html 151,530 285,557
+rect $classWt_1_1WFormWidget.html 77,381 207,407
+rect $classWt_1_1WInteractWidget.html 70,306 214,333
+rect $classWt_1_1WWebWidget.html 78,231 206,258
+rect $classWt_1_1WWidget.html 91,157 193,183
+rect $classWt_1_1WResource.html 83,82 201,109
+rect $classWt_1_1WObject.html 94,7 190,34

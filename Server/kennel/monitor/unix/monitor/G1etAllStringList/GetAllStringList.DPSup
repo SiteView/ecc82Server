@@ -1,0 +1,8 @@
+<Suppress Comment="Version 7.2.0 (Build 2254)">
+	<ErrType Category=6 >
+		<Module Name="svapi.dll" >
+			<Address Value=0x000083F1 >
+			</Address>
+		</Module>
+	</ErrType>
+</Suppress>

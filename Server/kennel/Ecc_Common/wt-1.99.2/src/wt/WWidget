@@ -1,0 +1,531 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WWIDGET_H_
+#define WWIDGET_H_
+
+#include <WResource>
+#include <WLength>
+#include <WBorder>
+#include <WValidator>
+#include <WSignal>
+
+#include <vector>
+
+namespace Wt {
+
+class WCssDecorationStyle;
+class WMessage;
+class WWebWidget;
+class WContainerWidget;
+class WDropEvent;
+class DomElement;
+class JavaScript;
+
+/*! \class WWidget WWidget WWidget
+ *  \brief A WWidget represents a %Wt widget.
+ *
+ * WWidget is an abstract base class.
+ *
+ * The user-interface is organized in a tree structure, in which all nodes
+ * are WWidgets. When the parent widget is deleted, all children are deleted
+ * likewise. All WWidgets, except for the application's root widget
+ * have a parent, which is usually a WContainerWidget.
+ *
+ * WWidget is not designed to be used directly. You may use either WWebWidget 
+ * or WCompositeWidget which are concrete forms of WWidget. 
+ * To add a WWebWidget to a parent WContainerWidget, either specify 
+ * the parent in the constructor WWebWidget(WContainerWidget *), or add the 
+ * widget to the parent with WContainerWidget::addWidget(WWidget *).
+ *
+ * A WWidget provides methods to manage its decorative style, and its
+ * layout with respect to the parent widget.
+ */
+class WT_API WWidget : public WResource {
+public:
+  /*! \brief Construct a widget with a given parent.
+   *
+   * Constructs a WWidget. If a parent WObject is specified it will add this
+   * object to the parent's list and gets deleted when the parent is deleted.
+   * If this widget is a WWebWidget and the parent is a WContainerWidget,
+   * it will visually add this widget to its children.
+   */
+  WWidget(WContainerWidget* parent = 0);
+
+  /*! \brief Delete a widget.
+   *
+   * Deletes a WWidget, and all child widgets. If necessary,
+   * the WWidget is removed from its parent.
+   */
+  virtual ~WWidget();
+
+  /*! \brief Return the parent widget.
+   */
+  WWidget *parent() const { return parent_; }
+
+  /*! \brief Layout mechanism for this widget.
+   *
+   * The layout mechanism for the WWidget.
+   * \sa setPositionScheme(PositionScheme scheme)
+   */
+  enum PositionScheme {
+    /*! The WWidget is layed-out with other \link WWidget::Static
+     *  Static \endlink and \link WWidget::Relative Relative \endlink
+     *  sibling widgets, in a consecutive way. Consecutive inline
+     *  widgets are layed out in lines. Otherwise widgets are stacked
+     *  vertically. Static WWidgets may also float to the left or
+     *  right border. 
+     *
+     * \sa setFloatSide(Side s)
+     */
+    Static,
+    /*! Same as Static, but after layout, the WWidget is offset.
+     */
+    Relative,
+    /*! The WWidget is positioned at an absolute position
+     *  with respect to the nearest ancestor widget that either:
+     *  <ul>
+     *    <li> is a WTableCell </li>
+     *    <li> has a PositionScheme that is not \link WWidget::Static
+     *         Static \endlink. </li>
+     *  </ul>
+     */
+    Absolute,
+    /*! The WWidget is positioned at fixed position with respect to the
+     *  browser's view-pane.
+     */
+    Fixed };
+
+  /*! \brief Enumeration that designates a side of widget.
+   *
+   * \sa setOffset(Side s, WLength x), setFloatSide(Side s), setClearSides(int sides)
+   */
+  enum Side { None = 0x0,                 //!< No side
+	      Top = 0x1,                  //!< Top side
+	      Bottom = 0x2,               //!< Bottom side
+	      Left = 0x4,                 //!< Left side
+	      Right = 0x8,                //!< Right side
+              Verticals = (0x4 | 0x8),    //!< (Left | Right)
+              Horizontals = (0x1 | 0x8),  //!< (Top | Bottom)
+	      All = (Top | Bottom | Left | Right) //!< All sides
+  };
+
+  /*! \brief Vertical alignment of this widget.
+   *
+   * This only applies to inline widgets, and determines how to position
+   * itself on the current line, with respect to sibling inline widgets.
+   *
+   * \sa setVerticalAlignment(VerticalAlignment, WLength)
+   */
+  enum VerticalAlignment { AlignBaseline=0x0, //!< Align at baseline
+  			   AlignSub=0x10,     //!< Align below the baseline
+			   AlignSuper=0x20,   //!< Align above the baseline
+			   AlignTop=0x30,     //!< Align top of widget
+			   AlignTextTop=0x40, //!< Align text top ?
+			   AlignMiddle=0x50,  //!< Align middle of widget
+			   AlignBottom=0x60,  //!< Align bottom of widget
+			   AlignTextBottom=0x70, //!< Align text bottom ?
+			   AlignLength=0x80   //!< Specific length offset ?
+			 };
+
+  /*! \brief The horizontal alignment of child widgets.
+   */
+  enum HorizontalAlignment {
+    AlignLeft=0x1,   //!< Align children to the left
+    AlignRight=0x2,  //!< Align children to the right
+    AlignCenter=0x3, //!< Align children to the center
+    AlignJustify=0x4 //!< Justify children left and right
+  };
+
+  /*! \brief Set the widget position scheme.
+   *
+   * Set how the widget must be layed-out.
+   *
+   * \sa positionScheme()
+   */
+  virtual void setPositionScheme(PositionScheme scheme) = 0;
+
+  /*! \brief Get the widget position scheme.
+   *
+   * \sa setPositionScheme(PositionScheme)
+   */
+  virtual PositionScheme positionScheme() const = 0;
+
+  /*! \brief Position a non-statically positioned widget with respect
+   *         to its parent.
+   *
+   * This applies only to widgets that have a non-\link
+   * WWidget::Static Static \endlink positionScheme(), as these latter widgets
+   * are layed out automatically in an inline or block flow.
+   *
+   * When this widget uses a \link WWidget::Relative Relative \endlink
+   * position scheme, it specifies the offset with respect to its
+   * position as it would be when layed-out using a \link
+   * WWidget::Static Static \endlink positionScheme(). In that case,
+   * one can specify an vertical offset (with respect to \link
+   * WWidget::AlignTop Top \endlink or \link WWidget::Bottom Bottom
+   * \endlink) to shift the widget up or down, or a horizontal offset
+   * (with respect to \link WWidget::Left Left \endlink or \link
+   * WWidget::Right Right \endlink) to shift the widget to the left or
+   * to the right.
+   *
+   * When this widget uses an \link WWidget::Absolute Absolute
+   * \endlink or \link WWidget::Fixed Fixed \endlink position scheme,
+   * it specifies the position within respectively the reference
+   * parent WWidget, or the browser viewport. In that case, the side
+   * refers to the sides of this reference.
+   *
+   * In all cases, valid values for Side or only \link WWidget::Left
+   * Left \endlink, \link WWidget::Right Right \endlink, \link
+   * WWidget::Bottom Bottom \endlink and \link WWidget::Top Top
+   * \endlink.
+   *
+   * \sa offset(Side) const
+   */
+  virtual void setOffset(int s, WLength x) = 0;
+
+  /*! \brief Retrieve the offset of the widget.
+   * \sa setOffset(Side, WLength)
+   */
+  virtual WLength offset(Side s) const = 0;
+
+  /*! \brief Resize the widget.
+   *
+   * Specify a new size for this widget, by specifying width and height.
+   * By default a widget has automatic width and height, see WLength::isAuto().
+   *
+   * \sa width(), height()
+   */
+  virtual void resize(WLength width, WLength height) = 0;
+
+  /*! \brief Get the widget width.
+   *
+   * Return the width set for this widget. This is not a calculated width,
+   * based on layout, but the width as specified with
+   * resize(WLength width, WLength height).
+   *
+   * \sa resize(WLength width, WLength height), width()
+   */
+  virtual WLength width() const = 0;
+
+  /*! \brief Get the widget height.
+   *
+   * Return the height set for this widget. This is not a calculated height,
+   * based on layout, but the height as specified previously with
+   * resize(WLength width, WLength height).
+   *
+   * \sa resize(WLength width, WLength height), height()
+   */
+  virtual WLength height() const = 0;
+
+  virtual void setMinimumSize(WLength width, WLength height) = 0;
+  virtual void setMaximumSize(WLength width, WLength height) = 0;
+
+  /*! \brief Specify a side to which the WWidget must float.
+   *
+   * This only applies to WWidgets with a \link WWidget::Static Static
+   * \endlink positionScheme().
+   *
+   * It specifies if the WWidget must be positioned on one of the
+   * sides of the parent widget, at the current line. A typical use is
+   * to position images within text. Valid values for Side or \link
+   * WWidget::None None \endlink, \link WWidget::Left Left \endlink or
+   * \link WWidget::Right Right \endlink.
+   */
+  virtual void setFloatSide(Side s) = 0;
+
+  /*! \brief Return the float side.
+   *
+   * \sa setFloatSide(Side)
+   */
+  virtual Side floatSide() const = 0;
+
+  /*! \brief Set the sides that should be remain empty.
+   *
+   * Fixme: lookup what this actually does in the CSS manual.
+   */
+  virtual void setClearSides(int sides) = 0;
+
+  /*! \brief Get the sides that should be remain empty.
+   *
+   * Fixme: lookup what this actually does in the CSS manual.
+   */
+  virtual int clearSides() const = 0;
+
+  /*! \brief Set margins around the widget.
+   *
+   * Setting margin has the effect of adding a distance between the widget
+   * and surrounding widgets. The default margin (with an automatic length)
+   * is zero.
+   *
+   * Use any combination of \link WWidget::Left Left \endlink,
+   * \link WWidget::Right Right \endlink,
+   * \link WWidget::Bottom Bottom \endlink,
+   * or \link WWidget::Top Top \endlink.
+   *
+   * \sa WWidget::margin(Side side);
+   */
+  virtual void setMargin(WLength margin, int sides = All) = 0;
+
+  /*! \brief Get the margin set for that side.
+   *
+   * \sa WWidget::setMargin(WLength margin, int sides);
+   */
+  virtual WLength margin(Side side) const = 0;
+
+  /*! \brief Set whether the widget must be hidden.
+   *
+   * Hide or show the widget (including all its descendant widgets).
+   * setHidden(false) will show this widget and all child widgets that
+   * are not hidden.
+   *
+   * \sa hide(), show()
+   */
+  virtual void setHidden(bool) = 0;
+
+  /*! \brief Return whether this widget is set hidden.
+   *
+   * A widget that is not hidden may still be not visible when one
+   * of its ancestor widgets are hidden.
+   *
+   * \sa setHidden()
+   */
+  virtual bool isHidden() const = 0;
+
+  /*! \brief Set whether this widget is overlayed on the parent widget.
+   *
+   * This option only applies to widgets with a \link
+   * WWidget::Absolute Absolute \endlink or \link WWidget::Fixed Fixed
+   * \endlink positionScheme().
+   *
+   * A widget that isPopup() will be rendered on top of the parent widget.
+   */
+  virtual void setPopup(bool) = 0;
+
+  /*! \brief Returns whether this WWidget is overlayed.
+   *
+   * \sa setPopup(bool)
+   */
+  virtual bool isPopup() const = 0;
+
+  /*! \brief Set whether this widget is inline or stacked.
+   *
+   * This option changes whether this widget must be rendered in-line
+   * with sibling widgets wrapping at the right edge of the parent
+   * container (like text), or whether this widget must be stacked
+   * vertically with sibling widgets. Depending on the WWidget type,
+   * the default value is inline (such as for example for WText, or
+   * WPushButton), or stacked (such as for example for WTable).
+   */
+  virtual void setInline(bool) = 0;
+
+  /*! \brief Returns whether this widget is inline or stacked.
+   *
+   * \sa setInline(bool)
+   */
+  virtual bool isInline() const = 0;
+
+  /*! \brief Access the decoration style of this widget.
+   *
+   * This groups all decorative aspects of the widget, which do not affect
+   * the widget layout (except for the border properties which change the
+   * total size of the widget when adding a non-zero-width border).
+   */
+  virtual WCssDecorationStyle& decorationStyle() = 0;
+
+  /*! \brief Specify that a particular style class must be applied
+   *         to this WWidget.
+   *
+   * Setting a style class will interfere with all layout and decoration
+   * style properties of the WWidget (does it?). To remove the style class,
+   * set an empty string as style class.
+   * 
+   * \sa WApplication::styleSheet()
+   */
+  virtual void setStyleClass(const std::wstring styleClass) = 0;
+
+  /*! \brief <i>Deprecated.</i> Specify that a particular style class must be
+   *         applied to this WWidget.
+   *
+   * Setting a style class will interfere with all layout and decoration
+   * style properties of the WWidget (does it?). To remove the style class,
+   * set an empty string as style class.
+   *
+   * This function is only provided to support legacy applications prior
+   * to Wt 2.0.0. Consider using setStyleClass(const std::wstring styleClass)
+   * instead.
+   *
+   * \sa WApplication::styleSheet()
+   */
+  virtual void setStyleClass(const char *styleClass) = 0;
+
+  /*! \brief Returns the style class for this WWidget.
+   *
+   * \sa setStyleClass(const std::wstring)
+   */
+  virtual const std::wstring styleClass() const = 0;
+
+  /*! \brief Set the vertical alignment of this (inline) WWidget.
+   *
+   * This only applies to inline widgets, and determines how to position
+   * itself on the current line, with respect to sibling inline widgets.
+   */
+  virtual void setVerticalAlignment(VerticalAlignment alignment,
+				    WLength length = WLength()) = 0;
+
+  /*! \brief Get the vertical alignment of this WWidget.
+   *
+   * \sa WWidget::setVerticalAlignment()
+   */
+  virtual VerticalAlignment verticalAlignment() const = 0;
+
+  /*! \brief Get the a fixed vertical alignment with respect to the baseline
+   *             of this WWidget.
+   *
+   * \sa WWidget::setVerticalAlignment()
+   */
+  virtual WLength verticalAlignmentLength() const = 0;
+
+  /*! \brief Get the webWidget that (ultimately) implements this widget.
+   */
+  virtual WWebWidget *webWidget() = 0;
+
+  /*! \brief Set the tooltip for the widget.
+   *
+   * The tooltip is displayed when the cursor rests above the widget.
+   */
+  virtual void setToolTip(const WMessage& text) = 0;
+
+  /*! \brief Get the tooltip text.
+   */
+  virtual WMessage toolTip() const = 0;
+
+  /*! \brief Refresh the widget.
+   *
+   * The refresh method is invoked when the locale is changed using
+   * WApplication::setLocale() or when the user hit the refresh button.
+   *
+   * The widget must actualize its contents in response.
+   */
+  virtual void refresh() = 0;
+
+  /*! \brief A javascript expression that returns the corresponding
+   *         DOM node.
+   */
+  std::string jsRef() const;
+
+  /*! \brief Set an attribute value.
+   *
+   * Associate an extra attribute with this widget, with the given value.
+   * This is only useful when processing dom nodes associated with widgets
+   * in JavaScript code associated with javascript slots.
+   */
+  virtual void setAttributeValue(const std::string name,
+				 const std::wstring value) = 0;
+
+  /*! \brief Short hand for WMessage::tr()
+   *
+   * Create a message with the given key.
+   */
+  static WMessage tr(const char *key);
+
+  /*! \brief Load content just before the widget's content is rendered.
+   *
+   * As soon as a widget is inserted into the widget hierarchy, it is
+   * rendered. Visible widgets are rendered immediately, and invisible
+   * widgets in the back-ground. This method is called when the widget
+   * is directly or indirectly inserted into the widget tree.
+   *
+   * The default implementation simply propagates the load signal to its
+   * children. You may want to override this method to load resource-intensive
+   * content only when the widget is loaded into the browser.
+   */
+  virtual void load() = 0;
+
+  /*! \brief Return if this widget has been loaded.
+   *
+   * \sa load()
+   */
+  virtual bool loaded() const = 0;
+
+  /*! \brief Set a mime type to be accepted for dropping.
+   *
+   * You may specify a style class that is applied to the widget when the
+   * specified mimetype hovers on top of it.
+   *
+   * \sa dropEvent, setDraggable, stopAcceptDrops
+   */
+  virtual void acceptDrops(const std::string mimeType,
+			   const std::wstring hoverStyleClass = L"");
+
+  /*! \brief No longer accept a mime type for dropping.
+   *
+   * \sa acceptDrops
+   */
+  virtual void stopAcceptDrops(const std::string mimeType);
+
+public slots:
+
+  /*! \brief Hide this WWidget.
+   *
+   * \sa setHidden(bool)
+   */
+  void hide();
+
+  /*! \brief Show this WWidget.
+   *
+   * \sa setHidden(bool)
+   */
+  void show();
+
+private:
+  void undoHide();
+  void undoShow();
+
+protected:
+  /*! \brief Handle a drop event.
+   *
+   * Reimplement this method to handle a drop events for mime types you
+   * declared to accept using setAcceptDrops.
+   *
+   * The default implementation simply completes the drag and drop operation
+   * as if nothing happened.
+   *
+   * \sa setAcceptDrops, setDraggable
+   */
+  virtual void dropEvent(WDropEvent dropEvent);
+
+  virtual void addChild(WWidget *child) = 0;
+  virtual void removeChild(WWidget *child) = 0;
+  virtual void addNewSibling(WWidget *sibling) = 0;
+
+  virtual void setParent(WWidget *parent);
+
+  virtual bool isVisible() const = 0;
+  virtual bool isStubbed() const = 0;
+  WWidget *adam();
+
+  /*
+   * Implement the resource methods.
+   */
+  virtual const std::string resourceMimeType() const;
+  virtual void streamResourceData(std::ostream& stream);
+  virtual void resourceHTML(std::ostream& out);
+
+  WWidget *parent_;
+  bool    wasHidden_;
+  bool    resourceTriggerUpdate_;
+
+  friend class WebRenderer;
+  friend class WContainerWidget;
+  friend class WScrollArea;
+  friend class WWebWidget;
+  friend class WCompositeWidget;
+};
+
+}
+
+#endif // WWIDGET_H_

@@ -1,0 +1,7 @@
+; SQLServer.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SQLServer"
+DESCRIPTION  'SQLServer Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

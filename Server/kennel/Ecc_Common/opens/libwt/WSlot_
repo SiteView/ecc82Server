@@ -1,0 +1,32 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSLOT_H_
+#define WSLOT_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <map>
+#include <string>
+
+class __declspec(dllexport) WSlot_ {
+public:
+  WSlot_();
+  WSlot_(const std::string name, bool canStatic);
+
+  bool good() { return name_.length() != 0; }
+  bool canStatic() const { return canStatic_; }
+
+  const std::string name() const { return name_; }
+
+private:
+  std::string  name_;
+  bool	       canStatic_;
+};
+
+#endif // WSLOT_H_

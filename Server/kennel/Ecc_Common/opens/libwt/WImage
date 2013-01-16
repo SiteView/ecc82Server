@@ -1,0 +1,97 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WIMAGE_H_
+#define WIMAGE_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WInteractWidget>
+
+/*! \brief An image widget.
+ *
+ * A WImage is by default an inline widget.
+ */
+class __declspec(dllexport) WImage : public WInteractWidget
+{
+  //MOC: W_OBJECT WImage:WInteractWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Create an empty image widget.
+   */
+  WImage(WContainerWidget *parent = 0);
+
+  /*! \brief Create an image widget with given image URL.
+   */
+  WImage(const std::string imageRef, WContainerWidget *parent = 0);
+
+  /*! \brief Create an image widget with given image URL and alternate text.
+   */
+  WImage(const std::string imageRef,
+	 const std::string altText, WContainerWidget *parent = 0);
+
+  /*! \brief Create an image widget with given image resource and alternate
+   *         text.
+   *
+   * Use this constructor if you want to present a dynamically generated
+   * image.
+   */
+  WImage(WResource *resource, const std::string altText,
+	 WContainerWidget *parent = 0);
+
+  /*! \brief Get the alternate text.
+   */
+  const std::string alternateText() const { return altText_; }
+
+  /*! \brief Set the alternate text.
+   */
+  void setAlternateText(const std::string text);
+
+  /*! \brief Get the image URL.
+   *
+   * When the image is specified as a resource, this returns the current
+   * resource URL.
+   */
+  const std::string imageRef() const;
+
+  /*! \brief Set the image URL.
+   *
+   * Not available when the image is specified as a resource.
+   */
+  void setImageRef(const std::string ref);
+
+  /*! \brief Set the resource.
+   *
+   * Set a resource for a dynamically generated image.
+   */
+  void setResource(WResource *resource);
+
+  /*! \brief Get the resource.
+   */
+  WResource *resource() const { return resource_; }
+
+private:
+  std::string altText_;
+  std::string imageRef_;
+  WResource *resource_;
+
+private slots:
+  //MOC: SLOT WImage::resourceChanged()
+  void resourceChanged();
+
+  bool altTextChanged_;
+  bool imageRefChanged_;
+
+protected:
+  virtual void  updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+#endif // WIMAGE_H_

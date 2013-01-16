@@ -1,0 +1,1 @@
+char *FindStrValue(const char *strParas, CString str);

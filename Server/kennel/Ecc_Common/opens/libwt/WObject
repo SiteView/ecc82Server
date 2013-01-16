@@ -1,0 +1,283 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WOBJECT_H_
+#define WOBJECT_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <vector>
+#include <map>
+
+class WConnection_;
+class WSlot_;
+class WSlotInstance_;
+class WSignal_;
+class WSignalInstance_;
+typedef std::map<std::string, WSignalInstance_ *> WSignalMap;
+typedef std::map<std::string, WSlotInstance_ *> WSlotMap;
+
+#define W_OBJECT \
+  protected: \
+  virtual void buildSlotMap(WSlotMap& result); \
+  virtual void buildSignalMap(WSignalMap& result); \
+  virtual bool triggerSlot(WObject *sender, const WSlot_ *slot, void **args); \
+  virtual bool undoTriggerSlot(const WSlot_ *slot, void **args); \
+  static WSlot_     slots_[]; \
+  static WSignal_   signals_[];
+
+#define static_slots
+#define slots
+#define signals
+#define emit
+
+/*! \brief Macro to reference a signal declaration.
+ */
+#define SIGNAL(d) "x"#d
+
+/*! \brief Macro to reference a slot declaration.
+ */
+#define SLOT(d)   "y"#d
+
+/*! \brief This class is the base class of all Wt objects.
+ *
+ * The main features offered by WObject is a signal/slot system. Connections
+ * between signals and slots of WObjects allow automatic communication and
+ * event handling. For example, one can simply connect() the
+ * WInteractWidget::clicked() signal of for example a WPushButton to the
+ * WApplication::quit() slot, to exit the application when the button is
+ * clicked.
+ *
+ * When creating a subclass of WObject with new signals or slots,
+ * it is necessary to put the W_OBJECT macro in the class definition.
+ * To define signals and slots, put them in respectively signals: and slots:
+ * sections of the class definition.
+ * In addition, the Meta Object Compiler (moc) must process this class
+ * definition.
+ *
+ * The current implementation of moc does not actually parse the class
+ * definition, but only parses special comments that start with
+ * <pre>
+ *   //MOC ...
+ * </pre>
+ * This restriction will be removed in the future, and moc will directly
+ * parse the class definition to find signal and slots.
+ *
+ * When declaring a new class Foo that inherits directly or indirectly (through
+ * WBar) from WObject, you need to put:
+ * <pre>
+ * class Foo : public WBar {
+ *   //MOC: W_OBJECT Foo:WBar
+ *   W_OBJECT;
+ * public:
+ *   // ...
+ * };
+ * </pre>
+ *
+ * When declaring a signal in the class Foo:
+ * <pre>
+ * public signals:
+ *   //MOC: SIGNAL Foo::geigerCountChanged(int count)
+ *   void geigerCountChanged(int count);
+ * </pre>
+ *
+ * When declaring a (dynamic) slot in the class Foo:
+ * <pre>
+ * public slots:
+ *   //MOC: SLOT Foo::doReactorShutdown()
+ *   void doReactorShutdown();
+ * </pre>
+ *
+ * Finally, WObject provides support for static slots. These are slots
+ * that alter directly or indirectly aspects of one or more WWidgets,
+ * independent from the current state of the application. When connected
+ * with a STATIC connection to a signal, the effect on these WWidgets
+ * will be learned in advance, and optimized to client-side (JavaScript) code.
+ *
+ * For example, consider a slot FooWidget::highlight(), which will direct
+ * attention of the user to itself by emphasizing its contents, which is
+ * a good candidate for a static slot. To declare this slot as a static slot
+ * one needs to declare two methods, in addition to a MOC directive:
+ * <pre>
+ * class FooWidget : public WContainerWidget {
+ *   //MOC: W_OBJECT FooWidget:WContainerWidget
+ *   W_OBJECT;
+ *
+ * public:
+ *   //...
+ *
+ * public static_slots:
+ *   //MOC: STATIC SLOT FooWidget::highlight()
+ *   void highlight();
+ *   //...
+ *
+ * private:
+ *   void undoHighlight();
+ *
+ * };
+ * </pre>
+ *
+ * The additional method, undoHighlight(), will be called during the learning
+ * phase and must undo any effects of highlight(). During the learning phase,
+ * %Wt learns the visual updates of the slot code, which will be encoded as
+ * JavaScript code in the web page. The learning is done by calling the slot,
+ * examining visual changes, and undoing the effect of the call to the slot by
+ * calling the undo function.
+ */
+class  __declspec(dllexport) WObject {
+  //MOC: W_OBJECT WObject:
+  W_OBJECT;
+
+public:
+     static	void InsertMap(WSlotMap& result,std::string key,WSlotInstance_*pw);
+
+  /*! \brief The type of connection
+   *
+   * Used to specify either how the connection must be handled.
+   * 
+   */
+  enum ConnectionType
+    { /*! \brief Default connection, with server-side processing.
+       *
+       * A DYNAMIC connection gives the normal behaviour: the slot code is executed
+       * when the signal is emitted. Any resulting changes to the user interface
+       * are updated back to the server.
+       */
+      DYNAMIC,
+      /*! \brief Stateless connection, with both server-side and
+       *         client-side processing.
+       *
+       * For a STATIC connection, the slot code is executed when the
+       * signal is emitted. However, the changes that result to the
+       * user interface are supposed to be always the same (hence
+       * state-less), and have been learned beforehand and are executed
+       * immediately at client-side.
+       */
+      STATIC,
+	  JAVASCRIPT,  // just java 
+	  JAVASCRIPTDYNAMIC,  // java &dynamic
+	  JAVASCRIPTUPDATE    // java include update;
+	  
+	   }; //wangpeng
+
+  /*! \brief Create the WObject.
+   */
+  WObject();
+
+  /*! \brief Destroy the WObject.
+   *
+   * This automatically deletes all connections from and to signals and
+   * slots of this WObject.
+   */
+  virtual ~WObject();
+
+  /*! \brief Create a connection between a signal and slot.
+   *
+   * This is an overloaded member function, provided for convenience.
+   *
+   * \sa connect(const WObject *, const char *, const WObject *, const char * method, ConnectionType)
+   */
+  bool connect(const WObject *sender, const char *signal,
+	       const char * method, ConnectionType = DYNAMIC) const;
+
+//wangpeng
+  bool connect(const WObject *sender, const char *signal,const char* jsfun,
+		      const char *method, ConnectionType type) const;
+
+  /*! \brief Create a connection between a signal and slot.
+   *
+   * Connect a signal of the sender to a slot in this object, with
+   * the specified connection type.
+   *
+   * After connection, whenever the sender emits its signal, the slot
+   * of the receiver is called.
+   *
+   * Use the SIGNAL() and SLOT() macro's to specify the signal and slots.
+   */
+  static bool connect(const WObject *sender, const char *signal,
+		      const WObject *receiver, const char * method,
+		      ConnectionType = DYNAMIC);
+  //wangpeng	
+  static bool WObject::connect(const WObject *sender, const char *signal, const char* jsfun,
+		      const WObject *receiver, const char * method,
+		      ConnectionType type= DYNAMIC);		
+	
+  const std::string formName() const;
+  virtual void setFormData(const char *value, int length,
+			   const char *filename);
+  virtual void setNoFormData();
+
+  /*! \brief Indicate that the behaviour of a static slot has changed.
+   *
+   * Whenever the behaviour of a static slot changes, use this
+   * function to indicate to Wt that the learning process must be
+   * redone, to update the client-side JavaScript code.
+   *
+   * Use the SLOT() macro to specify the slot.
+   */
+  void staticSlotChanged(const std::string name);
+
+  // std::string GetId();
+public signals:
+  //MOC: SIGNAL WObject::destroyed(WObject *obj)
+  virtual void destroyed(WObject *obj);
+
+protected:
+  void triggerSignal(const WSignal_ *signal, void **args);
+
+  /*! \brief Get a reference to a given signal
+   *
+   * Get a reference to a signal for this WObject.
+   *
+   * Use the SIGNAL() macro to specify the signal.
+   *
+   * \sa isConnected(const WSignalInstance_ *signal) const
+   */
+  WSignalInstance_ *getSignal(const std::string name) const;
+  WSignalInstance_ *getSignal(const WSignal_ *signal) const;
+  WSlotInstance_   *getSlot(const std::string name) const;
+
+  /*! \brief Determine whether a given signal is connected.
+   *
+   * Returns true if a slot is connected to this signal. This is
+   * used by internal WWidgets to determine whether server-side
+   * interaction is needed on keyboard or mouse events.
+   *
+   * \sa getSignal(const std::string name) const
+   */
+  bool isConnected(const WSignalInstance_ *signal) const;
+
+  WSlotInstance_ *findConnectedNeedTriggerStaticSlot();
+
+protected:
+  mutable WObject *sender_;
+
+private:
+  virtual void signalConnectionsChanged();
+
+  WObject(const WObject&);
+  int id_;
+
+  /*
+   * connections from this object to other objects
+   */
+  mutable WSignalMap *signalMap_;
+  mutable WSlotMap   *slotMap_;
+
+  WObject *sender() const { return sender_; }
+
+  friend class WebSession;
+  friend class DomElement;
+  friend class WSignalInstance_;
+  friend class WSlotInstance_;
+  friend class WSignalMapper;
+
+  static int nextObjId_;
+};
+
+#endif // WOBJECT_H_

@@ -1,0 +1,52 @@
+# Microsoft Developer Studio Generated Dependency File, included by SnareSvr.mak
+
+.\NTServApp.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\NTServApp.h"\
+	".\NTService.h"\
+	".\NTServMsg.h"\
+	".\SnareSvr.h"\
+	".\support.h"\
+	
+
+.\NTService.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\NTServApp.h"\
+	".\NTService.h"\
+	".\NTServMsg.h"\
+	
+
+.\SnareSvr.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\NTServApp.h"\
+	".\NTService.h"\
+	".\NTServMsg.h"\
+	".\SnareSvr.h"\
+	".\support.h"\
+	".\webserver.h"\
+	
+
+.\support.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\support.h"\
+	
+
+.\WebPages.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\support.h"\
+	".\Version.h"\
+	".\WebPages.h"\
+	".\webserver.h"\
+	
+
+.\webserver.cpp : \
+	"..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\NTService.h"\
+	".\NTServMsg.h"\
+	".\WebPages.h"\
+	".\webserver.h"\
+	
+
+.\NTServApp.rc : \
+	".\msg00001.bin"\
+	

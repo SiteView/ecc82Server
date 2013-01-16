@@ -1,0 +1,18 @@
+LIBRARY	"IODll"
+EXPORTS
+		MD5String @1
+		MD5File @2
+		InitLicense @3
+		IsValidLicense @4
+		IncreaseTime @5
+		Decrypt2Data @6
+		EncryptS2S @7
+		DecryptS2S @8
+		CreateLicense @9
+		GetLicense @10
+		RsaEncrypt @11
+		RsaDecrypt @12
+		GetLicData @13
+		IsValidLicenseFile @14
+		IncreaseTimeFile @15
+		Decrypt_to_Data @16

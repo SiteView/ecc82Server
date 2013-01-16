@@ -1,0 +1,9 @@
+GetUnivData(ForestMap & fmap,const NodeData & inwhat, string & estr):
+"fmap"的数据类型：ForestMap: map< string, map<string,string> >
+"inwhat"的数据类型：NodeData: map< string, string >
+
+in parameter "inwhat":
+
+"dowhat"   ="delIniFile"
+"filename" =name
+"user"     =""

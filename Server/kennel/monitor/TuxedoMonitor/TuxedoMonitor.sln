@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TuxedoMonitor", "TuxedoMonitor.vcproj", "{CEC28661-6059-42CE-B823-E2ADDEA1C801}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{CEC28661-6059-42CE-B823-E2ADDEA1C801}.Debug.ActiveCfg = Debug|Win32
+		{CEC28661-6059-42CE-B823-E2ADDEA1C801}.Debug.Build.0 = Debug|Win32
+		{CEC28661-6059-42CE-B823-E2ADDEA1C801}.Release.ActiveCfg = Release|Win32
+		{CEC28661-6059-42CE-B823-E2ADDEA1C801}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

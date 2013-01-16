@@ -1,0 +1,169 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2006 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WEVENT_H_
+#define WEVENT_H_
+
+namespace Wt {
+
+class CgiParser;
+class WObject;
+
+template<class E> class EventSignal;
+
+struct JavascriptEvent {
+  int  clientX, clientY;
+  int  documentX, documentY;
+  int  screenX, screenY;
+  int  widgetX, widgetY;
+  int  dragDX, dragDY;
+
+  bool alt, ctrl, shift, meta;
+  int  code;
+  std::string charCode;
+  bool right;
+
+  WObject    *dropSource;
+  std::string dropMimeType;
+
+  void get(const CgiParser& parser);
+
+  JavascriptEvent();
+};
+
+/*! \class WMouseEvent WEvent WEvent
+ *  \brief Mouse event details.
+ */
+class WMouseEvent
+{
+public:
+  /*! \brief Enumeration for the mouse button.
+   */
+  enum Button { LeftButton,    //!< Left button
+		MiddleButton,  //!< Middle button
+		RightButton    //!< Right button
+  };
+
+  /*! \brief Coordinates of the mouse.
+   */
+  struct Coordinates {
+    int x; //!< X coordinate
+    int y; //!< Y coordinate
+
+    Coordinates(int x_, int y_)
+      : x(x_), y(y_) { }
+  };
+
+  /*! \brief Get the button.
+   */
+  Button button() const { return jsEvent_.right ? RightButton : LeftButton; }
+
+  /*! \brief The position relative to the document.
+   */
+  Coordinates document() const
+  { return Coordinates(jsEvent_.documentX, jsEvent_.documentY); }
+
+  /*! \brief The position relative to the window.
+   *
+   * This differs from documentX() only through scrolling
+   * through the document.
+   */
+  Coordinates window() const
+  { return Coordinates(jsEvent_.clientX, jsEvent_.clientY); }
+
+  /*! \brief The position relative to the screen.
+   */
+  Coordinates screen() const
+  { return Coordinates(jsEvent_.screenX, jsEvent_.screenY); }
+
+  /*! \brief The position relative to the widget.
+   */
+  Coordinates widget() const
+  { return Coordinates(jsEvent_.widgetX, jsEvent_.widgetY); }
+
+  /*! \brief The distance over which the mouse has been dragged.
+   *
+   * This is only defined for a mouseWentUp event.
+   */
+  Coordinates dragDelta() const
+  { return Coordinates(jsEvent_.dragDX, jsEvent_.dragDY); }
+
+protected:
+  JavascriptEvent jsEvent_;
+
+  WMouseEvent(const JavascriptEvent& jsEvent);
+
+  WMouseEvent();
+
+  friend class EventSignal<WMouseEvent>;
+  friend class WebSession;
+};
+
+/*! \class WKeyEvent WEvent WEvent
+ *  \brief Keyboard event details.
+ */
+class WKeyEvent
+{
+public:
+  /*! \brief Has the alt key been pressed ?
+   */
+  bool altKey() const { return jsEvent_.alt; }
+
+  /*! \brief Has the meta key been pressed ?
+   */
+  bool metaKey() const { return jsEvent_.meta; }
+
+  /*! \brief Has the ctrl key been pressed ?
+   */
+  bool ctrlKey() const { return jsEvent_.ctrl; }
+
+  /*! \brief Has the shift key been pressed ?
+   */
+  bool shiftKey() const { return jsEvent_.shift; }
+
+  /*! \brief The key code.
+   */  
+  int keyCode() const { return jsEvent_.code; }
+
+  /*! \brief The unicode character.
+   */  
+  std::string character() const { return jsEvent_.charCode; }
+
+private:
+  JavascriptEvent jsEvent_;
+
+  WKeyEvent(const JavascriptEvent& jsEvent);
+
+  friend class EventSignal<WKeyEvent>;
+};
+
+/*! \class WDropEvent WEvent WEvent
+ *  \brief Drop event details.
+ */
+class WDropEvent : public WMouseEvent
+{
+public:
+  /*! \brief The source of the drag&drop operation.
+   *
+   * The source is the widget that was set draggable using
+   * WWidget::setDraggable.
+   */
+  WObject *source() const { return jsEvent_.dropSource; }
+
+  /*! \brief The mime type of this drop event.
+   */
+  const std::string mimeType() const { return jsEvent_.dropMimeType; }
+
+private:
+  WDropEvent(const JavascriptEvent& jsEvent);
+  WDropEvent();
+
+  friend class EventSignal<WDropEvent>;
+};
+
+}
+
+#endif // WEVENT_H_

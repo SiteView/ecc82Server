@@ -1,0 +1,27 @@
+IDS_SAVE 			: 保 存 : strSave
+IDS_Cancel1 			: 取 消 : strCancel
+IDS_DIList_Edit 		: 编　辑 : strEdit
+IDS_UrlTransStep_Title 		: UrlTransactionStepInfo配置 : strTitle
+IDS_UrlTransStep_StepName 	: 步 名 称 : strStepNameLabel
+IDS_UrlTransStep_StepType 	: 步 类 型 : strStepTypeLabel
+IDS_UrlTransStep_StepList 	: 步列表 : strStepListLabel
+IDS_UrlTransStep_DelStep 	: 删除步 : strDel
+IDS_UrlTransStep_AddStep 	: 增加一步 : strAddStep
+IDS_UrlTransStep_StepInfo 	: 步信息 : strStepInfo
+IDS_UrlTransStep_BaseInfo 	: 基础信息 : strBaseInfo
+IDS_UrlTransStep_Url 		: Url名称 : strUrls
+IDS_UrlTransStep_Links 		: Links名称 : strLinksLabel
+IDS_UrlTransStep_Forms 		: Forms名称 : strFormsLabel
+IDS_UrlTransStep_Frames 	: Frames名称 : strFramesLabel
+IDS_UrlTransStep_Refreshs 	: Refreshs名称 : strRefreshsLabel
+IDS_UrlTransStep_pPostData 	: pPostData参数 : strPostDatasLabel
+IDS_UrlTransStep_AdvanceInfo 	: 高级信息 : strAdvanceInfo
+IDS_UrlTransStep_Content 	: 内容匹配 : strConentLabel
+IDS_UrlTransStep_ErrorContent 	: 内容错误匹配 : strErrorConentLabel
+IDS_UrlTransStep_UserName 	: 用户名称 : strUserNameLabel
+IDS_UrlTransStep_UserPwd 	: 用户密码 : strUserPwdLabel
+IDS_UrlTransStep_ShowHtml 	: 显示网页 : strShowHtml
+IDS_UrlTransStep_DelStepAffirm 	: 是否删除该步信息! : strDelStepAffirm
+IDS_UrlTransStep_AllowStepLimit : 不能超过限制步数! : strStepLimit
+IDS_UrlTransStep_AllowStepDel 	: 只允许删除最后一步! : strStepDelTip
+IDS_UrlTransStep_AllowStepEdit 	: 只允许编辑最后一步! :strStepEditTip 

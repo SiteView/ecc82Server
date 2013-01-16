@@ -1,0 +1,16 @@
+SCA_SVAPI
+bool SubmitUnivData(ForestMap & fmap, const NodeData & what, const string & estr);
+
+// 输入参数：
+what:
+dowhat= MassMoveEntity;	
+targetParentId= XXX;	
+autoCreateTable= true/false (默认为 true ，即若不填为 true );
+
+fmap:
+idPair: id1=id1,id2=id2,...,idN=idN.
+
+// 输出参数：
+fmap:
+return: return=false/true, moveNum=value;
+idPair: id1=newId1,id2=newId2,...,id(moveNum)=newId(moveNum).

@@ -1,0 +1,78 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WANCHOR_H_
+#define WANCHOR_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WInteractWidget>
+
+class WLabel;
+class WImage;
+
+/*! \brief A WWidget that represents an HTML anchor.
+ *
+ * Use an anchor to link to another web page, using a text and/or image.
+ *
+ * An anchor is by default an inline widget.
+ */
+class __declspec(dllexport) WAnchor : public WInteractWidget
+{
+  //MOC: W_OBJECT WAnchor:WInteractWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Create an anchor going nowhere without any text
+   */
+  WAnchor(WContainerWidget *parent = 0);
+
+  /*! \brief Create an anchor with a destination URL, but without any text.
+   */
+  WAnchor(const std::string ref, WContainerWidget *parent = 0);
+
+  /*! \brief Create an anchor with a destination URL and anchor label.
+   */
+  WAnchor(const std::string ref, const std::string text,
+	  WContainerWidget *parent = 0);
+
+  /*! \brief Create an anchor with a destination URL and anchor message.
+   */
+  WAnchor(const std::string ref, const WMessage& message,
+	  WContainerWidget *parent = 0);
+
+  /*! \brief Create an anchor with a destination URL and anchor image.
+   */
+  WAnchor(const std::string ref, WImage *image,
+	  WContainerWidget *parent = 0);
+
+  /*! \brief Access the label for this anchor.
+   */
+  WLabel *label() const { return label_; }
+
+  /*! \brief Change the destination URL for this anchor.
+   */
+  void setRef(const std::string ref);
+
+  /*! \brief Get the destination URL for this anchor.
+   */
+  const std::string ref() const { return ref_; }
+
+private:
+  std::string ref_;
+  WLabel *label_;
+
+  bool refChanged_;
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+#endif // WANCHOR_H_

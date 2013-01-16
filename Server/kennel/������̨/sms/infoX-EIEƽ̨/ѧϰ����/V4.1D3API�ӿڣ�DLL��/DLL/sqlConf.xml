@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- sql 配置文件-->
+<config>        
+  <dbSqls>
+    <!--当前激活的sql配置项-->
+    <activeSqlType>DB2</activeSqlType>
+    <!--sql server 的配置文件-->
+    <dbSql type="sqlServer">
+      <!--验证登录用户-->
+      <CHECK_OPERATOR>Select Password from tbl_Operator where Operator_ID = ?</CHECK_OPERATOR>
+      <!--获取待收短信（上行）-->
+      <FETCH_SM_RECEIVED>Exec FetchSMRequest :@DestAddrMask,:@SourceAddr OUTPUT,:@DestAddr OUTPUT,:@Content OUTPUT,:@RecvTime OUTPUT,:@SMType OUTPUT,:@MessageID OUTPUT,:@OrgAddrType OUTPUT,:@ActionID OUTPUT,:@ActionReasonID OUTPUT,:@ServiceID OUTPUT,:@RetCode OUTPUT</FETCH_SM_RECEIVED>
+      <!--提交待发短信（下行）-->
+      <SUBMIT_SM>Exec addSMToSend :@pOrgAddr,:@pDestAddr,:@pSmContent,:@pSendTime,:@pNeedStateReport,:@pServiceID,:@pFeeType,:@pFeeCode,:@pSMType,:@pMessageID,:@pDestaddrType,:@pCreatorID,:@pSendType,:@pSuccess OUTPUT</SUBMIT_SM>
+      <!--统计已提交短信短信（下行）-->
+      <COUNTER_SUBMITTED_SM>Exec SearchCountForUser :@Operator,:@LimitType OUTPUT,:@MaxLimit OUTPUT,:@SentCount OUTPUT,:@RetCode OUTPUT</COUNTER_SUBMITTED_SM>
+      <!--查询已发短信-->
+      <QUERY_SM>Exec QuerySentShortMessage ?,?</QUERY_SM>
+      <!--获取USSD请求-->
+      <FETCH_USSD_REQUEST>Exec FetchUSSDRequest :@SessionID OUTPUT,:@CallerNO OUTPUT,:@CurrentIn OUTPUT,:@LastTrack OUTPUT,:@MsgType OUTPUT,:@UpdateTime OUTPUT,:@RetCode OUTPUT</FETCH_USSD_REQUEST>
+      <!--提交USSD响应-->
+      <SUBMIT_USSD_RESPONSE>Exec SubmitUSSDResponse :@SessionID,:@CallerNO,:@CurrentIn,:@LastTrack,:@MsgType,:@FeeType,:@FeeRate,:@FeeNO,:@RetCode OUTPUT</SUBMIT_USSD_RESPONSE>                   
+      <!--获取USSD当前会话列表-->
+      <QUERY_USSD_SESSIONS>SELECT CAST(RIGHT(CallerNo, 9) AS INT) FROM tbl_UssdMsg WHERE ISNULL(MsgType,0) IN (0, 1)</QUERY_USSD_SESSIONS>
+    </dbSql>
+    <!--mySql 的配置文件-->
+    <dbSql type="DB2">
+      <!--验证登录用户-->
+      <CHECK_OPERATOR>Select Password from tbl_Operator where Operator_ID = ?</CHECK_OPERATOR>
+      <!--获取待收短信（上行）-->
+      <FETCH_SM_RECEIVED>CALL FetchSMRequest (?,?,?,?,?,?,?,?,?,?,?,?)</FETCH_SM_RECEIVED>                    
+      <!--提交待发短信（下行）-->
+      <SUBMIT_SM>CALL addSMToSend (?,?,?,?,?,?,?,?,?,?,?,?,?,?)</SUBMIT_SM>                    
+      <!--统计已提交短信短信（下行）-->
+      <COUNTER_SUBMITTED_SM>CALL SearchCountForUser (?,?,?,?,?)</COUNTER_SUBMITTED_SM>
+      <!--查询已发短信-->
+      <QUERY_SM>CALL QuerySentShortMessage (?,?)</QUERY_SM>
+      <!--获取USSD请求-->
+      <FETCH_USSD_REQUEST>CALL FetchUSSDRequest (?,?,?,?,?,?,?)</FETCH_USSD_REQUEST>
+      <!--提交USSD响应-->
+      <SUBMIT_USSD_RESPONSE>CALL SubmitUSSDResponse (?,?,?,?,?,?,?,?,?)</SUBMIT_USSD_RESPONSE>                   
+      <!--获取USSD当前会话列表-->
+      <QUERY_USSD_SESSIONS>SELECT CAST(RIGHT(CallerNo, 9) AS INT) FROM tbl_UssdMsg WHERE VALUE(MsgType,0) IN (0, 1)</QUERY_USSD_SESSIONS>
+    </dbSql> 
+  </dbSqls>
+</config>

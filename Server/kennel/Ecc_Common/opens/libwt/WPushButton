@@ -1,0 +1,74 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WPUSHBUTTON_H_
+#define WPUSHBUTTON_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WFormWidget>
+
+/*! \brief A user control that represents a push button.
+ *
+ * To act on a button click, connect a slot to the clicked() signal.
+ *
+ * A WPushButton is by default an inline widget.
+ */
+class __declspec(dllexport) WPushButton : public WFormWidget
+{
+  //MOC: W_OBJECT WPushButton:WFormWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Create a push button with empty text.
+   */
+  WPushButton(WContainerWidget *parent = 0);
+
+  /*! \brief Create a push button with given text.
+   */
+  WPushButton(const std::string text, WContainerWidget *parent = 0);
+
+
+  /*! \brief Create a push button with given message.
+   */
+  WPushButton(const WMessage& message, WContainerWidget *parent = 0);
+
+  /*! \brief Set the button text.
+   */
+  void setText(const std::string text);
+
+  /*! \brief Get the button text.
+   */
+  std::string text() const { return text_; }
+
+  /*! \brief Set the button message.
+   */
+  void setMessage(const WMessage& message);
+
+  /*! \brief Get the button message.
+   */
+  const WMessage& message() const { return message_; }
+
+  virtual void refresh();
+
+public:
+	char * redict_;
+
+private:
+  std::string text_;
+  WMessage message_;
+
+  bool textChanged_;
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& result);
+};
+
+#endif // WTEXT_H_

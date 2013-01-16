@@ -1,0 +1,7 @@
+; UrlTrans.def : Declares the module parameters for the DLL.
+
+LIBRARY      "UrlTrans"
+DESCRIPTION  'UrlTrans Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

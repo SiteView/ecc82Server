@@ -1,0 +1,68 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2006 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WREGEXPVALIDATOR_H_
+#define WREGEXPVALIDATOR_H_
+
+#include <limits>
+#include <WValidator>
+
+#ifndef WIN32
+#include <boost/regex.hpp>
+#endif // WIN32
+
+namespace Wt {
+
+struct WRegExpValidatorImpl;
+
+/*! \class WRegExpValidator WRegExpValidator WRegExpValidator
+ *  \brief A WRegExpValidator is used to validate user input against a
+ *         regular expression.
+ *
+ * This validator checks whether user input is matched by the given
+ * regular expression.
+ */
+class WT_API WRegExpValidator : public WValidator
+{
+public:
+#ifndef WIN32
+  /*! \brief Create a new regular expression validator that accepts input
+   *         that matches the given regular expression.
+   *
+   * <i>Deprecated.</i> Consider using WRegExpValidator(const std::string)
+   * which is available on all platforms (including WIN32).
+   */
+  WRegExpValidator(const boost::wregex& rx);
+#endif // WIN32
+
+  /*! \brief Create a new regular expression validator that accepts input
+   *         that matches the given perl regular expression.
+   *
+   * TODO: provide a nice subset of the options provided by boost::regex.
+   */
+  WRegExpValidator(const std::wstring expr);
+
+  /*! \brief Delete the regexp validator.
+   */
+  ~WRegExpValidator();
+
+#ifndef WIN32
+  /*! \brief Return the regular expression for matching.
+   */
+  const boost::wregex& regExp() const;
+#endif // WIN32
+
+  /*! \brief Validate the to match the regular expression.
+   */
+  virtual State validate(std::wstring& input, int& pos) const;
+
+private:
+  WRegExpValidatorImpl *impl_;
+};
+
+}
+
+#endif // WREGEXPVALIDATOR_H_

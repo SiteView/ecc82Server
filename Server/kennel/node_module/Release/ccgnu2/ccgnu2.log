@@ -1,0 +1,47 @@
+﻿生成启动时间为 2013/1/14 15:31:28。
+     1>项目“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\w32\ccgnu2.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\ccgnu2.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         所有输出均为最新。
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\w32 /I..\include /Zi /nologo /W3 /WX- /O2 /Ob1 /Oi /Oy /D WIN32 /D NDEBUG /D _LIB /D _USRDLL /D CCGNU2_EXPORTS /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\\" /Fd"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\vc100.pdb" /Gd /TP /wd4996 /analyze- /errorReport:prompt ..\src\in6addr.cpp
+         in6addr.cpp
+       Lib:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2.lib" /NOLOGO E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\assoc.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\buffer.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\dir.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\dso.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\event.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\exception.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\file.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\friends.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\in6addr.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\inaddr.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\keydata.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\lockfile.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\mempager.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\missing.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\mutex.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\nat.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\peer.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\process.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\runlist.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\semaphore.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\simplesocket.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\slog.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\socket.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\strchar.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\string.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\thread.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\threadkey.obj
+         E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\timer.obj
+     1>in6addr.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件
+         ccgnu2.vcxproj -> E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2.lib
+       FinalizeBuildStatus:
+         正在删除文件“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\ccgnu2.unsuccessfulbuild”。
+         正在对“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\Release\ccgnu2\ccgnu2.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\ecc82meteor\ECC8_BACKEND\Server\kennel\node_module\w32\ccgnu2.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.16

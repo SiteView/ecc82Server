@@ -1,0 +1,9 @@
+base referer
+rect $classWt_1_1WGroupBox.html 7,456 125,482
+rect $classWt_1_1WStackedWidget.html 149,456 298,482
+rect $classWt_1_1WTableCell.html 322,456 437,482
+rect $classWt_1_1WInteractWidget.html 151,306 295,333
+rect $classWt_1_1WWebWidget.html 159,232 287,258
+rect $classWt_1_1WWidget.html 173,157 274,184
+rect $classWt_1_1WResource.html 165,82 282,109
+rect $classWt_1_1WObject.html 175,8 271,34

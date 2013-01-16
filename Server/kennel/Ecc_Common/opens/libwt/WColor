@@ -1,0 +1,136 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WCOLOR_H_
+#define WCOLOR_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <string>
+
+/*! \brief Style class for a color.
+ */
+class __declspec(dllexport) WColor
+{
+public:
+  /*! \brief A default color (which is some other color or a transparent
+   *         color depending on the context).
+   */
+  WColor();
+
+  /*! \brief Color with given red/green/blue values (0-255).
+   */
+  WColor(int r, int g, int b);
+
+  /*! \brief Color with a CSS name.
+   */
+  WColor(const std::string name);
+
+  /*! \brief Set red/green/blue values (0-255).
+   */
+  void setRgb(int r, int g, int b);
+
+  /*! \brief Set CSS name.
+   */
+  void setName(const std::string name);
+
+  /*! \brief Is a default color ?
+   */
+  bool isDefault() const { return default_; }
+
+  /*! \brief Get green component.
+   *
+   * Only available when it was set with setRgb or WColor(int r, int g, int b).
+   */
+  int red() const { return red_; }
+
+  /*! \brief Get green component.
+   *
+   * Only available when it was set with setRgb or WColor(int r, int g, int b).
+   */
+  int green() const { return green_; }
+
+  /*! \brief Get blue component.
+   *
+   * Only available when it was set with setRgb or WColor(int r, int g, int b).
+   */
+  int blue() const { return blue_; }
+
+  /*! \brief Get CSS name.
+   *
+   * Only available when it was set with setName or WColor(const std::string name).
+   */
+  std::string name() const { return name_; }
+
+  const std::string cssText() const;
+private:
+  bool default_;
+  int red_, green_, blue_;
+  std::string name_;
+};
+
+/*! \brief A namespace for Wt constants.
+ */
+namespace Wt {
+  /*! \brief Color white.
+   */
+  extern const WColor white;
+  /*! \brief Color black.
+   */
+  extern const WColor black;
+  /*! \brief Color red.
+   */
+  extern const WColor red;
+  /*! \brief Color dark red.
+   */
+  extern const WColor darkRed;
+  /*! \brief Color green.
+   */
+  extern const WColor green;
+  /*! \brief Color dark green.
+   */
+  extern const WColor darkGreen;
+  /*! \brief Color blue.
+   */
+  extern const WColor blue;
+  /*! \brief Color dark blue.
+   */
+  extern const WColor darkBlue;
+  /*! \brief Color cyan.
+   */
+  extern const WColor cyan;
+  /*! \brief Color dark cyan.
+   */
+  extern const WColor darkCyan;
+  /*! \brief Color magenta.
+   */
+  extern const WColor magenta;
+  /*! \brief Color dark magenta.
+   */
+  extern const WColor darkMagenta;
+  /*! \brief Color yellow.
+   */
+  extern const WColor yellow;
+  /*! \brief Color dark yellow.
+   */
+  extern const WColor darkYellow;
+  /*! \brief Color medium gray.
+   */
+  extern const WColor gray;
+  /*! \brief Color dark gray.
+   */
+  extern const WColor darkGray;
+  /*! \brief Color light gray.
+   */
+  extern const WColor lightGray;
+  /*! \brief Color transparent.
+   */
+  extern const WColor transparent;
+}
+
+#endif // WCOLOR

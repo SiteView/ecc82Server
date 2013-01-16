@@ -1,0 +1,105 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WINTERACT_WIDGET_H_
+#define WINTERACT_WIDGET_H_
+
+#include <WWebWidget>
+#include <WEvent>
+#include <WJavascriptSlot>
+
+namespace Wt {
+
+/*! \class WInteractWidget WInteractWidget WInteractWidget
+ *  \brief A WWidget that can receive user-interface interaction
+ *
+ * An InteractWidget provides various event signals that correspond
+ * to user-interface interaction.
+ */
+class WT_API WInteractWidget : public WWebWidget
+{
+public:
+  /*! \brief Create an InteractWidget with optional parent.
+   */
+  WInteractWidget(WContainerWidget *parent = 0);
+
+  /* keyboard events */
+
+  /*! \brief Event signal emitted when a keyboard key is pushed down.
+   */
+  EventSignal<WKeyEvent> keyWentDown;
+
+  /*! \brief Event signal emitted when a keyboard key is pressed.
+   */
+  EventSignal<WKeyEvent> keyPressed;
+    
+  /*! \brief Event signal emitted when a keyboard key is released.
+   */
+  EventSignal<WKeyEvent> keyWentUp;
+
+  /* mouse events */
+
+  /*! \brief Event signal emitted when a mouse key was clicked on this
+   *         WWidget.
+   */
+  EventSignal<WMouseEvent> clicked;
+
+  /*! \brief Event signal emitted when a mouse key was double clicked
+   *         on this WWidget.
+   */
+  EventSignal<WMouseEvent> doubleClicked;
+
+  /*! \brief Event signal emitted when a mouse key was pushed down on this
+   *         WWidget.
+   */
+  EventSignal<WMouseEvent> mouseWentDown;
+
+  /*! \brief Event signal emitted when a mouse key was released on this
+   *         WWidget.
+   */
+  EventSignal<WMouseEvent> mouseWentUp;
+
+  /*! \brief Event signal emitted when the mouse went out of this WWidget.
+   */
+  EventSignal<WMouseEvent> mouseWentOut;
+    
+  /*! \brief Event signal emitted when the mouse entered this WWidget.
+   */
+  EventSignal<WMouseEvent> mouseWentOver;
+
+  /*! \brief Event signal emitted when the mouse moved over this WWidget.
+   */
+  EventSignal<WMouseEvent> mouseMoved;
+
+  /*! \brief Event signal emitted when enter was pressed.
+   */
+  EventSignal<void> enterPressed;
+
+  /*! \brief Configure dragging.
+   *
+   * Enable drag&drop for this widget. The mimeType is used to find a
+   * suitable drop target, which must accept dropping of this mimetype.
+   *
+   * By default, the entire widget is dragged. One may specify another widget
+   * to be dragged (for example the parent), or a drag widget whose function
+   * is only to represent the drag visually (when isDragWidgetOnly = true).
+   *
+   * The widget to be identified as source in the dropEvent may be given
+   * explicitly, and will default to this widget otherwise.
+   *
+   * \sa WWidget::dropEvent, WWidget::setAcceptDrops, WDropEvent
+   */
+  void setDraggable(const std::string mimeType, WWidget *dragWidget = 0,
+		    bool isDragWidgetOnly = false, WObject *sourceWidget = 0);
+protected:
+  void updateDom(DomElement& element, bool all);
+
+  WJavascriptSlot dragSlot_;
+};
+
+}
+
+#endif // WINTERACT_WIDGET_H_

@@ -1,0 +1,74 @@
+// This may look like C code, but it's really -*- C++ -*-
+/*
+ * Copyright (C) 2005 Koen Deforche, Kessel-Lo, Belgium.
+ *
+ * See the LICENSE file for terms of use.
+ */
+#ifndef WSVLinkText_H_
+#define WSVLinkText_H_
+
+#ifdef WIN32
+#pragma warning (disable: 4251)
+#endif
+
+#include <WInteractWidget>
+#include <WMessage>
+#include "WText"
+
+/*! \brief A Widget that displays text.
+ *
+ * This is by default an inline widget.
+ *
+ * Use setFormatting to configure the formatting of the text. It may
+ * either be XHMTLText (which is the default), or plain text.
+ *
+ * The XHMTLText formatting allows any XHMTL formatting to be included in the
+ * text, and this formatting is used in rendering the text. In contrast,
+ * the PlainText format will display the text literally.
+ *
+ * The text can be set directly, or using a WMessage (for text contained
+ * in resource files for convenience or i18n).
+ */
+class __declspec(dllexport) WSVLinkText : public WText
+{
+  //MOC: W_OBJECT WSVLinkText:WInteractWidget
+  W_OBJECT;
+
+public:
+  /*! \brief Formatting for the text.
+   */
+  enum Formatting { XHMTLFormatting, //!< Format as XHTML markup'ed text
+		    PlainFormatting  //!< Format as plain text.
+  };
+
+  /*! \brief Construct a WSVLinkText widget with empty text
+   */
+  WSVLinkText(WContainerWidget *parent = 0);
+
+  /*! \brief Construct a WSVLinkText widget with given text
+   */
+  WSVLinkText(const std::string text, WContainerWidget *parent = 0);
+
+  /*! \brief Construct a WSVLinkText widget with a given message.
+   */
+  WSVLinkText(const WMessage& message, WContainerWidget *parent = 0);
+
+  
+  virtual void refresh();
+
+  void setSelfJs(const std::string selfstring);
+
+  void initStyle(const std::string normalclass,const std::string overclass);
+private:
+	
+     
+private:
+  
+
+protected:
+  virtual void        updateDom(DomElement& element, bool all);
+  virtual DomElement *createDomElement();
+  virtual void        getDomChanges(std::vector<DomElement *>& changes);
+};
+
+#endif // WSVLinkText_H_

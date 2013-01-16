@@ -1,0 +1,76 @@
+为DB2监视器提供的DLL程序：db2mfcmonitor.dll
+
+编译环境：VS2003
+编译条件：
+1、安装DB2数据库；
+2、在“db2mfcmonitor属性页”-〉“C/C++”-〉“常规”
+-〉“附加包含目录”中加入“D:\Program Files\IBM\SQLLIB\include”
+（IBM DB2安装在D盘）；
+3、在“db2mfcmonitor属性页”-〉“链接器”-〉“常规”
+-〉“附加库目录”中加入“D:\Program Files\IBM\SQLLIB\lib”
+（IBM DB2安装在D盘）；
+4、在“db2mfcmonitor属性页”-〉“链接器”-〉“输入”
+-〉“附加依赖项”中加入“db2api.lib”。
+
+
+监视器名称：DB2连接状态
+调用的函数：UnixCommand_Connects
+监视指标：SQLM_ELM_TOTAL_CONS  指标类型：int
+监视指标：SQLM_ELM_REM_CONS_IN 指标类型：int
+监视指标：SQLM_ELM_LOCAL_CONS  指标类型：int
+
+监视器名称：DB2代理状态
+调用的函数：UnixCommand_Agents
+监视指标：SQLM_ELM_AGENTS_REGISTERED  指标类型：int
+监视指标：SQLM_ELM_IDLE_AGENTS	      指标类型：int
+监视指标：SQLM_ELM_NUM_AGENTS         指标类型：int
+监视指标：SQLM_ELM_AGENTS_WAITING_TOP 指标类型：int
+
+监视器名称：DB2缓存池状态
+调用的函数：UnixCommand_Buffer
+监视指标：SQLM_ELM_BUFFER_POOL_HIT_RATIO 指标类型：float
+监视指标：SQLM_ELM_INDEX_PAGE_HIT_RATIO	 指标类型：float
+监视指标：SQLM_ELM_DATA_HIT_RATIO        指标类型：float
+监视指标：SQLM_ELM_DIRECT_READS          指标类型：int
+监视指标：SQLM_ELM_DIRECT_WRITES         指标类型：int
+
+监视器名称：DB2cache缓存状态
+调用的函数：UnixCommand_Cache
+监视指标：SQLM_ELM_PACKAGE_CACHE_HIT_RATIO 指标类型：float
+监视指标：SQLM_ELM_CATALOG_CACHE_HIT_RATIO 指标类型：float
+
+监视器名称：DB2数据库性能信息
+调用的函数：UnixCommand_DataBase
+监视指标：SQLM_ELM_SERVER_INSTANCE_NAME  指标类型：String
+监视指标：SQLM_ELM_DB_NAME	 	 指标类型：String
+监视指标：SQLM_ELM_DB_PATH		 指标类型：String
+监视指标：SQLM_ELM_INPUT_DB_ALIAS	 指标类型：String
+监视指标：SQLM_ELM_DB_STATUS		 指标类型：int
+监视指标：SQLM_ELM_DB_CONN_TIME		 指标类型：String
+监视指标：SQLM_ELM_DEADLOCKS		 指标类型：int
+监视指标：SQLM_ELM_TOTAL_LOG_USED	 指标类型：int
+监视指标：SQLM_ELM_TOTAL_LOG_AVAILABLE	 指标类型：int
+监视指标：SQLM_ELM_SORT_OVERFLOWS	 指标类型：int
+
+监视器名称：DB2执行状态
+调用的函数：UnixCommand_Transation
+监视指标：SQL_ELM_SUCCESS_QUERY 指标类型：int
+监视指标：SQL_ELM_FAILURE_QUERY 指标类型：int
+监视指标：SQL_ELM_UNITS_OF_WORK 指标类型：int
+
+监视器名称：DB2数据库表空间
+调用的函数：UnixCommand_Tablespace
+监视指标：SQLM_ELM_TABLESPACE_EXTENT_SIZE   指标类型：int
+监视指标：SQLM_ELM_TABLESPACE_PREFETCH_SIZE 指标类型：int
+监视指标：SQLM_ELM_TABLESPACE_PAGE_SIZE     指标类型：int
+监视指标：SQLM_ELM_TABLESPACE_CUR_POOL_ID   指标类型：int
+监视指标：SQLM_ELM_TABLESPACE_NEXT_POOL_ID  指标类型：int
+监视指标：SQLM_ELM_TABLESPACE_TOTAL_PAGES   指标类型：int 指标名称：TOTALPAGES
+监视指标：SQLM_ELM_TABLESPACE_USED_PAGES    指标类型：int 指标名称：USEDPAGES
+监视指标：SQLM_ELM_TABLESPACE_USED_RATE     指标类型：int 指标名称：USEDRATE
+
+监视器名称：DB2数据库备份
+调用的函数：UnixCommand_Backup
+监视指标：SQLM_ELM_LAST_BACKUP  	指标类型：String  指标名称：最后备份时间
+监视指标：SQLM_ELM_LAST_BACKUP_DAYS    	指标类型：int 	  指标名称：最后一次备份距今天数
+								   （若备份周期为1天，则将该指标报警阀值设为1）
