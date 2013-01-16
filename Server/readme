@@ -1,0 +1,10 @@
+说明：
+
+     EccServer下的EccServer为总解决方案， 生成的东西均到bin目录。
+
+     kennel\nodemodule 为nodejs插件代码。
+
+     kennel\meteor\... 为meteor package代码。
+
+     kennel\SliceScasvapiAgent为ice 接口代码。
+    
